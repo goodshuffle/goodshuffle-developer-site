@@ -22,7 +22,7 @@ gspro-item-card gspro-icon {
   background-repeat: no-repeat;
 }
 
-/* hide the build-in svg */
+/* hide the built-in svg */
 gspro-item-card gspro-icon svg {
   display: none;
 }
@@ -38,7 +38,7 @@ gspro-wishlist .gspro-c-wishlist__trigger gspro-icon {
   background-repeat: no-repeat;
 }
 
-/* hide the build-in svg */
+/* hide the built-in svg */
 gspro-wishlist .gspro-c-wishlist__trigger gspro-icon svg {
   display: none;
 }
