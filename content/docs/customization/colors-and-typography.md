@@ -9,7 +9,7 @@ weight: 10
 
 Applying your brand colors and typography to webcomponents requires a basic understanding of CSS.
 
-If you're using a website theme created by someone else, it is helpful to understand how web browsers determine which styles are used. You can [learn about CSS specificy from MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity). In some cases, you may need to adapt our examples to be more "specific" than your website's CSS.
+If you're using a website theme created by someone else, it is helpful to understand how web browsers determine which styles are used. You can [learn about CSS specificity from MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity). In some cases, you may need to adapt our examples to be more "specific" than your website's CSS.
 
 ## Item Card Examples
 
@@ -25,29 +25,92 @@ gspro-item-card:hover {
 }
 
 gspro-item-card .gspro-o-card__title {
-  color: orange;
+  color: #3B3B3B;
 }
 
 gspro-item-card .gspro-o-card__subtitle {
-  color: hotpink;
+  color: #656565;
 }
 
 gspro-item-card .gspro-o-card__add button {
-  background: black;
+  background: #2A2A2A;
 }
 
 gspro-item-card .gspro-o-card__add:hover button {
-  background: blue;
+  background: #1A1A1A;
 }
 ```
 
 ## Item Detail Examples
 
-Coming Soon!
+```
+gspro-item-detail h2.gspro-c-item-details__title {
+  color: red;
+}
+```
 
 ## Wishlist Examples
 
-Coming Soon!
+The wishlist has two different states. Initially, it is collapsed, appearing as a floating action button on the bottom-right side of the screen. When clicked, it will enter the expanded state.
+
+This CSS shows you how to apply background and foreground colors in both states. If you use this snippet on your site, you might want to change the hotpink background to something that matches your site's branding.
+
+```
+gspro-wishlist[data-mode="collapse"] {
+  background: white;
+}
+
+gspro-wishlist[data-mode="collapse"] .gspro-c-wishlist__count {
+  background: black;
+  color: white
+}
+
+gspro-wishlist[data-mode="collapse"] use {
+  fill: black;
+}
+
+gspro-wishlist[data-mode="expand"] {
+  background: hotpink;
+}
+```
+
+## Button Customization
+
+```
+button.gspro-o-button {
+  background: inherit;
+}
+
+button.gspro-o-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+button.gspro-o-button--primary {
+  background: #1F1F1F;
+}
+
+button.gspro-o-button--primary:hover {
+  background: #3F3F3F;
+}
+
+button.gspro-o-button--reverse {
+  background: white;
+  color: hotpink;
+}
+
+button.gspro-o-button--reverse:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: hotpink;
+}
+
+button.gspro-o-button--icon {
+  background: inherit;
+}
+
+button.gspro-o-button--icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+```
 
 ## Using Custom Properties
 
