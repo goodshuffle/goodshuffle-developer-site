@@ -17,7 +17,7 @@ Our webcomponents include classes most subelements to provide you with a concise
 
 The default styles provided by our webcomponents attempt to be as minimially specific as possible so that the CSS you write is more succinct. The tradeoff is your website's existing CSS may override _our_ default styles; it's possible our examples won't work. So, being familiar with specificity rules is helpful.
 
-## Item Card Examples
+## Item Card CSS
 
 This example provides you with a handful of CSS selectors. Although they focus on colors, you can use these as a starting point to customize a variety of properties. You can easily [experiment with your own customizations](https://jsfiddle.net/goshujomo/j1xd8uos/) by forking this JSFiddle.
 
@@ -50,7 +50,7 @@ gspro-item-card .gspro-o-card__add:hover button {
 }
 ```
 
-## Item Detail Examples
+## Item Detail CSS
 
 ```
 gspro-item-detail .gspro-c-item-detail__title {
@@ -63,7 +63,7 @@ gspro-item-detail .gspro-c-item-detail__price {
 }
 ```
 
-## Wishlist Examples
+## Wishlist CSS
 
 The wishlist has two different states. Initially, it is collapsed, appearing as a floating action button on the bottom-right side of the screen. When clicked, it will enter the expanded state.
 
@@ -89,7 +89,7 @@ gspro-wishlist[data-mode="expand"] {
 }
 ```
 
-## Buttons
+## Button CSS
 
 Some webcomponents have button elements. In order to make these look consistent in a variety of web browsers, devices, and operating systems; we provide a shape that makes them easy to select.
 
@@ -106,7 +106,7 @@ button.gspro-o-button--primary {
   background: #1F1F1F;
 }
 
-button.gspro-o-button--primary:hover {
+button.gspro-o-button-primary:hover {
   background: #3F3F3F;
 }
 
