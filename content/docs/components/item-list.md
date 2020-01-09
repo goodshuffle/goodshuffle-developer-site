@@ -67,9 +67,36 @@ No. Keyword search is not case sensitive.
 
 #### Q: How do I create a basic search UI?
 
-Answer: You can update the search attribute. You can observe an HTML input field for changes and assign the changed value to the `search` attribute. You can refer to this JSFiddle for an example:
+An item list with a `route` attribute observes hashlocation change events. You can create a basic form observed by javascript to accomlish this with relative ease.
 
-https://jsfiddle.net/goshujomo/60zh8ygq/
+```
+<form id="gspro-search">
+  <input type="text" name="search" placeholder="search" />
+  <button>Search</button>
+</form>
+
+<gspro-item-list id="gspro-item-list" route="/inventory/:search*">
+</gspro-item-list>
+
+<script>
+(function() {
+  function initSearchListener() {
+    var form = document.querySelector("#gspro-search");
+    if (!form) {
+      return;
+    }
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      let search = form.search.value;
+      window.location.hash = `#!/inventory/:search?search=${search}`;
+    });
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    initSearchListener();
+  });
+})();
+</script>
+```
 
 ### `tags`
 
