@@ -9,16 +9,51 @@ title: WordPress Setup
 
 You will need...
 
-- WordPress version 5+
-- Credentials with administrative access and the ability to upload a plugin
+- WordPress version 5 or better.
+- An active "Website Wishlist" subscription on Goodshuffle Pro.
 
 ## Overview
 
-1. [Download the WordPress plugin]({{< relref "/docs/downloads" >}})
-2. Install it.
-3. Configure it.
-4. Create a page for the basic gallery.
+1. [Download the WordPress plugin](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-embed-wpp-0.2.0.zip).
+1. Activate your Website Wishlist integration.
+1. Upload the plugin to your site.
+1. Configure the plugin to use you public web key.
+1. Create a page for the basic gallery.
 
-## Walk-Through
+## Detailed Walk-Through
 
-_We'll link to a video here soon!_
+### Activation
+
+You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
+
+![Integration Tab](/2019-11-21_17-21-39.png)
+
+### Installation
+
+1. Sign into your WordPress site using an account that has administrative access.
+1. Select the “Plugins” item on the left sidebar.
+1. At the top of the main area, click the “Add New” button.
+1. At the top of the main area, click the “Upload Plugin” button.
+1. Click “Choose File” to locate and select the plugin you downloaded.
+1. Click “Install Now”.
+1. Click “Activate Plugin”.
+
+You should now see “Goodshuffle Embedded Catalog” in your list of plugins.
+
+### Configuration
+
+1. Go to "settings" by clicking the “Settings” link beneath “Goodshuffle Embedded Catalog”.
+1. Enter the “Web Key” that you obtained earlier.
+1. Add the name of the page that you'd like to inventory displayed on. I suggest while getting started, name the page "goodshuffle".
+1. Select which category you would like to display on this page by default. Your other categories and subcategories will be available on the side. You can learn more below. Note, you can leave this blank.
+1. Check the "Display Wishlist on All Pages" when you're ready to list your wishlist on all pages. By default the wishlist will only display on the page listed with "Display Inventory on Page".
+1. Click "Update Options".
+
+You should now be able to add a basic gallery to display your inventory.
+
+### Create a Basic Gallery
+
+1. Select the “Pages” item on the left sidebar.
+1. Click “Add New” to create a new page.
+1. Enter a title for the page (e.g. Goodshuffle)
+1. Click Publish in the top right.

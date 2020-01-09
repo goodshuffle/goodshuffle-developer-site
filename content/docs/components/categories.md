@@ -9,8 +9,10 @@ Use the `gspro-categories` webcomponent to display a list of Goodshuffle Pro cat
 
 ## Overview
 
+This element is useful if you'd like to provide a basic page with a list of items filterable by category and subcategory.
+
 #### Usage Example:
 
 ```
-<gspro-categories></gspro-categorie>
+<gspro-categories></gspro-categories>
 ```
