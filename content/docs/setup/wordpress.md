@@ -14,7 +14,9 @@ You will need...
 
 ## Overview
 
-1. [Download the WordPress plugin](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-embed-wpp-0.2.0.zip).
+The are the high-level steps:
+
+1. [Download the WordPress plugin](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-embed-wpp-0.2.1.zip).
 1. Activate your Website Wishlist integration.
 1. Upload the plugin to your site.
 1. Configure the plugin to use you public web key.
@@ -26,7 +28,7 @@ You will need...
 
 You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
 
-![Integration Tab](/2019-11-21_17-21-39.png)
+![Integration Tab](/wordpress-website-integration-activation.png)
 
 ### Installation
 
@@ -44,12 +46,13 @@ You should now see “Goodshuffle Embedded Catalog” in your list of plugins.
 
 1. Go to "settings" by clicking the “Settings” link beneath “Goodshuffle Embedded Catalog”.
 1. Enter the “Web Key” that you obtained earlier.
-1. Add the name of the page that you'd like to inventory displayed on. I suggest while getting started, name the page "goodshuffle".
-1. Select which category you would like to display on this page by default. Your other categories and subcategories will be available on the side. You can learn more below. Note, you can leave this blank.
-1. Check the "Display Wishlist on All Pages" when you're ready to list your wishlist on all pages. By default the wishlist will only display on the page listed with "Display Inventory on Page".
-1. Click "Update Options".
+1. Set "Display Inventory on Page" with the slug of the page you want to display your inventory. Using the name "goodshuffle" is good for testing and evaluation purposes, but you may want to change it to something later.
+1. Leave the "Default Category" blank for now and the "Display wishliston all pages blank for now."
+1. Press the "Update Options" button to save your changes.
 
 You should now be able to add a basic gallery to display your inventory.
+
+![Wordpress Settings](/wordpress-settings-screen.png)
 
 ### Create a Basic Gallery
 
@@ -57,3 +60,12 @@ You should now be able to add a basic gallery to display your inventory.
 1. Click “Add New” to create a new page.
 1. Enter a title for the page (e.g. Goodshuffle)
 1. Click Publish in the top right.
+
+When you view that page, you should now see a basic gallery that includes category and subcategory filters.
+
+## Next Steps
+
+1. Apply your colors and typography to the webcomponents.
+1. Learn how to use the `<gspro-item-list>` to create [customized lists]({{< relref "/docs/customization/colors-and-typography" >}}) of your items.
+
+![Basic Gallery](/wordpress-basic-gallery.png)
