@@ -1,5 +1,5 @@
 ---
 bookFlatSection: true
-title: Downloads
+title: Resources
 weight: 100
 ---
