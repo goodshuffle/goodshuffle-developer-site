@@ -7,7 +7,7 @@ weight: 10
 
 ## Overview
 
-Use the `gspro-item-list` webcomponent to display a list of items on a page.
+Use the `gspro-item-list` web component to display a list of items on a page.
 
 ```
 <gspro-item-list search="table | chair" size="20">
@@ -31,7 +31,7 @@ You change the number of items and enable pagination using:
 ### search
 
 Use the `search` attribute to get items to find items with a title and
-descrption containing the keywords you specify.
+description containing the keywords you specify.
 
 #### Example:
 
@@ -67,7 +67,7 @@ No. Keyword search is not case sensitive.
 
 #### Q: How do I create a basic search UI?
 
-An item list with a `route` attribute observes hashlocation change events. You can create a basic form observed by javascript to accomlish this with relative ease.
+An item list with a `route` attribute observes hashlocation change events. You can create a basic form observed by javascript to accomplish this with relative ease.
 
 ```
 <form id="gspro-search">
@@ -100,13 +100,13 @@ An item list with a `route` attribute observes hashlocation change events. You c
 
 ### `tags`
 
-Use the `tags` attribute to get items using tags you have added to your items in Goodshuffle Pro. This can help you create collections of items using data that supplements the Goodshuffle Pro taxonomy. This might include:
+Use the `tags` attribute to get items using the tags you have added to your items in Goodshuffle Pro. This can help you create collections of items using data that supplements the Goodshuffle Pro taxonomy. This might include:
 
 - seasonality (e.g. fall, winter, spring)
 - featured
 - event type
 
-_We strongly suggest using tags to supplement the Goodshuffle Pro taxonomy, duplicating it could be very time consuming!_
+_We strongly suggest using tags to supplement the Goodshuffle Pro taxonomy; duplicating it could be very time consuming!_
 
 #### Example:
 

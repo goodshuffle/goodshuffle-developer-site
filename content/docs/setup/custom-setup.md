@@ -14,7 +14,7 @@ tried to make things simple for people just like you.
 ## Step 1: Add Dependencies
 
 Add the following code into your website `<head>...</head>` element.
-It will add our Webcomponents library and reference your Goodshuffle Pro inventory.
+It will add our web components library and reference your Goodshuffle Pro inventory.
 This is only needed on pages that you intend to display the wishlist or your inventory.
 
 ### Required
@@ -29,7 +29,7 @@ _Please Note: Your public web site key can be obtained from your Goodshuffle Pro
 
 ### Optional
 
-If you intend to display details about your items and want to weird body scrolling behavior on mobile devices, you should also include this library in the `<head>...</head>` element.
+Include this library in the `<head>...</head>` element to mitigate [a common UI issue related to how browsers handle scrolling when a modal item is displayed](https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/).
 
 ```
 <script src="https://unpkg.com/tua-body-scroll-lock"></script>
@@ -41,7 +41,7 @@ Add the following code to your website `<body>...</body>` element, prefereably t
 
 2. An element used to display item details when an item card is clicked.
 1. A floating-action-button that toggles the display of a wishlist.
-1. A hidden SVG sprite that is reference by other webcomponents.
+1. A hidden SVG sprite that is reference by other web components.
 
 ```
 <div class="gspro-gallery-omni-present">

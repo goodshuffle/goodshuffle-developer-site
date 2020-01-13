@@ -14,13 +14,13 @@ You will need...
 
 ## Overview
 
-The are the high-level steps:
+These are the high-level steps:
 
 1. [Download the WordPress plugin](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-embed-wpp-0.2.1.zip).
 1. Activate your Website Wishlist integration.
 1. Upload the plugin to your site.
 1. Configure the plugin to use you public web key.
-1. Create a page for the basic gallery.
+1. Create a page to display a basic gallery.
 
 ## Detailed Walk-Through
 
@@ -44,10 +44,10 @@ You should now see “Goodshuffle Embedded Catalog” in your list of plugins.
 
 ### Configuration
 
-1. Go to "settings" by clicking the “Settings” link beneath “Goodshuffle Embedded Catalog”.
-1. Enter the “Web Key” that you obtained earlier.
-1. Set "Display Inventory on Page" with the slug of the page you want to display your inventory. Using the name "goodshuffle" is good for testing and evaluation purposes, but you may want to change it to something later.
-1. Leave the "Default Category" blank for now and the "Display wishliston all pages blank for now."
+1. Click the "Settings" link beneath "Goodshuffle Embedded Catalog".
+1. Enter the "Web Key" that you obtained earlier.
+1. Set "Display Inventory on Page" with the slug of the page you want to display your inventory. Using the name "goodshuffle" is good for testing and evaluation purposes. You will be able to change it later.
+1. Leave the "Default Category" blank for now and the "Display wishlist on all pages blank for now."
 1. Press the "Update Options" button to save your changes.
 
 You should now be able to add a basic gallery to display your inventory.
@@ -65,7 +65,7 @@ When you view that page, you should now see a basic gallery that includes catego
 
 ## Next Steps
 
-1. Apply your colors and typography to the webcomponents.
+1. Apply your colors and typography to the web components.
 1. Learn how to use the `<gspro-item-list>` to create [customized lists]({{< relref "/docs/customization/colors-and-typography" >}}) of your items.
 
 ![Basic Gallery](/wordpress-basic-gallery.png)

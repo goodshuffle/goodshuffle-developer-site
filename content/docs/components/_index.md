@@ -1,5 +1,5 @@
 ---
-title: Webcomponents
+title: Web Components
 bookFlatSection: true
 weight: 20
 ---
