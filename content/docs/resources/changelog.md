@@ -27,7 +27,9 @@ _[Learn more](https://keepachangelog.com/en/1.0.0/) about Changelogs._
 
 ## [0.2.6] - 2019-12-19
 
-Run a clean build and release it.
+### Fixed
+
+- Run a clean build and re-release, the previous version appears to be dirty.
 
 ## [0.2.5] - 2019-12-19
 

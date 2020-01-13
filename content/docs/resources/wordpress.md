@@ -1,5 +1,5 @@
 ---
-title: WordPress Plugin Download
+title: WordPress Plugin
 weight: 90
 ---
 
