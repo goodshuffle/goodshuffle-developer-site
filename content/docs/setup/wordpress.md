@@ -22,6 +22,8 @@ These are the high-level steps:
 1. Configure the plugin to use you public web key.
 1. Create a page to display a basic gallery.
 
+If you prefer a narrated walk-through, checkout our [WordPress Setup Youtube video](https://youtu.be/JNmhzDPFcKA).
+
 ## Detailed Walk-Through
 
 ### Activation
