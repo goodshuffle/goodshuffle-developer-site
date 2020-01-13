@@ -6,11 +6,6 @@ title: "Custom Website Setup"
 
 # Setup
 
-**We love a hand-built website!**
-
-Even though you're using the building blocks of our Webcomponent library, we've
-tried to make things simple for people just like you.
-
 ## Step 1: Add Dependencies
 
 Add the following code into your website `<head>...</head>` element.
