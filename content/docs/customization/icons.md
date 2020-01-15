@@ -7,7 +7,7 @@ weight: 30
 
 You may customize the icon of the item card and the wishlist floating action button. The easiest way to accomplish this is by&hellip;
 
-1. Setting a background image of the `gspro-icon` webcomponent.
+1. Setting a background image of the `gspro-icon` web component.
 1. Hide the built-in SVG.
 
 _Please Note: you should host icon images on a server (or service) you control. Otherwise, changes to it could cause unexpected issues on your website._
