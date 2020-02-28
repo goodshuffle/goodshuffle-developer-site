@@ -16,8 +16,8 @@ This is only needed on pages that you intend to display the wishlist or your inv
 
 ```
 <meta name="gspro-config" content="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY" />
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.2.6/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.2.6/dist/gspro-wc/gspro-wc.js"></script>
+<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.3.1/dist/gspro-wc/gspro-wc.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.3.1/dist/gspro-wc/gspro-wc.js"></script>
 ```
 
 _Please Note: Your public web site key can be obtained from your Goodshuffle Pro Account Settings._
@@ -34,7 +34,7 @@ Include this library in the `<head>...</head>` element to mitigate [a common UI 
 
 Add the following code to your website `<body>...</body>` element, prefereably toward the end. It will create:
 
-2. An element used to display item details when an item card is clicked.
+1. An element used to display item details when an item card is clicked.
 1. A floating-action-button that toggles the display of a wishlist.
 1. A hidden SVG sprite that is reference by other web components.
 
@@ -55,7 +55,7 @@ Add the following code to your website `<body>...</body>` element, prefereably t
 To test your configuration, add this to a web page:
 
 ```
-<gspro-item-list search="table | chair"></gspro-item-list>
+<gspro-item-gallery search="table | chair"></gspro-item-gallery>
 ```
 
 _Please note: you need to an item in your inventory with the word table or chair in order for items to be displayed._
