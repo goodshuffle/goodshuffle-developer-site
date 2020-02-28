@@ -1,3 +1,4 @@
 baseURL = "https://docs.goodshuffle.dev/"
 languageCode = "en-us"
 title = "Goodshuffle Developer Docs"
+theme = "book"

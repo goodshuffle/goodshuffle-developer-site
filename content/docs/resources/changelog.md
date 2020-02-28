@@ -7,23 +7,31 @@ weight: 1
 
 _[Learn more](https://keepachangelog.com/en/1.0.0/) about Changelogs._
 
-## [0.3.0] - Upcoming
+## [0.3.1] - 2020-02-28
 
-### Deprecated
+### Changed
 
-- CSS custom properties should not be used by 3rd-parties to customize sites.
-- `.gspro-c-item-card` replaces `.gspro-o-card` (there are no other cards)
+- Use consistent BEM class names for gspro-item-gallery
+- Hide gspro-item-gallery category button on desktop and display the list of categories.
+
+## [0.3.0] - 2020-02-27
 
 ### Added
 
+- `gspro-item-gallery` provides search and filtering of items.
 - Provide sample selectors to facilitate deprecation of CSS custom properties.
 - Provide search example in out-of-the-box HTML and JS.
 
 ### Changed
 
-- `gspro-duration` Use neautral colors in web component.
+- The default color palette is now black and white. This is a popular choice when people customize the look and feel of the webcomponents, so we've made them the default.
+- `gspro-duration` Use neutral colors (instead of Goodshuffle brand blue).
 - `gsrpo-item-detail` modal overlay style is included in web component.
-- Use neutral colors to minimize effort when configuring a site.
+
+### Deprecated
+
+- CSS custom properties should not be used by 3rd-parties to customize sites.
+- `.gspro-c-item-card` replaces `.gspro-o-card` (there are no other cards)
 
 ## [0.2.6] - 2019-12-19
 
