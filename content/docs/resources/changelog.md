@@ -5,6 +5,12 @@ weight: 1
 
 # Changelog
 
+## [0.3.2] - 2020-03-16
+
+### Changed
+
+- Item gallery has fewer default styles. This makes it easier to integrate with other sites (sticky headers are not good out of the box!)
+
 _[Learn more](https://keepachangelog.com/en/1.0.0/) about Changelogs._
 
 ## [0.3.1] - 2020-02-28

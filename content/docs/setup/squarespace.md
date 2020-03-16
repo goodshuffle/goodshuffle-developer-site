@@ -41,8 +41,8 @@ You can access this by going to "Settings" &gt; "Advanced" &gt; "Code Injection"
 ```
 <meta name="gspro-config"
       content="https://data.goodshuffle.com/vendor/YOUR-WEB-SITE-KEY" />
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.3.1/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.3.1/dist/gspro-wc/gspro-wc.js"></script>
+<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.3.2/dist/gspro-wc/gspro-wc.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.3.2/dist/gspro-wc/gspro-wc.js"></script>
 <script src="https://unpkg.com/tua-body-scroll-lock"></script>
 ```
 
