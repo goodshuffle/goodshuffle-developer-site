@@ -3,7 +3,7 @@ weight: 20
 title: Squarespace Setup
 ---
 
-# WordPress Setup
+# Squarespace Setup
 
 ## Requirements
 
