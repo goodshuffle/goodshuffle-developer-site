@@ -40,7 +40,7 @@ You can access this by going to "Settings" &gt; "Advanced" &gt; "Code Injection"
 
 ```
 <meta name="gspro-config"
-      content="https://data.goodshuffle.com/vendor/YOUR-WEB-SITE-KEY" />
+      content="https://data.goodshuffle.com/vendor/YOUR_WEB_SITE_KEY" />
 <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.3.2/dist/gspro-wc/gspro-wc.esm.js"></script>
 <script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.3.2/dist/gspro-wc/gspro-wc.js"></script>
 <script src="https://unpkg.com/tua-body-scroll-lock"></script>
@@ -61,46 +61,6 @@ _Be careful not to replace other code that may have been injected for other purp
     route="/item/:id/:title*"></gspro-item-detail>
   <gspro-sprite></gspro-sprite>
 </div>
-
-<script>
-(function() {
-  function initBodyScrollLockListener() {
-    if (bodyScrollLock == undefined) {
-      return;
-    }
-    let itemDetail = document.querySelector(
-      "gspro-item-detail.gspro-u-fullscreen"
-    );
-    if (!itemDetail) {
-      return;
-    }
-    itemDetail.addEventListener("gspro-item-detail.mode", ({ detail }) => {
-      if (detail == "active") {
-        bodyScrollLock.lock(detail);
-      } else {
-        bodyScrollLock.unlock(detail);
-      }
-    });
-  }
-
-  function initDetailToggle() {
-    var detail = document.querySelector("gspro-item-detail.gspro-u-fullscreen");
-    if (!detail) {
-      return;
-    }
-    detail.addEventListener("click", e => {
-      if (e.target == detail) {
-        detail.close();
-      }
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    initBodyScrollLockListener();
-    initDetailToggle();
-  });
-})();
-</script>
 ```
 
 ### Create a Gallery Page
