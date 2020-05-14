@@ -179,11 +179,3 @@ This will configure the gspro-item-list to read additional properties from a fra
 For example, the `route` in the `<gspro-item-list>` will match the following URL:
 
 https://dz1.goodshuffle.dev/posh/#!/inventory?from=12&size=6
-
-## Coming Soon!
-
-_These are not currently availble, but will be available in the future._
-
-1. `sort` – control property for sorting
-2. `kind` – product, service, package, any
-3. `filter` – enable additional controls to filter items by color, material, size, etc...

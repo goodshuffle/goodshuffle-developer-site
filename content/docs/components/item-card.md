@@ -1,6 +1,6 @@
 ---
 title: "Item Card"
-weight: 10
+weight: 30
 ---
 
 # Item Card
