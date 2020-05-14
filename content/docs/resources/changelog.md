@@ -5,13 +5,29 @@ weight: 1
 
 # Changelog
 
+## [0.4.0] - 2020-05-14
+
+### Changed
+
+- `gspro-item-list` now display narrower cards so that typical websites will display more than one item per row by default.
+- `gspro-item-gallery` on mobile uses fixed positioning for categories and filters instead of absolute positioning. This should improve the out-of-the-box setup experience for most people.
+- `gspro-wishlist` form labels are now more concise and can be customized using CSS.
+- Item cards use an absolute URL to open item detail, this may improve crawlability of item details.
+
+### Added
+
+- `gspro-item-gallery` now support "scoped" category, group, search, and tags.
+- `gspro-item-gallery` filter and category elements can be hidden using the `show-filters="false"` and `show-categories="false"` respectively.
+- `gspro-item-card` image now sets the alt attribute to any provided caption in Goodshuffle Pro.
+- Price related elements can be selected (and hidden) using the `.gspro-o-price` CSS selector.
+- Wishlist now has a notes field so that customers can provide additional detail.
+- Data queries now include additional information about the library version to help us identify people that should upgrade.
+
 ## [0.3.2] - 2020-03-16
 
 ### Changed
 
 - Item gallery has fewer default styles. This makes it easier to integrate with other sites (sticky headers are not good out of the box!)
-
-_[Learn more](https://keepachangelog.com/en/1.0.0/) about Changelogs._
 
 ## [0.3.1] - 2020-02-28
 
