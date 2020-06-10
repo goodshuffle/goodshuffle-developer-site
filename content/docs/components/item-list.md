@@ -67,36 +67,7 @@ No. Keyword search is not case sensitive.
 
 #### Q: How do I create a basic search UI?
 
-An item list with a `route` attribute observes hashlocation change events. You can create a basic form observed by javascript to accomplish this with relative ease.
-
-```
-<form id="gspro-search">
-  <input type="text" name="search" placeholder="search" />
-  <button>Search</button>
-</form>
-
-<gspro-item-list id="gspro-item-list" route="/inventory/:search*">
-</gspro-item-list>
-
-<script>
-(function() {
-  function initSearchListener() {
-    var form = document.querySelector("#gspro-search");
-    if (!form) {
-      return;
-    }
-    form.addEventListener("submit", event => {
-      event.preventDefault();
-      let search = form.search.value;
-      window.location.hash = `#!/inventory/:search?search=${search}`;
-    });
-  }
-  document.addEventListener("DOMContentLoaded", () => {
-    initSearchListener();
-  });
-})();
-</script>
-```
+[Use a `gspro-item-gallery` instead of this web component.]({{< relref "/docs/components/item-gallery" >}})
 
 ### `tags`
 

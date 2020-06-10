@@ -50,11 +50,15 @@ You can specify the "scope" of items displayed within a gallery by using the fol
 
 Each of these attributes works will constrain the set of items to be displayed. This is useful for creating a page for a set of items (like linens) and providing visitors with a way to filter or search them. For example:
 
+```
 <gspro-item-gallery scope-category="linen-rentals"></gspro-item-gallery>
+```
 
 Here's another example that limits items to ones with the tags "featured" and "summer" on them.
 
+```
 <gspro-item-gallery scope-tags="featured summer"></gspro-item-gallery>
+```
 
 ## Attributes
 
