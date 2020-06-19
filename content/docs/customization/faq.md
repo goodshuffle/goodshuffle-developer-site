@@ -9,7 +9,7 @@ If you have a question that isn't answered here, ask us in the [blue-chat bubble
 
 ## How do I hide prices?
 
-Yes, you can disable the display of all price related elements using this snippet of CSS.
+You can disable the display of all price related elements using this snippet of CSS.
 
 ```
 .gspro-o-price {
