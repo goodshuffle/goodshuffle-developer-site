@@ -31,5 +31,3 @@ You can disable the display of time selection menus using this snippet of CSS:
 ```
 
 This will disable time selection in the wishlist date picker and item detail overlay. Please note that projects will still have a default time of noon set when a wishlist is submitted.
-
-Jon m.
