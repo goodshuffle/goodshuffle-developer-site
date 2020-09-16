@@ -16,8 +16,8 @@ This is only needed on pages that you intend to display the wishlist or your inv
 
 ```
 <meta name="gspro-config" content="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY" />
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.0/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.0/dist/gspro-wc/gspro-wc.js"></script>
+<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.1/dist/gspro-wc/gspro-wc.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.1/dist/gspro-wc/gspro-wc.js"></script>
 ```
 
 _Please Note: Your public web site key can be obtained from your Goodshuffle Pro Account Settings._

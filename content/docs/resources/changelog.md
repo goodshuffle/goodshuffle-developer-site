@@ -5,6 +5,10 @@ weight: 1
 
 # Changelog
 
+## [0.4.1] - 2020-09-16
+
+- Update UTM params for Powered by Goodshuffle logo
+
 ## [0.4.0] - 2020-05-14
 
 ### Changed
