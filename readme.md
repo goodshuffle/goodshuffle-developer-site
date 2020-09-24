@@ -10,10 +10,16 @@ Install [Hugo](https://gohugo.io/getting-started/usage/).
 brew install hugo
 ```
 
+Init the 'book' theme
+
+```
+ git submodule update --init
+```
+
 Run the server.
 
 ```
-hugo run
+hugo server --minify --theme book
 ```
 
 Make any edits you'd like to the docs.
