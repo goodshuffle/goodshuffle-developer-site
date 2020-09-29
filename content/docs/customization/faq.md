@@ -12,7 +12,7 @@ Packages will show the photos and description of the package, along with any of 
 
 You can also have packages who show some contents, or none at all. A good example is a tent, which is comprised of many items, but you’d likely only want the client to see the name of the tent as a whole.
 
-Packages are also a create way for you to get lead info about a client’s event. You might consider making a “Graduation Backyard Starter Pack” and including the most common things for those events. Keep in mind: you can put in the description something about the ability to add more things later.
+Packages are also a creative way for you to get lead info about a client’s event. You might consider making a “Graduation Backyard Starter Pack” and including the most common things for those events. Keep in mind: you can put in the description something about the ability to add more things later.
 
 
 ## How do Accessories show on the site?
@@ -21,10 +21,10 @@ If you have a hidden accessory (like chalk for a chalkboard) it will not show on
 If you have accessories that show on the contract, they will show on the item card and might be a good way to show common upsell items [like this example](https://beautifuleventrentals.com/accent-chairs/#!/item/0eda09d4-1828-3155-309d-084e44cd0b87/Auburn%20Chair).
 
 ## How do I change my categories in Goodshuffle Pro?
-You can’t change the categories in the software, but can use tags to create any categories you like on your website. 
+You can’t change the categories in the software, but can use tags to group items together for your website pages and menu.
 
 ## How do I create collections on my website?
-Also via tags. Items can have multiple tags, therefore showing on several different pages. 
+Also via [tags](https://help.goodshuffle.com/en/articles/3702845-how-can-i-mark-my-products-for-a-specific-venue-or-event-type). Items can have multiple tags, therefore showing on several different pages. 
 
 ## How do I group items together by color?
 To group items together by color, you can use multiple gspro-item-list elements on a single page. 
@@ -55,7 +55,7 @@ We have confirmed that Google search bot can crawl wishlist content by using
 Google’s search console and it appears to be neutral with respect to page rank.
 
 ## Can I customize the wishlist icon?
-Yes, we have a walk-through and some video tutorials for that!
+Yes, we have a [walk-through and some video tutorials](https://help.goodshuffle.com/en/articles/3528690-how-do-i-use-something-other-than-a-heart-icon) for that!
 
 ## Do you have preset templates for designs that I can use?
 Not currently, but these may be available in the future. However, 
