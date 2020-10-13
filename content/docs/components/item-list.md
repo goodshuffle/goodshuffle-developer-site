@@ -20,7 +20,10 @@ You control what is displayed by setting specific attributes on this component.
 2. `tags` – keyword search on item tags
 3. `category` – root level category (from Goodshuffle Pro)
 4. `group` – sub-categories (from Goodshuffle Pro)
-5. `item-attribute` - custom attributes (from Goodshuffle Pro)
+5. `item-attribute-#` - custom attributes (from Goodshuffle Pro)
+    * `item-attribute-#-name` for the attribute name
+    * `item-attribute-#-value` for the attribute value
+    * the `#` symbol will be replaced with a number 1-3
 
 You change the number of items and enable pagination using:
 
@@ -138,7 +141,7 @@ Groups operate in a very similar way to categories. You can find the value for a
 
 ![Group String in URL](/group-url.png)
 
-## `item-attribute`
+## `item-attribute-#`
 
 Up to three custom attributes can be used to filter your `gspro-item-list`.
 
