@@ -20,6 +20,7 @@ You control what is displayed by setting specific attributes on this component.
 2. `tags` – keyword search on item tags
 3. `category` – root level category (from Goodshuffle Pro)
 4. `group` – sub-categories (from Goodshuffle Pro)
+5. `item-attribute` - custom attributes (from Goodshuffle Pro)
 
 You change the number of items and enable pagination using:
 
@@ -28,7 +29,7 @@ You change the number of items and enable pagination using:
 
 ## Attributes
 
-### search
+## `search`
 
 Use the `search` attribute to get items to find items with a title and
 description containing the keywords you specify.
@@ -69,7 +70,7 @@ No. Keyword search is not case sensitive.
 
 [Use a `gspro-item-gallery` instead of this web component.]({{< relref "/docs/components/item-gallery" >}})
 
-### `tags`
+## `tags`
 
 Use the `tags` attribute to get items using the tags you have added to your items in Goodshuffle Pro. This can help you create collections of items using data that supplements the Goodshuffle Pro taxonomy. This might include:
 
@@ -89,7 +90,7 @@ _We strongly suggest using tags to supplement the Goodshuffle Pro taxonomy; dupl
 
 No.
 
-### `category`
+## `category`
 
 Set this attribute to display items using the Goodshuffle Pro taxonomy for items.
 
@@ -102,16 +103,84 @@ This attribute selects items from a single root category.
 </gspro-item-list>
 ```
 
-### `group`
+**Q: How can I find my item categories?**
+
+The easiest way to get the desired categories is to temporarily add an item gallery to your page. Make sure `show-categories` is enabled and there are no other modifications, like so:
+
+`<gspro-item-gallery show-categories="true"></gspro-item-gallery>`.
+
+You can remove this gallery from your page when you are done gathering categories.
+
+Click the name of the category you want to add on the left hand side of the screen.
+
+![Get Category String](/select-category.png)
+
+You will notice that the url of the page has changed based on the category you have selected. This is the value you will include in `category` tag in your item list.
+
+![Category String in URL](/category-url.png)
+
+In this case, the value of the category would be "entertainment-games-rentals", e.g.
+
+```
+<gspro-item-list category="entertainment-games-rentals">
+</gspro-item-list>
+```
+
+For a video tutorial on getting the category of an item, please [see here](https://www.youtube.com/watch?v=drWHmwRsyxw&feature=youtu.be&t=144).
+
+## `group`
 
 Set this attribute to display items using the Goodshuffle Pro taxonomy for items.
 
 This attribute selects items from a single subcategory.
 
-<gspro-item-list category="decor-rentals">
-</gspro-item-list>
+Groups operate in a very similar way to categories. You can find the value for a specific group by following the steps above for category, but instead clicking on the desired sub category.
 
-### `size`
+![Group String in URL](/group-url.png)
+
+## `item-attribute`
+
+Up to three custom attributes can be used to filter your `gspro-item-list`.
+
+#### Example
+```
+<gspro-item-list
+  item-attribute-1-name="Warehouse Location"
+  item-attribute-1-value="Washington, DC"
+  item-attribute-2-name="Color"
+  item-attribute-2-value="Red | Black"
+  item-attribute-3-name="Fabric"
+  item-attribute-3-value="Cotton"
+></gspro-item-list>
+```
+
+Note: The item attribute `name` and `value` **must match exactly** what is provided in your Goodshuffle Pro inventory, including **case sensitivity** and any special characters.
+
+The `name` and `value` of an item attribute correspond to the number provided in between the dashes. You must have both of these parts for item attribute filtering to work properly.
+
+**Q: Can I add multiple `item-attribute-#-value` for one `item-attribute-#-name`?**
+
+Yes, you can filter for many item attribute values using the pipe `|` symbol. `item-attribute-#-value` using the pipe will include items with **either** item attribute value.
+
+For example, the item list shown above will have items that are red **and** items that are black.
+
+**Q: How can I find the attributes for items in my inventory?**
+
+You can find the attributes for an item by clicking the item in your Goodshuffle Pro inventory and looking under Specs. All lines that are not Primary Category or Sub Category are considered attributes (see below).
+
+![Category String in URL](/attribute-location.png)
+
+To create an item list that filters based on the height attribute in the above image, the component would look like this:
+```
+<gspro-item-list
+  item-attribute-1-name="Height"
+  item-attribute-1-value="2 ft."
+></gspro-item-list>
+```
+
+You can use any attribute assigned to items in your Goodshuffle Pro, even custom ones you've created yourself. 
+
+## `size`
 
 Use a `size` attribute to control the number of items displayed. By default, a `gspro-item-list` displays fifteen (15) items.
 
@@ -127,7 +196,7 @@ You can display fewer items:
 <gspro-item-list search="lounge" size="50"></gspro-item-list>
 ```
 
-### `route`
+## `route`
 
 Use the route attribute to enable paginated lists that support bookmarking and sharing.
 
