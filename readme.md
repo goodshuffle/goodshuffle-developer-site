@@ -23,3 +23,12 @@ hugo server --minify --theme book
 ```
 
 Make any edits you'd like to the docs.
+
+## Deploy
+
+Netlify will automatically handle the build and deploy process.
+
+Merge your feature branch into `staging` to deploy to the test site for testing and review.
+
+Merge `staging` into master to deploy to the public developer [documentation site](https://docs.goodshuffle.dev/).
+
