@@ -95,7 +95,7 @@ No.
 
 ## `category`
 
-Set this attribute to display items using the Goodshuffle Pro taxonomy for items.
+Set this attribute to display items using the Goodshuffle Pro categorization for items.
 
 This attribute selects items from a single root category.
 
@@ -108,7 +108,7 @@ This attribute selects items from a single root category.
 
 **Q: How can I find my item categories?**
 
-The easiest way to get the desired categories is to temporarily add an item gallery to your page. Make sure `show-categories` is enabled and there are no other modifications, like so:
+The easiest way to get the desired categories is to temporarily [add an item gallery]({{< relref "/docs/components/item-gallery" >}}) to your page. Make sure `show-categories` is enabled and there are no other modifications, like so:
 
 `<gspro-item-gallery show-categories="true"></gspro-item-gallery>`.
 
@@ -133,7 +133,7 @@ For a video tutorial on getting the category of an item, please [see here](https
 
 ## `group`
 
-Set this attribute to display items using the Goodshuffle Pro taxonomy for items.
+Set this attribute to display items using the Goodshuffle Pro sub-categorization for items.
 
 This attribute selects items from a single subcategory.
 
@@ -170,6 +170,8 @@ For example, the item list shown above will have items that are red **and** item
 **Q: How can I find the attributes for items in my inventory?**
 
 You can find the attributes for an item by clicking the item in your Goodshuffle Pro inventory and looking under Specs. All lines that are not Primary Category or Sub Category are considered attributes (see below).
+
+You can learn more about adding attributes [here](https://help.goodshuffle.com/en/articles/2114066-attributes-what-they-are-how-to-use-them).
 
 ![Category String in URL](/attribute-location.png)
 
