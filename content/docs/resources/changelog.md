@@ -5,6 +5,11 @@ weight: 1
 
 # Changelog
 
+## [0.4.2] - 2020-10-14
+
+- `gspro-item-list` now supports filtering on custom attributes. See our [developer docs](https://docs.goodshuffle.dev/docs/components/item-list/) for usage.
+- Clicking on an item in a `gspro-item-gallery` or `gspro-item-list` will now update the canonical url, title and meta description of a Wishlist integrated site
+
 ## [0.4.1] - 2020-09-16
 
 - Update UTM params for Powered by Goodshuffle logo

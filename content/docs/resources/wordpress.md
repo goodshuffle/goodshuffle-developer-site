@@ -7,7 +7,7 @@ weight: 90
 
 ## Current Version
 
-- [0.4.1](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.4.1.zip) (September 16, 2020)
+- [0.4.2](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.4.2.zip) (September 16, 2020)
 
 ## Previous Versions
 
