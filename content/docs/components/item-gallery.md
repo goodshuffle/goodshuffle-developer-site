@@ -3,7 +3,7 @@ title: "Item Gallery"
 weight: 20
 ---
 
-# Item List
+# Item Gallery
 
 ## Overview
 

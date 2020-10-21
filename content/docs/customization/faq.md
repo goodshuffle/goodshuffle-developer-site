@@ -28,15 +28,21 @@ Also via [tags](https://help.goodshuffle.com/en/articles/3702845-how-can-i-mark-
 
 ## How do I group items together by color?
 To group items together by color, you can use multiple gspro-item-list elements on a single page. 
-Each element should query items using tags:
+You can do this by querying by "item-attribute". Read `item-attribute` [documentation]({{< relref "/docs/components/item-list" >}}) here. Filtering by item attribute corresponds to the [attributes](https://help.goodshuffle.com/en/articles/2114066-attributes-what-they-are-how-to-use-them) that are set in your Goodshuffle Pro inventory.
+
+Note: `item-attribute-#-name` & `item-attribute-#-value` are case sensitive
 
 ```
-<gspro-item-list search=”lounge” tags=”brown”></gspro-item-list>
-<gspro-item-list search=”lounge” tags=”red”></gspro-item-list>
-<gspro-item-list search=”lounge” tags=”orange”></gspro-item-list>
-<gspro-item-list search=”lounge” tags=”white”></gspro-item-list>
-<gspro-item-list search=”lounge” tags=”blue”></gspro-item-list>
-``` 
+<gspro-item-list search="lounge"
+    item-attribute-1-name="Color"
+    item-attribute-1-value="Brown"></gspro-item-list>
+<gspro-item-list search="lounge"
+    item-attribute-1-name="Color"
+    item-attribute-1-value="Red"></gspro-item-list>
+<gspro-item-list search="lounge"
+    item-attribute-1-name="Color"
+    item-attribute-1-value="Orange"></gspro-item-list>
+```
 
 Keep in mind that these will display 15 items by default.
 
@@ -60,8 +66,7 @@ Yes, we have a [walk-through and some video tutorials](https://help.goodshuffle.
 ## Do you have preset templates for designs that I can use?
 Not currently, but these may be available in the future. However, 
 customization with CSS is straightforward for most developers. We follow 
-the block element modifier (BEM) convention so that you can override our 
-preset theme.
+the [block element modifier (BEM)](http://getbem.com/naming/) convention so that you can override our preset theme.
 
 ## Can I customize the text or labels?
 Not at this time.
@@ -78,6 +83,16 @@ This is the CSS snippet to hide all price data:
   display: none !important;
 }
 ```
+
+## How do I hide the search bar and categories?
+
+The default setup of a Wishlist integration involves adding a [`<gspro-item-gallery>`]({{< relref "/docs/components/item-gallery" >}}) to your page. This component comes out of the box with a search bar and category selection sidebar.
+
+If you just want to hide the category selection sidebar, you can set the [`show-categories`]({{< relref "/docs/components/item-gallery" >}}) attribute to `false`.
+
+If you want to remove both the search bar and category selection sidebar, you will use a `<gspro-item-list>`. To give it a "gallery-like" feel, you can increase the `size` attribute and use any of the available filtering options.
+
+See the [documentation]({{< relref "/docs/components/item-list" >}}) on `<gspro-item-list>` for more information on customizing your component.
 
 ## Does your website wishlist use cookies?
 No. We store website wishlist data using a technology called “Local Storage” 
