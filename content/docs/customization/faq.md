@@ -26,8 +26,8 @@ You can’t change the categories in the software, but can use tags to group ite
 ## How do I create collections on my website?
 Also via [tags](https://help.goodshuffle.com/en/articles/3702845-how-can-i-mark-my-products-for-a-specific-venue-or-event-type). Items can have multiple tags, therefore showing on several different pages. 
 
-## How do I group items together by color?
-To group items together by color, you can use multiple gspro-item-list elements on a single page. 
+## How do I group items together by color, fabric, warehouse location (etc.)?
+To group items together by color (or any other attribute) you can use multiple gspro-item-list elements on a single page.
 You can do this by using "item-attribute-#". Read `item-attribute-#` [documentation]({{< relref "/docs/components/item-list" >}}) here. Filtering by item attribute corresponds to the [attributes](https://help.goodshuffle.com/en/articles/2114066-attributes-what-they-are-how-to-use-them) that are set in your Goodshuffle Pro inventory.
 
 Note: `item-attribute-#-name` & `item-attribute-#-value` are case sensitive
