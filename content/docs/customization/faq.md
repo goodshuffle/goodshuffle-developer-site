@@ -28,7 +28,7 @@ Also via [tags](https://help.goodshuffle.com/en/articles/3702845-how-can-i-mark-
 
 ## How do I group items together by color?
 To group items together by color, you can use multiple gspro-item-list elements on a single page. 
-You can do this by querying by "item-attribute". Read `item-attribute` [documentation]({{< relref "/docs/components/item-list" >}}) here. Filtering by item attribute corresponds to the [attributes](https://help.goodshuffle.com/en/articles/2114066-attributes-what-they-are-how-to-use-them) that are set in your Goodshuffle Pro inventory.
+You can do this by using "item-attribute-#". Read `item-attribute-#` [documentation]({{< relref "/docs/components/item-list" >}}) here. Filtering by item attribute corresponds to the [attributes](https://help.goodshuffle.com/en/articles/2114066-attributes-what-they-are-how-to-use-them) that are set in your Goodshuffle Pro inventory.
 
 Note: `item-attribute-#-name` & `item-attribute-#-value` are case sensitive
 
@@ -86,7 +86,9 @@ This is the CSS snippet to hide all price data:
 
 ## How do I hide the search bar and categories?
 
-The default setup of a Wishlist integration involves adding a [`<gspro-item-gallery>`]({{< relref "/docs/components/item-gallery" >}}) to your page. This component comes out of the box with a search bar and category selection sidebar.
+The default setup of a Wishlist integration involves adding a [`<gspro-item-gallery>`]({{< relref "/docs/components/item-gallery" >}}) to your page. This component comes out of the box with a search bar and category selection sidebar. (see below)
+
+![Categories and Search](/search-and-category.png)
 
 If you just want to hide the category selection sidebar, you can set the [`show-categories`]({{< relref "/docs/components/item-gallery" >}}) attribute to `false`.
 
