@@ -139,8 +139,11 @@ This will disable time selection in the wishlist date picker and item detail ove
 ## How do I show item quantity?
 
 You can enable display of item quantities in two places, using CSS.
+
 **NOTE**: The quantities displayed are only maximum inventory quantities, not actual in stock inventory.
-This will allow you to manage any inventory conflicts manually, rather than prevent a Wishlist submission.
+This allows you to:
+* provide alternative inventory (e.g. slightliy different color)
+* subrent or purchase more items to fulfill order
 
 To show prices on the item-card component (items in list display):
 
