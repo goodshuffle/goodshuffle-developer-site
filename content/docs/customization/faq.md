@@ -133,3 +133,25 @@ You can disable the display of time selection menus using this snippet of CSS:
 ```
 
 This will disable time selection in the wishlist date picker and item detail overlay. Please note that projects will still have a default time of noon set when a wishlist is submitted.
+
+## How do I show item quantity?
+
+You can enable display of item quantities in two places, using CSS.
+**NOTE**: The quantities displayed are only maximum inventory quantities, not actual in stock inventory.
+This will allow you to manage any inventory conflicts manually, rather than prevent a Wishlist submission.
+
+To show prices on the item-card component (items in list display):
+
+```
+gspro-item-card.gspro-c-item-card .gspro-c-item-card__quantity {
+    display: block !important;
+}
+```
+
+To show prices on item-detail (pop-up when clicking an item):
+
+```
+.gspro-c-item-detail__quantity {
+    display: block !important;
+}
+```
