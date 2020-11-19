@@ -151,7 +151,7 @@ Up to three custom attributes can be used to filter your `gspro-item-list`.
   item-attribute-1-name="Warehouse Location"
   item-attribute-1-value="Washington, DC"
   item-attribute-2-name="Color"
-  item-attribute-2-value="Red | Black"
+  item-attribute-2-value="Red | Blush"
   item-attribute-3-name="Fabric"
   item-attribute-3-value="Cotton"
 ></gspro-item-list>
