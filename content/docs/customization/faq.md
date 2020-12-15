@@ -135,16 +135,6 @@ You can disable the display of time selection menus using this snippet of CSS:
 
 This will disable time selection in the wishlist date picker and item detail overlay. Please note that projects will still have a default time of noon set when a wishlist is submitted.
 
-## How do I hide item quantity on the item detail (popup on card click)?
-
-Use the following CSS snippet to hide quantity on the modal that appears when a card in a gallery or item-list is clicked:
-
-```
-.gspro-c-item-choices__quantity {
-  display: none !important;
-  }
-```
-
 ## How do I show item quantity on a gallery or item-list card?
 
 **NOTE**: The quantities displayed are only maximum inventory quantities, not actual in stock inventory.
