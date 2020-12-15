@@ -120,7 +120,6 @@ We do not provide this out-of-the-box, however it is something you can enable.
 ## Can I get Google address autocompletion for venue / delivery location?
 No, this would require you to create a Google Developer account and to obtain & configure a Google API key.
 
-
 ## How do I hide time selection?
 
 You can disable the display of time selection menus using this snippet of CSS:
@@ -136,27 +135,27 @@ You can disable the display of time selection menus using this snippet of CSS:
 
 This will disable time selection in the wishlist date picker and item detail overlay. Please note that projects will still have a default time of noon set when a wishlist is submitted.
 
-## How do I show item quantity?
+## How do I hide item quantity on the item detail (popup on card click)?
 
-You can enable display of item quantities in two places, using CSS.
+Use the following CSS snippet to hide quantity on the modal that appears when a card in a gallery or item-list is clicked:
+
+```
+.gspro-c-item-choices__quantity {
+  display: none !important;
+  }
+```
+
+## How do I show item quantity on a gallery or item-list card?
 
 **NOTE**: The quantities displayed are only maximum inventory quantities, not actual in stock inventory.
 This allows you to:
 * provide alternative inventory (e.g. slightliy different color)
 * subrent or purchase more items to fulfill order
 
-To show prices on the item-card component (items in list display):
+To show quantity on the item-card component (items in list display):
 
 ```
 gspro-item-card.gspro-c-item-card .gspro-c-item-card__quantity {
-    display: block !important;
-}
-```
-
-To show prices on item-detail (pop-up when clicking an item):
-
-```
-.gspro-c-item-detail__quantity {
     display: block !important;
 }
 ```
