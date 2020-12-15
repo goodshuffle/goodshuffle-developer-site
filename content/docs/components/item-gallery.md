@@ -3,7 +3,7 @@ title: "Item Gallery"
 weight: 20
 ---
 
-# Item List
+# Item Gallery
 
 ## Overview
 
@@ -67,6 +67,9 @@ Here's another example that limits items to ones with the tags "featured" and "s
 The default category of items to display. Will be overriden by searching or picking a category.
 
 ### group
+
+Note: When using the group flag for a `<gspro-item-gallery>`, you **MUST** also have the appropriate parent category. 
+Not doing so will interfere with the filtering of the component. 
 
 The default subcategory of items to display. Will be overriden by searching or picking a category.
 

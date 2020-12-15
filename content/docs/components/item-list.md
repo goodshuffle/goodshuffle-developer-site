@@ -24,6 +24,8 @@ You control what is displayed by setting specific attributes on this component.
     * `item-attribute-#-name` for the attribute name
     * `item-attribute-#-value` for the attribute value
     * the `#` symbol will be replaced with a number 1-3
+    * this filter **MUST** be used with at least one of the following
+      * category, search, group, AND/OR tags
 
 You change the number of items and enable pagination using:
 
@@ -145,13 +147,16 @@ Groups operate in a very similar way to categories. You can find the value for a
 
 Up to three custom attributes can be used to filter your `gspro-item-list`.
 
+The `item-attribute-#` filter **MUST** be used with category, search, group, and/or tags
+
 #### Example
 ```
 <gspro-item-list
+  category="linen-rentals"
   item-attribute-1-name="Warehouse Location"
   item-attribute-1-value="Washington, DC"
   item-attribute-2-name="Color"
-  item-attribute-2-value="Red | Black"
+  item-attribute-2-value="Red | Blush"
   item-attribute-3-name="Fabric"
   item-attribute-3-value="Cotton"
 ></gspro-item-list>
@@ -178,6 +183,7 @@ You can learn more about adding attributes [here](https://help.goodshuffle.com/e
 To create an item list that filters based on the height attribute in the above image, the component would look like this:
 ```
 <gspro-item-list
+  category="furniture-rentals"
   item-attribute-1-name="Height"
   item-attribute-1-value="2 ft."
 ></gspro-item-list>
