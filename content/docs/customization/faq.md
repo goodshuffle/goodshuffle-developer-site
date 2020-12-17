@@ -71,10 +71,9 @@ the [block element modifier (BEM)](http://getbem.com/naming/) convention so that
 ## Can I customize the text or labels?
 Not at this time.
 
-## How do I hide prices?
+## Can I hide prices?
 
-Yes. (we discourage it- feel free to read why in [this article](https://app.intercom.com/a/apps/rl8lfsoi/articles/articles/4180713/show)). However, only with CSS. 
-Anyone that can inspect your web page’s source code may be able to see your prices. 
+Yes. (we strongly discourage it- feel free to read why in [this article](https://help.goodshuffle.com/en/articles/4180713-how-do-i-hide-pricing-on-my-website-wishlist)). However, anyone that can inspect your web page’s source code may be able to see your prices. 
 This is the CSS snippet to hide all price data:
 :
 
