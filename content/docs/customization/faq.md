@@ -160,3 +160,14 @@ To show quantity on item-detail (pop-up when clicking an item):
 ```
 
 If you wish to **hide** item quantity, simple replace `display: block !important` with `display: none !important` in the snippets above.
+
+## How does the Wishlist impact SEO?
+
+Adding a Wishlist integration comes with two improvements to your site's SEO (Search Engine Optimization).
+
+* When using a `<gspro-item-gallery>`, clicking on any category, e.g. Furniture, will update the page metadata, enabling search engines to crawl those pages as if they were different pages. This lets users find specific sections of your gallery from search engines.
+
+
+* When clicking on a `<gspro-item-card>` and launching the detail pop-out, the Wishlist updates your site metadata for that specific item. This causes search engines to see each item detail pop-out as a unique page. Clients can find you and search by each specific item in your inventory (as long as it is visible on the wishlist).
+
+Please note, it can sometimes take many weeks for SEO changes to be reflected in search engine results.
