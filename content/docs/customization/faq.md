@@ -163,11 +163,14 @@ If you wish to **hide** item quantity, simple replace `display: block !important
 
 ## How does the Wishlist impact SEO?
 
-Adding a Wishlist integration comes with two improvements to your site's SEO (Search Engine Optimization).
+Adding a Wishlist integration comes out of the box with improvements to your site's SEO (Search Engine Optimization). 
 
-* When using a `<gspro-item-gallery>`, clicking on any category, e.g. Furniture, will update the page metadata, enabling search engines to crawl those pages as if they were different pages. This lets users find specific sections of your gallery from search engines.
+These improvements are focused on allowing your users to search for sub-pages of a Wishlist Integration. This search specificity will increase the breadth of search terms that will find content on your site. It also increases the chances that your site is the most relevant to the user's search terms.
 
+Our improvements also increase the number of pages detected by search engine crawlers on your site, which will improve your page's SEO optimization overall. Having a high number of internal pages increases the relevance of your pages to a wider variety of search terms. It will also indicate your page is "higher value" to search engine crawlers, making it much more likely to appear in search engine results.
 
-* When clicking on a `<gspro-item-card>` and launching the detail pop-out, the Wishlist updates your site metadata for that specific item. This causes search engines to see each item detail pop-out as a unique page. Clients can find you and search by each specific item in your inventory (as long as it is visible on the wishlist).
+We are also making use of Rich Results, which causes your detail pages to be placed in a "featured area" at the top of the search results. This even further increases the visibility of your page on search engine results.
 
 Please note, it can sometimes take many weeks for SEO changes to be reflected in search engine results.
+
+We are working hard to consistently enhance the SEO optimization provided by the Website Wishlist Integration. Please reach out to our marketing team if you'd like to be a part of our SEO optimization pilot program. 
