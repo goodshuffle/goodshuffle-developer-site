@@ -113,6 +113,6 @@ Limit the number of displayed items. Defaults to 15 items.
 
 ### tags
 
-Display a list of items with the tag(s). Will be overriden by searching or picking a category.
+Display a list of items with the tag(s). Will be overriden by searching, filtering or picking a category.
 
 [Learn more about how to use tags]({{< relref "./item-list.md#tags" >}}).
