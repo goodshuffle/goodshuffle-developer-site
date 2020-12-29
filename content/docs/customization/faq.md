@@ -56,9 +56,21 @@ Pagination isn’t supported by default because it is common for people to use
 multiple gspro-item-list components on a single page, this would be confusing 
 to website visitors.
 
-## Can Google Search Bot crawl wishlist content?
-We have confirmed that Google search bot can crawl wishlist content by using 
-Google’s search console and it appears to be neutral with respect to page rank.
+## How does the Wishlist impact SEO (Search Engine Optimization)?
+
+Adding a Wishlist integration comes out of the box with improvements to your site's SEO.
+
+These improvements are focused on allowing your users to search for sub-pages of a Wishlist Integration. This search specificity will increase the breadth of search terms that will find content on your site. It also increases the chances that your site is the most relevant to the user's search terms.
+
+Our improvements also increase the number of pages detected by search engine crawlers on your site, which will improve your page's SEO optimization overall. Having a high number of internal pages increases the relevance of your pages to a wider variety of search terms. It will also indicate your page is "higher value" to search engine crawlers, making it much more likely to appear in search engine results.
+
+The Wishlist will treat each category and group of a standard `<gspro-item-gallery>` as a unique page, contributing to the benefits described above.
+
+We even create unique [structured data](https://developers.google.com/search/docs/guides/intro-structured-data#:~:text=Structured%20data%20is%20a%20standardized,the%20calories%2C%20and%20so%20on.) for each item detail page that a user clicks on. Putting this unique item slug in metadata allows users to search for specific items and improves your site SEO as a whole. 
+
+We are also making use of [Rich Results](https://support.google.com/webmasters/answer/7506797?hl=en). You may have noticed Rich Results in your own searching for e.g. movies or recipes. Rich results, with their enhanced visibility features, should make your site much more noticeable on search engine results. 
+
+Please note, it can sometimes take many weeks for SEO changes to be reflected in search engine results.
 
 ## Can I customize the wishlist icon?
 Yes, we have a [walk-through and some video tutorials](https://help.goodshuffle.com/en/articles/3528690-how-do-i-use-something-other-than-a-heart-icon) for that!
@@ -114,7 +126,9 @@ No. Most visitors no longer use IE11.
 * Wix users can either set up a simple redirect to another page on one of our supported platforms, or they can fully migrate to a supported platform. Our users who have migrated to Squarespace have reported being equally happy with its user-friendly interface.
 
 ## Can I obtain analytics about how people are using my site?
-We do not provide this out-of-the-box, however it is something you can enable.
+We do not provide this out-of-the-box, however you can install and enable [Google Analytics](https://support.google.com/analytics/answer/1008015?hl=en), or any other anayltics provider, on your site.
+
+Once you have done that, head over to our [documentation on events](({{< relref "/docs/components/item-list" >}})) to get more information on capturing Wishlist events for your analytics platform(s) of choice.
 
 ## Can I get Google address autocompletion for venue / delivery location?
 No, this would require you to create a Google Developer account and to obtain & configure a Google API key.
@@ -161,16 +175,4 @@ To show quantity on item-detail (pop-up when clicking an item):
 
 If you wish to **hide** item quantity, simple replace `display: block !important` with `display: none !important` in the snippets above.
 
-## How does the Wishlist impact SEO?
 
-Adding a Wishlist integration comes out of the box with improvements to your site's SEO (Search Engine Optimization). 
-
-These improvements are focused on allowing your users to search for sub-pages of a Wishlist Integration. This search specificity will increase the breadth of search terms that will find content on your site. It also increases the chances that your site is the most relevant to the user's search terms.
-
-Our improvements also increase the number of pages detected by search engine crawlers on your site, which will improve your page's SEO optimization overall. Having a high number of internal pages increases the relevance of your pages to a wider variety of search terms. It will also indicate your page is "higher value" to search engine crawlers, making it much more likely to appear in search engine results.
-
-We are also making use of Rich Results, which causes your detail pages to be placed in a "featured area" at the top of the search results. This even further increases the visibility of your page on search engine results.
-
-Please note, it can sometimes take many weeks for SEO changes to be reflected in search engine results.
-
-We are working hard to consistently enhance the SEO optimization provided by the Website Wishlist Integration. Please reach out to our marketing team if you'd like to be a part of our SEO optimization pilot program. 
