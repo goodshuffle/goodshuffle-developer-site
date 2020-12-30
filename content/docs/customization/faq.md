@@ -58,7 +58,9 @@ to website visitors.
 
 ## How does the Wishlist impact SEO (Search Engine Optimization)?
 
-Adding a Wishlist integration comes out of the box with improvements to your site's SEO.
+SEO optimization features require Wishlist version 0.4.3 or later.
+
+Adding the Wishlist integration comes out of the box with improvements to your site's SEO.
 
 These improvements are focused on allowing your users to search for sub-pages of a Wishlist Integration. This search specificity will increase the breadth of search terms that will find content on your site. It also increases the chances that your site is the most relevant to the user's search terms.
 
