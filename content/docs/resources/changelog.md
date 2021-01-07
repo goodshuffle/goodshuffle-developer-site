@@ -8,7 +8,6 @@ weight: 1
 ## [0.4.3] - 2020-01-07
 
 - Added event emitters to key wishlist events. See [this page](https://docs.goodshuffle.dev/docs/integrations/events/) on usage.
-
 - Improved SEO optimization. See [this FAQ](https://docs.goodshuffle.dev/docs/customization/faq/#how-does-the-wishlist-impact-seo-search-engine-optimization) for more information.
 
 ## [0.4.2] - 2020-10-14
