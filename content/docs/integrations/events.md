@@ -5,7 +5,7 @@ weight: 30
 
 # Events
 
-**NOTE: This feature is in the experimental stage. Please contact us if you'd like to use this event functionality.** 
+Using event emitters requires Wishlist version 0.4.3 or later.
 
 Goodshuffle Wishlist leverages [HTML DOM events](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events)
 to allow you to integrate a wide variety of services into your Wishlist components.

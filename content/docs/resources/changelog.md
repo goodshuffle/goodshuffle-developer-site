@@ -5,6 +5,12 @@ weight: 1
 
 # Changelog
 
+## [0.4.3] - 2020-01-07
+
+- Added event emitters to key wishlist events. See [this page](https://docs.goodshuffle.dev/docs/integrations/events/) on usage.
+
+- Improved SEO optimization. See [this FAQ](https://docs.goodshuffle.dev/docs/customization/faq/#how-does-the-wishlist-impact-seo-search-engine-optimization) for more information.
+
 ## [0.4.2] - 2020-10-14
 
 - `gspro-item-list` now supports filtering on custom attributes. See our [developer docs](https://docs.goodshuffle.dev/docs/components/item-list/) for usage.
