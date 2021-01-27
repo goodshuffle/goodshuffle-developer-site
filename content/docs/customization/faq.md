@@ -20,8 +20,8 @@ If you have a hidden accessory (like chalk for a chalkboard) it will not show on
 
 If you have accessories that show on the contract, they will show on the item card and might be a good way to show common upsell items [like this example](https://beautifuleventrentals.com/accent-chairs/#!/item/0eda09d4-1828-3155-309d-084e44cd0b87/Auburn%20Chair).
 
-## How do I change my categories in Goodshuffle Pro?
-You can’t change the categories in the software, but can use tags to group items together for your website pages and menu.
+## Can I create custom categories in Goodshuffle Pro?
+You can’t create custom categories in the software, but can use [tags](https://help.goodshuffle.com/en/articles/3702845-how-can-i-mark-my-products-for-a-specific-venue-or-event-type) to group items together for your website pages and menu.
 
 ## How do I create collections on my website?
 Also via [tags](https://help.goodshuffle.com/en/articles/3702845-how-can-i-mark-my-products-for-a-specific-venue-or-event-type). Items can have multiple tags, therefore showing on several different pages. 
@@ -44,17 +44,13 @@ Note: `item-attribute-#-name` & `item-attribute-#-value` are case sensitive
     item-attribute-1-value="Orange"></gspro-item-list>
 ```
 
-Keep in mind that these will display 15 items by default.
-
 ## How do I change how many items appear in a list of items?
 You can change the number of items that appear in the gspro-item-list and gspro-item-gallery 
 components by setting the size attribute (e.g. size=”25”). Please be aware that loading more items 
 can take more time to load.
 
-## Why doesn’t the gspro-item-list support pagination by default?
-Pagination isn’t supported by default because it is common for people to use 
-multiple gspro-item-list components on a single page, this would be confusing 
-to website visitors.
+## Can I change the order of items on my Wishlist?
+No, that's not a feature we offer at this time. It's something we're considering for a future version. At this point, we've seen folks break things out in groupings using either the attributes or tags (e.g. "most popular" along the top, then everything else below).
 
 ## How does the Wishlist impact SEO (Search Engine Optimization)?
 
@@ -83,7 +79,10 @@ customization with CSS is straightforward for most developers. We follow
 the [block element modifier (BEM)](http://getbem.com/naming/) convention so that you can override our preset theme.
 
 ## Can I customize the text or labels?
-Not at this time.
+You can customize the name of your Wishlist "Cart" that site visitors see when checking out.
+This is done by adding `<meta name="gspro-wishlist-alias" content="Your Cart">` to your site header code. In this case, the Wishlist submission panel will be named Your Cart.
+
+All other labels/text are not customizeable at this time.
 
 ## Can I hide prices?
 
@@ -97,7 +96,9 @@ This is the CSS snippet to hide all price data:
 }
 ```
 
-## How do I hide the search bar and categories?
+## How do I show/hide the search bar and categories?
+
+On a high level, if you want to show the search bar, use a `<gspro-item-gallery>`. If you do not want to show the search bar, use a `<gspro-item-list>`.
 
 The default setup of a Wishlist integration involves adding a [`<gspro-item-gallery>`]({{< relref "/docs/components/item-gallery" >}}) to your page. This component comes out of the box with a search bar and category selection sidebar. (see below)
 
@@ -122,10 +123,10 @@ No. Data is retrieved from Goodshuffle Pro on demand, although it is cached to i
 ## Do you support IE11?
 No. Most visitors no longer use IE11.
 
-## Why don’t you support Wix?
-* Wix doesn’t allow custom code snippets to be embedded on their sites. They only allow integrations that are part of their official “app marketplace” which makes it impossible for fully customizable integrations like ours to work. You could embed an iFrame, but we strongly advise against it as it will not be the experience for your clients that is intended. 
+## Why don’t you support Wix or Joomla?
+* Wix and Joomla don’t allow custom code snippets to be embedded on their sites. They only allow integrations that are part of their official “app marketplace” which makes it impossible for fully customizable integrations like ours to work. You could embed an iFrame, but we strongly advise against it as it will not be the experience for your clients that is intended. 
 
-* Wix users can either set up a simple redirect to another page on one of our supported platforms, or they can fully migrate to a supported platform. Our users who have migrated to Squarespace have reported being equally happy with its user-friendly interface.
+* Wix or Joomla users can either set up a simple redirect to another page on one of our supported platforms, or they can fully migrate to a supported platform. Our users who have migrated to Squarespace have reported being equally happy with its user-friendly interface.
 
 ## Can I obtain analytics about how people are using my site?
 We do not provide this out-of-the-box, however you can install and enable [Google Analytics](https://support.google.com/analytics/answer/1008015?hl=en), or any other anayltics provider, on your site.
@@ -176,5 +177,10 @@ To show quantity on item-detail (pop-up when clicking an item):
 ```
 
 If you wish to **hide** item quantity, simple replace `display: block !important` with `display: none !important` in the snippets above.
+
+## Why doesn’t the gspro-item-list support pagination by default?
+Pagination isn’t supported by default because it is common for people to use
+multiple gspro-item-list components on a single page, this would be confusing
+to website visitors.
 
 

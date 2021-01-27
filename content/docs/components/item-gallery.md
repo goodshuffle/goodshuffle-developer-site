@@ -7,7 +7,7 @@ weight: 20
 
 ## Overview
 
-Use the `gspro-item-gallery` web component to display a list of items with controls for searching, browsing categories, and filtering items. If you don't need any of these controls, consider using an item list instead. It's worth noting, that this web component provides a superset of attributes provided by `gspro-item-list`. It may help to [learn more about how to use a `gspro-item-list`]({{< relref "./item-list.md" >}}) because the item-list has a subset of item-gallery attributes.
+Use the `gspro-item-gallery` web component to display a list of items with controls for searching, browsing categories, and filtering items. If you don't need any of these controls, consider using an `gspro-item list` instead. It's worth noting, that this web component provides a superset of attributes provided by `gspro-item-list`. It may help to [learn more about how to use a `gspro-item-list`]({{< relref "./item-list.md" >}}) because the item-list has a subset of item-gallery attributes.
 
 ## Parts of a Gallery
 

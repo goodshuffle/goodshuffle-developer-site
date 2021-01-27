@@ -7,7 +7,7 @@ weight: 10
 
 ## Overview
 
-Use the `gspro-item-list` web component to display a list of items on a page.
+Use the `gspro-item-list` web component to display a list of items on a page, with no category, filter or search controls. If you want those controls, use `gspro-item-gallery` instead.
 
 ```
 <gspro-item-list search="table | chair" size="20">
