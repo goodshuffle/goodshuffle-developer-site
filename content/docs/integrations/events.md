@@ -30,7 +30,7 @@ Common reasons for targetting this event would be using analytics to determine w
 To capture this event, you will use the [`document.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) Javascript method. The event to target for these `<gspro-item-card>` click events is "gspro-item-card.click".
 
 Example (with Google Analytics):
-```
+``` javascript
 document.addEventListener("gspro-item-card.click", function(data) {
     // get the item title from the event payload
     var itemName = data.detail.title;
@@ -42,7 +42,7 @@ document.addEventListener("gspro-item-card.click", function(data) {
 In this example, an event listener is being attached to the item card click. When the user clicks to expand an item card, the analytics category (Wishlist), event action (Item Card Click), and a label (the clicked item's name) are all being reported to Google Analytics.
 
 `data.detail` object for "gspro-item-card.click":
-```
+``` javascript
 {
     attributes: // An array of objects representing the item's attributes
     category: // An object representing the category the item is assigned to
@@ -74,7 +74,7 @@ Because you will need to capture both events, we recommend putting your handler 
 This will help you ensure that the same logic is being executed by both handlers.
 
 Example (with alert):
-```
+``` javascript
 // define your handler function (in this case presenting an alert)
 function handleEvent(itemDetail) {
     alert("You have added " + itemDetail.want + " quantity of " + itemDetail.title + " to your Wishlist!")
@@ -100,7 +100,7 @@ This event occurs when a user submits a Wishlist request after filling in their 
 You can capture this event by targetting the "gspro-wishlist.submit" event. 
 
 Example (with Google Analytics):
-```
+``` javascript
 // add listener for wishlist submit event
 document.addEventListener("gspro-wishlist.submit", function(data) {
     // get our data from the detail object
@@ -114,7 +114,7 @@ document.addEventListener("gspro-wishlist.submit", function(data) {
 ```
 
 `data.detail` object for "gspro-wishlist.submit"
-```
+``` javascript
 contact: // information about the person filling out the Wishlist
 venue: // venue information provided by person submitting the Wishlist
 wishlist: // array of objects representing the "cart" of the Wishlist
@@ -122,7 +122,7 @@ wishlist: // array of objects representing the "cart" of the Wishlist
 ```
 
 `data.detail.contact` object - provided by user before submission
-```
+``` javascript
 {
     firstName: "John"
     lastName: "Doe"
@@ -132,7 +132,7 @@ wishlist: // array of objects representing the "cart" of the Wishlist
 ```
 
 `data.details.venue` object - provided by user before submission
-```
+``` javascript
 {
     addressStreet1: "123 Green St"
     addressStreet2: "Suite 101"

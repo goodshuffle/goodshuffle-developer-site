@@ -5,10 +5,15 @@ weight: 1
 
 # Changelog
 
+## [0.4.4] - 2020-02-11
+
+- Added ability to sort `gpsro-item-list` by `item-attribute`
+- Improved search relevance on text searches
+- Added ability to restrict scope of `gspro-item-gallery` by attribute.
+
 ## [0.4.3] - 2020-01-07
 
 - Added event emitters to key wishlist events. See [this page](https://docs.goodshuffle.dev/docs/integrations/events/) on usage.
-
 - Improved SEO optimization. See [this FAQ](https://docs.goodshuffle.dev/docs/customization/faq/#how-does-the-wishlist-impact-seo-search-engine-optimization) for more information.
 
 ## [0.4.2] - 2020-10-14

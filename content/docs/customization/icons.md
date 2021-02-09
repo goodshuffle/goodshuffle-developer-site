@@ -16,7 +16,7 @@ _Please Note: you should host icon images on a server (or service) you control. 
 
 Add this to your site's CSS.
 
-```
+``` css
 /** Hide the built-in icon **/
 .gspro-c-item-card .gspro-c-item-card__add gspro-icon svg,
 .gspro-c-wishlist  .gspro-c-wishlist__trigger gspro-icon svg {
@@ -36,7 +36,7 @@ Upload SVG images to your site and then add this CSS to your site.
 
 _PLEASE NOTE: You will need to change the `background-image` URLs to match the location of the images you have uploaded!_
 
-```
+``` css
 /* use an image of your choosing */
 .gspro-c-item-card .gspro-c-item-card__add gspro-icon {
   background-image: url("https://your-website-url-here/s/add-no-border-light.svg");
