@@ -193,7 +193,7 @@ You can use any attribute assigned to items in your Goodshuffle Pro, even custom
 
 ### `sort-primary` 
 
-You can sort any `gspro-item-list` that has an `item-attribute-#-name` and an `item-attribute-#-value` with **at least two piped values**. This is done by using the `sort-primary` flag, and passing in the `item-attribute-#` you wish to sort by.
+You can sort any `gspro-item-list` that has an `item-attribute-#-name` and an `item-attribute-#-value` with **at least two values separated by a pipe**. This is done by using the `sort-primary` flag, and passing in the `item-attribute-#` you wish to sort by.
 
 **Example**
 ```html
