@@ -193,7 +193,7 @@ You can use any attribute assigned to items in your Goodshuffle Pro, even custom
 
 ### `sort-primary` 
 
-You can sort any `gspro-item-list` that has an `item-attribute-#-name` and an `item-attribute-#-value` with **at least two piped values**. This is done by using the `sort-primary` flag, and passing in the value of the `item-attribute-#-name` you wish to sort by.
+You can sort any `gspro-item-list` that has an `item-attribute-#-name` and an `item-attribute-#-value` with **at least two piped values**. This is done by using the `sort-primary` flag, and passing in the `item-attribute-#` you wish to sort by.
 
 **Example**
 ```html
@@ -203,15 +203,15 @@ You can sort any `gspro-item-list` that has an `item-attribute-#-name` and an `i
   item-attribute-1-value="Red | Blush | Black"
   item-attribute-2-name="Fabric"
   item-attribute-2-value="Cotton | Polyester"
-  sort-primary="Color"
+  sort-primary="item-attribute-1"
 ></gspro-item-list>
 ```
 
 In this example, we would get a list of all linen rentals that are Red, Blush, or Black and either Fabric or Polyester. We would see all the Red Linens, then all Blush linens, then all Black linens. 
 
-If you wanted to have all Cotton linens, then all Polyester Linens, simply change `sort-primary="Color"` to `sort-primary="Fabric"`. 
+If you wanted to have all Cotton linens, then all Polyester Linens, simply change `sort-primary="item-attribute-1"` to `sort-primary="item-attribute-2"`. 
 
-This flag does not have any impact on which items appear in the item list. It will only affect the order in which those items appear. 
+The sort flags do not have any impact on which items appear in the item list. They will only affect the order in which those items appear. 
 
 ### `sort-primary-order`
 
