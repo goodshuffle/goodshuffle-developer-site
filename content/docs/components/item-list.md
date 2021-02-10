@@ -7,9 +7,9 @@ weight: 10
 
 ## Overview
 
-Use the `gspro-item-list` web component to display a list of items on a page.
+Use the `gspro-item-list` web component to display a list of items on a page, with no category, filter or search controls. If you want those controls, use `gspro-item-gallery` instead.
 
-```
+``` html
 <gspro-item-list search="table | chair" size="20">
 </gspro-item-list>
 ```
@@ -41,7 +41,7 @@ description containing the keywords you specify.
 
 #### Example:
 
-```
+``` html
 <gspro-item-list search="lounge"></gspro-item-list>
 ```
 
@@ -63,7 +63,7 @@ Answer: Use a minus (e.g. "-cloth") to omit any items containing that keyword.
 
 Example:
 
-```
+``` html
 <gspro-item-list search="table -cloth"></gspro-item-list>
 ```
 
@@ -87,7 +87,7 @@ _We strongly suggest using tags to supplement the Goodshuffle Pro taxonomy; dupl
 
 #### Example:
 
-```
+``` html
 <gspro-item-list tags="wedding"></gspro-item-list>
 ```
 
@@ -103,7 +103,7 @@ This attribute selects items from a single root category.
 
 #### Example:
 
-```
+``` html
 <gspro-item-list category="decor-rentals">
 </gspro-item-list>
 ```
@@ -126,7 +126,7 @@ You will notice that the url of the page has changed based on the category you h
 
 In this case, the value of the category would be "entertainment-games-rentals", e.g.
 
-```
+``` html
 <gspro-item-list category="entertainment-games-rentals">
 </gspro-item-list>
 ```
@@ -150,7 +150,7 @@ Up to three custom attributes can be used to filter your `gspro-item-list`.
 The `item-attribute-#` filter **MUST** be used with category, search, group, and/or tags
 
 #### Example
-```
+```html
 <gspro-item-list
   category="linen-rentals"
   item-attribute-1-name="Warehouse Location"
@@ -181,8 +181,8 @@ You can learn more about adding attributes [here](https://help.goodshuffle.com/e
 ![Category String in URL](/attribute-location.png)
 
 To create an item list that filters based on the height attribute in the above image, the component would look like this:
-```
-<gspro-item-list
+```html
+<gspro-item-list 
   category="furniture-rentals"
   item-attribute-1-name="Height"
   item-attribute-1-value="2 ft."
@@ -191,19 +191,45 @@ To create an item list that filters based on the height attribute in the above i
 
 You can use any attribute assigned to items in your Goodshuffle Pro, even custom ones you've created yourself. 
 
+### `sort-primary` 
+
+You can sort any `gspro-item-list` that has an `item-attribute-#-name` and an `item-attribute-#-value` with **at least two values separated by a pipe**. This is done by using the `sort-primary` flag, and passing in the `item-attribute-#` you wish to sort by.
+
+**Example**
+```html
+<gspro-item-list
+  category="linen-rentals"
+  item-attribute-1-name="Color"
+  item-attribute-1-value="Red | Blush | Black"
+  item-attribute-2-name="Fabric"
+  item-attribute-2-value="Cotton | Polyester"
+  sort-primary="item-attribute-1"
+></gspro-item-list>
+```
+
+In this example, we would get a list of all linen rentals that are Red, Blush, or Black and either Fabric or Polyester. We would see all the Red Linens, then all Blush linens, then all Black linens. 
+
+If you wanted to have all Cotton linens, then all Polyester Linens, simply change `sort-primary="item-attribute-1"` to `sort-primary="item-attribute-2"`. 
+
+The sort flags do not have any impact on which items appear in the item list. They will only affect the order in which those items appear. 
+
+### `sort-primary-order`
+
+You can also sort from right to left by adding the `sort-primary-order="desc"` flag.
+
 ## `size`
 
 Use a `size` attribute to control the number of items displayed. By default, a `gspro-item-list` displays fifteen (15) items.
 
 You can display fewer items:
 
-```
+``` html
 <gspro-item-list search="lounge" size="10"></gspro-item-list>
 ```
 
 ...or you can display more items:
 
-```
+``` html
 <gspro-item-list search="lounge" size="50"></gspro-item-list>
 ```
 
@@ -217,7 +243,7 @@ Use the `route` attribute to enable "paginated" list of items that are sharing a
 
 #### Example:
 
-```
+``` html
 <gspro-item-list
   search="posh"
   size="6"

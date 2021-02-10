@@ -38,11 +38,11 @@ You can access this by going to "Settings" &gt; "Advanced" &gt; "Code Injection"
 
 **PLEASE NOTE! You need to update "YOUR-WEB-SITE-KEY" with your Public Browser Key from Goodshuffle Pro.**
 
-```
+``` html
 <meta name="gspro-config"
       content="https://data.goodshuffle.com/vendor/YOUR_WEB_SITE_KEY" />
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.3/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.3/dist/gspro-wc/gspro-wc.js"></script>
+<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.js"></script>
 <script src="https://unpkg.com/tua-body-scroll-lock"></script>
 ```
 
@@ -52,7 +52,7 @@ You can access this by going to "Settings" &gt; "Advanced" &gt; "Code Injection"
 
 _Be careful not to replace other code that may have been injected for other purposes._
 
-```
+``` html
 <div class="gspro-gallery-omni-present">
   <gspro-wishlist></gspro-wishlist>
   <gspro-item-detail
@@ -68,7 +68,7 @@ _Be careful not to replace other code that may have been injected for other purp
 1. Create a page to display a basic gallery of items.
 2. Insert the following snippet in a `Code` block.
 
-```
+``` html
 <gspro-item-gallery></gspro-item-gallery>
 ```
 

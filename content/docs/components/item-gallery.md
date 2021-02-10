@@ -7,7 +7,7 @@ weight: 20
 
 ## Overview
 
-Use the `gspro-item-gallery` web component to display a list of items with controls for searching, browsing categories, and filtering items. If you don't need any of these controls, consider using an item list instead. It's worth noting, that this web component provides a superset of attributes provided by `gspro-item-list`. It may help to [learn more about how to use a `gspro-item-list`]({{< relref "./item-list.md" >}}) because the item-list has a subset of item-gallery attributes.
+Use the `gspro-item-gallery` web component to display a list of items with controls for searching, browsing categories, and filtering items. If you don't need any of these controls, consider using an `gspro-item list` instead. It's worth noting, that this web component provides a superset of attributes provided by `gspro-item-list`. It may help to [learn more about how to use a `gspro-item-list`]({{< relref "./item-list.md" >}}) because the item-list has a subset of item-gallery attributes.
 
 ## Parts of a Gallery
 
@@ -21,7 +21,7 @@ Filters are populated using the custom attributes you've assigned to items in Go
 
 You can disable filters entirely by setting the `show-filters` attribute like this:
 
-```
+```html
 <gspro-item-gallery show-filters="false"></gspro-item-gallery>
 ```
 
@@ -31,7 +31,7 @@ Categories and subcategories are retrieved from Goodshuffle Pro. If you do not w
 
 You can also disable categories entirely by setting the `show-categories` attribute like this:
 
-```
+```html
 <gspro-item-gallery show-categories="false"></gspro-item-gallery>
 ```
 
@@ -50,13 +50,13 @@ You can specify the "scope" of items displayed within a gallery by using the fol
 
 Each of these attributes works will constrain the set of items to be displayed. This is useful for creating a page for a set of items (like linens) and providing visitors with a way to filter or search them. For example:
 
-```
+```html
 <gspro-item-gallery scope-category="linen-rentals"></gspro-item-gallery>
 ```
 
 Here's another example that limits items to ones with the tags "featured" and "summer" on them.
 
-```
+```html
 <gspro-item-gallery scope-tags="featured summer"></gspro-item-gallery>
 ```
 
@@ -92,6 +92,19 @@ Limit the displayed items to ones that match the given keywords.
 Limit the displayed items to ones with the given tags.
 
 [Learn more about how to use tags]({{< relref "./item-list.md#tags" >}}).
+
+### scope-attribute-#-name / scope-attribute-#-value
+
+Limit the displayed items to ones with the given attributes.
+
+Example:
+```html
+<gspro-item-gallery
+    scope-attribute-1-name="Warehouse Location"
+    scope-attribute-1-value="Washington, DC"
+```
+
+[Learn more about attributes]({{< relref "./item-list.md#item-attribute-" >}}).
 
 ### search
 
