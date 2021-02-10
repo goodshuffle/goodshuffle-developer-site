@@ -5,7 +5,7 @@ weight: 1
 
 # Changelog
 
-## [0.4.4] - 2020-02-11
+## [0.4.4] - 2021-02-11
 
 - Added ability to sort `gpsro-item-list` by `item-attribute`
 - Improved search relevance on text searches
