@@ -8,7 +8,6 @@ weight: 1
 ## [0.4.4] - 2021-02-11
 
 - Added ability to sort `gpsro-item-list` by `item-attribute`
-- Improved search relevance on text searches
 - Added ability to restrict scope of `gspro-item-gallery` by attribute.
 
 ## [0.4.3] - 2021-01-07
