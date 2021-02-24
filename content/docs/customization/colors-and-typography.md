@@ -21,7 +21,7 @@ The default styles provided by our web components attempt to be as minimially sp
 
 This example provides you with a handful of CSS selectors. Although they focus on colors, you can use these as a starting point to customize a variety of properties. You can easily [experiment with your own customizations](https://jsfiddle.net/goshujomo/j1xd8uos/) by forking this JSFiddle.
 
-``` css
+```
 gspro-item-card {
   background: rgb(250, 250, 250);
 }
@@ -52,7 +52,7 @@ gspro-item-card .gspro-o-card__add:hover button {
 
 ## Item Detail CSS
 
-``` css
+```
 gspro-item-detail .gspro-c-item-detail__title {
   color: black;
 }
@@ -69,7 +69,7 @@ The wishlist has two different states. Initially, it is collapsed, appearing as 
 
 This CSS shows you how to apply background and foreground colors in both states. If you use this snippet on your site, you might want to change the "hotpink" background to something that matches your site's branding.
 
-``` css
+```
 
 gspro-wishlist[data-mode="collapse"] {
   background: white;
@@ -93,7 +93,7 @@ gspro-wishlist[data-mode="expand"] {
 
 Some web components have button elements. In order to make these look consistent in a variety of web browsers, devices, and operating systems, we define a properties that makes them easy to recognize and select.
 
-``` css
+```
 button.gspro-o-button {
   background: inherit;
 }

@@ -9,7 +9,7 @@ weight: 30
 
 Use the `gspro-item-card` web component to display a single item. This can be useful for diplaying an item inline with other content (e.g. blog posts).
 
-``` html
+```
 <gspro-item-card item-id="9942725a-dcd2-5d33-27b0-44f2ec408d88">
 </gspro-item-card>
 ```

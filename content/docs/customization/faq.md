@@ -32,7 +32,7 @@ You can do this by using "item-attribute-#". Read `item-attribute-#` [documentat
 
 Note: `item-attribute-#-name` & `item-attribute-#-value` are case sensitive
 
-``` html
+```
 <gspro-item-list search="lounge"
     item-attribute-1-name="Color"
     item-attribute-1-value="Brown"></gspro-item-list>
@@ -92,7 +92,7 @@ Yes. (we strongly discourage it- feel free to read why in [this article](https:/
 This is the CSS snippet to hide all price data:
 :
 
-``` css
+```
 .gspro-o-price {
   display: none !important;
 }
@@ -142,7 +142,7 @@ No, this would require you to create a Google Developer account and to obtain & 
 
 You can disable the display of time selection menus using this snippet of CSS:
 
-``` css
+```
 .gspro-c-item-choices__start-time,
 .gspro-c-duration__start-time,
 .gspro-c-duration__end-time,
@@ -164,7 +164,7 @@ This allows you to:
 
 To show quantity on the item-card component (items in list display):
 
-``` css
+```
 gspro-item-card.gspro-c-item-card .gspro-c-item-card__quantity {
     display: block !important;
 }
@@ -172,7 +172,7 @@ gspro-item-card.gspro-c-item-card .gspro-c-item-card__quantity {
 
 To show quantity on item-detail (pop-up when clicking an item):
 
-``` css
+```
 .gspro-c-item-detail__quantity {
     display: block !important;
 }

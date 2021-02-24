@@ -14,7 +14,7 @@ This is only needed on pages that you intend to display the wishlist or your inv
 
 ### Required
 
-``` html
+```
 <meta name="gspro-config" content="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY" />
 <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.esm.js"></script>
 <script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.js"></script>
@@ -26,7 +26,7 @@ _Please Note: Your public web site key can be obtained from your Goodshuffle Pro
 
 Include this library in the `<head>...</head>` element to mitigate [a common UI issue related to how browsers handle scrolling when a modal item is displayed](https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/).
 
-``` html
+``` 
 <script src="https://unpkg.com/tua-body-scroll-lock"></script>
 ```
 
@@ -38,7 +38,7 @@ Add the following code to your website `<body>...</body>` element, prefereably t
 1. A floating-action-button that toggles the display of a wishlist.
 1. A hidden SVG sprite that is reference by other web components.
 
-``` html
+```
 <div class="gspro-gallery-omni-present">
   <gspro-item-detail
     data-mode="inactive"
@@ -54,11 +54,9 @@ Add the following code to your website `<body>...</body>` element, prefereably t
 
 To test your configuration, add this to a web page:
 
-``` html
-<gspro-item-gallery search="table | chair"></gspro-item-gallery>
 ```
-
-_Please note: you need to an item in your inventory with the word table or chair in order for items to be displayed._
+<gspro-item-gallery></gspro-item-gallery>
+```
 
 ## Troubleshooting
 
