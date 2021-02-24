@@ -38,9 +38,6 @@ either “contain” the image (default) within the image area or “cover”
 it with the image. There are trade-offs for both, but this can be adjusted 
 to whatever works best for you.
 
-## Are my item detail “pages” indexed by Google?
-No. Even though you can bookmark and share links of item details, these are not separate pages and will not be individually indexed. However, a page with an item list on it will be indexed. You should follow SEO best practices on these pages to draw your visitors to them.
-
 ## Why are my items “temporarily unavailable?”
 * This usually indicates that you have a configuration problem. Please make sure you 
 are using the proper public web key.
