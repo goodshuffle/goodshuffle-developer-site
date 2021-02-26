@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 10
 title: Squarespace Setup
 ---
 
@@ -18,9 +18,9 @@ You will need...
 These are the high-level steps:
 
 1. Activate you Website Wishlist Integration.
-1. Add HTML code snippets to your site's header and footer.
-1. Add custom CSS to your site's design.
-1. Create a page for the basic gallery and embed an HTML code snippet.
+2. Add HTML code snippets to your site's header and footer.
+3. Add custom CSS to your site's design.
+4. Create a page for the basic gallery and embed an HTML code snippet.
 
 _If you prefer a narrated walk-through, checkout our [Squarespace Setup Youtube video](https://www.youtube.com/watch?reload=9&v=Ap5zhuijH90&feature=youtu.be)._
 
