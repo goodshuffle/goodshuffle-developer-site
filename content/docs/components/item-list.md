@@ -7,43 +7,54 @@ weight: 10
 
 ## Overview
 
-Use the `gspro-item-list` web component to display a list of items on a page, with no category, filter or search controls. If you want those controls, use `gspro-item-gallery` instead.
+An Item List is used to display inventory when you do not want a search bar. If you want the search bar, read the directions for an [Item Gallery]({{< relref "/docs/components/item-gallery" >}}).
 
-``` html
-<gspro-item-list search="table | chair" size="20">
+A code snippet for an Item List with **every control specified** looks like this:
+
+```
+<gspro-item-list 
+   tags="Rustic" 
+   category="furniture-rentals"
+   group="seating-chair-rentals"
+   search="chiavari"
+   item-attribute-1-name="Color"
+   item-attribute-1-value="Red"
+   size="20">
 </gspro-item-list>
 ```
+_A highly specific item list. Most lists only use a few controls_ 
 
-You control what is displayed by setting specific attributes on this component.
+_This list will show 20 items, all red seating/chair rentals, tagged "Rustic", with "chiavari" in their title or description._
 
-1. `search` – keyword search on item title and description
-2. `tags` – keyword search on item tags
-3. `category` – root level category (from Goodshuffle Pro)
-4. `group` – sub-categories (from Goodshuffle Pro)
-5. `item-attribute-#` - custom attributes (from Goodshuffle Pro)
-    * `item-attribute-#-name` for the attribute name
-    * `item-attribute-#-value` for the attribute value
-    * the `#` symbol will be replaced with a number 1-3
-    * this filter **MUST** be used with at least one of the following
-      * category, search, group, AND/OR tags
+
+Not all fields are required. Minimum requirements are **at least one of: group, category, search OR tags**.
+
+## Usage
+
+You determine the items displayed in a gallery by changing the following controls on the `<gspro-item-list>` component. 
+
+Click the control name to go to usage details.
+
+* [`search`]({{< relref "#search" >}}) – keyword search on item title and description 
+* [`tags`]({{< relref "#tags" >}}) – keyword search on item tags
+* [`category`]({{< relref "#category" >}}) – root level category (from Goodshuffle Pro)
+* [`group`]({{< relref "#group" >}}) – sub-categories (from Goodshuffle Pro)
+* [`item-attribute-#`]({{< relref "#item-attribute-" >}}) - filter based on attributes (Color, Shape, Location, etc.)
 
 You change the number of items and enable pagination using:
+* [`size`]({{< relref "#size" >}}) – control the number of items that will appear in the list. Defaults to 15 items
+* [`route`]({{< relref "#route" >}}) – used to enable bookmark and sharing friendly pagination.
 
-1. `size` – control the number of items to display
-2. `route` – used to enable bookmark and sharing friendly pagination.
+## Usage Details
 
-## Attributes
-
-## `search`
-
-Use the `search` attribute to get items to find items with a title and
-description containing the keywords you specify.
-
-#### Example:
-
-``` html
+### **`search`**
+```
 <gspro-item-list search="lounge"></gspro-item-list>
 ```
+
+Use the `search` attribute to find items with a title and description containing the keywords you specify.
+
+It’s possible to specify part of an identifier or multiple, by using the keys below.
 
 - Put `-` (minus) in front of a keyword to omit items with that term.
 - Put `|` (pipe) in between keywords to include items with either term.
@@ -63,7 +74,7 @@ Answer: Use a minus (e.g. "-cloth") to omit any items containing that keyword.
 
 Example:
 
-``` html
+```
 <gspro-item-list search="table -cloth"></gspro-item-list>
 ```
 
@@ -75,7 +86,11 @@ No. Keyword search is not case sensitive.
 
 [Use a `gspro-item-gallery` instead of this web component.]({{< relref "/docs/components/item-gallery" >}})
 
-## `tags`
+### **`tags`**
+_Note: We strongly suggest using tags to **supplement** the Goodshuffle Pro taxonomy; duplicating it could be very time consuming!_
+```
+<gspro-item-list tags="wedding"></gspro-item-list>
+```
 
 Use the `tags` attribute to get items using the tags you have added to your items in Goodshuffle Pro. This can help you create collections of items using data that supplements the Goodshuffle Pro taxonomy. This might include:
 
@@ -83,30 +98,19 @@ Use the `tags` attribute to get items using the tags you have added to your item
 - featured
 - event type
 
-_We strongly suggest using tags to supplement the Goodshuffle Pro taxonomy; duplicating it could be very time consuming!_
-
-#### Example:
-
-``` html
-<gspro-item-list tags="wedding"></gspro-item-list>
-```
-
 #### Question: are tags case-sensitive?
 
 No.
 
-## `category`
+### **`category`**
+```
+<gspro-item-list category="decor-rentals">
+</gspro-item-list>
+```
 
 Set this attribute to display items using the Goodshuffle Pro categorization for items.
 
 This attribute selects items from a single root category.
-
-#### Example:
-
-``` html
-<gspro-item-list category="decor-rentals">
-</gspro-item-list>
-```
 
 **Q: How can I find my item categories?**
 
@@ -126,14 +130,18 @@ You will notice that the url of the page has changed based on the category you h
 
 In this case, the value of the category would be "entertainment-games-rentals", e.g.
 
-``` html
+```
 <gspro-item-list category="entertainment-games-rentals">
 </gspro-item-list>
 ```
 
 For a video tutorial on getting the category of an item, please [see here](https://www.youtube.com/watch?v=drWHmwRsyxw&feature=youtu.be&t=144).
 
-## `group`
+### **`group`**
+```
+<gspro-item-list group="cable-cord-power-rentals">
+</gspro-item-list>
+```
 
 Set this attribute to display items using the Goodshuffle Pro sub-categorization for items.
 
@@ -143,14 +151,9 @@ Groups operate in a very similar way to categories. You can find the value for a
 
 ![Group String in URL](/group-url.png)
 
-## `item-attribute-#`
+### **`item-attribute-#`**
 
-Up to three custom attributes can be used to filter your `gspro-item-list`.
-
-The `item-attribute-#` filter **MUST** be used with category, search, group, and/or tags
-
-#### Example
-```html
+```
 <gspro-item-list
   category="linen-rentals"
   item-attribute-1-name="Warehouse Location"
@@ -161,6 +164,10 @@ The `item-attribute-#` filter **MUST** be used with category, search, group, and
   item-attribute-3-value="Cotton"
 ></gspro-item-list>
 ```
+
+Up to three custom attributes can be used to filter your `gspro-item-list`.
+
+The `item-attribute-#` filter **MUST** be used with category, search, group, and/or tags
 
 Note: The item attribute `name` and `value` **must match exactly** what is provided in your Goodshuffle Pro inventory, including **case sensitivity** and any special characters.
 
@@ -181,7 +188,7 @@ You can learn more about adding attributes [here](https://help.goodshuffle.com/e
 ![Category String in URL](/attribute-location.png)
 
 To create an item list that filters based on the height attribute in the above image, the component would look like this:
-```html
+```
 <gspro-item-list 
   category="furniture-rentals"
   item-attribute-1-name="Height"
@@ -191,12 +198,12 @@ To create an item list that filters based on the height attribute in the above i
 
 You can use any attribute assigned to items in your Goodshuffle Pro, even custom ones you've created yourself. 
 
-### `sort-primary` 
+#### **`sort-primary`** 
 
 You can sort any `gspro-item-list` that has an `item-attribute-#-name` and an `item-attribute-#-value` with **at least two values separated by a pipe**. This is done by using the `sort-primary` flag, and passing in the `item-attribute-#` you wish to sort by.
 
 **Example**
-```html
+```
 <gspro-item-list
   category="linen-rentals"
   item-attribute-1-name="Color"
@@ -213,27 +220,27 @@ If you wanted to have all Cotton linens, then all Polyester Linens, simply chang
 
 The sort flags do not have any impact on which items appear in the item list. They will only affect the order in which those items appear. 
 
-### `sort-primary-order`
+#### **`sort-primary-order`**
 
 You can also sort from right to left by adding the `sort-primary-order="desc"` flag.
 
-## `size`
+### **`size`**
 
-Use a `size` attribute to control the number of items displayed. By default, a `gspro-item-list` displays fifteen (15) items.
+Use a `size` attribute to control the number of items displayed. By default, a `gspro-item-list` displays **fifteen (15)** items.
 
 You can display fewer items:
 
-``` html
+``` 
 <gspro-item-list search="lounge" size="10"></gspro-item-list>
 ```
 
 ...or you can display more items:
 
-``` html
+``` 
 <gspro-item-list search="lounge" size="50"></gspro-item-list>
 ```
 
-## `route`
+### **`route`**
 
 Use the route attribute to enable paginated lists that support bookmarking and sharing.
 
@@ -243,7 +250,7 @@ Use the `route` attribute to enable "paginated" list of items that are sharing a
 
 #### Example:
 
-``` html
+```
 <gspro-item-list
   search="posh"
   size="6"
