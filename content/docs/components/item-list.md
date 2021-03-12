@@ -111,6 +111,12 @@ Use the `tags` attribute to get items using the tags you have added to your item
 
 No.
 
+#### Question: how do I add multi-word tags a.k.a. tags with spaces in between words?
+
+Wrap them in a single quote `'`.
+
+E.g. `<gspro-item-list tags="'Graduation Party'"></gspro-item-list>`
+
 ### **`category`**
 ```
 <gspro-item-list category="decor-rentals">
