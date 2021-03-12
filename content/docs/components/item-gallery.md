@@ -9,6 +9,8 @@ weight: 20
 
 Use the `gspro-item-gallery` web component to display a list of items with controls for searching, browsing categories, and filtering items. If you don't need any of these controls, consider using an `gspro-item list` instead. It's worth noting, that this web component provides a superset of attributes provided by `gspro-item-list`. It may help to [learn more about how to use a `gspro-item-list`]({{< relref "./item-list.md" >}}) because the item-list has a subset of item-gallery attributes.
 
+[See an example gallery here!](https://dz8.goodshuffle.dev/gallery)
+
 ## Parts of a Gallery
 
 ### Search
@@ -35,7 +37,7 @@ You can also disable categories entirely by setting the `show-categories` attrib
 <gspro-item-gallery show-categories="false"></gspro-item-gallery>
 ```
 
-### Item List
+### Customizing Listed Inventory
 
 The gallery displays a list of items that match your initial configuration of the list. As visitors perform searches, choose categories or subcategories, or make filter choices, the item list will be updated.
 

@@ -29,5 +29,10 @@ This usually indicates that you have a [configuration problem](https://help.good
 They [appear best on high DPI devices](https://help.goodshuffle.com/en/articles/4974050-why-do-you-use-svg-images).
 
 ## How long does it take for inventory changes in Goodshuffle Pro to appear on my website?
-
 Changes to your inventory should appear on your website within [a matter of minutes](https://help.goodshuffle.com/en/articles/4974054-how-long-does-it-take-for-inventory-changes-in-goodshuffle-pro-to-appear-on-my-website-wishlist). 
+
+## Why is my `gspro-item-gallery` search button cut-off on mobile devices?
+Likely due to theme padding. [Learn how to fix it here.](https://app.intercom.com/a/apps/rl8lfsoi/articles/articles/4993747/show).
+
+## Why are all the categories on the category sidebar not showing on mobile devices?
+Likely a result of header "overlapping" the category sidebar. [Learn how to fix it here.](https://app.intercom.com/a/apps/rl8lfsoi/articles/articles/4993992/show).

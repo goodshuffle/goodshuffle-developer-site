@@ -29,6 +29,8 @@ We encourage you to experiment with personalizing your site after running throug
 ## Walk-Through
 ### Activation
 
+If you'd prefer to follow along with a video tutorial, we have one [available here](https://www.youtube.com/watch?v=gYZod6-o4hk)!
+
 You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
 
 ![Integration Tab](/wordpress-website-integration-activation.png)
@@ -60,9 +62,9 @@ From the site tab:
 1. Go to the Site Canvases section of the Site tab
 2. Click the Plus Sign button next to Site Canvases
 3. Select Add Blank Site Canvas
-4. Change the Canvas name to "Wishlist" (double click "New Site Canvas")
+4. Change the Canvas name to "Wishlist" (double click New Site Canvas)
 
-On the canvas options (right side of screen), repeat the following steps for both the "Mobile" and "Desktop" tab:
+On the canvas options (right side of screen), repeat the following steps for both the Mobile and Desktop tabs:
 
 1. Change initial height to 80
 2. Change the "Sticky" dropdown to "Bottom"
@@ -99,27 +101,30 @@ We will add this canvas to your page in the following step.
 From the site tab:
 
 1. Click the page where you injected the header in the first step
-2. Click the "Page" tab
+2. Click the Page tab
 3. Click on the three dots to the right of the page name
 4. Select Add New Canvas
 5. Select the "Wishlist" component (which we created in the above step)
-6. Click "Add" in the bottom right
+6. Click Add in the bottom right
 
 ### Add a Gallery to the Page
 
 Remain on the Page tab:
 
 1. Click the three dots to the right of the page name
-2. Select "Add Blank Canvas"
-3. Double Click "New Canvas" and rename to Gallery
+2. Select Add Blank Canvas
+3. Double Click New Canvas and rename to Gallery
 4. Click on the Gallery Canvas
 5. Click inside the page on the blue button labelled "Gallery"
-6. Embed HTML. This is exactly the same as the process described in Create Wishlist Canvas above
-7. Paste the following snippet into the popup
+6. Give this new Gallery Canvas a height of 800px on the right side of the screen.
+7. Embed HTML. This is exactly the same as the process described in Create Wishlist Canvas above
+8. Paste the following snippet into the popup
 
 ```
 <gspro-item-gallery></gspro-item-gallery>
 ```
+
+8. Make sure to resize your gallery iframe to fit your page. You can either drag and drop the corners of the blue box containing your gallery, or change the numerical values on the right side of the screen.
 
 On the left hand Page tab, drag your Wishlist canvas so that it is **below** the Gallery canvas.
 
