@@ -9,25 +9,34 @@ weight: 10
 
 An Item List is used to display inventory when you do not want a search bar. If you want the search bar, read the directions for an [Item Gallery]({{< relref "/docs/components/item-gallery" >}}).
 
-A code snippet for an Item List with **every control specified** looks like this:
+[See an example item list here!](https://dz8.goodshuffle.dev/list)
+
+A code snippet example for a basic Item List with the most popular way to pull inventory (via tags):
 
 ```
-<gspro-item-list 
-   tags="Rustic" 
-   category="furniture-rentals"
-   group="seating-chair-rentals"
-   search="chiavari"
-   item-attribute-1-name="Color"
-   item-attribute-1-value="Red"
-   size="20">
+<gspro-item-list tags="Rustic"></gspro-item-list>
+```
+
+Another example showing pulling inventory via category:
+
+```
+<gspro-item-list category="tent-canopy-rentals"></gspro-item-list>
+```
+
+The minimum requirement for displaying inventory on an item list is **at least one of** `category`, `search`, `tags`, or `group`. 
+
+Additionally, multiple options can be provided to further narrow down the inventory displayed in the list:
+
+```
+<gspro-item-list
+    group="seating-chair-rentals"
+    tags="Rustic"
+    item-attribute-1-name="Color"
+    item-attribute-1-value="Red | White | Blue">
 </gspro-item-list>
 ```
-_A highly specific item list. Most lists only use a few controls_ 
 
-_This list will show 20 items, all red seating/chair rentals, tagged "Rustic", with "chiavari" in their title or description._
-
-
-Not all fields are required. Minimum requirements are **at least one of: group, category, search OR tags**.
+*This list will display seating and chair rentals, tagged with the 'Rustic' tag, with either a Red, White or Blue 'Color' attribute. Tags and attributes can be set in your [Goodshuffle Pro Inventory tab](https://pro.goodshuffle.com/inventory/index)*
 
 ## Usage
 
@@ -101,6 +110,12 @@ Use the `tags` attribute to get items using the tags you have added to your item
 #### Question: are tags case-sensitive?
 
 No.
+
+#### Question: how do I add multi-word tags a.k.a. tags with spaces in between words?
+
+Wrap them in a single quote `'`.
+
+E.g. `<gspro-item-list tags="'Graduation Party'"></gspro-item-list>`
 
 ### **`category`**
 ```
