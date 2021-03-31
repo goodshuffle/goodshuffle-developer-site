@@ -22,7 +22,7 @@ These are the high-level steps:
 2. Add HTML code snippets to your page's header and footer.
 3. Create a page for the basic gallery and embed an HTML code snippet.
 
-This document will guide you through setting up a basic Wishlist on a Showit site, but more customization will likely be desired. This customization is intuitive thanks to Showit's easy to use drag-and-drop interface
+This document will guide you through setting up a basic Wishlist on a Showit site, but more customization will likely be desired. This customization is intuitive thanks to Showit's easy to use drag-and-drop interface.
 
 We encourage you to experiment with personalizing your site after running through these basic setup instructions.
 
@@ -31,16 +31,24 @@ We encourage you to experiment with personalizing your site after running throug
 
 If you'd prefer to follow along with a video tutorial, we have one [available here](https://www.youtube.com/watch?v=gYZod6-o4hk)!
 
-You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
+You can do this from the [Integrations Tab](https://pro.goodshuffle.com/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
 
 ![Integration Tab](/wordpress-website-integration-activation.png)
 
 ### Inject in Page Header
 
-Select a Page from the Site Menu &gt; Click Page Tab &gt; Advanced Settings on the right &gt; Custom Head HTML &gt; Paste the below Snippet
+To inject code in your page header, you will need to inject code into your site's "Header" Canvas by following the steps below:
 
-**PLEASE NOTE! You need to update "YOUR-WEB-SITE-KEY" with your Public Browser Key from Goodshuffle Pro.**
+1. Go to the Site Canvases menu (under the Site tab of the lefthand menu)
+2. Select the Header Canvas (if this is an existing Showit site, your header may be named something different)
+3. Click inside the Header on your page so that you are editing the Header Canvas
+4. Click on the middle button of the button grouping at the bottom of the page (shown in the image below)
+   
+![Embed HTML](/showit-embed.png)
 
+6. Select Embed Code
+7. Double click on the black box that appears on the header
+8. Paste the below code snippet into the box:
 ```
 <meta name="gspro-config"
       content="https://data.goodshuffle.com/vendor/YOUR_WEB_SITE_KEY" />
@@ -49,11 +57,12 @@ Select a Page from the Site Menu &gt; Click Page Tab &gt; Advanced Settings on t
 <script src="https://unpkg.com/tua-body-scroll-lock"></script>
 ```
 
-If this is a brand new Showit site, proceed to the next step. 
+**PLEASE NOTE! You need to update "YOUR-WEB-SITE-KEY" with your Public Browser Key from Goodshuffle Pro.**
 
-For existing Showit sites, repeat this step for every page where clients will interact with your Wishlist.
+9. Click Save
+10. Your Wishlist is now installed on your site
+11. Proceed to the next section
 
-**NOTE**: This step must be done on **every** page where you want your Wishlist to be visible.
 
 ### Create Wishlist Canvas 
 
@@ -64,20 +73,20 @@ From the site tab:
 3. Select Add Blank Site Canvas
 4. Change the Canvas name to "Wishlist" (double click New Site Canvas)
 
-On the canvas options (right side of screen), repeat the following steps for both the Mobile and Desktop tabs:
+On the Canvas options (right side of screen), repeat the following steps for both the Mobile and Desktop tabs:
 
 1. Change initial height to 80
 2. Change the "Sticky" dropdown to "Bottom"
 
 On the bottom toolbar, highlight the middle Icon and select "Embed Code". The "Embed Code" option is the selected by clicking the middle button (see image).
 
-_Example: How to insert code into a Showit canvas_
+_Example: How to insert code into a Showit Canvas_
 
 ![Embed HTML](/showit-embed.png)
 
 A black box will appear with the text "Enter iframe URL or embed code in properties panel".
 
-Double click that box and paste the following snippet inside.
+Double click that box and paste the following snippet inside:
 
 ```
 <div class="gspro-gallery-omni-present">
@@ -94,7 +103,7 @@ Resize the blue rectangle (it will appear empty) and move it to the far right of
 
 We have now created a Canvas that contains our Wishlist "cart" icon.
 
-We will add this canvas to your page in the following step.
+We will add this Canvas to your page in the following step.
 
 ### Add "Wishlist Cart" Canvas to Page
 
@@ -113,12 +122,12 @@ Remain on the Page tab:
 
 1. Click the three dots to the right of the page name
 2. Select Add Blank Canvas
-3. Double Click New Canvas and rename to Gallery
+3. Double click New Canvas and rename to "Gallery"
 4. Click on the Gallery Canvas
 5. Click inside the page on the blue button labelled "Gallery"
 6. Give this new Gallery Canvas a height of 800px on the right side of the screen.
 7. Embed HTML. This is exactly the same as the process described in Create Wishlist Canvas above
-8. Paste the following snippet into the popup
+8. Paste the following snippet into the popup:
 
 ```
 <gspro-item-gallery></gspro-item-gallery>
@@ -126,7 +135,7 @@ Remain on the Page tab:
 
 8. Make sure to resize your gallery iframe to fit your page. You can either drag and drop the corners of the blue box containing your gallery, or change the numerical values on the right side of the screen.
 
-On the left hand Page tab, drag your Wishlist canvas so that it is **below** the Gallery canvas.
+On the left hand Page tab, drag your Wishlist Canvas so that it is **below** the Gallery Canvas.
 
 That's it!
 
