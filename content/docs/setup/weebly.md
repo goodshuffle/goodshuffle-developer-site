@@ -26,6 +26,8 @@ These are the high-level steps:
 
 ### Activation
 
+If you'd prefer to follow along with a video tutorial, we have one [available here](https://www.youtube.com/watch?v=PGBM8f7CdOQ)!
+
 You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
 
 ![Integration Tab](/wordpress-website-integration-activation.png)
