@@ -16,3 +16,11 @@ If you have a WordPress site, start by learning how to [install and configure th
 ## For Squarespace
 
 If you have a Squarespace site, we have [detailed instructions]({{< relref "/docs/setup/squarespace" >}}) available too.
+
+## For Weebly
+
+If you have a Weebly site, we also have [detailed instructions]({{< relref "/docs/setup/weebly" >}}) available.
+
+## For Custom Websites
+
+If you have a custom-built site, we have [detailed instructions]({{< relref "/docs/setup/custom-setup" >}}) here.
