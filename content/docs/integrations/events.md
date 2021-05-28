@@ -36,7 +36,7 @@ document.addEventListener("gspro-item-card.click", function(data) {
     var itemName = data.detail.title;
     // report the event to Google Analytics
     gtag('event', 'Click', {
-        'event_category': 'Item Card',
+        'event_category': 'Wishlist',
         'event_label': 'Wishlist Card Click',
         'value': itemName
     });
