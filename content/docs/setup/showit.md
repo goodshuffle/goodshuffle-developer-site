@@ -50,11 +50,46 @@ To inject code in your page header, you will need to inject code into your site'
 7. Double click on the black box that appears on the header
 8. Paste the below code snippet into the box:
 ```
-<meta name="gspro-config"
-      content="https://data.goodshuffle.com/vendor/YOUR_WEB_SITE_KEY" />
+<meta name="gspro-config" content="https://test-data.goodshuffle.com/vendor/fc6OTA8MF3tFz7vSVahzjN10EsotrL">
 <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.esm.js"></script>
 <script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.js"></script>
 <script src="https://unpkg.com/tua-body-scroll-lock"></script>
+<style>
+.wishlist-cart {
+  bottom: 0px !important;
+  height: 100% !important;
+  position: fixed !important;
+  z-index: 999 !important;
+}
+.wishlist-embed {
+    height: 100% !important;
+    width: 100% !important;
+}
+.wishlist-detail {
+    height: 100% !important;
+    width: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+}
+</style>
+<script>
+document.addEventListener("gspro-item-detail.mode", function(data) {
+    var cart = document.getElementById("goodshuffle-wishlist-cart");
+    var embed = document.querySelector(".sie-goodshuffle-wishlist-cart_0 > .si-embed");
+    var detail = document.querySelector('#goodshuffle-wishlist-cart [class^="sie-goodshuffle-wishlist-cart_"]');
+    
+    if (data.detail === "active") {
+      cart.classList.add("wishlist-cart");
+      embed.classList.add("wishlist-embed");
+      detail.classList.add("wishlist-detail");
+    } else {
+      cart.classList.remove("wishlist-cart");
+      embed.classList.remove("wishlist-embed");
+      detail.classList.remove("wishlist-detail");
+    }
+});
+</script>
 ```
 
 **PLEASE NOTE! You need to update "YOUR-WEB-SITE-KEY" with your Public Browser Key from Goodshuffle Pro.**
@@ -71,7 +106,9 @@ From the site tab:
 1. Go to the Site Canvases section of the Site tab
 2. Click the Plus Sign button next to Site Canvases
 3. Select Add Blank Site Canvas
-4. Change the Canvas name to "Wishlist" (double click New Site Canvas)
+4. Change the Canvas name to "Goodshuffle Wishlist Cart" (double click New Site Canvas)
+
+**IMPORTANT: This canvas name MUST EXACTLY MATCH the text in quotes on step 4 or the plugin WILL NOT WORK. We suggest copying and pasting the text (without the surrounding quotes) to ensure accuracy.**
 
 On the Canvas options (right side of screen), repeat the following steps for both the Mobile and Desktop tabs:
 
@@ -138,8 +175,3 @@ Remain on the Page tab:
 On the left hand Page tab, drag your Wishlist Canvas so that it is **below** the Gallery Canvas.
 
 That's it!
-
-
-
-
-
