@@ -35,7 +35,11 @@ document.addEventListener("gspro-item-card.click", function(data) {
     // get the item title from the event payload
     var itemName = data.detail.title;
     // report the event to Google Analytics
-    ga("send", "event", "Wishlist", "Item Card Click", itemName)
+    gtag('event', 'Click', {
+        'event_category': 'Item Card',
+        'event_label': 'Wishlist Card Click',
+        'value': itemName
+    });
 })
 ```
 
@@ -109,7 +113,11 @@ document.addEventListener("gspro-wishlist.submit", function(data) {
     // construct a message
     var message = clientFullName + " submitted a wishlist with " + wishlistCount + " items."
     // send to Google Analytics
-    ga("send", "event", "Wishlist", "Wishlist Submission", message)
+    gtag('event', 'Submission', {
+        'event_category': 'Wishlist',
+        'event_label': 'Wishlist Submission',
+        'value': message
+    });
 })
 ```
 
