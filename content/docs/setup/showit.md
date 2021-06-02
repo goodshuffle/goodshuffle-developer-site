@@ -50,7 +50,7 @@ To inject code in your page header, you will need to inject code into your site'
 7. Double click on the black box that appears on the header
 8. Paste the below code snippet into the box:
 ```
-<meta name="gspro-config" content="https://test-data.goodshuffle.com/vendor/fc6OTA8MF3tFz7vSVahzjN10EsotrL">
+<meta name="gspro-config" content="https://test-data.goodshuffle.com/vendor/YOUR_WEB_SITE_KEY">
 <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.esm.js"></script>
 <script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.js"></script>
 <script src="https://unpkg.com/tua-body-scroll-lock"></script>
