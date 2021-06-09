@@ -16,41 +16,14 @@ This is only needed on pages that you intend to display the wishlist or your inv
 
 ```
 <meta name="gspro-config" content="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY" />
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.js"></script>
+<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.5/dist/gspro-wc/gspro-wc.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.5/dist/gspro-wc/gspro-wc.js"></script>
+<gspro-config></gspro-config>
 ```
 
 _Please Note: Your public web site key can be obtained from your Goodshuffle Pro Account Settings._
 
-### Optional
-
-Include this library in the `<head>...</head>` element to mitigate [a common UI issue related to how browsers handle scrolling when a modal item is displayed](https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/).
-
-``` 
-<script src="https://unpkg.com/tua-body-scroll-lock"></script>
-```
-
-## Step 2: Add Helpers
-
-Add the following code to your website `<body>...</body>` element, prefereably toward the end. It will create:
-
-1. An element used to display item details when an item card is clicked.
-1. A floating-action-button that toggles the display of a wishlist.
-1. A hidden SVG sprite that is reference by other web components.
-
-```
-<div class="gspro-gallery-omni-present">
-  <gspro-item-detail
-    data-mode="inactive"
-    class="gspro-u-fullscreen"
-    route="/item/:id/:title*"
-  ></gspro-item-detail>
-  <gspro-wishlist></gspro-wishlist>
-  <gspro-sprite></gspro-sprite>
-</div>
-```
-
-## Step 3: Test
+## Step 2: Test
 
 To test your configuration, add this to a web page:
 
@@ -61,5 +34,4 @@ To test your configuration, add this to a web page:
 ## Troubleshooting
 
 - Are you using a valid public web site key?
-- Do you have items in your inventory with the keyword table or chair?
 - Is our webcomponent library downloading?

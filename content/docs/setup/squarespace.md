@@ -18,7 +18,7 @@ You will need...
 These are the high-level steps:
 
 1. Activate you Website Wishlist Integration.
-2. Add HTML code snippets to your site's header and footer.
+2. Add HTML code snippets to your site's header.
 3. Add custom CSS to your site's design.
 4. Create a page for the basic gallery and embed an HTML code snippet.
 
@@ -41,26 +41,9 @@ You can access this by going to "Settings" &gt; "Advanced" &gt; "Code Injection"
 ```
 <meta name="gspro-config"
       content="https://data.goodshuffle.com/vendor/YOUR_WEB_SITE_KEY" />
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.js"></script>
-<script src="https://unpkg.com/tua-body-scroll-lock"></script>
-```
-
-### Inject in Site Footer
-
-You can access this by going to "Settings" &gt; "Advanced" &gt; "Code Injection"
-
-_Be careful not to replace other code that may have been injected for other purposes._
-
-```
-<div class="gspro-gallery-omni-present">
-  <gspro-wishlist></gspro-wishlist>
-  <gspro-item-detail
-    data-mode="inactive"
-    class="gspro-u-fullscreen"
-    route="/item/:id/:title*"></gspro-item-detail>
-  <gspro-sprite></gspro-sprite>
-</div>
+<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.5/dist/gspro-wc/gspro-wc.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.5/dist/gspro-wc/gspro-wc.js"></script>
+<gspro-config></gspro-config>
 ```
 
 ### Create a Gallery Page
@@ -75,5 +58,3 @@ _Be careful not to replace other code that may have been injected for other purp
 ## All Set!
 
 You should now have a basic page that displays a list of relevant categories/subcategories and your inventory.
-
-

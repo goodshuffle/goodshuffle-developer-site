@@ -5,6 +5,13 @@ weight: 1
 
 # Changelog
 
+## [0.4.5] - 2021-06-10
+
+- Added behavior to prevent background page scrolling when an item detail popup is open 
+    - To disable this functionality, [look here](https://docs.goodshuffle.dev/docs/customization/troubleshooting/#how-do-i-disable-body-scroll-locking)
+- Improved look and performance of Wishlist components on certain site builders
+- Simplified installation process
+
 ## [0.4.4] - 2021-02-11
 
 - Added ability to sort `gpsro-item-list` by `item-attribute`
