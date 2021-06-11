@@ -1,24 +1,23 @@
 ---
-weight: 30
-bookFlatSection: true
-title: "Custom Website Setup"
+weight: 30 bookFlatSection: true title: "Custom Website Setup"
 ---
 
 # Setup
 
 ## Step 1: Add Dependencies
 
-Add the following code into your website `<head>...</head>` element.
-It will add our web components library and reference your Goodshuffle Pro inventory.
-This is only needed on pages that you intend to display the wishlist or your inventory.
+Add the following code into your website `<head>...</head>` element. It will add our web components library and
+reference your Goodshuffle Pro inventory. This is only needed on pages that you intend to display the wishlist or your
+inventory.
 
 ### Required
 
 ```
-<meta name="gspro-config" content="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY" />
 <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.5/dist/gspro-wc/gspro-wc.esm.js"></script>
 <script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.5/dist/gspro-wc/gspro-wc.js"></script>
-<gspro-config></gspro-config>
+<gspro-wishlist-config
+    data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
+></gspro-wishlist-config>
 ```
 
 _Please Note: Your public web site key can be obtained from your Goodshuffle Pro Account Settings._

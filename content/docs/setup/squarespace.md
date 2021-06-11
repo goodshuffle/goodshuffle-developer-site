@@ -39,11 +39,11 @@ You can access this by going to "Settings" &gt; "Advanced" &gt; "Code Injection"
 **PLEASE NOTE! You need to update "YOUR-WEB-SITE-KEY" with your Public Browser Key from Goodshuffle Pro.**
 
 ```
-<meta name="gspro-config"
-      content="https://data.goodshuffle.com/vendor/YOUR_WEB_SITE_KEY" />
 <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.5/dist/gspro-wc/gspro-wc.esm.js"></script>
 <script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.5/dist/gspro-wc/gspro-wc.js"></script>
-<gspro-config></gspro-config>
+<gspro-wishlist-config
+    data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
+></gspro-wishlist-config>
 ```
 
 ### Create a Gallery Page
