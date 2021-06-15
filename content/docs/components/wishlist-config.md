@@ -6,6 +6,71 @@ weight: 10
 # Item List
 
 ## Overview
-Usage of this element **requires** a Wishlist of version 0.5.0 or greater.
+Usage of this element **requires** a Wishlist of version **0.5.0** or greater.
 
-This component is used to change 
+This component is used to change certain settings that affect the Wishlist, or every component of the Wishlist.
+
+Only one of the attributes on this component is required: the `data-url` attribute.
+
+## Usage
+
+Using the `<gspro-wishlist-config>` element is the same as using a `<gspro-item-gallery>`. 
+Certain attributes will be added inside the tag and will change the corresponding settings.
+Read more about the options enabled by this component below.
+
+This element will be placed into your site header during your installation. It should always reside in your site header.
+
+## Usage Details
+
+### **`data-url`**
+
+```
+<gspro-wishlist-config 
+    data-url="data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7">
+</gspro-wishlist-config>
+```
+* This attribute is required to load your Goodshuffle inventory onto your Wishlist. 
+  
+* Its basic format is `data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"`.
+  
+* Note that you will need to replace "YOU-PUBLIC-WEBSITE-KEY" with your unique website key, copied from the Wishlist section of the integrations tab in your Goodshuffle Pro account page. It will be a long string of numbers and letters.
+
+### **`wishlist-show-on-all-pages`**
+
+```
+<gspro-wishlist-config 
+    wishlist-show-on-all-pages="false">
+</gspro-wishlist-config>
+```
+
+* The Wishlist heart icon will **always** show on any page where you have a `<gspro-item-list>`, a `<gspro-item-gallery>`, or a `<gspro-item-card>`.
+
+* This attribute determines whether the Wishlist heart icon, representing the "cart", will show on every page of your website that does not contain one of the components mentioned in the previous step.
+
+* The default value for this attribute is `true`. You only need to include this attribute if you wish to disable the Wishlist appearing on all pages.
+
+### **`wishlist-alias`**
+
+```
+<gspro-wishlist-config 
+    wishlist-alias="Your Cart">
+</gspro-wishlist-config>
+```
+
+* This attribute determines the label for the Wishlist "cart" that site visitors will see when submitting information to generate a quote.
+
+* The default value for this attribute is `Wishlist`. You only need to p
+
+### **`disable-body-scroll-lock`**
+
+```
+<gspro-wishlist-config 
+    disable-body-scroll-lock="true">
+</gspro-wishlist-config>
+```
+
+* The Wishlist comes out of the box with a feature that prevents background scrolling when an item detail component is open. This results in a smoother user experience.
+
+* We highly recommend you keep this feature enabled, but you can disable it using this attribute.
+
+* The default value for this attribute is `false`.
