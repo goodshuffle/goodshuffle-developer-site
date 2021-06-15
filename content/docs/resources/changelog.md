@@ -5,7 +5,7 @@ weight: 1
 
 # Changelog
 
-## [0.4.5] - 2021-06-10
+## [0.5.0] - 2021-06-10
 
 - Added behavior to prevent background page scrolling when an item detail popup is open 
     - To disable this functionality, [look here](https://docs.goodshuffle.dev/docs/customization/troubleshooting/#how-do-i-disable-body-scroll-locking)
