@@ -38,14 +38,12 @@ Likely due to theme padding. [Learn how to fix it here.](https://app.intercom.co
 Likely a result of header "overlapping" the category sidebar. [Learn how to fix it here.](https://app.intercom.com/a/apps/rl8lfsoi/articles/articles/4993992/show).
 
 ## How do I disable body scroll locking?
-Add `<meta name="gspro-disable-scroll-lock" content="true">` to your site header.
+Add `disable-body-scroll-lock="true"` to your [`<gspro-wishlist-config>`]({{< relref "../components/wishlist-config.md#disable-body-scroll-lock" >}}) element.
 
 ## How do I hide the Wishlist "Heart" Icon on certain pages?
-This icon is automatically added to any pages that have a `<gspro-item-list>` or a `<gspro-item-gallery>`.
+This icon is automatically added to any pages that have a `<gspro-item-list>`, a `<gspro-item-card>` or a `<gspro-item-gallery>`.
 
-Additionally, adding the `<gspro-config></gspro-config>` (as detailed in the setup instructions) tag to your site header will load the Wishlist on all pages.
-
-If you wish to have more control over which pages the Wishlist appears on, remove `<gspro-config></gspro-config>` from your site header. Then, add that tag to **ONLY** the pages where you would like your Wishlist Cart to appear.
+If you want to disable it on pages without Wishlist components, add `wishlist-show-on-all-pages="false"` to your [`<gspro-wishlist-config>`]({{< relref "../components/wishlist-config.md#disable-body-scroll-lock" >}}) element.
 
 **NOTE:** Our studies have shown that having the Wishlist Cart available on all pages increases rate of quote generation and conversion. We strongly recommend keeping it enabled on all pages.
 
