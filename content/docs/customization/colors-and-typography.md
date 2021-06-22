@@ -17,6 +17,64 @@ Our web components include classes on most sub-elements to provide you with a co
 
 The default styles provided by our web components attempt to be as minimially specific as possible so that the CSS you write is more succinct. The tradeoff is your website's existing CSS may override _our_ default styles; it's possible our examples won't work. So, being familiar with specificity rules is helpful.
 
+## Starting Out
+
+When you first begin customizing the appearance of your Wishlist, we recommend starting with the following CSS. 
+A good way to start is by pasting this whole block of CSS inside the appropriate place on your site. Next, use a [color picker](https://www.w3schools.com/colors/colors_picker.asp) to get the perfect colors for your site's look, and replace the placeholder colors with the ones you picked out.
+
+Customizing the Wishlist font is also detailed below, and is a great way to make your Wishlist even more unique.
+
+```
+/* search button */
+.gspro-o-search > .gspro-o-button {
+  background-color: red !important;
+}
+
+/* filter button */
+.gspro-c-item-gallery__toggle-filters,  {
+  background-color: green !important;
+}
+
+/* card add button color */
+gspro-item-card .gspro-o-card__add button {
+  background: blue !important;
+}
+
+/* category text color */
+.gspro-o-category {
+ 	color: purple !important; 
+}
+
+/* category count badge text color */
+.gspro-u-badge {
+  color: orange !important;
+}
+
+/* wishlist 'cart' count badge*/
+gspro-wishlist .gspro-c-wishlist__count {
+  background: yellow !important;
+  color: purple !important;
+}
+
+/* wishlist heart icon color */
+gspro-wishlist[data-mode="collapse"] use {
+    fill: orange;
+}
+
+/* wishlist heart 'cart' background */
+.gspro-c-wishlist__trigger {
+  background: darkred !important;
+}
+
+/* fonts */
+:root {
+    --gspro-font-family-secondary: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif !important;
+    --gspro-font-family-secondary: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif !important;
+    --gspro-custom-font-size: 16px;
+}
+```
+
+
 ## Item Card CSS
 
 This example provides you with a handful of CSS selectors. Although they focus on colors, you can use these as a starting point to customize a variety of properties. You can easily [experiment with your own customizations](https://jsfiddle.net/goshujomo/j1xd8uos/) by forking this JSFiddle.
