@@ -8,181 +8,83 @@ weight: 30
 If you have a question that isn't answered here, ask us in the [blue-chat bubble on https://pro.goodshuffle.com](https://pro.goodshuffle.com).
 
 ## How do Packages show on the site?
-Packages will show the photos and description of the package, along with any of the contents that you don’t have marked as “hide from contract”. A good example is [here](https://beautifuleventrentals.com/lounge-package/#!/item/9c24926d-0f3a-4aeb-9aa3-efbe63e30fba/Brooklyn%20Lounge%20-%20Styled). 
+Packages will show the [photos and description of the package](https://help.goodshuffle.com/en/articles/4973384-how-do-packages-show-in-the-wishlist-integration), along with any of the contents that you don’t have marked as “hide from contract”. 
 
-You can also have packages who show some contents, or none at all. A good example is a tent, which is comprised of many items, but you’d likely only want the client to see the name of the tent as a whole.
+## Are my item detail “pages” indexed by Google?
 
-Packages are also a creative way for you to get lead info about a client’s event. You might consider making a “Graduation Backyard Starter Pack” and including the most common things for those events. Keep in mind: you can put in the description something about the ability to add more things later.
-
+Yes, they are. [Learn more](https://help.goodshuffle.com/en/articles/4974038-are-my-item-detail-pages-indexed-by-google)
 
 ## How do Accessories show on the site?
-If you have a hidden accessory (like chalk for a chalkboard) it will not show on the website, but it will add to the project when the wishlist is submitted.
-
-If you have accessories that show on the contract, they will show on the item card and might be a good way to show common upsell items [like this example](https://beautifuleventrentals.com/accent-chairs/#!/item/0eda09d4-1828-3155-309d-084e44cd0b87/Auburn%20Chair).
+Accessories not marked "hidden" will [show on parent product's item detail](https://help.goodshuffle.com/en/articles/4973414-how-to-accessories-show-on-the-wishlist).
 
 ## Can I create custom categories in Goodshuffle Pro?
-You can’t create custom categories in the software, but can use [tags](https://help.goodshuffle.com/en/articles/3702845-how-can-i-mark-my-products-for-a-specific-venue-or-event-type) to group items together for your website pages and menu.
+You can’t create custom categories in the software, but can use [tags](https://help.goodshuffle.com/en/articles/4973437-can-i-create-custom-categories-in-goodshuffle-pro) to group items together for your website pages and menu.
 
 ## How do I create collections on my website?
-Also via [tags](https://help.goodshuffle.com/en/articles/3702845-how-can-i-mark-my-products-for-a-specific-venue-or-event-type). Items can have multiple tags, therefore showing on several different pages. 
+Also via [tags](https://help.goodshuffle.com/en/articles/4973477-how-do-i-create-collections-in-my-website-wishlist). Items can have multiple tags, therefore showing on several different pages. 
 
 ## How do I group items together by color, fabric, warehouse location (etc.)?
-To group items together by color (or any other attribute) you can use multiple gspro-item-list elements on a single page.
-You can do this by using "item-attribute-#". Read `item-attribute-#` [documentation]({{< relref "/docs/components/item-list" >}}) here. Filtering by item attribute corresponds to the [attributes](https://help.goodshuffle.com/en/articles/2114066-attributes-what-they-are-how-to-use-them) that are set in your Goodshuffle Pro inventory.
-
-Note: `item-attribute-#-name` & `item-attribute-#-value` are case sensitive
-
-``` html
-<gspro-item-list search="lounge"
-    item-attribute-1-name="Color"
-    item-attribute-1-value="Brown"></gspro-item-list>
-<gspro-item-list search="lounge"
-    item-attribute-1-name="Color"
-    item-attribute-1-value="Red"></gspro-item-list>
-<gspro-item-list search="lounge"
-    item-attribute-1-name="Color"
-    item-attribute-1-value="Orange"></gspro-item-list>
-```
+You can group items together in this way using [attribute filtering](https://help.goodshuffle.com/en/articles/4973496-how-do-i-group-items-together-by-color-fabric-warehouse-location-etc-in-my-website-wishlist).
 
 ## How do I change how many items appear in a list of items?
-You can change the number of items that appear in the gspro-item-list and gspro-item-gallery 
-components by setting the size attribute (e.g. size=”25”). Please be aware that loading more items 
-can take more time to load.
+By [changing the size attribute](https://help.goodshuffle.com/en/articles/4973497-how-do-i-change-how-many-items-appear-in-a-list-of-items).
 
 ## Can I change the order of items on my Wishlist?
-No, that's not a feature we offer at this time. 
-
-However, if you are using `item-attribute` filtering on a `gspro-item-list`, you can sort by attribute using [`sort-primary`]({{< relref "../components/item-list.md#sort-primary" >}}).
+No, that's not a feature we offer at this time. [Learn more here.](https://help.goodshuffle.com/en/articles/4973549-can-i-change-the-order-of-items-on-my-wishlist)
 
 ## How does the Wishlist impact SEO (Search Engine Optimization)?
 
-SEO optimization features require Wishlist version 0.4.3 or later.
-
-Adding the Wishlist integration comes out of the box with improvements to your site's SEO.
-
-These improvements are focused on allowing your users to search for sub-pages of a Wishlist Integration. This search specificity will increase the breadth of search terms that will find content on your site. It also increases the chances that your site is the most relevant to the user's search terms.
-
-Our improvements also increase the number of pages detected by search engine crawlers on your site, which will improve your page's SEO optimization overall. Having a high number of internal pages increases the relevance of your pages to a wider variety of search terms. It will also indicate your page is "higher value" to search engine crawlers, making it much more likely to appear in search engine results.
-
-The Wishlist will treat each category and group of a standard `<gspro-item-gallery>` as a unique page, contributing to the benefits described above.
-
-We even create unique [structured data](https://developers.google.com/search/docs/guides/intro-structured-data#:~:text=Structured%20data%20is%20a%20standardized,the%20calories%2C%20and%20so%20on.) for each item detail page that a user clicks on. Putting this unique item slug in metadata allows users to search for specific items and improves your site SEO as a whole. 
-
-We are also making use of [Rich Results](https://support.google.com/webmasters/answer/7506797?hl=en). You may have noticed Rich Results in your own searching for e.g. movies or recipes. Rich results, with their enhanced visibility features, should make your site much more noticeable on search engine results. 
-
-Please note, it can sometimes take many weeks for SEO changes to be reflected in search engine results.
+Version 0.4.3 of the Wishlist plugin introduced [many improvements](https://help.goodshuffle.com/en/articles/4973565-how-does-the-wishlist-impact-seo-search-engine-optimization) to Wishlist SEO.
 
 ## Can I customize the wishlist icon?
-Yes, we have a [walk-through and some video tutorials](https://help.goodshuffle.com/en/articles/3528690-how-do-i-use-something-other-than-a-heart-icon) for that!
+Yes, we have a [walk-through and some video tutorials](https://help.goodshuffle.com/en/articles/4973593-can-i-customize-the-wishlist-icon) for that!
 
 ## Do you have preset templates for designs that I can use?
-Not currently, but these may be available in the future. However, 
-customization with CSS is straightforward for most developers. We follow 
-the [block element modifier (BEM)](http://getbem.com/naming/) convention so that you can override our preset theme.
+Not currently, [learn more here](https://help.goodshuffle.com/en/articles/4973615-do-you-have-preset-templates-for-designs-that-i-can-use)
 
 ## Can I customize the text or labels?
-You can customize the name of your Wishlist "Cart" that site visitors see when checking out.
-This is done by adding `<meta name="gspro-wishlist-alias" content="Your Cart">` to your site header code. In this case, the Wishlist submission panel will be named Your Cart.
+You can [customize the name of your Wishlist "Cart"](https://help.goodshuffle.com/en/articles/4973617-can-i-customize-the-text-or-labels) that site visitors see when checking out.
 
 All other labels/text are not customizeable at this time.
 
 ## Can I hide prices?
 
-Yes. (we strongly discourage it- feel free to read why in [this article](https://help.goodshuffle.com/en/articles/4180713-how-do-i-hide-pricing-on-my-website-wishlist)). However, anyone that can inspect your web page’s source code may be able to see your prices. 
-This is the CSS snippet to hide all price data:
-:
-
-``` css
-.gspro-o-price {
-  display: none !important;
-}
-```
+Yes, although [we strongly discourage it](https://help.goodshuffle.com/en/articles/4973620-can-i-hide-prices-on-my-wishlist).
 
 ## How do I show/hide the search bar and categories?
 
 On a high level, if you want to show the search bar, use a `<gspro-item-gallery>`. If you do not want to show the search bar, use a `<gspro-item-list>`.
 
-The default setup of a Wishlist integration involves adding a [`<gspro-item-gallery>`]({{< relref "/docs/components/item-gallery" >}}) to your page. This component comes out of the box with a search bar and category selection sidebar. (see below)
-
-![Categories and Search](/search-and-category.png)
-
-If you just want to hide the category selection sidebar, you can set the [`show-categories`]({{< relref "/docs/components/item-gallery" >}}) attribute to `false`.
-
-If you want to remove both the search bar and category selection sidebar, you will use a `<gspro-item-list>`. To give it a "gallery-like" feel, you can increase the `size` attribute and use any of the available filtering options.
-
-See the [documentation]({{< relref "/docs/components/item-list" >}}) on `<gspro-item-list>` for more information on customizing your component.
+[Learn more here](https://help.goodshuffle.com/en/articles/4973625-how-do-i-show-hide-the-search-bar-and-categories)
 
 ## Does your website wishlist use cookies?
-No. We store website wishlist data using a technology called “Local Storage” 
-on modern web browsers. This enables us to preserve a person’s wishlist 
-without using cookies. Using cookies requires consent in certain jurisdictions 
-and we want to avoid imposing disclosure and consent requirements on your site.
-
+No. We store website wishlist data using a technology called “Local Storage”. [Learn more here](https://help.goodshuffle.com/en/articles/4973627-does-your-website-wishlist-use-cookies).
 
 ## Does your website wishlist store my inventory data on my server?
 No. Data is retrieved from Goodshuffle Pro on demand, although it is cached to improve performance.
 
 ## Do you support IE11?
-No. Most visitors no longer use IE11.
+No. Most visitors [no longer use IE11](https://help.goodshuffle.com/en/articles/4973646-do-you-support-ie11).
 
 ## Why don’t you support Wix or Joomla?
-* Wix and Joomla don’t allow custom code snippets to be embedded on their sites. They only allow integrations that are part of their official “app marketplace” which makes it impossible for fully customizable integrations like ours to work. You could embed an iFrame, but we strongly advise against it as it will not be the experience for your clients that is intended. 
-
-* Wix or Joomla users can either set up a simple redirect to another page on one of our supported platforms, or they can fully migrate to a supported platform. Our users who have migrated to Squarespace have reported being equally happy with its user-friendly interface.
+* Wix and Joomla don’t allow custom code snippets to be embedded on their sites. 
+* [Learn more here](https://help.goodshuffle.com/en/articles/4973648-why-don-t-you-support-wix-or-joomla) about your options when using a Wix or Joomla site.
 
 ## Can I obtain analytics about how people are using my site?
-We do not provide this out-of-the-box, however you can install and enable [Google Analytics](https://support.google.com/analytics/answer/1008015?hl=en), or any other anayltics provider, on your site.
-
-Once you have done that, head over to our [documentation on events](({{< relref "/docs/components/item-list" >}})) to get more information on capturing Wishlist events for your analytics platform(s) of choice.
+We do not provide this out-of-the-box. [Learn more here.](https://help.goodshuffle.com/en/articles/4973654-can-i-obtain-analytics-about-how-people-are-using-my-site)
 
 ## Can I get Google address autocompletion for venue / delivery location?
-No, this would require you to create a Google Developer account and to obtain & configure a Google API key.
+No, this would require you to create a [Google Developer account](https://help.goodshuffle.com/en/articles/4973657-can-i-get-google-address-autocompletion-for-venue-delivery-location).
 
 ## How do I hide time selection?
 
-You can disable the display of time selection menus using this snippet of CSS:
-
-``` css
-.gspro-c-item-choices__start-time,
-.gspro-c-duration__start-time,
-.gspro-c-duration__end-time,
-.gspro-o-time-label {
-  display: none !important;
-}
-```
-
-This will disable time selection in the wishlist date picker and item detail overlay. Please note that projects will still have a default time of noon set when a wishlist is submitted.
+You can disable the display of time selection menus [using CSS](https://help.goodshuffle.com/en/articles/4973662-how-do-i-hide-time-selection).
 
 ## How do I show/hide item quantity?
 
-You can enable display of item quantities in two places, using CSS.
-
-**NOTE**: The quantities displayed are only maximum inventory quantities, not actual in stock inventory.
-This allows you to:
-* provide alternative inventory (e.g. slightly different color)
-* subrent or purchase more items to fulfill order
-
-To show quantity on the item-card component (items in list display):
-
-``` css
-gspro-item-card.gspro-c-item-card .gspro-c-item-card__quantity {
-    display: block !important;
-}
-```
-
-To show quantity on item-detail (pop-up when clicking an item):
-
-``` css
-.gspro-c-item-detail__quantity {
-    display: block !important;
-}
-```
-
-If you wish to **hide** item quantity, simple replace `display: block !important` with `display: none !important` in the snippets above.
+You can toggle display of item quantities in [two places](https://help.goodshuffle.com/en/articles/4973665-how-do-i-show-hide-item-quantity), using CSS.
 
 ## Why doesn’t the gspro-item-list support pagination by default?
-Pagination isn’t supported by default because it is common for people to use
-multiple gspro-item-list components on a single page, this would be confusing
-to website visitors.
+[View help article](https://help.goodshuffle.com/en/articles/4973676-why-doesn-t-the-gspro-item-list-support-page-numbers-by-default)
 
 
