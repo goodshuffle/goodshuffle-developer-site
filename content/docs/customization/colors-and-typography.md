@@ -27,33 +27,47 @@ Customizing the Wishlist font is also detailed below, and is a great way to make
 ```
 /* search button */
 .gspro-o-search > .gspro-o-button {
-  background-color: red !important;
+    /* this property changes the background color of the targetted element */
+    background: red !important;
+    
+    /* this property changes the text color of the targetted element */
+    color: black !important; 
 }
 
 /* filter button */
-.gspro-c-item-gallery__toggle-filters,  {
-  background-color: green !important;
+.gspro-c-item-gallery__toggle-filters  {
+    background: green !important;
+}
+
+/* category button - mobile only */
+.gspro-c-item-gallery__toggle-category {
+    background: orange !important;
 }
 
 /* card add button color */
 gspro-item-card .gspro-o-card__add button {
-  background: blue !important;
+    background: blue !important;
+}
+
+/* card add icon color */
+.gspro-c-item-card__add use {
+    fill: green !important;
 }
 
 /* category text color */
 .gspro-o-category {
- 	color: purple !important; 
+    color: purple !important; 
 }
 
 /* category count badge text color */
 .gspro-u-badge {
-  color: orange !important;
+    color: orange !important;
 }
 
 /* wishlist 'cart' count badge*/
 gspro-wishlist .gspro-c-wishlist__count {
-  background: yellow !important;
-  color: purple !important;
+    background: yellow !important;
+    color: purple !important;
 }
 
 /* wishlist heart icon color */
@@ -63,7 +77,7 @@ gspro-wishlist[data-mode="collapse"] use {
 
 /* wishlist heart 'cart' background */
 .gspro-c-wishlist__trigger {
-  background: darkred !important;
+    background: darkred !important;
 }
 
 /* fonts */
