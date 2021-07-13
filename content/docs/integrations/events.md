@@ -27,7 +27,7 @@ This event occurs when the user clicks on a `<gspro-item-card>` inside of a `<gs
 This event is attached to the opening the modal with the detail view of the item, with a larger image and information about the item.
 Common reasons for targetting this event would be using analytics to determine which items are popular, or for tracking how many items a user clicks on before adding an item to their wishlist.
 
-To capture this event, you will use the [`document.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) Javascript method. The event to target for these `<gspro-item-card>` click events is "gspro-item-card.click".
+To capture this event, you will use the [`document.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) Javascript method. The event to target for these `<gspro-item-card>` click events is `gspro-item-card.click`.
 
 Example (with Google Analytics):
 ```
@@ -45,7 +45,7 @@ document.addEventListener("gspro-item-card.click", function(data) {
 
 In this example, an event listener is being attached to the item card click. When the user clicks to expand an item card, the analytics category (Wishlist), event action (Item Card Click), and a label (the clicked item's name) are all being reported to Google Analytics.
 
-`data.detail` object for "gspro-item-card.click":
+`data.detail` object for `gspro-item-card.click`:
 ```
 {
     attributes: // An array of objects representing the item's attributes
@@ -72,7 +72,7 @@ This event occurs when the user clicks the "Add to Wishlist" icon (represented b
 The user can also add items to their wishlist from inside the expanded item detail view and clicks the "Send to Wishlist" button.
 These are distinct events from a Wishlist perspective, but correspond to the same event for tracking purposes.
 
-The two events that correspond to adding to wishlist are "gspro-item-card.add" and "gspro-item-detail.add".
+The two events that correspond to adding to wishlist are `gspro-item-card.add` and `gspro-item-detail.add`.
 You will want to capture **BOTH** of these events when targetting the "Add to Wishlist" functionality.
 Because you will need to capture both events, we recommend putting your handler logic inside its own function.
 This will help you ensure that the same logic is being executed by both handlers.
@@ -101,7 +101,11 @@ The `data.detail` object of this event is the exact same as the one detailed in 
 ### Submit Wishlist
 
 This event occurs when a user submits a Wishlist request after filling in their venue and contact information.
-You can capture this event by targetting the "gspro-wishlist.submit" event. 
+You can capture this event by targeting the `gspro-wishlist.submit` event. 
+
+This event happens *immediately* after the submit button is clicked. 
+It should not be used for any functionality that might block completion of the request, such as a redirect. 
+The 'Submission Complete' event detailed below is fired when the API call to submit the Wishlist completes successfully, and should be used for redirects.
 
 Example (with Google Analytics):
 ```
@@ -121,10 +125,10 @@ document.addEventListener("gspro-wishlist.submit", function(data) {
 })
 ```
 
-`data.detail` object for "gspro-wishlist.submit"
+`data.detail` object for `gspro-wishlist.submit`
 ```
-contact: // information about the person filling out the Wishlist
-venue: // venue information provided by person submitting the Wishlist
+contact:  // information about the person filling out the Wishlist
+venue:    // venue information provided by person submitting the Wishlist
 wishlist: // array of objects representing the "cart" of the Wishlist
           // each item is identical to the item detail described above
 ```
@@ -149,4 +153,23 @@ wishlist: // array of objects representing the "cart" of the Wishlist
     state: "DC"
     venueName: "The Place to Be"
 }
+```
+
+### Submit Complete
+
+Usage of this event **requires** a Wishlist version of **0.5.1** or greater.
+
+This event happens when the API responds successfully, indicating that the Wishlist has been received and processed.
+You might use this even to redirect to a thank-you page, or open a modal instructing your users on what to expect next.
+
+You can capture this event by targeting the `gspro-wishlist.submit-complete` event.
+
+This event uses the exact same `data.detail` modelling as the 'Submission Complete' event described above.
+
+Example (with a redirect to personalized thank-you page):
+```
+  document.addEventListener("gspro-wishlist.submit-complete", function (data) {
+    var clientFullName = data.detail.contact.firstName + " " + data.detail.contact.lastName;
+    location = "https://eventrentals.com/?name=" + clientFullName
+  })
 ```

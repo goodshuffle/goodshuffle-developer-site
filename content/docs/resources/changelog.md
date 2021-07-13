@@ -5,6 +5,11 @@ weight: 1
 
 # Changelog
 
+## [0.5.1] - 2021-07-13
+
+- Fixed a rare bug resulting in duplicate Wishlist submissions
+- Added a new event emitter, [`gspro-wishlist.submit-complete`]({{< relref "../integrations/events.md#submit-complete" >}})
+
 ## [0.5.0] - 2021-06-10
 
 - Added behavior to prevent background page scrolling when an item detail popup is open 
