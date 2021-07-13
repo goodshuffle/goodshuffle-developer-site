@@ -5,6 +5,18 @@ weight: 1
 
 # Changelog
 
+## [0.5.1] - 2021-07-13
+
+- Fixed a rare bug resulting in duplicate Wishlist submissions
+- Added a new event emitter, [`gspro-wishlist.submit-complete`]({{< relref "../integrations/events.md#submit-complete" >}})
+
+## [0.5.0] - 2021-06-10
+
+- Added behavior to prevent background page scrolling when an item detail popup is open 
+    - To disable this functionality, [look here]({{< relref "../customization/troubleshooting.md#how-do-i-disable-body-scroll-locking" >}})
+- Improved look and performance of Wishlist components on certain site builders
+- Simplified installation process
+
 ## [0.4.4] - 2021-02-11
 
 - Added ability to sort `gpsro-item-list` by `item-attribute`
@@ -12,12 +24,12 @@ weight: 1
 
 ## [0.4.3] - 2021-01-07
 
-- Added event emitters to key wishlist events. See [this page](https://docs.goodshuffle.dev/docs/integrations/events/) on usage.
-- Improved SEO optimization. See [this FAQ](https://docs.goodshuffle.dev/docs/customization/faq/#how-does-the-wishlist-impact-seo-search-engine-optimization) for more information.
+- Added event emitters to key wishlist events. See [this page]({{< relref "../integrations/events.md" >}}) on usage.
+- Improved SEO optimization. See [this FAQ]({{< relref "../customization/faq/#how-does-the-wishlist-impact-seo-search-engine-optimization" >}}) for more information.
 
 ## [0.4.2] - 2020-10-14
 
-- `gspro-item-list` now supports filtering on custom attributes. See our [developer docs](https://docs.goodshuffle.dev/docs/components/item-list/) for usage.
+- `gspro-item-list` now supports filtering on custom attributes. See our [developer docs]({{< relref "../components/item-list.md#item-attribute-" >}}) for usage.
 - Clicking on an item in a `gspro-item-gallery` or `gspro-item-list` will now update the canonical url, title and meta description of a Wishlist integrated site
 
 ## [0.4.1] - 2020-09-16

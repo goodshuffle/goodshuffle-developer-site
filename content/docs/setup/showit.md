@@ -50,23 +50,11 @@ To inject code in your page header, you will need to inject code into your site'
 7. Double click on the black box that appears on the header
 8. Paste the below code snippet into the box:
 ```
-<meta name="gspro-config" content="https://data.goodshuffle.com/vendor/YOUR_WEB_SITE_KEY">
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.4.4/dist/gspro-wc/gspro-wc.js"></script>
-<script src="https://unpkg.com/tua-body-scroll-lock"></script>
-<script>
-var detail = document.createElement("gspro-item-detail");
-detail.setAttribute("data-mode", "inactive");
-detail.setAttribute("route","/item/:id/:title*");
-detail.classList.add("gspro-u-fullscreen");
-document.body.appendChild(detail);
-
-var wishlist = document.createElement("gspro-wishlist");
-document.body.appendChild(wishlist);
-
-var sprite = document.createElement("gspro-sprite");
-document.body.appendChild(sprite);
-</script>
+<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.1/dist/gspro-wc/gspro-wc.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.1/dist/gspro-wc/gspro-wc.js"></script>
+<gspro-wishlist-config
+    data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
+></gspro-wishlist-config>
 ```
 
 **PLEASE NOTE! You need to update "YOUR-WEB-SITE-KEY" with your Public Browser Key from Goodshuffle Pro.**
@@ -85,7 +73,7 @@ Head to the Page tab:
 4. Click on the Gallery Canvas
 5. Click inside the page on the blue button labelled "Gallery"
 6. Give this new Gallery Canvas a height of 3000px on the right side of the screen on both Mobile AND Desktop tabs.
-7. Embed HTML. This is exactly the same as the process described in Create Wishlist Canvas above
+7. Embed HTML. This is exactly the same as the process described in the 'Inject in Page Header' step above
 8. Paste the following snippet into the popup:
 
 ```

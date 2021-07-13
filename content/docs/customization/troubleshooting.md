@@ -36,3 +36,32 @@ Likely due to theme padding. [Learn how to fix it here.](https://app.intercom.co
 
 ## Why are all the categories on the category sidebar not showing on mobile devices?
 Likely a result of header "overlapping" the category sidebar. [Learn how to fix it here.](https://app.intercom.com/a/apps/rl8lfsoi/articles/articles/4993992/show).
+
+## How do I disable body scroll locking?
+Add `disable-body-scroll-lock="true"` to your [`<gspro-wishlist-config>`]({{< relref "../components/wishlist-config.md#disable-body-scroll-lock" >}}) element.
+
+## How do I hide the Wishlist "Heart" Icon on certain pages?
+This icon is automatically added to any pages that have a `<gspro-item-list>`, a `<gspro-item-card>` or a `<gspro-item-gallery>`.
+
+If you want to disable it on pages without Wishlist components, add `wishlist-show-on-all-pages="false"` to your [`<gspro-wishlist-config>`]({{< relref "../components/wishlist-config.md#disable-body-scroll-lock" >}}) element.
+
+**NOTE:** Our studies have shown that having the Wishlist Cart available on all pages increases rate of quote generation and conversion. We strongly recommend keeping it enabled on all pages.
+
+## How can I control where in the DOM tree the gspro-item-detail and gspro-wishlist are located?
+
+By default, the Wishlist injects these web components right at the end of the body.
+If you want to move those elements elsewhere, simply place the following code snippet in your desired location:
+
+```
+<div class="gspro-gallery-omni-present">
+  <gspro-item-detail
+    data-mode="inactive"
+    class="gspro-u-fullscreen"
+    route="/item/:id/:title*"
+  ></gspro-item-detail>
+  <gspro-wishlist></gspro-wishlist>
+  <gspro-sprite></gspro-sprite>
+</div>
+```
+
+These manually added elements will **replace** the ones automatically added to the page, not duplicate them.
