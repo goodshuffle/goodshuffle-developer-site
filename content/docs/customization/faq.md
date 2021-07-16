@@ -87,4 +87,10 @@ You can toggle display of item quantities in [two places](https://help.goodshuff
 ## Why doesn’t the gspro-item-list support pagination by default?
 [View help article](https://help.goodshuffle.com/en/articles/4973676-why-doesn-t-the-gspro-item-list-support-page-numbers-by-default)
 
+## How can I have the cursor automatically focus into the search bar when visiting a page with a <gspro-item-gallery>?
 
+With a [custom Javascript snippet](http://help.goodshuffle.com/en/articles/5413165-how-can-i-auto-focus-on-an-item-gallery-search-bar)
+
+## How can I add linebreaks (and other accents) to my item descriptions?
+
+By adding [HTML tags](http://help.goodshuffle.com/en/articles/5416641-how-can-i-add-line-breaks-and-other-accents-to-my-wishlist-item-descriptions) to your Web Descriptions.
