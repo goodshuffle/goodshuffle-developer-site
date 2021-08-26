@@ -19,7 +19,7 @@ You will need...
 These are the high-level steps:
 
 1. Activate you Website Wishlist Integration.
-2. Add HTML code snippets to your page's header and footer.
+2. Add HTML code snippets to your page's header.
 3. Create a page for the basic gallery and embed an HTML code snippet.
 
 This document will guide you through setting up a basic Wishlist on a Showit site, but more customization will likely be desired. This customization is intuitive thanks to Showit's easy to use drag-and-drop interface.
