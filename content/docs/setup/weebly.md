@@ -18,7 +18,7 @@ You will need...
 These are the high-level steps:
 
 1. Activate you Website Wishlist Integration.
-2. Add HTML code snippets to your site's header and footer.
+2. Add HTML code snippets to your site's header.
 3. Add custom CSS to your site's design.
 4. Create a page for the basic gallery and embed an HTML code snippet.
 
