@@ -22,7 +22,7 @@ These are the high-level steps:
 3. Add custom CSS to your site's design.
 4. Create a page for the basic gallery and embed an HTML code snippet.
 
-_If you prefer a narrated walk-through, checkout our [Squarespace Setup Youtube video](https://www.youtube.com/watch?reload=9&v=Ap5zhuijH90&feature=youtu.be)._
+_If you prefer a narrated walk-through, checkout our [Squarespace Setup Youtube video](https://www.youtube.com/watch?v=9IjnZpx1UCo&feature=emb_title)._
 
 ## Walk-Through
 
