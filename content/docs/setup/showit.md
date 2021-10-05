@@ -57,7 +57,7 @@ To inject code in your page header, you will need to inject code into your site'
 ></gspro-wishlist-config>
 ```
 
-**PLEASE NOTE! You need to update "YOUR-WEB-SITE-KEY" with your Public Browser Key from Goodshuffle Pro.**
+**PLEASE NOTE! You need to replace the text YOUR-PUBLIC-WEBSITE-KEY below with your Public Browser Key from Goodshuffle Pro (retrieved in the Activation step above).**
 
 9. Click Save
 10. Your Wishlist is now installed on your site

@@ -36,7 +36,7 @@ You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAcc
 
 You can access this by going to "Settings" &gt; "Advanced" &gt; "Code Injection"
 
-**PLEASE NOTE! You need to update "YOUR-WEB-SITE-KEY" with your Public Browser Key from Goodshuffle Pro.**
+**PLEASE NOTE! You need to replace the text YOUR-PUBLIC-WEBSITE-KEY below with your Public Browser Key from Goodshuffle Pro (retrieved in the Activation step above).**
 
 ```
 <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.1/dist/gspro-wc/gspro-wc.esm.js"></script>
