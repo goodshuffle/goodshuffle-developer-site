@@ -74,3 +74,17 @@ This element will be placed into your site header during your installation. It s
 * We highly recommend you keep this feature enabled, but you can disable it using this attribute.
 
 * The default value for this attribute is `false`.
+
+### **`disable-time-selection`**
+
+```
+<gspro-wishlist-config 
+    disable-time-selection="true">
+</gspro-wishlist-config>
+```
+
+* By default, users can select times along with dates on the item-detail popup, as well as during the Wishlist submission sequence.
+
+* When enabled, users wil not be able to see those time selection dropdowns or assign a start or end time to their Wishlist event.
+
+* The default value for this attribute is `false`

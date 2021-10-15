@@ -5,6 +5,11 @@ weight: 1
 
 # Changelog
 
+## [0.5.2] - 2021-10-15
+
+- Added support for [sorting gspro-item-gallery]({{< relref "../components/item-gallery/#sort" >}}) by attributes
+- Added ability to [disable time selection]({{< relref "../components/wishlist-config/#disable-time-selection" >}}) by attributes with the config element
+
 ## [0.5.1] - 2021-07-13
 
 - Fixed a rare bug resulting in duplicate Wishlist submissions
