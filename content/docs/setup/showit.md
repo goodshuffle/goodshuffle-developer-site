@@ -63,6 +63,9 @@ To inject code in your page header, you will need to inject code into your site'
 10. Your Wishlist is now installed on your site
 11. Proceed to the next section
 
+*Previous versions of the Wishlist also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Wishlist  you can safely ignore the footer setup.*
+
+
 ### Add a Gallery to the Page
 
 Head to the Page tab:

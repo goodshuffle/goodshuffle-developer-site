@@ -24,6 +24,8 @@ inventory.
 ></gspro-wishlist-config>
 ```
 
+*Previous versions of the Wishlist also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Wishlist  you can safely ignore the footer setup.*
+
 ## Step 2: Test
 
 To test your configuration, add this to a web page:
