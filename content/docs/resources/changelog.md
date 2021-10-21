@@ -11,7 +11,7 @@ weight: 1
 - Significantly expanded options provided with the `gspro-wishlist-config` element
   - Added ability to [disable time selection]({{< relref "../components/wishlist-config/#disable-time-selection" >}})
   - Added ability to [hide prices]({{< relref "../components/wishlist-config/#hide-prices" >}})
-  - Added ability to [show quantities]({{< relref "../components/wishlist-config/#show-quantity-on-cardshow-quantity-on-detail" >}})) on the `gspro-item-detail` and the `gspro-item-card`
+  - Added ability to [show quantities]({{< relref "../components/wishlist-config/#show-quantity-on-cardshow-quantity-on-detail" >}}) on the `gspro-item-detail` and the `gspro-item-card`
   - Added ability to make [phone numbers required]({{< relref "../components/wishlist-config/#require-phone-number" >}}) for Wishlist submission
   - Added ability to [add help text]({{< relref "../components/wishlist-config/#notes-help-text" >}}) under the "Notes" label of the Wishlist submission form
 
