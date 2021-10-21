@@ -117,9 +117,26 @@ Example:
 <gspro-item-gallery
     scope-attribute-1-name="Warehouse Location"
     scope-attribute-1-value="Washington, DC"
+></gspro-item-gallery>
 ```
 
 [Learn more about attributes]({{< relref "./item-list.md#item-attribute-" >}}).
+
+### sort
+
+**Usage of at least one `scope-attribute-#` with piped `scope-attribute-#-value` values is required to use sort.** 
+
+```
+<gspro-item-gallery
+    scope-attribute-1-name="Warehouse Location"
+    scope-attribute-1-value="Washington, DC | Rosslyn, VA"
+    sort-primary="scope-attribute-1"
+></gspro-item-gallery>
+```
+
+We would then see all the items in the Washington warehouse, then all the items in the Rosslyn warehouse.
+
+[Learn more about sort]({{< relref "./item-list.md#sort-primary" >}}).
 
 ### show-categories
 
