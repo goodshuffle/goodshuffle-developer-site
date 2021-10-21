@@ -177,7 +177,7 @@ button.gspro-o-button--primary {
   background: #1F1F1F;
 }
 
-button.gspro-o-button-primary:hover {
+button.gspro-o-button--primary:hover {
   background: #3F3F3F;
 }
 
