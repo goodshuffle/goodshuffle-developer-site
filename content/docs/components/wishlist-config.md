@@ -24,6 +24,26 @@ This element will be placed into your site header during your installation. It s
 Note that any combination of attributes can be used on one Wishlist config. However, a valid `data-url` is **required**
 on every `gspro-wishlist-config`.
 
+## Overriding Sitewide Settings
+
+You can include an additional `gspro-wishlist-config` on specific pages if you want to override a config property you have set for your entire site.
+
+There are two caveats: 
+* you **must** include the `data-url` exactly as it appears on your main config element
+* you **must* add `disable-body-scroll-lock="true"` on the *page scoped* config element (we do not recommend including this setting on your sitewide config element).
+
+Suppose you have chosen to hide prices sitewide using `hide-prices="true"` on your sitewide config element.
+However, you have a page of clearance items where you do want to show prices.
+You would include the following snippet in the header of the page where you want to show prices.
+
+```
+<gspro-wishlist-config
+    hide-prices="false"
+    disable-body-scroll-lock="true"
+    data-url="data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7">
+</gspro-wishlist-config>
+```
+
 ## Usage Details
 
 ### **`data-url`**
