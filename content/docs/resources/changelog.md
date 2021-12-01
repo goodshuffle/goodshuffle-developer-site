@@ -5,7 +5,7 @@ weight: 1
 
 # Changelog
 
-## [0.5.2] - 2021-10-15
+## [0.5.2] - 2021-12-1
 
 - Added support for [sorting gspro-item-gallery]({{< relref "../components/item-gallery/#sort" >}}) by attributes
 - Significantly expanded options provided with the `gspro-wishlist-config` element
