@@ -50,18 +50,21 @@ To inject code in your page header, you will need to inject code into your site'
 7. Double click on the black box that appears on the header
 8. Paste the below code snippet into the box:
 ```
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.1/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.1/dist/gspro-wc/gspro-wc.js"></script>
+<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.2/dist/gspro-wc/gspro-wc.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.2/dist/gspro-wc/gspro-wc.js"></script>
 <gspro-wishlist-config
     data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
 ></gspro-wishlist-config>
 ```
 
-**PLEASE NOTE! You need to update "YOUR-WEB-SITE-KEY" with your Public Browser Key from Goodshuffle Pro.**
+**PLEASE NOTE! You need to replace the text YOUR-PUBLIC-WEBSITE-KEY below with your Public Browser Key from Goodshuffle Pro (retrieved in the Activation step above).**
 
 9. Click Save
 10. Your Wishlist is now installed on your site
 11. Proceed to the next section
+
+*Previous versions of the Wishlist also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Wishlist  you can safely ignore the footer setup.*
+
 
 ### Add a Gallery to the Page
 

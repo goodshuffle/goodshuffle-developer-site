@@ -75,6 +75,19 @@ Not doing so will interfere with the filtering of the component.
 
 The default subcategory of items to display. Will be overriden by searching or picking a category.
 
+### tags
+
+Display a list of items with the tag(s). Will be overriden by searching, filtering or picking a category.
+
+[Learn more about how to use tags]({{< relref "./item-list.md#tags" >}}).
+
+### search
+
+Display a list of items with the specified keywords by default. Will be overriden by searching or picking a category.
+
+[Learn more about how to use keywords]({{< relref "./item-list.md#search" >}}).
+
+
 ### scope-category
 
 Limit the displayed items to a root-level category in Goodshuffle Pro. Supports multiple categories separated by spaces.
@@ -104,15 +117,26 @@ Example:
 <gspro-item-gallery
     scope-attribute-1-name="Warehouse Location"
     scope-attribute-1-value="Washington, DC"
+></gspro-item-gallery>
 ```
 
 [Learn more about attributes]({{< relref "./item-list.md#item-attribute-" >}}).
 
-### search
+### sort
 
-Display a list of items with the specified keywords by default. Will be overriden by searching or picking a category.
+**Usage of at least one `scope-attribute-#` with piped `scope-attribute-#-value` values is required to use sort.** 
 
-[Learn more about how to use keywords]({{< relref "./item-list.md#search" >}}).
+```
+<gspro-item-gallery
+    scope-attribute-1-name="Warehouse Location"
+    scope-attribute-1-value="Washington, DC | Rosslyn, VA"
+    sort-primary="scope-attribute-1"
+></gspro-item-gallery>
+```
+
+We would then see all the items in the Washington warehouse, then all the items in the Rosslyn warehouse.
+
+[Learn more about sort]({{< relref "./item-list.md#sort-primary" >}}).
 
 ### show-categories
 
@@ -125,9 +149,3 @@ Set to false to hide the filter element and button to toggle it. Default to true
 ### size
 
 Limit the number of displayed items. Defaults to 15 items.
-
-### tags
-
-Display a list of items with the tag(s). Will be overriden by searching, filtering or picking a category.
-
-[Learn more about how to use tags]({{< relref "./item-list.md#tags" >}}).

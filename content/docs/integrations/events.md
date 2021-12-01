@@ -160,7 +160,7 @@ wishlist: // array of objects representing the "cart" of the Wishlist
 Usage of this event **requires** a Wishlist version of **0.5.1** or greater.
 
 This event happens when the API responds successfully, indicating that the Wishlist has been received and processed.
-You might use this even to redirect to a thank-you page, or open a modal instructing your users on what to expect next.
+You might use this event to redirect to a thank-you page, or open a modal instructing your users on what to expect next.
 
 You can capture this event by targeting the `gspro-wishlist.submit-complete` event.
 
