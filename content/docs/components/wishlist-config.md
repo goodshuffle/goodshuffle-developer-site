@@ -30,7 +30,7 @@ on every `gspro-wishlist-config`.
 
 ```
 <gspro-wishlist-config 
-    data-url="data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7">
+    data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7">
 </gspro-wishlist-config>
 ```
 
@@ -45,7 +45,7 @@ on every `gspro-wishlist-config`.
 
 ```
 <gspro-wishlist-config 
-    data-url="data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
+    data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
     disable-body-scroll-lock="true">
 </gspro-wishlist-config>
 ```
@@ -61,7 +61,7 @@ on every `gspro-wishlist-config`.
 
 ```
 <gspro-wishlist-config 
-    data-url="data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
+    data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
     disable-time-selection="true">
 </gspro-wishlist-config>
 ```
@@ -78,7 +78,7 @@ on every `gspro-wishlist-config`.
 
 ```
 <gspro-wishlist-config 
-    data-url="data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
+    data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
     notes-help-text="Tell us how you heard about us!">
 </gspro-wishlist-config>
 ```
@@ -93,7 +93,7 @@ on every `gspro-wishlist-config`.
 
 ```
 <gspro-wishlist-config 
-    data-url="data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
+    data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
     require-phone-number="true">
 </gspro-wishlist-config>
 ```
@@ -106,7 +106,7 @@ on every `gspro-wishlist-config`.
 
 ```
 <gspro-wishlist-config 
-    data-url="data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
+    data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
     show-quantity-on-card="true"
     show-quantity-on-detail="true">
 </gspro-wishlist-config>
@@ -120,7 +120,7 @@ on every `gspro-wishlist-config`.
 
 ```
 <gspro-wishlist-config 
-    data-url="data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
+    data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
     wishlist-alias="Your Cart">
 </gspro-wishlist-config>
 ```
@@ -134,7 +134,7 @@ on every `gspro-wishlist-config`.
 
 ```
 <gspro-wishlist-config 
-    data-url="data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
+    data-url="https://data.goodshuffle.com/vendor/a1b2c3d4e5f6g7"
     wishlist-show-on-all-pages="false">
 </gspro-wishlist-config>
 ```
