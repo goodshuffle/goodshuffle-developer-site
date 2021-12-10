@@ -107,6 +107,8 @@ Use the `tags` attribute to get items using the tags you have added to your item
 - featured
 - event type
 
+Tags use the **same commands** as the search attribute. Review the [subsection under search]({{< relref "#search" >}}) labelled "More Examples" for more complex usage instructions.
+
 #### Question: are tags case-sensitive?
 
 No.
