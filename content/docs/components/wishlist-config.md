@@ -21,8 +21,20 @@ below.
 
 This element will be placed **into your site header** during your installation. It should always reside in **your site header**.
 
-Note that any combination of attributes can be used on one Wishlist config. However, a valid `data-url` is **required**
-on every `gspro-wishlist-config`.
+Note that **any combination of attributes** can be used on one Wishlist config. 
+However, a valid `data-url` is **required** on every `gspro-wishlist-config`.
+
+You may have as many options as you like attached to a single `gspro-wishlist-config` element.
+This following example shows how to attach multiple options to a single element.
+```
+<gspro-wishlist-config 
+    data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
+    require-phone-number="true"
+    show-quantity-on-card="true"
+    disable-time-selection="true">
+</gspro-wishlist-config>
+```
+
 
 ## Usage Details
 
@@ -83,7 +95,9 @@ on every `gspro-wishlist-config`.
 </gspro-wishlist-config>
 ```
 
-* This element lets you add italicized help text under the "Notes" field on the Send Wishlist panel.
+* This element lets you add help text under the "Notes" field on the Send Wishlist panel.
+
+* To customize this label, please read the [documentation on customization.]({{< relref "/docs/customization/colors-and-typography" >}})
 
 * The length of this help text is **hard capped at 140 characters**. 
 
