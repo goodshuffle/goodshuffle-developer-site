@@ -32,10 +32,10 @@ They [appear best on high DPI devices](https://help.goodshuffle.com/en/articles/
 Changes to your inventory should appear on your website within [a matter of minutes](https://help.goodshuffle.com/en/articles/4974054-how-long-does-it-take-for-inventory-changes-in-goodshuffle-pro-to-appear-on-my-website-wishlist). 
 
 ## Why is my `gspro-item-gallery` search button cut-off on mobile devices?
-Likely due to theme padding. [Learn how to fix it here.](https://app.intercom.com/a/apps/rl8lfsoi/articles/articles/4993747/show).
+Likely due to theme padding. [Learn how to fix it here.](http://help.goodshuffle.com/en/articles/4993747-why-is-my-gspro-item-gallery-search-button-cut-off-on-mobile-devices).
 
 ## Why are all the categories on the category sidebar not showing on mobile devices?
-Likely a result of header "overlapping" the category sidebar. [Learn how to fix it here.](https://app.intercom.com/a/apps/rl8lfsoi/articles/articles/4993992/show).
+Likely a result of header "overlapping" the category sidebar. [Learn how to fix it here.](http://help.goodshuffle.com/en/articles/4993992-why-can-t-i-see-all-my-categories-on-mobile-devices).
 
 ## How do I disable body scroll locking?
 Add `disable-body-scroll-lock="true"` to your [`<gspro-wishlist-config>`]({{< relref "../components/wishlist-config.md#disable-body-scroll-lock" >}}) element.
