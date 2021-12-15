@@ -7,7 +7,7 @@ weight: 10
 
 ## Overview
 
-Usage of this element **requires** a Wishlist of version **0.5.2** or greater.
+Usage of this element **requires** a Wishlist of version **0.5.0** or greater.
 
 This component is used to change certain settings that affect the Wishlist, or every component of the Wishlist.
 
@@ -70,6 +70,7 @@ This following example shows how to attach multiple options to a single element.
 * The default value for this attribute is `false`.
 
 ### **`disable-time-selection`**
+**`added in v0.5.2`**
 
 ```
 <gspro-wishlist-config 
@@ -87,6 +88,7 @@ This following example shows how to attach multiple options to a single element.
 * The default value for this attribute is `false`.
 
 ### **`notes-help-text`**
+**`added in v0.5.2`**
 
 ```
 <gspro-wishlist-config 
@@ -104,6 +106,7 @@ This following example shows how to attach multiple options to a single element.
 * By default, there will be no text under the Notes field.
 
 ### **`require-phone-number`**
+**`added in v0.5.2`**
 
 ```
 <gspro-wishlist-config 
@@ -117,6 +120,7 @@ This following example shows how to attach multiple options to a single element.
 * The default value for this attribute is `false`.
 
 ### **`show-quantity-on-card`/`show-quantity-on-detail`**
+**`added in v0.5.2`**
 
 ```
 <gspro-wishlist-config 
