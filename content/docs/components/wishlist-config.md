@@ -7,7 +7,7 @@ weight: 10
 
 ## Overview
 
-Usage of this element **requires** a Wishlist of version **0.5.0** or greater.
+Usage of this element **requires** a Wishlist of version **0.5.2** or greater.
 
 This component is used to change certain settings that affect the Wishlist, or every component of the Wishlist.
 
