@@ -64,51 +64,52 @@ Here's another example that limits items to ones with the tags "featured" and "s
 
 ## Attributes
 
-### category
+### **`category`**
 
 The default category of items to display. Will be overriden by searching or picking a category.
 
-### group
+### **`group`**
 
 Note: When using the group flag for a `<gspro-item-gallery>`, you **MUST** also have the appropriate parent category. 
 Not doing so will interfere with the filtering of the component. 
 
 The default subcategory of items to display. Will be overriden by searching or picking a category.
 
-### tags
+### **`tags`**
 
 Display a list of items with the tag(s). Will be overriden by searching, filtering or picking a category.
 
 [Learn more about how to use tags]({{< relref "./item-list.md#tags" >}}).
 
-### search
+### **`search`**
 
 Display a list of items with the specified keywords by default. Will be overriden by searching or picking a category.
 
 [Learn more about how to use keywords]({{< relref "./item-list.md#search" >}}).
 
 
-### scope-category
+### **`scope-category`**
 
 Limit the displayed items to a root-level category in Goodshuffle Pro. Supports multiple categories separated by spaces.
 
-### scope-group
+### **`scope-group`**
 
 Limit the displayed items to a subcategory in Goodshuffle Pro. Supports multiple subcategories separated by spaces.
 
-### scope-search
+### **`scope-search`**
 
 Limit the displayed items to ones that match the given keywords.
 
 [Learn more about how to use keywords]({{< relref "./item-list.md#search" >}}).
 
-### scope-tags
+### **`scope-tags`**
 
 Limit the displayed items to ones with the given tags.
 
 [Learn more about how to use tags]({{< relref "./item-list.md#tags" >}}).
 
-### scope-attribute-#-name / scope-attribute-#-value
+### **`scope-attribute-#-name / scope-attribute-#-value`**
+**`added in v0.5.2`**
 
 Limit the displayed items to ones with the given attributes.
 
@@ -122,7 +123,8 @@ Example:
 
 [Learn more about attributes]({{< relref "./item-list.md#item-attribute-" >}}).
 
-### sort
+### **`sort`**
+**`added in v0.5.2`**
 
 **Usage of at least one `scope-attribute-#` with piped `scope-attribute-#-value` values is required to use sort.** 
 
@@ -138,14 +140,14 @@ We would then see all the items in the Washington warehouse, then all the items 
 
 [Learn more about sort]({{< relref "./item-list.md#sort-primary" >}}).
 
-### show-categories
+### **`show-categories`**
 
 Set to false to hide the category element and button to toggle it. Default to true.
 
-### show-filters
+### **`show-filters`**
 
 Set to false to hide the filter element and button to toggle it. Default to true.
 
-### size
+### **`size`**
 
 Limit the number of displayed items. Defaults to 15 items.
