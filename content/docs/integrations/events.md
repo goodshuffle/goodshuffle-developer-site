@@ -80,18 +80,18 @@ This will help you ensure that the same logic is being executed by both handlers
 Example (with alert):
 ```
 // define your handler function (in this case presenting an alert)
-function handleEvent(itemDetail) {
-    alert("You have added " + itemDetail.want + " quantity of " + itemDetail.title + " to your Wishlist!")
+function handleEvent(data) {
+    alert("You have added " + data.detail.want + " quantity of " + data.detail.title + " to your Wishlist!")
 }
 
 // add listener for adding to wishlist with "heart icon"
 document.addEventListener("gspro-item-card.add", function(data) {
-    handleEvent(data.detail)
+    handleEvent(data)
 })
 
 // add listener for adding to wishlist from expanded item detail view
 document.addEventListener("gspro-item-detail.add", function(data) {
-    handleEvent(data.detail)
+    handleEvent(data)
 })
 
 ```
