@@ -30,7 +30,7 @@ You can group items together in this way using [attribute filtering](https://hel
 By [changing the size attribute](https://help.goodshuffle.com/en/articles/4973497-how-do-i-change-how-many-items-appear-in-a-list-of-items).
 
 ## Can I change the order of items on my Wishlist?
-No, that's not a feature we offer at this time. [Learn more here.](https://help.goodshuffle.com/en/articles/4973549-can-i-change-the-order-of-items-on-my-wishlist)
+No, that's not a feature we offer at this time. 
 
 ## How does the Wishlist impact SEO (Search Engine Optimization)?
 
