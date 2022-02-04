@@ -46,7 +46,7 @@ You can access this by going to "Settings" &gt; "Advanced" &gt; "Code Injection"
 ></gspro-wishlist-config>
 ```
 
-*Previous versions of the Wishlist also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Wishlist  you can safely ignore the footer setup.*
+*Previous versions of the Wishlist also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Wishlist you can safely ignore the footer setup.*
 
 ### Create a Gallery Page
 
