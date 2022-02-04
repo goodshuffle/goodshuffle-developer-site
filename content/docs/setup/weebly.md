@@ -37,8 +37,9 @@ You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAcc
 #### Add Custom Header Code
 1. Go to your Weebly Site Editor
 2. Click the button that says "Settings" on the top toolbar
-3. Scroll down to the section labelled "Header Code"
-4. Paste the following snippet into that box
+3. Click on the tab marked "SEO" on the left side of the screen
+4. Scroll down to the section labelled "Header Code"
+5. Paste the following snippet into that box
 
 **PLEASE NOTE! You need to replace the text YOUR-PUBLIC-WEBSITE-KEY below with your Public Browser Key from Goodshuffle Pro (retrieved in the Activation step above).**
 
@@ -50,7 +51,7 @@ You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAcc
 ></gspro-wishlist-config>
 ```
 
-*Previous versions of the Wishlist also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Wishlist  you can safely ignore the footer setup.*
+*Previous versions of the Wishlist also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Wishlist you can safely ignore the footer setup.*
 
 ### Create a Gallery Page
 
