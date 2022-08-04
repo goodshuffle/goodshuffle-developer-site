@@ -1,6 +1,7 @@
 ---
 weight: 10
 title: Weebly Setup
+bookHidden: true
 ---
 
 # Weebly Setup
