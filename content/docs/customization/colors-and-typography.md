@@ -27,7 +27,6 @@ To learn about adding CSS to your site, the following resources will be of use:
  - [Squarespace](https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor) 
  - [Wordpress](https://wordpress.com/support/editing-css/)
  - [Showit](https://learn.showit.co/en/articles/905069-blog-formatting-with-css-advanced)
- - [Weebly](https://www.weebly.com/websites/code-editor)
 
 ```
 /* search button */
