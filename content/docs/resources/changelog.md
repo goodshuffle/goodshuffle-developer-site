@@ -5,6 +5,12 @@ weight: 1
 
 # Changelog
 
+## [0.5.3] - 2022-11-15
+
+- Added support for [dynamically changing list and gallery properties]({{< relref "../integrations/listeners.md#listeners" >}})
+- Improved validation for email addresses
+- Improved handling timezones in a specific use case involving Daylight Savings Time
+
 ## [0.5.2] - 2021-12-1
 
 - Added support for [sorting gspro-item-gallery]({{< relref "../components/item-gallery/#sort" >}}) by attributes
