@@ -5,7 +5,15 @@ weight: 1
 
 # Changelog
 
-## [0.5.2] - 2021-12-1
+## [0.5.3] - 2022-12-06
+
+
+- Added support for [dynamically changing list and gallery properties]({{< relref "../integrations/listeners.md#listeners" >}})
+- Improved validation for email addresses
+- Improved handling timezones in a specific use case involving Daylight Savings Time
+- Prevent individual pool items from appearing in lists or galleries
+
+## [0.5.2] - 2021-12-01
 
 - Added support for [sorting gspro-item-gallery]({{< relref "../components/item-gallery/#sort" >}}) by attributes
 - Significantly expanded options provided with the `gspro-wishlist-config` element
