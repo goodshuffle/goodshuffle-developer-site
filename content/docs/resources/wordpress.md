@@ -7,10 +7,11 @@ weight: 90
 
 ## Current Version
 
-- [0.5.2](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.2.zip) (October 15, 2021)
+- [0.5.3](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.3.zip) (October 15, 2021)
 
 ## Previous Versions
 
+- [0.5.2](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.2.zip) (October 15, 2021)
 - [0.5.1](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.1.zip) (July 13, 2021)
 - [0.5.0](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.0.zip) (June 10, 2021)
 - [0.4.4](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.4.4.zip) (February 11, 2021)
