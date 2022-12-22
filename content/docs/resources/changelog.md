@@ -5,8 +5,11 @@ weight: 1
 
 # Changelog
 
-## [0.5.3] - 2022-12-06
+## [0.5.4] - 2022-12-22
 
+- Fixed an edge case bug where search results did not properly filter when using `scope-category` or `scope-group`
+
+## [0.5.3] - 2022-12-06
 
 - Added support for [dynamically changing list and gallery properties]({{< relref "../integrations/listeners.md#listeners" >}})
 - Improved validation for email addresses
