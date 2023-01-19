@@ -19,9 +19,9 @@ The default styles provided by our web components attempt to be as minimially sp
 
 ## Starting Out
 
-A good way to start customizing your Wishlist theming/branding is by pasting this whole block of CSS inside the appropriate place on your site. Next, use a [color picker](https://www.w3schools.com/colors/colors_picker.asp) to get the perfect colors for your site's look, and replace the placeholder colors with the ones you picked out.
+A good way to start customizing your Website Integration theming/branding is by pasting this whole block of CSS inside the appropriate place on your site. Next, use a [color picker](https://www.w3schools.com/colors/colors_picker.asp) to get the perfect colors for your site's look, and replace the placeholder colors with the ones you picked out.
 
-Customizing the Wishlist font is also detailed below, and is a great way to make your Wishlist even more unique.
+Customizing the Website Integration font is also detailed below, and is a great way to make your integration even more unique.
 
 To learn about adding CSS to your site, the following resources will be of use:
  - [Squarespace](https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor) 

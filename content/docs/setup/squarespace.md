@@ -17,7 +17,7 @@ You will need...
 
 These are the high-level steps:
 
-1. Activate you Website Wishlist Integration.
+1. Activate you Website Integration.
 2. Add HTML code snippets to your site's header.
 3. Add custom CSS to your site's design.
 4. Create a page for the basic gallery and embed an HTML code snippet.
@@ -46,7 +46,7 @@ You can access this by going to "Settings" &gt; "Advanced" &gt; "Code Injection"
 ></gspro-wishlist-config>
 ```
 
-*Previous versions of the Wishlist also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Wishlist you can safely ignore the footer setup.*
+*Previous versions of the Website Integration also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Website Integration you can safely ignore the footer setup.*
 
 ### Create a Gallery Page
 

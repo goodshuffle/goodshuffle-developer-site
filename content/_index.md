@@ -5,7 +5,7 @@ type: docs
 
 # Hello!
 
-This site contains technical reference material for developers that use Goodshuffle's services or software libraries. Currently, this site provides resources to help you with our Website Wishlist Integration product.
+This site contains technical reference material for developers that use Goodshuffle's services or software libraries. Currently, this site provides resources to help you with our Website Integration product.
 
 _Please Note: This is a preview release of our documentation. Send us your questions and feedback using the blue chat bubble on Goodshuffle Pro._
 

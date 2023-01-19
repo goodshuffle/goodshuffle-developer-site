@@ -29,12 +29,12 @@ You can group items together in this way using [attribute filtering](https://hel
 ## How do I change how many items appear in a list of items?
 By [changing the size attribute](https://help.goodshuffle.com/en/articles/4973497-how-do-i-change-how-many-items-appear-in-a-list-of-items).
 
-## Can I change the order of items on my Wishlist?
+## Can I change the order of items on my Website Integration?
 No, that's not a feature we offer at this time. 
 
-## How does the Wishlist impact SEO (Search Engine Optimization)?
+## How does the Website Integration impact SEO (Search Engine Optimization)?
 
-Version 0.4.3 of the Wishlist plugin introduced [many improvements](https://help.goodshuffle.com/en/articles/4973565-how-does-the-wishlist-impact-seo-search-engine-optimization) to Wishlist SEO.
+Version 0.4.3 of the Website Integration plugin introduced [many improvements](https://help.goodshuffle.com/en/articles/4973565-how-does-the-wishlist-impact-seo-search-engine-optimization) to Website Integration SEO.
 
 ## Can I customize the wishlist icon?
 Yes, we have a [walk-through and some video tutorials](https://help.goodshuffle.com/en/articles/4973593-can-i-customize-the-wishlist-icon) for that!
@@ -43,7 +43,7 @@ Yes, we have a [walk-through and some video tutorials](https://help.goodshuffle.
 Not currently, [learn more here](https://help.goodshuffle.com/en/articles/4973615-do-you-have-preset-templates-for-designs-that-i-can-use)
 
 ## Can I customize the text or labels?
-You can [customize the name of your Wishlist "Cart"](https://help.goodshuffle.com/en/articles/4973617-can-i-customize-the-text-or-labels) that site visitors see when checking out.
+You can [customize the name of your wishlist "Cart"](https://help.goodshuffle.com/en/articles/4973617-can-i-customize-the-text-or-labels) that site visitors see when checking out.
 
 All other labels/text are not customizeable at this time.
 
@@ -57,10 +57,10 @@ On a high level, if you want to show the search bar, use a `<gspro-item-gallery>
 
 [Learn more here](https://help.goodshuffle.com/en/articles/4973625-how-do-i-show-hide-the-search-bar-and-categories)
 
-## Does your website wishlist use cookies?
-No. We store website wishlist data using a technology called “Local Storage”. [Learn more here](https://help.goodshuffle.com/en/articles/4973627-does-your-website-wishlist-use-cookies).
+## Does your Website Integration use cookies?
+No. We store Website Integration data using a technology called “Local Storage”. [Learn more here](https://help.goodshuffle.com/en/articles/4973627-does-your-website-wishlist-use-cookies).
 
-## Does your website wishlist store my inventory data on my server?
+## Does your Website Integration store my inventory data on my server?
 No. Data is retrieved from Goodshuffle Pro on demand, although it is cached to improve performance.
 
 ## Do you support IE11?

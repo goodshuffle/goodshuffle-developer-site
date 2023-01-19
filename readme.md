@@ -1,6 +1,6 @@
 # About this Project
 
-We use this project to manage technical documentation for the Goodshuffle wishlist.
+We use this project to manage technical documentation for the Goodshuffle Website Integration.
 
 ## Setup
 

@@ -5,6 +5,10 @@ weight: 1
 
 # Changelog
 
+### [0.5.5] - 2023-1-19
+
+- Added ability to show packages with by contents pricing on Website Integration Pages
+
 ## [0.5.4] - 2022-12-22
 
 - Fixed an edge case bug where search results did not properly filter when using `scope-category` or `scope-group`
@@ -27,14 +31,14 @@ weight: 1
 
 ## [0.5.1] - 2021-07-13
 
-- Fixed a rare bug resulting in duplicate Wishlist submissions
+- Fixed a rare bug resulting in duplicate wishlist submissions
 - Added a new event emitter, [`gspro-wishlist.submit-complete`]({{< relref "../integrations/events.md#submit-complete" >}})
 
 ## [0.5.0] - 2021-06-10
 
 - Added behavior to prevent background page scrolling when an item detail popup is open 
     - To disable this functionality, [look here]({{< relref "../customization/troubleshooting.md#how-do-i-disable-body-scroll-locking" >}})
-- Improved look and performance of Wishlist components on certain site builders
+- Improved look and performance of Website Integration components on certain site builders
 - Simplified installation process
 
 ## [0.4.4] - 2021-02-11
@@ -44,13 +48,13 @@ weight: 1
 
 ## [0.4.3] - 2021-01-07
 
-- Added event emitters to key wishlist events. See [this page]({{< relref "../integrations/events.md" >}}) on usage.
+- Added event emitters to key Website Integration events. See [this page]({{< relref "../integrations/events.md" >}}) on usage.
 - Improved SEO optimization. See [this FAQ]({{< relref "../customization/faq/#how-does-the-wishlist-impact-seo-search-engine-optimization" >}}) for more information.
 
 ## [0.4.2] - 2020-10-14
 
 - `gspro-item-list` now supports filtering on custom attributes. See our [developer docs]({{< relref "../components/item-list.md#item-attribute-" >}}) for usage.
-- Clicking on an item in a `gspro-item-gallery` or `gspro-item-list` will now update the canonical url, title and meta description of a Wishlist integrated site
+- Clicking on an item in a `gspro-item-gallery` or `gspro-item-list` will now update the canonical url, title and meta description of a Website Integration integrated site
 
 ## [0.4.1] - 2020-09-16
 
