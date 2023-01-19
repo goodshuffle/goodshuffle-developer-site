@@ -5,19 +5,19 @@ weight: 30
 
 # Events
 
-Using event emitters requires Wishlist version 0.4.3 or later.
+Using event emitters requires Website Integration version 0.4.3 or later.
 
-Goodshuffle Wishlist leverages [HTML DOM events](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events)
-to allow you to integrate a wide variety of services into your Wishlist components.
+Goodshuffle Website Integration leverages [HTML DOM events](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events)
+to allow you to integrate a wide variety of services into your Website Integration components.
 
-Capturing Wishlist events requires a basic knowledge of Javascript, and the ability to add custom Javascript to your website.
+Capturing Website Integration events requires a basic knowledge of Javascript, and the ability to add custom Javascript to your website.
 
-The most common use case for Wishlist events is reporting to Google Analytics. Other common use cases are displaying custom dialogs/modals or integrating with an ad service provider.
+The most common use case for Website Integration events is reporting to Google Analytics. Other common use cases are displaying custom dialogs/modals or integrating with an ad service provider.
 
-Wishlist events come with relevant data to empower your custom logic, add specificity to your analytics, and personalize your custom messages.
+Website Integration events come with relevant data to empower your custom logic, add specificity to your analytics, and personalize your custom messages.
 This data is accessed with `data.detail` for every event. The specific structure of the `data.detail` payload is detailed below for each event.
 
-Note: some examples below demonstrate reporting to Google Analytics. To report event data from your Wishlist to Google Analytics requires [setting up Google Analytics first](https://developers.google.com/analytics/devguides/collection/analyticsjs).
+Note: some examples below demonstrate reporting to Google Analytics. To report event data from your Website Integration to Google Analytics requires [setting up Google Analytics first](https://developers.google.com/analytics/devguides/collection/analyticsjs).
 
 ## Event Types
 
@@ -36,14 +36,14 @@ document.addEventListener("gspro-item-card.click", function(data) {
     var itemName = data.detail.title;
     // report the event to Google Analytics
     gtag('event', 'Click', {
-        'event_category': 'Wishlist',
-        'event_label': 'Wishlist Card Click',
+        'event_category': 'Goodshuffle Website Integration',
+        'event_label': 'Item Card Click',
         'value': itemName
     });
 })
 ```
 
-In this example, an event listener is being attached to the item card click. When the user clicks to expand an item card, the analytics category (Wishlist), event action (Item Card Click), and a label (the clicked item's name) are all being reported to Google Analytics.
+In this example, an event listener is being attached to the item card click. When the user clicks to expand an item card, the analytics category (Goodshuffle Website Integration), event label (Item Card Click), and data (the clicked item's name) are all being reported to Google Analytics.
 
 `data.detail` object for `gspro-item-card.click`:
 ```
@@ -70,7 +70,7 @@ In this example, an event listener is being attached to the item card click. Whe
 
 This event occurs when the user clicks the "Add to Wishlist" icon (represented by a heart) on a `<gspro-item-card>` inside.
 The user can also add items to their wishlist from inside the expanded item detail view and clicks the "Send to Wishlist" button.
-These are distinct events from a Wishlist perspective, but correspond to the same event for tracking purposes.
+These are distinct events from a Website Integration perspective, but correspond to the same event for tracking purposes.
 
 The two events that correspond to adding to wishlist are `gspro-item-card.add` and `gspro-item-detail.add`.
 You will want to capture **BOTH** of these events when targetting the "Add to Wishlist" functionality.
@@ -96,11 +96,11 @@ document.addEventListener("gspro-item-detail.add", function(data) {
 
 ```
 
-The `data.detail` object of this event is the exact same as the one detailed in the Item Card Click section. You have access to all of the same data that you do for the "gspro-item-card.click" event.
+The `data.detail` object of this event is the exact same as the one detailed in the Item Card Click section. You have access to all the same data that you do for the "gspro-item-card.click" event.
 
 ### Submit Wishlist
 
-This event occurs when a user submits a Wishlist request after filling in their venue and contact information.
+This event occurs when a user submits a wishlist request after filling in their venue and contact information.
 You can capture this event by targeting the `gspro-wishlist.submit` event. 
 
 This event happens *immediately* after the submit button is clicked. 
@@ -157,9 +157,9 @@ wishlist: // array of objects representing the "cart" of the Wishlist
 
 ### Submit Complete
 
-Usage of this event **requires** a Wishlist version of **0.5.1** or greater.
+Usage of this event **requires** a Website Integration version of **0.5.1** or greater.
 
-This event happens when the API responds successfully, indicating that the Wishlist has been received and processed.
+This event happens when the API responds successfully, indicating that the wishlist has been received and processed.
 You might use this event to redirect to a thank-you page, or open a modal instructing your users on what to expect next.
 
 You can capture this event by targeting the `gspro-wishlist.submit-complete` event.

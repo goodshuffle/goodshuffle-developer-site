@@ -10,14 +10,14 @@ title: WordPress Setup
 You will need...
 
 - WordPress version 5 or better.
-- An active "Website Wishlist" subscription on Goodshuffle Pro.
+- An active "Website Integration" subscription on Goodshuffle Pro.
 
 ## Overview
 
 These are the high-level steps:
 
-1. [Download the WordPress plugin](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.4.zip).
-1. Activate your Website Wishlist integration.
+1. [Download the WordPress plugin](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.5.zip).
+1. Activate your Website Integration.
 1. Upload the plugin to your site.
 1. Configure the plugin to use you public web key.
 1. Create a page to display a basic gallery.
@@ -49,7 +49,7 @@ You should now see “Goodshuffle Embedded Catalog” in your list of plugins.
 1. Click the "Settings" link beneath "Goodshuffle Embedded Catalog".
 1. Enter the "Web Key" that you obtained earlier.
 1. Set "Display Inventory on Page" with the slug of the page you want to display your inventory. Using the name "goodshuffle" is good for testing and evaluation purposes. You will be able to change it later.
-1. Leave the "Default Category" blank for now and the "Display wishlist on all pages blank for now."
+1. Leave the "Default Category" blank for now and check the box marked "Display wishlist on all pages".
 1. Press the "Update Options" button to save your changes.
 
 You should now be able to add a basic gallery to display your inventory.

@@ -5,10 +5,10 @@ weight: 30
 
 # Listeners
 
-Use of this functionality **requires** a Wishlist version of **0.5.3** or greater.
+Use of this functionality **requires** a Website Integration version of **0.5.3** or greater.
 
 You are able to dynamically update the content of a `gspro-item-list` or `gspro-item-gallery` by using Javascript.
-This extends the functionality of the Wishlist's inherent category, search, and attribute selection and provides the opportunity to build more complicated user interfaces on your site, or allow your clients to choose between a smaller subset of options than provided by the standard gallery.
+This extends the functionality of the Website Integration's inherent category, search, and attribute selection and provides the opportunity to build more complicated user interfaces on your site, or allow your clients to choose between a smaller subset of options than provided by the standard gallery.
 
 Usage of this functionality requires knowledge of Javascript, and the ability to add custom Javascript to your website.
 

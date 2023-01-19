@@ -12,17 +12,17 @@ You will need...
 1. A Showit subscription (basic tier is sufficient)
 2. Access to the Showit site dashboard
 3. The ability to copy and paste code snippets
-4. Your Goodshuffle Website Wishlist Integration public browser key
+4. Your Goodshuffle Website Integration public browser key
 
 ## Overview
 
 These are the high-level steps:
 
-1. Activate you Website Wishlist Integration.
+1. Activate you Website Integration.
 2. Add HTML code snippets to your page's header.
 3. Create a page for the basic gallery and embed an HTML code snippet.
 
-This document will guide you through setting up a basic Wishlist on a Showit site, but more customization will likely be desired. This customization is intuitive thanks to Showit's easy to use drag-and-drop interface.
+This document will guide you through setting up a basic Website Integration on a Showit site, but more customization will likely be desired. This customization is intuitive thanks to Showit's easy to use drag-and-drop interface.
 
 We encourage you to experiment with personalizing your site after running through these basic setup instructions.
 
@@ -50,8 +50,8 @@ To inject code in your page header, you will need to inject code into your site'
 7. Double click on the black box that appears on the header
 8. Paste the below code snippet into the box:
 ```
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.4/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.4/dist/gspro-wc/gspro-wc.js"></script>
+<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.5/dist/gspro-wc/gspro-wc.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.5/dist/gspro-wc/gspro-wc.js"></script>
 <gspro-wishlist-config
     data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
 ></gspro-wishlist-config>
@@ -60,10 +60,10 @@ To inject code in your page header, you will need to inject code into your site'
 **PLEASE NOTE! You need to replace the text YOUR-PUBLIC-WEBSITE-KEY below with your Public Browser Key from Goodshuffle Pro (retrieved in the Activation step above).**
 
 9. Click Save
-10. Your Wishlist is now installed on your site
+10. Your Website Integration is now installed on your site
 11. Proceed to the next section
 
-*Previous versions of the Wishlist also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Wishlist you can safely ignore the footer setup.*
+*Previous versions of the Website Integration also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Website Integration you can safely ignore the footer setup.*
 
 
 ### Add a Gallery to the Page
