@@ -16,7 +16,7 @@ You will need...
 
 These are the high-level steps:
 
-1. [Download the WordPress plugin](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.4.zip).
+1. [Download the WordPress plugin](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.5.zip).
 1. Activate your Website Integration.
 1. Upload the plugin to your site.
 1. Configure the plugin to use you public web key.

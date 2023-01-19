@@ -50,8 +50,8 @@ To inject code in your page header, you will need to inject code into your site'
 7. Double click on the black box that appears on the header
 8. Paste the below code snippet into the box:
 ```
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.4/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.4/dist/gspro-wc/gspro-wc.js"></script>
+<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.5/dist/gspro-wc/gspro-wc.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.5/dist/gspro-wc/gspro-wc.js"></script>
 <gspro-wishlist-config
     data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
 ></gspro-wishlist-config>
