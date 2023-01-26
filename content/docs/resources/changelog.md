@@ -5,7 +5,7 @@ weight: 1
 
 # Changelog
 
-### [0.5.5] - 2023-1-19
+## [0.5.5] - 2023-01-19
 
 - Added ability to show packages with by contents pricing on Website Integration Pages
 
