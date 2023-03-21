@@ -5,6 +5,10 @@ weight: 1
 
 # Changelog
 
+## [0.5.6] - 2023-03-21
+
+- Fix bug preventing certain icons from properly rendering in Safari
+
 ## [0.5.5] - 2023-01-19
 
 - Added ability to show packages with by contents pricing on Website Integration Pages
