@@ -34,7 +34,7 @@ You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAcc
 
 ### Inject in Site Header
 
-You can access this by going to "Settings" &gt; "Developer Tools" &gt; "Code Injection"
+You can access this by going to "Website" &gt; "Website Tools" &gt; "Code Injection"
 
 **PLEASE NOTE! You need to replace the text YOUR-PUBLIC-WEBSITE-KEY below with your Public Browser Key from Goodshuffle Pro (retrieved in the Activation step above).**
 
