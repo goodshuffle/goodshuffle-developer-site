@@ -9,8 +9,6 @@ weight: 10
 
 An Item List is used to display inventory when you do not want a search bar. If you want the search bar, read the directions for an [Item Gallery]({{< relref "/docs/components/item-gallery" >}}).
 
-[See an example item list here!](https://dz8.goodshuffle.dev/list)
-
 A code snippet example for a basic Item List with the most popular way to pull inventory (via tags):
 
 ```
