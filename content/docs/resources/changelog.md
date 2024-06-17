@@ -8,6 +8,7 @@ weight: 1
 ## [0.5.7] - 2024-06-17
 
 - Fix bug affecting items marked 'not visible' appearing in certain cases
+- Attributes in item detail are now sorted alphabetically
 
 ## [0.5.6] - 2023-03-21
 
