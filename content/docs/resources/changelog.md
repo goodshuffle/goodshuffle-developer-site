@@ -5,6 +5,10 @@ weight: 1
 
 # Changelog
 
+## [0.5.7] - 2024-06-17
+
+- Fix bug affecting items marked 'not visible' appearing in certain cases
+
 ## [0.5.6] - 2023-03-21
 
 - Fix bug preventing certain icons from properly rendering in Safari
