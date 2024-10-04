@@ -5,6 +5,10 @@ weight: 1
 
 # Changelog
 
+## [0.5.8] - 2024-10-03
+
+- Support for Wix websites
+
 ## [0.5.7] - 2024-06-17
 
 - Fix bug affecting items marked 'not visible' appearing in certain cases
