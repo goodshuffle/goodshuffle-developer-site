@@ -84,6 +84,8 @@ Attributes (if using `gspro-item-list`):
 - Name: `tags` or `category` (Note - this can change depending on what you'd like listed)
 - Value: a tag or category of your choosing.
 
+#### Note: If you need help figuring out what value to provide for your desired category reference [this doc](https://help.goodshuffle.com/en/articles/5274417-how-do-i-find-the-code-for-my-item-categories-to-display-a-category-on-a-web-page).
+
 ## All Set!
 
 You should now have a basic page that displays a list of relevant categories/subcategories and your inventory.
