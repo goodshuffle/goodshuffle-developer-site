@@ -144,7 +144,6 @@ Limit the displayed items to ones with the given tags.
 [Learn more about how to use tags]({{< relref "./item-list.md#tags" >}}).
 
 ### **`scope-attribute-#-name / scope-attribute-#-value`**
-**`added in v0.5.2`**
 
 Limit the displayed items to ones with the given attributes. Use `1`, `2` and `3` for up to three attributes.
 
@@ -159,7 +158,6 @@ Example:
 [Learn more about attributes]({{< relref "./item-list.md#item-attribute-" >}}).
 
 ### **`sort`**
-**`added in v0.5.2`**
 
 **Usage of at least one `scope-attribute-#` with piped `scope-attribute-#-value` values is required to use sort.** 
 
