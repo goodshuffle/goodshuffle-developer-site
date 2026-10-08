@@ -28,10 +28,10 @@ You will need:
 4. Create the gallery page.
 5. Send a test quote request.
 
-Already using the plugin? Update it to the version above. Your settings carry over. See
+If your site already has the plugin, update it to the version above. Your settings carry over. See
 [Updating the plugin](#updating-the-plugin).
 
-## Walk-Through
+## Walk-through
 
 ### 1. Copy your Public Browser Key
 
@@ -113,8 +113,19 @@ The settings page has these fields. Each one maps to an attribute on the Website
 The gallery settings apply to the gallery page only. The wishlist settings apply across your site.
 
 **Advanced Settings** hold Data Source, Icon URL, Modern JS and Legacy JS. They show below the main settings when you
-open `/wp-admin/options-general.php?page=gspro-gallery&advanced=1` on your site. Leave them empty. An empty field
-uses the plugin's built-in address.
+open `/wp-admin/options-general.php?page=gspro-gallery&advanced=1` on your site. Every field shows an address even if
+nobody has changed it: when nothing is saved, the field shows the plugin's built-in address. To tell a custom address
+from the default, compare each field with this table.
+
+| Field | Built-in address |
+| --- | --- |
+| Data Source | `https://data.goodshuffle.com/vendor` |
+| Icon URL | Your site's address followed by `/wp-content/plugins/gspro-gallery/public/img/icons.svg` |
+| Modern JS | To be filled in when GSPRO-31872 ships: the loader address the plugin uses by default |
+| Legacy JS | To be filled in when GSPRO-31872 ships: the loader address the plugin uses by default |
+
+A field that matches the table uses the default. To put a field back to its default, clear it and click **Save
+Advanced Options**. The plugin deletes the saved address and shows the built-in one again.
 
 ## Shortcodes
 
@@ -144,9 +155,14 @@ plugin already adds setup and item detail to every page.
    that don't offer this, first deactivate and delete the old plugin in **Plugins**, then upload the new one. Deleting
    the plugin keeps its settings.
 4. Open the settings page and check your key is still there.
+5. Open Advanced Settings (`/wp-admin/options-general.php?page=gspro-gallery&advanced=1`) and look at **Modern JS** and
+   **Legacy JS**.
 
-If your Advanced Settings have a **Modern JS** or **Legacy JS** address, the plugin loads that address instead of the
-current Website Integration. Empty both fields and click **Save Advanced Options**, unless someone set them on purpose.
+An address with `@goodshuffle/gspro-wc` in it loads version 0.5.x. Older versions of the plugin show their built-in
+0.5.x address in these fields, and clicking **Save Advanced Options** on them saved that address. A saved address
+keeps loading, so the site stays on 0.5.x after the update. Clear both fields and click **Save Advanced Options**,
+unless someone set them on purpose. Both fields then show the built-in address from the table in
+[Every setting](#every-setting).
 
 ## Common changes
 
@@ -162,6 +178,7 @@ current Website Integration. Empty both fields and click **Save Advanced Options
 - **The gallery shows but no items load.** Check the Public Browser Key. If someone regenerated it in Goodshuffle Pro,
   paste the new one and click Update Options.
 - **No wishlist button on other pages.** Tick Wishlist ("Display wishlist on all pages").
-- **A shortcode shows as plain text.** Update the plugin. Older versions didn't register `[gspro-item-list]`.
+- **A shortcode shows as plain text.** Update the plugin. In older versions, `[gspro-item-list]` pointed at
+  code that doesn't exist, so WordPress printed the shortcode as text.
 
 See also [Getting Started]({{< relref "/docs/setup" >}}) and [Troubleshooting]({{< relref "/docs/customization/troubleshooting" >}}).

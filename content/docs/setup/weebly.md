@@ -22,7 +22,7 @@ These are the high-level steps:
 2. Add HTML code snippets to your site's header.
 3. Create a page for the basic gallery and embed an HTML code snippet.
 
-## Walk-Through
+## Walk-through
 
 ### Activation
 
@@ -53,7 +53,7 @@ You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAcc
 > **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
 > filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing.
 
-Already set up on version 0.5.x? Replace your two script tags with the one above. See
+If your site is on version 0.5.x, replace your two script tags with the one above. See
 [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
 
 No footer code is needed. Older tutorials that mention a footer can be ignored.

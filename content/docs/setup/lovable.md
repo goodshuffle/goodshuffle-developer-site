@@ -23,10 +23,10 @@ You will need:
 3. Add the gallery to a page.
 4. Publish, then send a test quote request.
 
-Already set up on version 0.5.x? Replace the two script tags in `index.html`. See
+If your app is on version 0.5.x, replace the two script tags in `index.html`. See
 [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
 
-## Walk-Through
+## Walk-through
 
 ### 1. Copy your Public Browser Key
 

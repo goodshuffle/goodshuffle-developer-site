@@ -20,10 +20,10 @@ You will need:
 3. Add a gallery to a page with a Code block.
 4. Send a test quote request.
 
-Already set up on version 0.5.x? You only need to replace your script tags. See
+If your site is on version 0.5.x, you only need to replace your script tags. See
 [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
 
-## Walk-Through
+## Walk-through
 
 ### 1. Copy your Public Browser Key
 

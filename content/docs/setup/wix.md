@@ -23,8 +23,8 @@ You will need:
 3. Add a gallery Custom Element to a page.
 4. Send a test quote request.
 
-Already set up on version 0.5.x? Open each Goodshuffle Custom Element and replace its Server URL with the one below.
-Nothing else changes. See [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
+If your site is on version 0.5.x, open each Goodshuffle Custom Element and replace its Server URL with the one
+below. Nothing else changes. See [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
 
 ## The Server URL
 
@@ -40,7 +40,7 @@ https://EMBED_HOST/v1/loader.js
 Older instructions used an address ending in `/dist/custom-elements/index.js`. Don't use it for new setups: it loads
 version 0.5.x, which no longer gets fixes.
 
-## Walk-Through
+## Walk-through
 
 ### 1. Copy your Public Browser Key
 
@@ -109,7 +109,9 @@ In Goodshuffle Pro, the request appears as a new project under **Projects**, **F
 ## Things to know on Wix
 
 - **Attribute values are typed by hand.** On/off attributes turn off only with the lowercase word `false`. Any other
-  value turns them on, including `False`. To keep an option off, leave the attribute out.
+  value turns them on, including `False`. To keep an option at its default, leave the attribute out. Some options
+  default to on (`wishlist-show-on-all-pages`, `show-categories`, `show-filters`), so leaving those out keeps them on.
+  To turn one off, set it to `false`.
 - **One settings element.** Put `gspro-wishlist-config` in the header once. A second copy on a page is ignored.
 - **The videos.** Our earlier Wix videos ([header](https://www.youtube.com/watch?v=GsAs8J6mVUM),
   [listing items](https://www.youtube.com/watch?v=w9Spx86UCss)) show the steps, but with the old Server URL. Use the

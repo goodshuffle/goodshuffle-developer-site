@@ -23,10 +23,10 @@ You will need:
 3. Add a gallery to a page with a custom code element.
 4. Send a test quote request.
 
-Already set up on version 0.5.x? Replace the two script tags in your head tracking code. See
+If your site is on version 0.5.x, replace the two script tags in your head tracking code. See
 [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
 
-## Walk-Through
+## Walk-through
 
 ### 1. Copy your Public Browser Key
 

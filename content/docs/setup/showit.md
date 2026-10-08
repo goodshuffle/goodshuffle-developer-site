@@ -23,10 +23,10 @@ You will need:
 3. Add a gallery canvas to a page with a second Embed Code element.
 4. Send a test quote request.
 
-Already set up on version 0.5.x? Open the Embed Code element in your header canvas and replace the two script tags.
-See [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
+If your site is on version 0.5.x, open the Embed Code element in your header canvas and replace the two script
+tags. See [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
 
-## Walk-Through
+## Walk-through
 
 ### 1. Copy your Public Browser Key
 

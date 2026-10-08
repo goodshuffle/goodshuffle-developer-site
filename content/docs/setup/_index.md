@@ -18,7 +18,8 @@ Pick the guide for your site builder:
 | Lovable | [Lovable Setup]({{< relref "/docs/setup/lovable" >}}) |
 | Anything else that lets you edit your page's HTML | [Custom Website Setup]({{< relref "/docs/setup/custom-setup" >}}) |
 
-Already running the Website Integration from `unpkg.com`? See [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
+If your site loads the Website Integration from `unpkg.com`, it's on version 0.5.x. See
+[Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
 
 ## How every setup works
 

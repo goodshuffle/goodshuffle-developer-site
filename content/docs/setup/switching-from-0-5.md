@@ -61,7 +61,7 @@ Check these if your site has custom JavaScript.
 | `gspro-item-card.click`, `gspro-item-card.add` and `gspro-item-detail.add` fire when a client opens or adds an item | Not fired. Listeners for them stop running |
 | Each entry in an event's `detail.wishlist` is the whole item: category, tags, attributes and more | Each entry holds the item's ID, name, photo, price, quantity, price type and dates. See [Events]({{< relref "/docs/integrations/events" >}}) |
 | `gspro-wishlist.submit` fires on every click of Send List, even while a send is in progress | Fires once per send |
-| The two script tags | One tag, which loads the scripts and styles itself |
+| The two script tags | One tag. To be filled in when GSPRO-31872 ships: whether that tag also adds the styles, or a stylesheet tag goes with it |
 
 If you rely on any of the 0.5.x behavior above, contact us using the blue chat bubble in Goodshuffle Pro before you
 switch.

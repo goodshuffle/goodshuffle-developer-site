@@ -9,7 +9,7 @@ title: "Custom Website Setup"
 Use this guide for any site where you can edit the page's HTML. If your site is on Squarespace, WordPress, Wix,
 Showit, GoHighLevel or Lovable, use [that builder's guide]({{< relref "/docs/setup" >}}) instead.
 
-Already set up on version 0.5.x? See [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
+If your site is on version 0.5.x, see [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
 
 ## Step 1: Add the snippet
 
@@ -30,8 +30,10 @@ Pro account.**
 > **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
 > filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing.
 
-The script tag works with or without `type="module"`. You don't need a footer snippet or a separate stylesheet: the
-script adds the wishlist, item detail and styles to the page.
+You don't need a footer snippet. `<gspro-wishlist-config>` adds the wishlist and item detail to the page.
+
+> To be filled in when GSPRO-31872 ships: whether the script tag works both with and without `type="module"`, and
+> whether it adds the styles itself or needs a stylesheet tag next to it.
 
 ## Step 2: Test
 

@@ -21,7 +21,7 @@ Pick the guide for your site builder:
 - [Lovable]({{< relref "/docs/setup/lovable" >}})
 - [Any other website]({{< relref "/docs/setup/custom-setup" >}})
 
-## Already set up?
+## Switching from 0.5.x
 
 If your site loads the Website Integration from `unpkg.com`, [switch to the current version]({{< relref "/docs/setup/switching-from-0-5" >}}).
 It's one change to your site header, and after it your site gets every fix without another edit.
