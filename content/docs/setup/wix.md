@@ -35,7 +35,8 @@ https://EMBED_HOST/v1/loader.js
 ```
 
 > **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
-> filled in when GSPRO-31872 ships: the final address. Until then, this URL loads nothing.
+> filled in when GSPRO-31872 ships: the final address. Until then, this URL loads nothing. Also to be filled in
+> then: whether this URL adds the styles itself or Wix needs something more.
 
 Older instructions used an address ending in `/dist/custom-elements/index.js`. Don't use it for new setups: it loads
 version 0.5.x, which no longer gets fixes.
@@ -123,7 +124,8 @@ In Goodshuffle Pro, the request appears as a new project under **Projects**, **F
   in the header, and that you published.
 - **The gallery element is empty.** Check its Server URL and Tag Name, and that the settings element's `data-url` has
   your key.
-- **Items load in the Editor preview but not on your domain.** Inventory loads on the website address saved for your
-  brand in Goodshuffle Pro. Check that it matches your domain.
+- **Items don't load in the Editor preview.** Inventory loads on the website address saved for your brand in
+  Goodshuffle Pro. The Editor preview runs on another address, so the gallery may stay empty there. Test on your
+  published domain, and check that it matches the address saved in Goodshuffle Pro.
 
 See also [Getting Started]({{< relref "/docs/setup" >}}) and [Troubleshooting]({{< relref "/docs/customization/troubleshooting" >}}).

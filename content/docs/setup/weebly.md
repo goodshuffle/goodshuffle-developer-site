@@ -28,7 +28,7 @@ These are the high-level steps:
 
 If you'd prefer to follow along with a video tutorial, we have one [available here](https://www.youtube.com/watch?v=PGBM8f7CdOQ)!
 
-You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
+You can do this from the [Integration Tab](https://pro.goodshuffle.com/app/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
 
 ![Integration Tab](/wordpress-website-integration-activation.png)
 
@@ -51,7 +51,8 @@ You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAcc
 ```
 
 > **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
-> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing.
+> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing. Also to be filled in
+> then: whether this tag adds the styles itself or needs a stylesheet tag next to it.
 
 If your site is on version 0.5.x, replace your two script tags with the one above. See
 [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
@@ -78,4 +79,6 @@ Make sure to publish your changes!
 
 ## All Set!
 
-You should now have a basic page that displays a list of relevant categories/subcategories and your inventory.
+You should now have a gallery page that shows your categories. Items appear once a client picks a category or
+searches. To open the gallery on one category, give it a `category`. See
+[Item Gallery]({{< relref "/docs/components/item-gallery" >}}).
