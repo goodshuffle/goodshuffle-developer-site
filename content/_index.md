@@ -7,16 +7,21 @@ type: docs
 
 This site contains technical reference material for developers that use Goodshuffle's services or software libraries. Currently, this site provides resources to help you with our Website Integration product.
 
-_Please Note: This is a preview release of our documentation. Send us your questions and feedback using the blue chat bubble on Goodshuffle Pro._
+_Send us your questions and feedback using the blue chat bubble on Goodshuffle Pro._
 
-## For WordPress
+## Set up the Website Integration
 
-If you have a WordPress site, start by learning how to [install and configure the plugin]({{< relref "/docs/setup/wordpress" >}}).
+Pick the guide for your site builder:
 
-## For Squarespace
+- [Squarespace]({{< relref "/docs/setup/squarespace" >}})
+- [WordPress]({{< relref "/docs/setup/wordpress" >}})
+- [Wix]({{< relref "/docs/setup/wix" >}})
+- [Showit]({{< relref "/docs/setup/showit" >}})
+- [GoHighLevel]({{< relref "/docs/setup/gohighlevel" >}})
+- [Lovable]({{< relref "/docs/setup/lovable" >}})
+- [Any other website]({{< relref "/docs/setup/custom-setup" >}})
 
-If you have a Squarespace site, we have [detailed instructions]({{< relref "/docs/setup/squarespace" >}}) available too.
+## Already set up?
 
-## For Custom Websites
-
-If you have a custom-built site, we have [detailed instructions]({{< relref "/docs/setup/custom-setup" >}}) here.
+If your site loads the Website Integration from `unpkg.com`, [switch to the current version]({{< relref "/docs/setup/switching-from-0-5" >}}).
+It's one change to your site header, and after it your site gets every fix without another edit.
