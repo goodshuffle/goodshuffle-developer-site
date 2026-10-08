@@ -50,7 +50,7 @@ Origin = "Website". The sales lead set on the Integrations tab also gets an emai
 
 | What you see | Likely cause |
 | --- | --- |
-| Nothing at all, not even the wishlist button | The script tag is missing from this page, or the snippet still has `EMBED_HOST` in it |
+| Nothing at all, not even the wishlist button | The script tag is missing from this page, or was changed when it was pasted |
 | The wishlist button shows but no items load | The key is wrong or was regenerated. Copy it again from the Integrations tab |
 | Items load on your live site but not in your builder's preview | Inventory loads only on the website address saved for your brand in Goodshuffle Pro, plus a few builder preview addresses. Check your live, published site |
 | A gallery shows categories but no items | That's expected until the client picks a category or searches. Give the gallery a `category` to open on one |

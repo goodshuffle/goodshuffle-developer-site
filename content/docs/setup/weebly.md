@@ -20,8 +20,7 @@ These are the high-level steps:
 
 1. Activate your Website Integration.
 2. Add HTML code snippets to your site's header.
-3. Add custom CSS to your site's design.
-4. Create a page for the basic gallery and embed an HTML code snippet.
+3. Create a page for the basic gallery and embed an HTML code snippet.
 
 ## Walk-Through
 
@@ -45,14 +44,19 @@ You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAcc
 **PLEASE NOTE! You need to replace the text YOUR-PUBLIC-WEBSITE-KEY below with your Public Browser Key from Goodshuffle Pro (retrieved in the Activation step above).**
 
 ```
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.js"></script>
+<script src="https://EMBED_HOST/v1/loader.js"></script>
 <gspro-wishlist-config
     data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
 ></gspro-wishlist-config>
 ```
 
-*Previous versions of the Website Integration also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Website Integration you can safely ignore the footer setup.*
+> **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
+> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing.
+
+Already set up on version 0.5.x? Replace your two script tags with the one above. See
+[Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
+
+No footer code is needed. Older tutorials that mention a footer can be ignored.
 
 ### Create a Gallery Page
 

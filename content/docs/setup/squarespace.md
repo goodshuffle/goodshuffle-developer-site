@@ -7,56 +7,91 @@ title: Squarespace Setup
 
 ## Requirements
 
-You will need...
+You will need:
 
-- A Squarespace site with the business-level plan.
-- Administrative credentials.
-- The ability to copy and paste code-snippets.
+- A Squarespace plan that includes Code Injection.
+- Administrator access to the site.
+- An active Website Integration on your Goodshuffle Pro account.
 
 ## Overview
 
-These are the high-level steps:
+1. Copy your Public Browser Key from Goodshuffle Pro.
+2. Add the snippet to your site header with Code Injection.
+3. Add a gallery to a page with a Code block.
+4. Send a test quote request.
 
-1. Activate your Website Integration.
-2. Add HTML code snippets to your site's header.
-3. Add custom CSS to your site's design.
-4. Create a page for the basic gallery and embed an HTML code snippet.
-
-_If you prefer a narrated walk-through, checkout our [Squarespace Setup Youtube video](https://www.youtube.com/watch?v=9IjnZpx1UCo&feature=emb_title)._
+Already set up on version 0.5.x? You only need to replace your script tags. See
+[Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
 
 ## Walk-Through
 
-### Activation
+### 1. Copy your Public Browser Key
 
-You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
+In Goodshuffle Pro, open the [Integrations tab](https://pro.goodshuffle.com/app/vendorAccount/index?tab=thirdPartyIntegrations)
+and activate the Website Integration if it isn't active yet. **Copy the Public Browser Key.**
 
 ![Integration Tab](/wordpress-website-integration-activation.png)
 
-### Inject in Site Header
+### 2. Add the snippet to your site header
 
-You can access this by going to "Website" &gt; "Pages" &gt; "Website Tools" &gt; "Code Injection"
-
-**PLEASE NOTE! You need to replace the text YOUR-PUBLIC-WEBSITE-KEY below with your Public Browser Key from Goodshuffle Pro (retrieved in the Activation step above).**
+1. In Squarespace, go to **Website** > **Pages** > **Custom Code** > **Code Injection**.
+2. Paste this snippet into the **Header** box:
 
 ```
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.js"></script>
+<script src="https://EMBED_HOST/v1/loader.js"></script>
 <gspro-wishlist-config
     data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
 ></gspro-wishlist-config>
 ```
 
-*Previous versions of the Website Integration also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Website Integration you can safely ignore the footer setup.*
+> **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
+> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing.
 
-### Create a Gallery Page
+3. Replace `YOUR-PUBLIC-WEBSITE-KEY` with the key you copied. Leave the rest as is.
+4. Click **Save**.
 
-1. Create a page to display a basic gallery of items.
-2. Insert the following snippet in a `Code` block.
+Code Injection runs on every page, so the wishlist button now shows across your site.
+
+To change how the Website Integration behaves (rename the wishlist, require a phone number, hide time selection), add
+attributes to the `<gspro-wishlist-config>` tag here. See [Wishlist Config]({{< relref "/docs/components/wishlist-config" >}}).
+
+### 3. Add a gallery to a page
+
+1. Create a page for your inventory, for example "Rentals".
+2. Add a **Code** block to the page.
+3. Paste this into the block:
 
 ```
 <gspro-item-gallery></gspro-item-gallery>
 ```
 
-## All Set!
+4. Save and publish the page.
 
-You should now have a basic page that displays a list of relevant categories/subcategories and your inventory.
+The gallery shows a search bar, your categories and filters. Pick a category to see its items. To show a fixed set of
+items without the search bar, use [`<gspro-item-list>`]({{< relref "/docs/components/item-list" >}}) instead.
+
+### 4. Send a test quote request
+
+On your published site (not the editor preview):
+
+1. Open the gallery page and pick a category.
+2. Click the heart on an item to add it to the wishlist.
+3. Open the wishlist, choose dates, then **Contact & Venue Info**.
+4. Fill in your name and email, then **Send List**.
+
+In Goodshuffle Pro, the request appears as a new project under **Projects**, **Filters**, Origin = "Website".
+
+## Common changes
+
+- **Hide the venue fields.** In **Website** > **Pages** > **Custom Code** > **Custom CSS**, add
+  `.gspro-c-wishlist__venue { display: none !important; }`.
+- **Colors and fonts.** See [Colors and Typography]({{< relref "/docs/customization/colors-and-typography" >}}).
+
+## When it doesn't work
+
+- **No wishlist button anywhere.** Check that the snippet is in Code Injection and that you saved.
+- **The button shows but no items load.** Check the key. If someone regenerated it in Goodshuffle Pro, copy it again.
+- **Items load on a `squarespace.com` address but not on your own domain.** Inventory loads on the website address
+  saved for your brand in Goodshuffle Pro. Check that it matches your domain.
+
+See also [Getting Started]({{< relref "/docs/setup" >}}) and [Troubleshooting]({{< relref "/docs/customization/troubleshooting" >}}).

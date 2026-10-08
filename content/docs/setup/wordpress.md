@@ -5,69 +5,163 @@ title: WordPress Setup
 
 # WordPress Setup
 
+On WordPress, the Goodshuffle plugin adds the Website Integration to your site for you. You enter your key on its
+settings page, and it puts a gallery on the page you choose. Shortcodes add lists and single items anywhere else.
+
 ## Requirements
 
-You will need...
+You will need:
 
-- WordPress version 5 or better.
-- An active "Website Integration" subscription on Goodshuffle Pro.
+- WordPress 5 or later, and an administrator login.
+- An active Website Integration on your Goodshuffle Pro account.
+- The Goodshuffle Website Integration plugin.
+
+> To be filled in when GSPRO-31872 ships: the version number of the plugin that loads the current Website Integration,
+> and its download link. Until that release, the plugin download on the
+> [WordPress Plugin]({{< relref "/docs/resources/wordpress" >}}) page is version 0.5.7.
 
 ## Overview
 
-These are the high-level steps:
+1. Copy your Public Browser Key from Goodshuffle Pro.
+2. Install and activate the plugin.
+3. Enter your key and choose your gallery page on the plugin's settings page.
+4. Create the gallery page.
+5. Send a test quote request.
 
-1. [Download the WordPress plugin](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.7.zip).
-1. Activate your Website Integration.
-1. Upload the plugin to your site.
-1. Configure the plugin to use you public web key.
-1. Create a page to display a basic gallery.
+Already using the plugin? Update it to the version above. Your settings carry over. See
+[Updating the plugin](#updating-the-plugin).
 
-If you prefer a narrated walk-through, checkout our [WordPress Setup Youtube video](https://www.youtube.com/watch?v=gzxL2LPECr0).
+## Walk-Through
 
-## Detailed Walk-Through
+### 1. Copy your Public Browser Key
 
-### Activation
-
-You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
+In Goodshuffle Pro, open the [Integrations tab](https://pro.goodshuffle.com/app/vendorAccount/index?tab=thirdPartyIntegrations)
+and activate the Website Integration if it isn't active yet. **Copy the Public Browser Key.**
 
 ![Integration Tab](/wordpress-website-integration-activation.png)
 
-### Installation
+### 2. Install the plugin
 
-1. Sign into your WordPress site using an account that has administrative access.
-1. Select the “Plugins” item on the left sidebar.
-1. At the top of the main area, click the “Add New” button.
-1. At the top of the main area, click the “Upload Plugin” button.
-1. Click “Choose File” to locate and select the plugin you downloaded.
-1. Click “Install Now”.
-1. Click “Activate Plugin”.
+1. Download the plugin `.zip` file. Don't unzip it.
+2. In WordPress, go to **Plugins** > **Add New** > **Upload Plugin**.
+3. Choose the file and click **Install Now**.
+4. Click **Activate Plugin**.
 
-You should now see “Goodshuffle Embedded Catalog” in your list of plugins.
+"Goodshuffle Website Integration" now appears in your list of plugins.
 
-### Configuration
+### 3. Fill in the settings page
 
-1. Click the "Settings" link beneath "Goodshuffle Embedded Catalog".
-1. Enter the "Web Key" that you obtained earlier.
-1. Set "Display Inventory on Page" with the slug of the page you want to display your inventory. Using the name "goodshuffle" is good for testing and evaluation purposes. You will be able to change it later.
-1. Leave the "Default Category" blank for now and check the box marked "Display wishlist on all pages".
-1. Press the "Update Options" button to save your changes.
+Open the settings page from the **Settings** link under the plugin's name, or from **Settings** > **Goodshuffle**.
 
-You should now be able to add a basic gallery to display your inventory.
+1. **Public Browser Key**: paste the key you copied.
+2. **Display Gallery on Page**: the slug of the page that will show your gallery. `goodshuffle` is the default and is
+   fine for a first test. You can change it later.
+3. Tick **Show Categories** and **Show Filters**.
+4. Tick **Wishlist** ("Display wishlist on all pages") so the wishlist button shows across your site.
+5. Leave the other fields as they are for now.
+6. Click **Update Options**.
 
 ![Wordpress Settings](/wordpress-settings-screen.png)
 
-### Create a Basic Gallery
+The plugin now adds the Website Integration to the header of every page on your site.
 
-1. Select the “Pages” item on the left sidebar.
-1. Click “Add New” to create a new page.
-1. Enter a title for the page (e.g. Goodshuffle)
-1. Click Publish in the top right.
+### 4. Create the gallery page
 
-When you view that page, you should now see a basic gallery that includes category and subcategory filters.
+1. Go to **Pages** > **Add New**.
+2. Give the page a title whose slug matches **Display Gallery on Page**, for example "Goodshuffle" for `goodshuffle`.
+3. Publish the page.
 
-## Next Steps
-
-1. Apply your colors and typography to the web components.
-1. Learn how to use the `<gspro-item-list>` to create [customized lists]({{< relref "/docs/customization/colors-and-typography" >}}) of your items.
+The plugin puts the gallery above the page's own content. Anything you write on the page shows below the gallery.
 
 ![Basic Gallery](/wordpress-basic-gallery.png)
+
+### 5. Send a test quote request
+
+1. Open the gallery page and pick a category.
+2. Click the heart on an item to add it to the wishlist.
+3. Open the wishlist, choose dates, then **Contact & Venue Info**.
+4. Fill in your name and email, then **Send List**.
+
+In Goodshuffle Pro, the request appears as a new project under **Projects**, **Filters**, Origin = "Website".
+
+## Every setting
+
+The settings page has these fields. Each one maps to an attribute on the Website Integration's tags.
+
+| Setting | Default | Same as |
+| --- | --- | --- |
+| Public Browser Key | Empty | The key in [`data-url`]({{< relref "/docs/components/wishlist-config" >}}) |
+| Display Gallery on Page | `goodshuffle` | The page slug that gets the gallery |
+| Default Gallery Category | Empty | Gallery `category` |
+| Default Gallery Group | Empty | Gallery `group` |
+| Default Gallery Search | Empty | Gallery `search` |
+| Default Gallery Tags | Empty | Gallery `tags` |
+| Default # of Items Listed | `20` | Gallery `size` |
+| Scoped Attribute Name | Empty | Gallery `scope-attribute-1-name` |
+| Scope Attribute Values | Empty | Gallery `scope-attribute-1-value`. Separate several values with a vertical bar |
+| Wishlist Alias | `Wishlist` | `wishlist-alias` |
+| Show Categories | Ticked | Gallery `show-categories` |
+| Show Filters | Ticked | Gallery `show-filters` |
+| Wishlist: Display wishlist on all pages | Not ticked | `wishlist-show-on-all-pages` |
+| Scroll Lock: Disable body scroll lock | Not ticked | `disable-body-scroll-lock` |
+| Time Selection: Disable time selection | Not ticked | `disable-time-selection` |
+| Quantity on Cards | Not ticked | `show-quantity-on-card` |
+| Quantity on Detail | Not ticked | `show-quantity-on-detail` |
+| Require Phone Numbers | Not ticked | `require-phone-number` |
+| Notes Help Text | Empty | `notes-help-text` |
+
+The gallery settings apply to the gallery page only. The wishlist settings apply across your site.
+
+**Advanced Settings** hold Data Source, Icon URL, Modern JS and Legacy JS. They show below the main settings when you
+open `/wp-admin/options-general.php?page=gspro-gallery&advanced=1` on your site. Leave them empty. An empty field
+uses the plugin's built-in address.
+
+## Shortcodes
+
+Use these in any page or post. Add them with a **Shortcode** block.
+
+| Shortcode | Shows |
+| --- | --- |
+| `[gspro-item-list category="decor-rentals"]` | A list of items in a category. Use `category`, `tags`, or both |
+| `[gspro-item item-id="9942725a-dcd2-5d33-27b0-44f2ec408d88"]` | A single item card |
+| `[gspro-gallery default-category="decor-rentals"]` | The category list next to the first 15 items of that category. No search or paging, and picking a category doesn't change the items |
+| `[gspro-wishlist]` | The wishlist. Rarely needed, since the plugin adds it to every page |
+
+For a full gallery with search, filters and paging, use the gallery page from step 4, not `[gspro-gallery]`.
+
+`[gspro-item-list]` with neither `category` nor `tags` shows nothing. To find a category's value, see
+[Item List]({{< relref "/docs/components/item-list" >}}). To find an item's ID, see
+[Item Card]({{< relref "/docs/components/item-card" >}}).
+
+Older pages may contain `[gspro-setup]` or `[gspro-item-detail]`. They print nothing, and you can delete them: the
+plugin already adds setup and item detail to every page.
+
+## Updating the plugin
+
+1. Download the new version (see Requirements above).
+2. Go to **Plugins** > **Add New** > **Upload Plugin**, choose the file and click **Install Now**.
+3. When WordPress says the plugin is already installed, click **Replace current with uploaded**. On WordPress versions
+   that don't offer this, first deactivate and delete the old plugin in **Plugins**, then upload the new one. Deleting
+   the plugin keeps its settings.
+4. Open the settings page and check your key is still there.
+
+If your Advanced Settings have a **Modern JS** or **Legacy JS** address, the plugin loads that address instead of the
+current Website Integration. Empty both fields and click **Save Advanced Options**, unless someone set them on purpose.
+
+## Common changes
+
+- **Rename the wishlist**: Wishlist Alias.
+- **Require a phone number**: Require Phone Numbers.
+- **Hide the venue fields**: in **Appearance** > **Customize** > **Additional CSS**, add
+  `.gspro-c-wishlist__venue { display: none !important; }`.
+- **Colors and fonts**: see [Colors and Typography]({{< relref "/docs/customization/colors-and-typography" >}}).
+
+## When it doesn't work
+
+- **No gallery on the page.** The page's slug must match Display Gallery on Page exactly.
+- **The gallery shows but no items load.** Check the Public Browser Key. If someone regenerated it in Goodshuffle Pro,
+  paste the new one and click Update Options.
+- **No wishlist button on other pages.** Tick Wishlist ("Display wishlist on all pages").
+- **A shortcode shows as plain text.** Update the plugin. Older versions didn't register `[gspro-item-list]`.
+
+See also [Getting Started]({{< relref "/docs/setup" >}}) and [Troubleshooting]({{< relref "/docs/customization/troubleshooting" >}}).

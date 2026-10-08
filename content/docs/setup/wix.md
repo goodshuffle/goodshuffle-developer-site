@@ -5,87 +5,123 @@ title: Wix Setup
 
 # Wix Setup
 
+On Wix, each part of the Website Integration is a **Custom Element** that you add in the Wix Editor. Every Custom
+Element uses the same Server URL; the Tag Name and attributes say what it shows.
+
 ## Requirements
 
-Using the Website Integration on a WIX site requires any paid or premium plan. The "Light" plan will work and is recommended by Goodshuffle Pro.
+You will need:
+
+- A paid Wix plan. Custom Elements need one; the Light plan works.
+- Access to the Wix Editor for the site.
+- An active Website Integration on your Goodshuffle Pro account.
 
 ## Overview
 
-These are the high-level steps:
+1. Copy your Public Browser Key from Goodshuffle Pro.
+2. Add the settings Custom Element to your site header.
+3. Add a gallery Custom Element to a page.
+4. Send a test quote request.
 
-1. Activate your Website Integration.
-2. Create a page for the basic gallery.
-3. Add Custom Elements to your site via the Wix Editor.
+Already set up on version 0.5.x? Open each Goodshuffle Custom Element and replace its Server URL with the one below.
+Nothing else changes. See [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
+
+## The Server URL
+
+Every Goodshuffle Custom Element on your site uses this Server URL:
+
+```
+https://EMBED_HOST/v1/loader.js
+```
+
+> **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
+> filled in when GSPRO-31872 ships: the final address. Until then, this URL loads nothing.
+
+Older instructions used an address ending in `/dist/custom-elements/index.js`. Don't use it for new setups: it loads
+version 0.5.x, which no longer gets fixes.
 
 ## Walk-Through
 
-### Activation
+### 1. Copy your Public Browser Key
 
-You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
+In Goodshuffle Pro, open the [Integrations tab](https://pro.goodshuffle.com/app/vendorAccount/index?tab=thirdPartyIntegrations)
+and activate the Website Integration if it isn't active yet. **Copy the Public Browser Key.**
 
 ![Integration Tab](/wordpress-website-integration-activation.png)
 
-### Adding the correct code to the Header of your Wix site
+### 2. Add the settings Custom Element to your header
 
-To get started, first head to your Wix site editor. You can get there on most WIX sites by clicking "Home" and then clicking "Design Site" or "Edit Site"
+1. Open the Wix Editor. From your site's dashboard, this is usually **Edit Site** or **Design Site**.
 
 ![Wix Dashboard](/wix-dashboard.png)
 
-Now that we're in the right place, we need to set the Website Integration up in your site's header. You can do this by clicking " Add Elements" and then "Add Custom Element"
+2. Click **Add Elements**, then **Embed Code**, then **Custom Element**.
 
 ![Wix Editor](/wix-editor.png)
 
-Now that you have this element added watch the video below to learn more about what you need to copy/paste:
+3. Drag the new element into your site's **header**, so it is on every page.
+4. Click **Choose Source** and set:
+   - **Server URL**: the Server URL above.
+   - **Tag Name**: `gspro-wishlist-config`
+5. Click **Set Attributes** and add two attributes, one at a time:
 
-For a detailed video of how to perform this step [See Here](https://www.youtube.com/watch?v=GsAs8J6mVUM)
+| Name | Value |
+| --- | --- |
+| `data-url` | `https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY` |
+| `disable-body-scroll-lock` | `true` |
 
-Custom Element Properties:
+6. Replace `YOUR-PUBLIC-WEBSITE-KEY` with the key you copied.
+7. Click **Publish**.
 
-Source:
-
-- Server URL: `https://unpkg.com/@goodshuffle/gspro-wc@0.5.8/dist/custom-elements/index.js`
-- Tag Name: `gspro-wishlist-config`
-
-Attributes (These are two separate Attributes):
-
-First:
-
-- Name: `data-url`
-- Value: `https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY`
-
-Second:
-
-- Name: `disable-body-scroll-lock`
-- Value: `true`
-
-#### Note: Don't forget to get the Public Browser Key from your account in the Integrations Tab!
-
-You'll know you have things connected correctly if, after clicking "Publish", you see this icon on the front end of your site:
+On your published site, the wishlist button (a heart with a count) now shows on every page.
 
 ![Wix Config Preview](/wix-config-preview.png)
 
-### Listing inventory items
+`disable-body-scroll-lock` keeps your Wix page scrolling normally while item detail is open. Add any other settings the
+same way, as attributes on this element. See [Wishlist Config]({{< relref "/docs/components/wishlist-config" >}}) for
+the full list. For example, to require a phone number, add the attribute `require-phone-number` with the value `true`.
 
-We've connected our inventory—great! Let's make it appear on a page with an Item Gallery and an Item List.
+### 3. Add a gallery to a page
 
-Wherever you'd like to list items, click "Add Element" and add a custom element,
+1. Open the page that should show your inventory.
+2. Click **Add Elements**, then **Embed Code**, then **Custom Element**, and place it on the page.
+3. Click **Choose Source** and set:
+   - **Server URL**: the same Server URL.
+   - **Tag Name**: `gspro-item-gallery`
+4. Resize the element to fill the width and height you want for the gallery.
+5. Click **Publish**.
 
-![Wix Editor](/wix-editor.png)
+For a fixed list of items without the search bar, use the Tag Name `gspro-item-list` instead, and add an attribute such
+as `category` or `tags`. See [Item List]({{< relref "/docs/components/item-list" >}}). To find a category's value, see
+[this help article](https://help.goodshuffle.com/en/articles/5274417-how-do-i-find-the-code-for-my-item-categories-to-display-a-category-on-a-web-page).
 
-From here, we'll adjust the Server URL and the tags again — learn more in [this video](https://www.youtube.com/watch?v=w9Spx86UCss).
+### 4. Send a test quote request
 
-Source:
+On your published site:
 
-- Server URL: `https://unpkg.com/@goodshuffle/gspro-wc@0.5.8/dist/custom-elements/index.js`
-- Tag Name: `gspro-item-gallery` or `gspro-item-list`
+1. Open the gallery page and pick a category.
+2. Click the heart on an item to add it to the wishlist.
+3. Open the wishlist, choose dates, then **Contact & Venue Info**.
+4. Fill in your name and email, then **Send List**.
 
-Attributes (if using `gspro-item-list`):
+In Goodshuffle Pro, the request appears as a new project under **Projects**, **Filters**, Origin = "Website".
 
-- Name: `tags` or `category` (Note - this can change depending on what you'd like listed)
-- Value: a tag or category of your choosing.
+## Things to know on Wix
 
-#### Note: If you need help figuring out what value to provide for your desired category reference [this doc](https://help.goodshuffle.com/en/articles/5274417-how-do-i-find-the-code-for-my-item-categories-to-display-a-category-on-a-web-page).
+- **Attribute values are typed by hand.** On/off attributes turn off only with the lowercase word `false`. Any other
+  value turns them on, including `False`. To keep an option off, leave the attribute out.
+- **One settings element.** Put `gspro-wishlist-config` in the header once. A second copy on a page is ignored.
+- **The videos.** Our earlier Wix videos ([header](https://www.youtube.com/watch?v=GsAs8J6mVUM),
+  [listing items](https://www.youtube.com/watch?v=w9Spx86UCss)) show the steps, but with the old Server URL. Use the
+  Server URL on this page.
 
-## All Set!
+## When it doesn't work
 
-You should now have a basic page that displays a list of relevant categories/subcategories and your inventory.
+- **No wishlist button.** Check that the settings element's Tag Name is exactly `gspro-wishlist-config`, that it sits
+  in the header, and that you published.
+- **The gallery element is empty.** Check its Server URL and Tag Name, and that the settings element's `data-url` has
+  your key.
+- **Items load in the Editor preview but not on your domain.** Inventory loads on the website address saved for your
+  brand in Goodshuffle Pro. Check that it matches your domain.
+
+See also [Getting Started]({{< relref "/docs/setup" >}}) and [Troubleshooting]({{< relref "/docs/customization/troubleshooting" >}}).
