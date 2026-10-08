@@ -97,8 +97,7 @@ Both events carry the same `event.detail`:
             rate: "DAILY",
             startDate: "2026-10-22",
             endDate: "2026-10-24",
-            startTime: "12:00 PM",
-            hours: 4
+            startTime: "12:00 PM"
         }
     ]
 }
