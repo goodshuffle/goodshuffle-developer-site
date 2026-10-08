@@ -51,7 +51,7 @@ and activate the Website Integration if it isn't active yet. **Copy the Public B
 3. Replace `YOUR-PUBLIC-WEBSITE-KEY` with the key you copied. Leave the rest as is.
 4. Click **Save**.
 
-Code Injection runs on every page, so the wishlist button now shows across your site.
+Code Injection runs on every page. The wishlist button now shows across your site.
 
 To change how the Website Integration behaves (rename the wishlist, require a phone number, hide time selection), add
 attributes to the `<gspro-wishlist-config>` tag here. See [Wishlist Config]({{< relref "/docs/components/wishlist-config" >}}).

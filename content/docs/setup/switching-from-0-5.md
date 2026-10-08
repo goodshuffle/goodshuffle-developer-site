@@ -26,7 +26,8 @@ Replace both with this one tag:
 ```
 
 > **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
-> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing.
+> filled in when GSPRO-31872 ships: the final address, and whether this tag also adds the styles or a stylesheet tag
+> goes with it. Until then, this tag loads nothing.
 
 Leave your `<gspro-wishlist-config>` tag where it is, and save or publish your site.
 
@@ -44,27 +45,20 @@ Where the header lives depends on your site builder:
 
 ## What stays the same
 
+Nothing else changes. All of these keep working as they are:
+
 - Your `<gspro-wishlist-config>` tag and its Public Browser Key.
 - Every `<gspro-item-gallery>`, `<gspro-item-list>` and `<gspro-item-card>` on your pages, and every attribute on them.
 - Your own CSS. The class names it targets, such as `gspro-c-item-card` and `gspro-c-wishlist__venue`, are unchanged.
-- Your listeners for `gspro-wishlist.submit` and `gspro-wishlist.submit-complete`, as long as they read `contact`,
-  `venue` or the number of items. See below for the item fields.
+- Your listeners for every event, with the same `detail`. See [Events]({{< relref "/docs/integrations/events" >}}).
 - Links into your catalog, such as `#!/inventory/...` and `#!/item/...`.
 - Wishlists your clients already started. They carry over to the new version.
 
-## What's different
+> `gspro-item-card.click`, `gspro-item-card.add`, `gspro-item-detail.add` and the whole item in each
+> `detail.wishlist` entry ship with GSPRO-32329.
 
-Check these if your site has custom JavaScript.
-
-| On 0.5.x | Now |
-| --- | --- |
-| `gspro-item-card.click`, `gspro-item-card.add` and `gspro-item-detail.add` fire when a client opens or adds an item | Not fired. Listeners for them stop running |
-| Each entry in an event's `detail.wishlist` is the whole item: category, tags, attributes and more | Each entry holds the item's ID, name, photo, price, quantity, price type and dates. See [Events]({{< relref "/docs/integrations/events" >}}) |
-| `gspro-wishlist.submit` fires on every click of Send List, even while a send is in progress | Fires once per send |
-| The two script tags | One tag. To be filled in when GSPRO-31872 ships: whether that tag also adds the styles, or a stylesheet tag goes with it |
-
-If you rely on any of the 0.5.x behavior above, contact us using the blue chat bubble in Goodshuffle Pro before you
-switch.
+One detail differs. On 0.5.x, `gspro-wishlist.submit` fired on every click of Send List, even while a send was in
+progress. It now fires once per send.
 
 ## Staying on a specific version
 
@@ -78,4 +72,4 @@ Sites that don't switch keep working on 0.5.x. They don't get fixes or new featu
 View your site's page source and search for `loader.js`. If it's there and `unpkg.com/@goodshuffle` isn't, your site
 is on the current version.
 
-> To be filled in when GSPRO-32235 ships: how Goodshuffle's support team can confirm which version your site runs.
+> To be decided: how Goodshuffle's support team can confirm which version your site runs.

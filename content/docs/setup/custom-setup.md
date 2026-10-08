@@ -48,7 +48,8 @@ Goodshuffle Pro as a new project under Projects, Filters, Origin = "Website".
 
 ## Troubleshooting
 
-- Is the Public Browser Key right, and current? Regenerating it in Goodshuffle Pro stops the old one at once.
-- Does the browser's network tab show `loader.js` loading?
-- Are you testing on the website address saved for your brand in Goodshuffle Pro? Apart from a few builder
-  preview addresses, inventory loads only there.
+- If nothing loads, check the Public Browser Key against the Integrations tab. Regenerating it in Goodshuffle Pro
+  stops the old one at once.
+- If the browser's network tab doesn't show `loader.js` loading, the script tag is missing or its address is wrong.
+- Test on the website address saved for your brand in Goodshuffle Pro. Apart from a few builder preview addresses,
+  inventory loads only there.

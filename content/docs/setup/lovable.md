@@ -134,9 +134,9 @@ In Goodshuffle Pro, the request appears as a new project under **Projects**, **F
 ## Things to know on Lovable
 
 - **Test on the published site.** Inventory loads on the website address saved for your brand in Goodshuffle Pro.
-  Lovable's in-editor preview runs on another address, so the gallery may stay empty there.
-- **Keep the snippet in `index.html`.** React doesn't reliably run a `<script>` tag that a component renders, so keep
-  the script tag out of your components.
+  Lovable's in-editor preview runs on another address, and the gallery may stay empty there.
+- **Keep the snippet in `index.html`.** React doesn't reliably run a `<script>` tag that a component renders. Keep the
+  script tag out of your components.
 - **The address hash.** The Website Integration keeps the client's place in the catalog after `#!` in the page
   address. If your app's router also uses the hash (`HashRouter`), the two clash. Use a router that doesn't use the
   hash, such as `BrowserRouter`.

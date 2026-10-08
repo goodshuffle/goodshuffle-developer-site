@@ -138,7 +138,8 @@ Use these in any page or post. Add them with a **Shortcode** block.
 | `[gspro-gallery default-category="decor-rentals"]` | The category list next to the first 15 items of that category. No search or paging, and picking a category doesn't change the items |
 | `[gspro-wishlist]` | The wishlist. Rarely needed, since the plugin adds it to every page |
 
-For a full gallery with search, filters and paging, use the gallery page from step 4, not `[gspro-gallery]`.
+For a full gallery with search, filters and paging, use the gallery page from step 4. `[gspro-gallery]` has none of
+those.
 
 `[gspro-item-list]` with neither `category` nor `tags` shows nothing. To find a category's value, see
 [Item List]({{< relref "/docs/components/item-list" >}}). To find an item's ID, see
@@ -160,7 +161,7 @@ plugin already adds setup and item detail to every page.
 
 An address with `@goodshuffle/gspro-wc` in it loads version 0.5.x. Older versions of the plugin show their built-in
 0.5.x address in these fields, and clicking **Save Advanced Options** on them saved that address. A saved address
-keeps loading, so the site stays on 0.5.x after the update. Clear both fields and click **Save Advanced Options**,
+keeps loading, and the site stays on 0.5.x after the update. Clear both fields and click **Save Advanced Options**,
 unless someone set them on purpose. Both fields then show the built-in address from the table in
 [Every setting](#every-setting).
 
@@ -179,6 +180,6 @@ unless someone set them on purpose. Both fields then show the built-in address f
   paste the new one and click Update Options.
 - **No wishlist button on other pages.** Tick Wishlist ("Display wishlist on all pages").
 - **A shortcode shows as plain text.** Update the plugin. In older versions, `[gspro-item-list]` pointed at
-  code that doesn't exist, so WordPress printed the shortcode as text.
+  code that doesn't exist, and WordPress printed the shortcode as text.
 
 See also [Getting Started]({{< relref "/docs/setup" >}}) and [Troubleshooting]({{< relref "/docs/customization/troubleshooting" >}}).

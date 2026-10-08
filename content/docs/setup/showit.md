@@ -37,11 +37,11 @@ and activate the Website Integration if it isn't active yet. **Copy the Public B
 
 ### 2. Add the snippet to your header canvas
 
-Your header canvas shows on every page, so the snippet goes there.
+The snippet goes in your header canvas, which shows on every page.
 
 1. In the left menu, open the **Site** tab, then **Site Canvases**.
 2. Select your header canvas. On a new Showit site it is called "Header"; yours may have another name.
-3. Click inside the header on the page, so you are editing the header canvas.
+3. Click inside the header on the page to edit the header canvas.
 4. In the toolbar at the bottom of the page, click the middle button and choose **Embed Code**.
 
 ![Embed HTML](/showit-embed.png)
@@ -63,7 +63,7 @@ Your header canvas shows on every page, so the snippet goes there.
 7. Replace `YOUR-PUBLIC-WEBSITE-KEY` with the key you copied.
 8. Click **Save**.
 
-The settings element shows nothing itself, so the box can stay small. To change settings, such as the wishlist's name
+The box can stay small: the settings element shows nothing itself. To change settings, such as the wishlist's name
 or a required phone number, add attributes to `<gspro-wishlist-config>`. See
 [Wishlist Config]({{< relref "/docs/components/wishlist-config" >}}).
 
@@ -80,7 +80,8 @@ or a required phone number, add attributes to `<gspro-wishlist-config>`. See
 <gspro-item-gallery></gspro-item-gallery>
 ```
 
-6. Drag the element's corners, or set its size on the right, so it fills the canvas. Do this on Desktop and Mobile.
+6. Make the element fill the canvas by dragging its corners or setting its size on the right. Do this on Desktop and
+   Mobile.
 7. Save and publish.
 
 Showit doesn't grow a canvas to fit its content. If the gallery is cut off at the bottom, make the canvas and the

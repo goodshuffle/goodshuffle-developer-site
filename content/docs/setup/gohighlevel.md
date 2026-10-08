@@ -40,8 +40,8 @@ and activate the Website Integration if it isn't active yet. **Copy the Public B
 The snippet belongs in the code GoHighLevel adds to the `<head>` of your pages.
 
 1. Open the website or funnel's **Settings**.
-2. Find the **Tracking Code** section and its **Header** (head) box. Use the site-wide box if there is one, so the
-   wishlist shows on every page. A single page's own settings have the same box if you only want it on that page.
+2. Find the **Tracking Code** section and its **Header** (head) box. Use the site-wide box if there is one. The
+   wishlist then shows on every page. A single page's own settings have the same box if you only want it on that page.
 3. Paste this snippet:
 
 ```
@@ -94,7 +94,7 @@ In Goodshuffle Pro, the request appears as a new project under **Projects**, **F
 ## Things to know on GoHighLevel
 
 - **Test on your own domain.** Inventory loads on the website address saved for your brand in Goodshuffle Pro. The
-  editor preview and GoHighLevel's preview links run on other addresses, so the gallery may stay empty there.
+  editor preview and GoHighLevel's preview links run on other addresses, and the gallery may stay empty there.
 - **Funnel steps.** Each funnel step is its own page. A funnel-level head tracking code covers every step; a step's own
   tracking code covers only that step.
 - **Your own forms.** GoHighLevel's forms and the wishlist are separate. A quote request sent from the wishlist goes to

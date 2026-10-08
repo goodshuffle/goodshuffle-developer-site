@@ -25,7 +25,12 @@ Only `data-url` is required. Add any of the other attributes to the same element
 
 The element reads its attributes once, when the page loads. Changing them later with JavaScript has no effect.
 
-Language, currency, and the date, address and phone formats come from your Goodshuffle Pro account.
+Currency, country, and the date, address and phone formats come from your Goodshuffle Pro account.
+
+Language works differently. The widget shows English unless multiple languages are turned on for your Goodshuffle
+Pro account (`multiLanguageEnabled`). With them on, clients get a language selector with English, Spanish and French.
+The widget uses the language the client picks there. Before they pick one, it uses the browser's language if that's
+Spanish or French, and English otherwise.
 
 ## All attributes
 
@@ -33,7 +38,7 @@ Language, currency, and the date, address and phone formats come from your Goods
 | --- | --- | --- |
 | `data-url` | None. Required | Your data address, ending in your Public Browser Key |
 | `disable-body-scroll-lock` | `false` | `true` lets the page behind item detail scroll |
-| `disable-time-selection` | `false` | `true` hides the time pickers, so clients pick dates only |
+| `disable-time-selection` | `false` | `true` hides the time pickers. Clients pick dates only |
 | `notes-help-text` | Empty | Help text under the Notes field, up to 140 characters |
 | `require-phone-number` | `false` | `true` makes the phone number required |
 | `show-quantity-on-card` | `false` | `true` shows available quantity on item cards |
@@ -148,4 +153,4 @@ leave the attribute out.
 
 * The wishlist button always shows on pages with a `<gspro-item-gallery>`, `<gspro-item-list>` or `<gspro-item-card>`.
 * By default it also shows on every other page of your site. Set this to `false` to show it only on those pages.
-* Clients send more quote requests when the wishlist is on every page, so we recommend leaving this alone.
+* Clients send more quote requests when the wishlist is on every page. We recommend leaving this alone.

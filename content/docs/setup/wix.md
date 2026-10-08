@@ -60,7 +60,7 @@ and activate the Website Integration if it isn't active yet. **Copy the Public B
 
 ![Wix Editor](/wix-editor.png)
 
-3. Drag the new element into your site's **header**, so it is on every page.
+3. Drag the new element into your site's **header**. That puts it on every page.
 4. Click **Choose Source** and set:
    - **Server URL**: the Server URL above.
    - **Tag Name**: `gspro-wishlist-config`
@@ -111,7 +111,7 @@ In Goodshuffle Pro, the request appears as a new project under **Projects**, **F
 
 - **Attribute values are typed by hand.** On/off attributes turn off only with the lowercase word `false`. Any other
   value turns them on, including `False`. To keep an option at its default, leave the attribute out. Some options
-  default to on (`wishlist-show-on-all-pages`, `show-categories`, `show-filters`), so leaving those out keeps them on.
+  default to on (`wishlist-show-on-all-pages`, `show-categories`, `show-filters`). Leaving those out keeps them on.
   To turn one off, set it to `false`.
 - **One settings element.** Put `gspro-wishlist-config` in the header once. A second copy on a page is ignored.
 - **The videos.** Our earlier Wix videos ([header](https://www.youtube.com/watch?v=GsAs8J6mVUM),
@@ -125,7 +125,7 @@ In Goodshuffle Pro, the request appears as a new project under **Projects**, **F
 - **The gallery element is empty.** Check its Server URL and Tag Name, and that the settings element's `data-url` has
   your key.
 - **Items don't load in the Editor preview.** Inventory loads on the website address saved for your brand in
-  Goodshuffle Pro. The Editor preview runs on another address, so the gallery may stay empty there. Test on your
+  Goodshuffle Pro. The Editor preview runs on another address, and the gallery may stay empty there. Test on your
   published domain, and check that it matches the address saved in Goodshuffle Pro.
 
 See also [Getting Started]({{< relref "/docs/setup" >}}) and [Troubleshooting]({{< relref "/docs/customization/troubleshooting" >}}).
