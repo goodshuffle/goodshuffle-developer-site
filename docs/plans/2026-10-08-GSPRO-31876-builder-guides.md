@@ -22,7 +22,7 @@ widget actually uses, and the Events page gives the exact `detail` of the two su
 | Hosting proposal 4140761090 (draft) | The loader is one plain script that adds the release's JS and CSS; numbered releases stay published. All of it is still NEED CONFIRMATION |
 | `wwi` skill (agent-rules PR #53) section 5 and `references/help-articles.md` | Activation, key, the platform quirks the help center covers |
 | marketplace `kyser/GSPRO-32057/legacy-elements` | `src/main/react-client/src/embed/elements/attributes.ts` (every attribute and default), `app/settings.ts` (config fallbacks), `app/wishlist/send.ts` and `payload.ts` (events), `app/catalog/query.ts` (what loads when), plan `2026-10-03-GSPRO-31877-host-page-tests.md` (where each builder takes the snippet) |
-| wp-gspro-gallery PR #20 (head `6a0e71f`) | Settings page labels, shortcodes, what is held for GSPRO-31872 |
+| wp-gspro-gallery PR #20 (head `1737a52`) | Settings page labels, shortcodes, Advanced Settings built-in addresses (`admin-display.php`), what is held for GSPRO-31872 |
 | `wir-testing-findings.md` | Real failure modes: origin check, key rotation, boolean parsing |
 | Git history of `content/docs/setup/showit.md` (removed in 860c083) | Showit editor steps |
 
@@ -48,21 +48,31 @@ widget actually uses, and the Events page gives the exact `detail` of the two su
 Nothing about hosting or monitoring is decided yet, so those facts are placeholders, each marked
 in the page as "To be filled in when GSPRO-31872 ships" (or GSPRO-32235):
 
-- The script host: every snippet uses `https://EMBED_HOST/v1/loader.js`.
-- Pinning a numbered release (`/releases/VERSION/` in the proposal).
-- The WordPress plugin download link and its version (GSPRO-31875's release waits on GSPRO-31872).
-- How CX confirms which version a vendor's site runs (GSPRO-32235's adoption view).
-
-The full list is in the PR description.
+- The script host: every snippet uses `https://EMBED_HOST/v1/loader.js`, with a "Placeholder
+  address" note (`setup/_index.md`, `custom-setup.md`, `squarespace.md`, `wordpress.md`, `wix.md`
+  as the Server URL, `showit.md`, `gohighlevel.md`, `lovable.md`, `weebly.md`,
+  `switching-from-0-5.md`).
+- Whether the loader works both with and without `type="module"`, and whether it adds the styles
+  or needs a stylesheet tag (`custom-setup.md`, and the script-tag row in `switching-from-0-5.md`).
+  Both are GSPRO-31872 acceptance criteria or still NEED CONFIRMATION in the hosting proposal.
+- Pinning a numbered release, and switching back to `/v1/` (`switching-from-0-5.md`).
+- The WordPress plugin version and download link (`setup/wordpress.md` Requirements,
+  `resources/wordpress.md`). GSPRO-31875's release waits on GSPRO-31872.
+- The WordPress plugin's built-in Modern JS and Legacy JS addresses (`setup/wordpress.md`, Every
+  setting). PR #20 still defaults to the 0.5.7 `unpkg.com` addresses, with a `TODO(GSPRO-31872)`
+  to switch them to `/v1/loader.js`.
+- How support confirms which version a vendor's site runs (`switching-from-0-5.md`, GSPRO-32235).
 
 ## Decisions
 
 | Decision | Choice | Why |
 |---|---|---|
-| Snippet tag | `<script src="https://EMBED_HOST/v1/loader.js"></script>`, no `type` | GSPRO-31872's acceptance: the loader works as a plain script and as a module. A plain tag works on every builder, Wix included, and in the WordPress plugin's head |
-| CSS | No separate stylesheet tag | The hosting proposal's loader adds the release's JS and CSS |
+| Snippet tag | `<script src="https://EMBED_HOST/v1/loader.js"></script>`, no `type` | GSPRO-31872's acceptance asks for the loader to work as a plain script and as a module. The loader doesn't exist yet, so the pages don't state it as fact; it's a placeholder until GSPRO-31872 ships |
+| CSS | No separate stylesheet tag in the snippet, with a placeholder | The draft hosting proposal has the loader adding the release's JS and CSS, still NEED CONFIRMATION. The bundle doesn't add its CSS by itself: `place-stylesheet.ts` only moves a `<link>` that is already on the page |
+| WordPress Advanced Settings | List each field's built-in address and how to reset it | Every field is pre-filled with its default (`get_option(..., $default)`), so "leave it empty" can't be followed. Clearing a field and saving deletes the option. 0.5.7 behaved the same, so a vendor who ever saved that form has the 0.5.7 address stored, and it keeps loading after the update |
 | "Switching from 0.5.x" | Says what changes beyond the script tag | The ticket says "nothing else changes", but the rebuild doesn't fire `gspro-item-card.click`, `gspro-item-card.add` or `gspro-item-detail.add` (`card.tsx` header, `store.ts` header), and `detail.wishlist` holds slim entries instead of whole items (`payload.ts eventDetail`). A guide that hides this breaks vendors' analytics silently. Flagged to Kyser |
-| Attributes the widget sets or ignores | Listed, marked "set by the widget" or "accepted, no effect" | The ticket asks for every attribute. `hide-quantity`, `total` and `package-quantity` are parsed but never read in `src/embed/app` |
+| Attributes the widget sets or ignores | Listed, marked "set by the widget" or "accepted, no effect" | The ticket asks for every attribute. `hide-quantity` and `total` are parsed but never read in `src/embed/app`. The card's `route` and the gallery's and list's `item-card-route` are passed along but never read: `itemLink()` in `card.tsx` always builds `#!/item/{id}/{slug}`. The list's `filters` is never set by the gallery (`catalog-results.tsx` passes only `item-card-route`), and a string attribute is never a valid filter object, so `catalogView()` treats it as null. `package-quantity` does work: `card.tsx` passes it to `quantityText()`, which shows it in place of the available quantity when `show-quantity-on-card` is on |
+| When a gallery loads items | Only with `category`, `group`, `search`, `tags` or `scope-category`/`-group`/`-search`/`-tags` | `shouldLoad('gallery')` in `catalog/query.ts`. The `scope-attribute-#` pair narrows a load but doesn't start one |
 | Boolean attributes | Documented: only the lowercase string `false` turns one off | `parseAttribute` in `attributes.ts`. Wix's help article sets `require-phone-number` to `True`, which works; `False` would also turn it on |
 | Shortcodes | Only `relref` and `raw-html`, which existing pages use | The `book` theme submodule isn't checked out here and Hugo isn't installed, so `hint` and friends can't be checked |
 | One set of event dates (GSPRO-32177) | Not documented | Not built on the branch the docs are written from |
@@ -71,9 +81,11 @@ The full list is in the PR description.
 
 ## Not done here
 
-- Publishing. `staging` and `master` deploy publicly; this branch is not pushed and nothing merges
+- Publishing. `master` and `preview` deploy publicly; this branch is not pushed and nothing merges
   until GSPRO-31872 replaces `EMBED_HOST`.
 - Building the site. Hugo isn't installed and isn't to be installed here, so the pages were checked
   by reading the front matter and shortcodes of existing pages, not by a build.
-- The acceptance runs: a fresh site per builder end to end, and CX's review against HubSpot's top
-  questions.
+- Two acceptance criteria, both blocked on GSPRO-31872: following each builder guide on a fresh
+  site through to a quote request landing in Goodshuffle Pro, and CX's review of the guides against
+  HubSpot's top questions. Every snippet loads `https://EMBED_HOST/v1/loader.js`, which loads
+  nothing until GSPRO-31872 ships, so neither can pass before then.
