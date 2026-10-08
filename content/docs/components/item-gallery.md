@@ -14,8 +14,9 @@ Use the `gspro-item-gallery` web component to display a list of items with contr
 ```
 
 With no attributes, the gallery shows the search bar, your categories and the filters. Items appear once the client
-picks a category or searches. To open on a set of items, give it a `category`, `group`, `search`, `tags` or one of
-the `scope-*` attributes.
+picks a category or searches. To open on a set of items, give it a `category`, `group`, `search`, `tags`,
+`scope-category`, `scope-group`, `scope-search` or `scope-tags`. The `scope-attribute-#` pair alone narrows the items
+but doesn't load any: the gallery still waits for the client to pick a category or search.
 
 ## All attributes
 
@@ -39,7 +40,7 @@ the `scope-*` attributes.
 | `size` | `15` | Items per page |
 | `from` | `0` | Position of the first item shown. Paging sets it; leave it out |
 | `route` | `/inventory/:category?/:group?` | Pattern the gallery keeps in the page link after `#!`. Leave it out |
-| `item-card-route` | `#!/item/:item` | Pattern of the link that opens item detail. Leave it out |
+| `item-card-route` | `#!/item/:item` | Accepted so older pages stay valid. It has no effect |
 | `total` | None | Accepted so older pages stay valid. It has no effect |
 
 On/off attributes read like the [Wishlist Config]({{< relref "./wishlist-config.md" >}}) ones: only the lowercase

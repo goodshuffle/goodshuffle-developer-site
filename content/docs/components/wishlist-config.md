@@ -25,8 +25,7 @@ Only `data-url` is required. Add any of the other attributes to the same element
 
 The element reads its attributes once, when the page loads. Changing them later with JavaScript has no effect.
 
-Language, currency, and the date, address and phone formats come from your Goodshuffle Pro account, not from
-attributes.
+Language, currency, and the date, address and phone formats come from your Goodshuffle Pro account.
 
 ## All attributes
 

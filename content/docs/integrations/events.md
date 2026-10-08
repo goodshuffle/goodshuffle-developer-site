@@ -25,7 +25,7 @@ document.addEventListener("gspro-wishlist.submit-complete", function (event) {
 });
 ```
 
-## Submit Wishlist: `gspro-wishlist.submit`
+## Wishlist sent: `gspro-wishlist.submit`
 
 Fires once each time the client sends their wishlist, right after they click Send List and before the request goes
 out. Clicking Send List again while a send is still in progress doesn't fire it again.
@@ -49,7 +49,7 @@ document.addEventListener("gspro-wishlist.submit", function (event) {
 
 Reporting to Google Analytics needs [Google Analytics set up on your site](https://developers.google.com/analytics/devguides/collection/gtagjs) first.
 
-## Submit Complete: `gspro-wishlist.submit-complete`
+## Quote request accepted: `gspro-wishlist.submit-complete`
 
 Fires when Goodshuffle Pro has accepted the quote request. The client sees the "Sent!" confirmation at the same time,
 and 5 seconds later the wishlist empties.

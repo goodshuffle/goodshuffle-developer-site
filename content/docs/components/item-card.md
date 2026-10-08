@@ -22,9 +22,9 @@ item detail. If no item has that ID, or the item isn't shown on your website, th
 | Attribute | Default | What it does |
 | --- | --- | --- |
 | `item-id` | None | The ID of the item to show |
-| `route` | `#!/item/:item` | Pattern of the link that opens item detail. Leave it out |
+| `route` | `#!/item/:item` | Accepted so older pages stay valid. It has no effect |
 | `item` | None | Set by a gallery or list for the cards it shows. Leave it out |
-| `package-quantity` | None | Accepted so older pages stay valid. It has no effect |
+| `package-quantity` | None | A number the card shows as its quantity, in place of the item's available quantity. Shows only when `show-quantity-on-card` is on in [Wishlist Config]({{< relref "./wishlist-config.md" >}}) |
 
 ## Attributes
 

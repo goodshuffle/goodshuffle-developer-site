@@ -53,8 +53,8 @@ Additionally, multiple options can be provided to further narrow down the invent
 | `route` | None | Turns on Previous and Next, kept in the page link. Without it, the list shows one page and ignores the page link |
 | `context` | `inventory` | First part of the page link when `route` is set. Leave it out |
 | `from` | `0` | Position of the first item shown. Paging sets it; leave it out |
-| `filters` | None | Set by the gallery that contains the list. Leave it out |
-| `item-card-route` | `#!/item/:item` | Pattern of the link that opens item detail. Leave it out |
+| `filters` | None | Accepted so older pages stay valid. It has no effect |
+| `item-card-route` | `#!/item/:item` | Accepted so older pages stay valid. It has no effect |
 | `hide-quantity` | `false` | Accepted so older pages stay valid. It has no effect; use `show-quantity-on-card` on [Wishlist Config]({{< relref "./wishlist-config.md" >}}) |
 | `total` | None | Accepted so older pages stay valid. It has no effect |
 
