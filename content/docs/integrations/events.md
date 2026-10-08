@@ -5,171 +5,150 @@ weight: 30
 
 # Events
 
-Using event emitters requires Website Integration version 0.4.3 or later.
+The Website Integration tells your page when a client sends their wishlist. It does this with standard
+[DOM events](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events), so any script on your
+page can react: report the quote request to your analytics, show your own thank-you message, or send the client to a
+thank-you page.
 
-Goodshuffle Website Integration leverages [HTML DOM events](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events)
-to allow you to integrate a wide variety of services into your Website Integration components.
+Listening for events takes basic JavaScript and a way to add your own script to your site.
 
-Capturing Website Integration events requires a basic knowledge of Javascript, and the ability to add custom Javascript to your website.
+| Event | When it fires |
+| --- | --- |
+| `gspro-wishlist.submit` | The client clicked Send List and the wishlist is on its way |
+| `gspro-wishlist.submit-complete` | Goodshuffle Pro accepted the quote request |
 
-The most common use case for Website Integration events is reporting to Google Analytics. Other common use cases are displaying custom dialogs/modals or integrating with an ad service provider.
+Both events fire on the `<gspro-wishlist>` element and bubble up to `document`, so listen on `document`:
 
-Website Integration events come with relevant data to empower your custom logic, add specificity to your analytics, and personalize your custom messages.
-This data is accessed with `data.detail` for every event. The specific structure of the `data.detail` payload is detailed below for each event.
+```
+document.addEventListener("gspro-wishlist.submit-complete", function (event) {
+    console.log(event.detail);
+});
+```
 
-Note: some examples below demonstrate reporting to Google Analytics. To report event data from your Website Integration to Google Analytics requires [setting up Google Analytics first](https://developers.google.com/analytics/devguides/collection/analyticsjs).
+## Submit Wishlist: `gspro-wishlist.submit`
 
-## Event Types
+Fires once each time the client sends their wishlist, right after they click Send List and before the request goes
+out. Clicking Send List again while a send is still in progress doesn't fire it again.
 
-### Item Card Click
-
-This event occurs when the user clicks on a `<gspro-item-card>` inside of a `<gspro-item-list>` or `<gspro-item-gallery>`.
-This event is attached to the opening the modal with the detail view of the item, with a larger image and information about the item.
-Common reasons for targetting this event would be using analytics to determine which items are popular, or for tracking how many items a user clicks on before adding an item to their wishlist.
-
-To capture this event, you will use the [`document.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) Javascript method. The event to target for these `<gspro-item-card>` click events is `gspro-item-card.click`.
+The send can still fail after this event, for example if the client loses their connection. Use it to count attempts.
+Don't redirect from it: leaving the page here can stop the quote request from reaching you. Use
+`gspro-wishlist.submit-complete` for anything that must happen only after a successful send.
 
 Example (with Google Analytics):
+
 ```
-document.addEventListener("gspro-item-card.click", function(data) {
-    // get the item title from the event payload
-    var itemName = data.detail.title;
-    // report the event to Google Analytics
-    gtag('event', 'Click', {
-        'event_category': 'Goodshuffle Website Integration',
-        'event_label': 'Item Card Click',
-        'value': itemName
+document.addEventListener("gspro-wishlist.submit", function (event) {
+    var itemCount = event.detail.wishlist.length;
+    gtag("event", "Submission", {
+        "event_category": "Wishlist",
+        "event_label": "Wishlist Submission",
+        "value": itemCount
     });
-})
+});
 ```
 
-In this example, an event listener is being attached to the item card click. When the user clicks to expand an item card, the analytics category (Goodshuffle Website Integration), event label (Item Card Click), and data (the clicked item's name) are all being reported to Google Analytics.
+Reporting to Google Analytics needs [Google Analytics set up on your site](https://developers.google.com/analytics/devguides/collection/gtagjs) first.
 
-`data.detail` object for `gspro-item-card.click`:
-```
-{
-    attributes: // An array of objects representing the item's attributes
-    category: // An object representing the category the item is assigned to
-    description: // the item's description
-    groups: // An array of objects representing the sub category of the item
-    id: // The item's unique ID in your Goodshuffle inventory
-    images: // An array of objects representing the images attached to this item
-    inventoryType: // The type of item
-    price:  // Pricing information about the item
-    quantity: // An object representing the amount of the item in your inventory
-    rate: // The default payment structure for this item
-    related: // Other inventory items flagged as related to the clicked item
-    tags: // The tags for the item
-    title: // The name of the item that was clicked
-    vendorName: // Your business name
-    wanted: // the amount of inventory item the user has added to the wishlist
-}
-```
+## Submit Complete: `gspro-wishlist.submit-complete`
 
-### Add to Wishlist
+Fires when Goodshuffle Pro has accepted the quote request. The client sees the "Sent!" confirmation at the same time,
+and 5 seconds later the wishlist empties.
 
-This event occurs when the user clicks the "Add to Wishlist" icon (represented by a heart) on a `<gspro-item-card>` inside.
-The user can also add items to their wishlist from inside the expanded item detail view and clicks the "Send to Wishlist" button.
-These are distinct events from a Website Integration perspective, but correspond to the same event for tracking purposes.
+It doesn't fire when the send fails. The client sees an error instead and can try again, and `gspro-wishlist.submit`
+fires again when they do.
 
-The two events that correspond to adding to wishlist are `gspro-item-card.add` and `gspro-item-detail.add`.
-You will want to capture **BOTH** of these events when targetting the "Add to Wishlist" functionality.
-Because you will need to capture both events, we recommend putting your handler logic inside its own function.
-This will help you ensure that the same logic is being executed by both handlers.
-
-Example (with alert):
-```
-// define your handler function (in this case presenting an alert)
-function handleEvent(data) {
-    alert("You have added " + data.detail.want + " quantity of " + data.detail.title + " to your Wishlist!")
-}
-
-// add listener for adding to wishlist with "heart icon"
-document.addEventListener("gspro-item-card.add", function(data) {
-    handleEvent(data)
-})
-
-// add listener for adding to wishlist from expanded item detail view
-document.addEventListener("gspro-item-detail.add", function(data) {
-    handleEvent(data)
-})
+Example (redirect to a thank-you page):
 
 ```
-
-The `data.detail` object of this event is the exact same as the one detailed in the Item Card Click section. You have access to all the same data that you do for the "gspro-item-card.click" event.
-
-### Submit Wishlist
-
-This event occurs when a user submits a wishlist request after filling in their venue and contact information.
-You can capture this event by targeting the `gspro-wishlist.submit` event. 
-
-This event happens *immediately* after the submit button is clicked. 
-It should not be used for any functionality that might block completion of the request, such as a redirect. 
-The 'Submission Complete' event detailed below is fired when the API call to submit the Wishlist completes successfully, and should be used for redirects.
-
-Example (with Google Analytics):
-```
-// add listener for wishlist submit event
-document.addEventListener("gspro-wishlist.submit", function(data) {
-    // get our data from the detail object
-    var wishlistCount = data.detail.wishlist.length
-    var clientFullName = data.detail.contact.firstName + " " + data.detail.contact.lastName
-    // construct a message
-    var message = clientFullName + " submitted a wishlist with " + wishlistCount + " items."
-    // send to Google Analytics
-    gtag('event', 'Submission', {
-        'event_category': 'Wishlist',
-        'event_label': 'Wishlist Submission',
-        'value': message
-    });
-})
+document.addEventListener("gspro-wishlist.submit-complete", function (event) {
+    var name = event.detail.contact.firstName || "";
+    window.location = "https://example.com/thank-you?name=" + encodeURIComponent(name);
+});
 ```
 
-`data.detail` object for `gspro-wishlist.submit`
-```
-contact:  // information about the person filling out the Wishlist
-venue:    // venue information provided by person submitting the Wishlist
-wishlist: // array of objects representing the "cart" of the Wishlist
-          // each item is identical to the item detail described above
-```
+## The `detail` of both events
 
-`data.detail.contact` object - provided by user before submission
+Both events carry the same `event.detail`:
+
 ```
 {
-    firstName: "John"
-    lastName: "Doe"
-    email: "john.doe@gmail.com"
-    phone: "5555551234"
+    contact: {                       // what the client typed in "Your Contact Info"
+        firstName: "John",
+        lastName: "Doe",
+        email: "john.doe@example.com",
+        phone: "5555551234"
+    },
+    venue: {                         // "Venue / Delivery Location", all optional
+        venueName: "The Place to Be",
+        addressStreet1: "123 Green St",
+        addressStreet2: "Suite 101",
+        city: "Washington",
+        state: "DC",
+        postalCode: "20032"
+    },
+    wishlist: [                      // one entry per item, in the order the client added them
+        {
+            id: "9942725a-dcd2-5d33-27b0-44f2ec408d88",
+            title: "Gold Chiavari Chair",
+            image: "https://...",
+            price: { ... },
+            minimum: 10,
+            want: 40,
+            rate: "DAILY",
+            startDate: "2026-10-22",
+            endDate: "2026-10-24",
+            startTime: "12:00 PM",
+            hours: 4
+        }
+    ]
 }
 ```
 
-`data.details.venue` object - provided by user before submission
-```
-{
-    addressStreet1: "123 Green St"
-    addressStreet2: "Suite 101"
-    city: "Washington"
-    postalCode: "20032"
-    state: "DC"
-    venueName: "The Place to Be"
-}
-```
+### `contact`
 
-### Submit Complete
+| Field | Notes |
+| --- | --- |
+| `firstName`, `lastName`, `email` | Required on the form, so always filled in |
+| `phone` | Filled in when the client gave one. Required when the vendor turns on `require-phone-number` |
 
-Usage of this event **requires** a Website Integration version of **0.5.1** or greater.
+An optional field the client left blank can be missing or an empty string. Check before you use it.
 
-This event happens when the API responds successfully, indicating that the wishlist has been received and processed.
-You might use this event to redirect to a thank-you page, or open a modal instructing your users on what to expect next.
+### `venue`
 
-You can capture this event by targeting the `gspro-wishlist.submit-complete` event.
+| Field | Notes |
+| --- | --- |
+| `venueName` | The venue's name |
+| `addressStreet1`, `addressStreet2` | Street address, two lines |
+| `city` | City |
+| `state` | State, province or region. Missing for countries whose form has no such field, such as the UK |
+| `postalCode` | ZIP or postal code |
 
-This event uses the exact same `data.detail` modelling as the 'Submission Complete' event described above.
+Every venue field is optional, so any of them can be missing or empty. Only the fields your country's form shows are included.
 
-Example (with a redirect to personalized thank-you page):
-```
-  document.addEventListener("gspro-wishlist.submit-complete", function (data) {
-    var clientFullName = data.detail.contact.firstName + " " + data.detail.contact.lastName;
-    location = "https://eventrentals.com/?name=" + clientFullName
-  })
-```
+### `wishlist`
+
+| Field | Always there | Notes |
+| --- | --- | --- |
+| `id` | Yes | The item's ID in Goodshuffle Pro |
+| `title` | Yes | The item's name |
+| `want` | Yes | Quantity requested |
+| `rate` | Yes | Price type: `HOURLY`, `DAILY`, `FLAT_FEE`, `PURCHASED`, `BY_CONTENTS_ALL`, `BY_CONTENTS_CLIENT_VISIBLE`, or `UNPRICED` for an item with no visible price |
+| `image` | No | Address of the item's main photo |
+| `price` | No | The item's price details, as your website shows them |
+| `minimum` | No | The item's minimum quantity |
+| `startDate`, `endDate` | No | Dates as `YYYY-MM-DD` |
+| `startTime` | No | Start time, such as `12:00 PM` |
+| `hours` | No | Hours requested, for an `HOURLY` item |
+
+The event's own dates and times aren't in `detail`.
+
+## Events from version 0.5.x
+
+Sites on version 0.5.x of the Website Integration also fire `gspro-item-card.click`, `gspro-item-card.add` and
+`gspro-item-detail.add` when a client opens an item or adds one to the wishlist.
+
+**The current Website Integration doesn't fire these three events.** If your site listens for them, those listeners
+stop running when you switch. See [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
+
+On 0.5.x, each entry in `detail.wishlist` was the whole item: its category, tags, attributes and the rest. It now holds
+only the fields in the table above. A listener that reads `wishlist.length`, `contact` or `venue` works on both.
