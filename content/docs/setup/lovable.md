@@ -47,7 +47,8 @@ The snippet goes inside `<head>` in `index.html`, at the root of the project:
 ```
 
 > **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
-> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing.
+> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing. Also to be filled in
+> then: whether this tag adds the styles itself or needs a stylesheet tag next to it.
 
 Replace `YOUR-PUBLIC-WEBSITE-KEY` with the key you copied.
 

@@ -37,12 +37,13 @@ Each guide does the same three things in its builder's own way:
 ```
 
 > **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
-> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing.
+> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing. Also to be filled in
+> then: whether this tag adds the styles itself or needs a stylesheet tag next to it.
 
 3. **Put your inventory on a page** with `<gspro-item-gallery>`, `<gspro-item-list>` or `<gspro-item-card>`. See
    [Web Components]({{< relref "/docs/components/item-gallery" >}}).
 
-Replace `YOUR-PUBLIC-WEBSITE-KEY` with your key. Every other part of the snippet stays exactly as shown.
+Replace `YOUR-PUBLIC-WEBSITE-KEY` with your key. Leave the rest of the snippet as shown.
 
 When a client sends their wishlist, it arrives in Goodshuffle Pro as a new project. Find it under Projects, Filters,
 Origin = "Website". The sales lead set on the Integrations tab also gets an email.
