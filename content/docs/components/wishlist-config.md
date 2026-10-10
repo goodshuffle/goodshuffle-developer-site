@@ -153,4 +153,4 @@ leave the attribute out.
 
 * The wishlist button always shows on pages with a `<gspro-item-gallery>`, `<gspro-item-list>` or `<gspro-item-card>`.
 * By default it also shows on every other page of your site. Set this to `false` to show it only on those pages.
-* Clients send more quote requests when the wishlist is on every page. We recommend leaving this alone.
+* The default is `true`.

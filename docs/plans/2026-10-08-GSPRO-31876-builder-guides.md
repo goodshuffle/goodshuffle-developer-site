@@ -86,8 +86,8 @@ and CX signs off. This branch can't close them. Its PR is a draft and says so.
 
 ## Not done here
 
-- Publishing. `master` and `preview` deploy publicly; this branch is not pushed and nothing merges
-  until GSPRO-31872 replaces `EMBED_HOST`.
+- Publishing. `master` and `preview` deploy publicly; this branch goes up as a draft PR and nothing
+  merges until GSPRO-31872 ships and replaces `EMBED_HOST`.
 - Building the site. Hugo isn't installed and isn't to be installed here, so the pages were checked
   by reading the front matter and shortcodes of existing pages, not by a build.
 - AC1 and AC2, above.
