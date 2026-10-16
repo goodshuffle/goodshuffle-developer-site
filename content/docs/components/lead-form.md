@@ -18,10 +18,7 @@ It's the same form your share link opens, but it sits inside your page and takes
 ```
 
 When a client submits the form, the response lands in the form's **Responses** in Goodshuffle Pro, the same as a
-response sent from the share link.
-
-<!-- GSPRO-32473: submit, the confirmation and the events aren't built yet. Until then a submit that passes
-validation shows the form's error message. Confirm this paragraph when GSPRO-32473 lands. -->
+response sent from the share link. See [After the client submits](#after-the-client-submits).
 
 The form needs only the Website Integration's script tag on the page:
 
@@ -66,6 +63,10 @@ form's ID. Any other address shows [This form isn't available](#this-form-isnt-a
 
 Changing `form` later, for example with JavaScript, loads the other form in its place.
 
+A project-specific link, one that ends in `?p=` and a number, isn't supported here. The form still shows, but its
+answers are filed against the form only, not the project, and the browser console shows a warning. Use the form's
+plain share link.
+
 <!-- GSPRO-32471: the attribute's format (share link or ID, and which hosts) and whether a vendor's page can load the
 form cross-site are both pending that decision. form-attribute.ts is the one place the rule lives; update this
 section to match when GSPRO-32471 is decided. -->
@@ -107,10 +108,10 @@ Every part has a class you can style with your site's CSS:
 | `gspro-c-lead-form__error` | A question's error message, such as "This field is required." |
 | `gspro-c-lead-form__submit` | The Submit button |
 | `gspro-c-lead-form__confirmation` | The message shown after a successful submit |
+| `gspro-c-lead-form__upload-fallback` | The "Open the form on Goodshuffle to attach files" link on a file question, when the upload can't run from your page |
 | `gspro-c-lead-form__unavailable` | The "This form isn't available." message |
 
-<!-- GSPRO-32473: gspro-c-lead-form__confirmation shows only once submit is built. Confirm the row then. The
-form-level submit error (above Submit) has no documented class yet; add a row if it gets one. -->
+<!-- The form-level submit error (above Submit) has no documented class; add a row if it gets one. -->
 
 For example, add this to your site's CSS:
 
@@ -160,21 +161,37 @@ and the same rules for when a question shows.
 Address questions are typed by hand. If your page already loads Google Maps Places for your own use, the address
 field suggests addresses as the client types.
 
-<!-- GSPRO-32474: file upload questions aren't built in the component yet (picking a file does nothing). Add a short
-note about file questions here when GSPRO-32474 lands. Don't say uploads work until then. -->
+Clients attach files right in the form, and the files upload straight to Goodshuffle's file storage. The file types
+and sizes allowed are the same as on the form's share page.
+
+If the client's browser can't upload from your page, the question says "Couldn't upload from this page." and shows a
+link, "Open the form on Goodshuffle to attach files". The link opens the form's share page in a new tab. The answers
+the client already gave on your page stay as they are.
+
+## After the client submits
+
+When the client clicks **Submit**, the form checks the answers first and shows an error under any question that needs
+fixing. Then it sends them. The Submit button can't be pressed again while the answers are on their way.
+
+- **Sent.** The form is replaced by your confirmation message, as you set it on the form in Goodshuffle Pro, or by a
+  default one if you didn't set any. The response shows in the form's **Responses**.
+- **Not sent**, for example because the client lost their connection. A message asks the client to try again. Nothing
+  they typed is lost.
+
+To react to a submit with your own script, for example to report it to your analytics or send the client to a
+thank-you page, see [Events]({{< relref "/docs/integrations/events" >}}).
 
 ## Languages
 
 The form's own text shows in English, Spanish or French: the Submit button, the required marker, error messages,
-field placeholders, the calendar for a single-date question, the address fields, the confirmation shown after a
-submit, and the "This form isn't available." message.
-
-<!-- GSPRO-32473 translates the confirmation screen's own text. Confirm it's listed correctly when GSPRO-32473 lands. -->
+field placeholders, the calendar for a single-date question, the address fields, the file field, the "try again"
+message, the default confirmation's title and text, and the "This form isn't available." message.
 
 Date range, date and time, date and time range, and time questions use the browser's own date and time fields. Those
 follow the language of the client's browser, not the form's.
 
-Your questions, answer choices, help text and content blocks show exactly as you wrote them, in any language.
+Your questions, answer choices, help text, content blocks and your own confirmation message show exactly as you wrote
+them, in any language.
 
 The form uses the same language as the rest of the Website Integration. That is English, unless multiple languages
 are turned on for your Goodshuffle Pro account and the page also has the

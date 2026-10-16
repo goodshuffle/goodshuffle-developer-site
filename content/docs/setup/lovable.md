@@ -170,8 +170,6 @@ export default function Contact() {
 5. On the published site, fill in the form and click **Submit**. The response shows in the form's **Responses** in
    Goodshuffle Pro.
 
-<!-- GSPRO-32473: submit and Responses for the lead form land with GSPRO-32473. Confirm this check then. -->
-
 From the chat, you can ask this, with your Website Integration code pasted in: "On the Contact page, render
 `<gspro-lead-form form="https://www.goodshuffle.com/c/f/FORM_ID"></gspro-lead-form>` exactly as written, as a plain
 HTML custom element below the heading, and declare gspro-lead-form for TypeScript in src/gspro-elements.d.ts."

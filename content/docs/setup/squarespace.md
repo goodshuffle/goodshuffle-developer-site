@@ -105,8 +105,6 @@ step to that screen once it ships. -->
 5. On your published site, fill in the form and click **Submit**. The response shows in the form's **Responses** in
    Goodshuffle Pro.
 
-<!-- GSPRO-32473: submit and Responses for the lead form land with GSPRO-32473. Confirm this check then. -->
-
 The form needs only the script tag from step 2. If you only want forms on your site, paste just this line into
 Code Injection's **Header** box. You can leave out `<gspro-wishlist-config>`:
 

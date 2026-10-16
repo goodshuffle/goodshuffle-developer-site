@@ -141,8 +141,6 @@ step to that screen once it ships. -->
 8. On your published site, fill in the form and click **Submit**. The response shows in the form's **Responses** in
    Goodshuffle Pro.
 
-<!-- GSPRO-32473: submit and Responses for the lead form land with GSPRO-32473. Confirm this check then. -->
-
 The form doesn't need the settings element from step 2. If you only want forms on your site, this is the only step
 you need.
 

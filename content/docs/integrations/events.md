@@ -116,37 +116,37 @@ document.addEventListener("gspro-wishlist.submit-complete", function (event) {
 
 ## Lead form sent: `gspro-lead-form.submit` and `gspro-lead-form.submit-complete`
 
-<!-- GSPRO-32473 builds lead form submit and these two events. The timing and `detail` below are the plan; confirm
-them against the code when GSPRO-32473 lands. -->
-
 A [`<gspro-lead-form>`]({{< relref "/docs/components/lead-form" >}}) fires two events, like the wishlist:
 
-- `gspro-lead-form.submit` fires when the client clicks Submit, the answers pass the form's checks, and they're on
-  their way. The send can still fail after it. Use it to count attempts, not to redirect.
+- `gspro-lead-form.submit` fires when the client clicks Submit and the answers pass the form's checks, just before
+  they're sent. The send can still fail after it. Use it to count attempts, not to redirect.
 - `gspro-lead-form.submit-complete` fires when Goodshuffle Pro has saved the response. Use it for anything that must
   happen only after a successful submit, such as sending the client to a thank-you page.
+
+When a send fails, nothing fires. The client sees a message asking them to try again, and `gspro-lead-form.submit`
+fires again when they do.
 
 Both carry the same `event.detail`:
 
 | Field | Notes |
 | --- | --- |
-| `form` | The form's ID, as in its share link: the text after `/c/f/` |
-| `answers` | The answers, as sent to Goodshuffle Pro |
+| `form` | The form's ID, as in its share link: the text after `/c/f/`, as a string |
+| `answers` | A copy of the answers sent, as a list of `{ elementLogicalID, value }`, one per answered question. Changing it doesn't change what's sent |
 
-<!-- GSPRO-32473: detail.form is to be the share-link form ID (a string), not the numeric internal ID. Confirm when
-GSPRO-32473 lands. -->
-
-Like the wishlist events, both bubble, are composed and are cancelable, so a listener on `document` hears them. With
+Both fire on the `<gspro-lead-form>` tag. Like the wishlist events, they bubble, are composed and are cancelable, so a
+listener on `document` hears them. Calling `preventDefault()` on either has no effect: it doesn't stop the send. With
 several forms on a page, use `detail.form` to tell them apart.
 
-Example (with Google Analytics):
+Example (with Google Analytics, then a thank-you page):
 
 ```
 document.addEventListener("gspro-lead-form.submit-complete", function (event) {
     gtag("event", "Submission", {
         "event_category": "Lead Form",
-        "event_label": event.detail.form
+        "event_label": event.detail.form,
+        "value": event.detail.answers.length
     });
+    window.location = "https://example.com/thank-you";
 });
 ```
 

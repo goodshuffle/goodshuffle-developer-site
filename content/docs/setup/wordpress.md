@@ -114,8 +114,6 @@ step to that screen once it ships. -->
 5. On your site, fill in the form and click **Submit**. The response shows in the form's **Responses** in Goodshuffle
    Pro.
 
-<!-- GSPRO-32473: submit and Responses for the lead form land with GSPRO-32473. Confirm this check then. -->
-
 The plugin already adds the Website Integration's script tag to every page while it's active, so you don't paste a
 script tag. The form doesn't use the plugin's settings: it needs no Public Browser Key and no gallery page.
 

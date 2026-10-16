@@ -47,10 +47,11 @@ on their own page with `<gspro-lead-form>`, styled by their site, with responses
 
 ## Pending other tickets (HTML comments in the source)
 
-- **GSPRO-32473 (submit, confirmation, events).** Submit doesn't post yet; the confirmation class and both events
-  are documented as planned. Comments on the Events page, the component page, and each guide's test line.
-- **GSPRO-32474 (file upload).** No promise that file questions work. Comment where a file-question note would go on
-  the component page.
+- **GSPRO-32473 (submit, confirmation, events)** and **GSPRO-32474 (file upload)** are built (marketplace
+  `origin/kyser/GSPRO-32473/lead-form-submit` at 397a1ea4, `kyser/GSPRO-32474/lead-form-file-upload` at 37a0e025).
+  Their comments are replaced with real content: "After the client submits" and file questions on the component
+  page, the events' timing, `detail` (`form`, a copy of `answers`), no effect from `preventDefault()`, and each
+  guide's Responses check. A `?p=` project link isn't supported in the tag.
 - **GSPRO-32471 (cross-site access).** Whether marketplace answers a vendor's page, and whether builder preview
   addresses work. Comment on the component page.
 - **GSPRO-32476 (Share section).** The exact labels in the form's Share section. Comment on the component page.
@@ -62,7 +63,7 @@ on their own page with `<gspro-lead-form>`, styled by their site, with responses
 
 - Each supported builder's guide includes adding a lead form: done in the source.
 - Following the step on a fresh site shows the form and a submission lands in the form's Responses: can't be proven
-  here. Submit is GSPRO-32473 and cross-site loading is GSPRO-32471, and no release with the tag is live yet. The
+  here. Cross-site loading is GSPRO-32471, and no release with the tag is live yet. The
   steps follow each guide's existing, reviewed placement of HTML.
 
 ## Not done here

@@ -72,8 +72,6 @@ To show one of your Goodshuffle Pro Custom Forms on a page, copy the **Website I
 The form needs only the script tag from step 1, not `<gspro-wishlist-config>`. Submit the form once on your site; the
 response shows in the form's **Responses** in Goodshuffle Pro. See [Lead Form]({{< relref "/docs/components/lead-form" >}}).
 
-<!-- GSPRO-32473: submit and Responses for the lead form land with GSPRO-32473. Confirm this check then. -->
-
 ## Troubleshooting
 
 - If nothing loads, check the Public Browser Key against the Integrations tab. Regenerating it in Goodshuffle Pro
