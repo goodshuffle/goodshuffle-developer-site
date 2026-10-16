@@ -1,5 +1,5 @@
 ---
-weight: 35
+weight: 30
 title: Wix Setup
 ---
 
@@ -34,10 +34,12 @@ Every Goodshuffle Custom Element on your site uses this Server URL:
 LOADER_URL
 {{< /embed-code >}}
 
-This one file is all Wix needs. It adds the styles and the rest of the Website Integration to the page itself, and
-it adds them once however many Custom Elements use it.
+This one file is all Wix needs. It adds the release's stylesheet, `gspro-embed.css`, and its script,
+`gspro-embed.js`, to the page's `<head>`. It adds them once per page, however many Custom Elements use it. If two
+elements on a page have different Server URLs, the first one to run decides which release loads, so keep them all the
+same.
 
-The address pins version {{< embed-version >}}, so your site changes only when you change that number on each Custom
+The address pins version {{< embed-version >}}, so your site changes only when you change that number on every Custom
 Element. See [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
 [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes without
 editing.

@@ -1,5 +1,5 @@
 ---
-weight: 30 
+weight: 70
 bookFlatSection: true 
 title: "Custom Website Setup"
 ---
@@ -37,8 +37,9 @@ You don't need a footer snippet. `<gspro-wishlist-config>` adds the wishlist and
 - the Website Integration itself, `gspro-embed.js`.
 
 It works as a plain `<script>` tag, as shown, and also with `type="module"` if your site adds every script that way.
-If the Website Integration is already on the page, for example because the tag is there twice, it does nothing the
-second time.
+If the page already has a `gspro-embed.js` script from any release, it adds nothing. So when the tag is on a page
+twice, the first copy to run decides which release loads. It doesn't look for the 0.5.x `gspro-wc` scripts: if your
+page still has those, remove them. See [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
 
 The address pins version {{< embed-version >}}, so your site changes only when you change that number. See
 [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or

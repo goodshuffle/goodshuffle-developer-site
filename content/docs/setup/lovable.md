@@ -1,5 +1,5 @@
 ---
-weight: 45
+weight: 60
 title: Lovable Setup
 ---
 
@@ -46,7 +46,8 @@ The snippet goes inside `<head>` in `index.html`, at the root of the project:
 ></gspro-wishlist-config>
 {{< /embed-code >}}
 
-> The script tag adds the styles too; you don't need a stylesheet tag or a CSS import. It pins version
+> The script tag also adds the release's stylesheet, `gspro-embed.css`, so you don't need a stylesheet tag or a
+> CSS import. It pins version
 > {{< embed-version >}}. See [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
 > [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes
 > without editing.

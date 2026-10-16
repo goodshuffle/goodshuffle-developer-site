@@ -1,5 +1,5 @@
 ---
-weight: 3
+weight: 90
 title: "Updating to a newer version"
 ---
 
@@ -12,46 +12,61 @@ Every setup snippet on this site pins one release of the Website Integration. Th
 <script src="LOADER_URL"></script>
 {{< /embed-code >}}
 
-The number in the address is the version. The files at a numbered address never change, so your site stays exactly
-as it is until you change that number.
+The number in the address is the release. `loader.js` adds two files from that same release folder to the page's
+`<head>`: the stylesheet `gspro-embed.css` and the script `gspro-embed.js`. Files in a numbered release folder are
+never changed or removed, so your site stays exactly as it is until you change the number.
 
 ## How to update
 
-1. Check what changed in the new release. See the [Changelog]({{< relref "/docs/resources/changelog" >}}).
-2. In your site's script tag, change the version number in the address to the new one. Change nothing else.
-3. Save or publish your site, then check a gallery and send a test quote request from your published site.
+1. Check what changed in the new release. See the [Changelog]({{< relref "/docs/resources/changelog" >}}). On
+   WordPress, the [WordPress Plugin]({{< relref "/docs/resources/wordpress" >}}) page lists plugin releases.
+2. Change the address where your site builder keeps it. See the table below. On most builders, you change the version
+   number in the address and nothing else.
+3. Save or publish your site. On your published site, check that a gallery shows items, and send a test quote request.
 
 > To be defined: where the release notes for 1.0.0 and later are published. The Changelog page lists releases up to
 > 0.5.8.
 
-Where the tag lives depends on your site builder:
-
 | Builder | What to change |
 | --- | --- |
 | Squarespace | The script tag in Code Injection, Header. See [Squarespace]({{< relref "/docs/setup/squarespace" >}}) |
-| WordPress | Nothing by hand. Update the plugin; each plugin release pins a version. See [WordPress]({{< relref "/docs/setup/wordpress#updating-the-plugin" >}}) |
+| WordPress | Nothing by hand. Install the plugin release that pins the version you want, then check **Your site loads** in Advanced Settings. If Modern JS holds an address, the plugin loads that address instead. See [Updating the plugin]({{< relref "/docs/setup/wordpress#updating-the-plugin" >}}) |
 | Wix | The Server URL on every Goodshuffle Custom Element. See [Wix]({{< relref "/docs/setup/wix" >}}) |
 | Showit | The script tag in the Embed Code element in your header canvas. See [Showit]({{< relref "/docs/setup/showit" >}}) |
 | GoHighLevel | The script tag in the head tracking code, and in any page's or funnel step's own tracking code. See [GoHighLevel]({{< relref "/docs/setup/gohighlevel" >}}) |
 | Lovable | The script tag in `index.html`. See [Lovable]({{< relref "/docs/setup/lovable" >}}) |
 | Any other site | The script tag in the page `<head>`. See [Custom Website]({{< relref "/docs/setup/custom-setup" >}}) |
 
-If the tag is on your site more than once, change every copy. When two copies are on one page, only one of them
-loads, and it may be the old one.
+If the address is on your site more than once, change every copy. When a page has two copies, the first one to run
+adds its release and the others do nothing. A leftover copy with the old number can keep the old release on that page.
 
 If something goes wrong after updating, put the old number back. The old release stays available at its address.
 
 ## Automatic updates with v1
 
-If you'd rather not edit your site for each fix, you can use this address instead of a numbered one:
+If you'd rather not edit your site for each 1.x release, you can put this address in your script tag in place of the numbered one:
 
 {{< embed-code alias="v1" >}}
 <script src="LOADER_URL"></script>
 {{< /embed-code >}}
 
-It's optional. `/v1/` serves the newest 1.x release, so your site gets every non-breaking 1.x update
-without an edit. A breaking change never ships under `/v1/`: it comes out as a new major version (2.x) with an
-upgrade guide, and your site stays on the newest 1.x release until you follow that guide.
+It's optional. `/v1/loader.js` is the loader of the newest published 1.x release, so it adds that release's
+`gspro-embed.css` and `gspro-embed.js` from its numbered folder. When a newer 1.x release is published, this file
+changes to point at it. It's cached for up to five minutes, so your site picks up a new release within a few minutes,
+without an edit. It never moves to a 2.x release.
 
-The trade-off is that your site changes when a release ships, not when you choose. To go back to a fixed version, put
-a numbered address back in the tag.
+Goodshuffle ships breaking changes only as a new major version (2.x), with an upgrade guide. Your site stays on the
+newest 1.x release until you follow that guide.
+
+The trade-off is that your site changes when a release ships, at a time you don't choose.
+
+How to switch depends on your builder:
+
+| Builder | What to change |
+| --- | --- |
+| WordPress | In Advanced Settings, enter the `/v1/` address in **Modern JS**, leave **Legacy JS** empty, and click **Save Advanced Options**. See [WordPress]({{< relref "/docs/setup/wordpress#automatic-updates-with-v1" >}}) |
+| Wix | Set the Server URL of every Goodshuffle Custom Element to the `/v1/` address. Leave no element on a numbered address |
+| Every other builder | Replace the address in the script tag with the `/v1/` address, everywhere the tag appears. The table in [How to update](#how-to-update) says where it is |
+
+To go back to a fixed version, put a numbered address back. On WordPress, clear Modern JS and save, and the site goes
+back to the version the plugin pins.

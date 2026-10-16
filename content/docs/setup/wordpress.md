@@ -14,15 +14,16 @@ You will need:
 
 - WordPress 5 or later, and an administrator login.
 - An active Website Integration on your Goodshuffle Pro account.
-- The Goodshuffle Website Integration plugin.
+- The Goodshuffle Website Integration plugin, version 0.6.0 or later.
 
-> To be filled in when GSPRO-32532 ships: the version number of the plugin release that loads the Website Integration
-> from its pinned `embed.goodshuffle.com` address, the Website Integration version it pins, and its download link. Until that release, the plugin download on the
-> [WordPress Plugin]({{< relref "/docs/resources/wordpress" >}}) page is version 0.5.7.
+> To be filled in when plugin 0.6.0 is released (GSPRO-32532): its download link. Until then, the download on the
+> [WordPress Plugin]({{< relref "/docs/resources/wordpress" >}}) page is version 0.5.7, which loads Website Integration
+> version 0.5.x.
 
-The plugin pins the Website Integration version for you. Your site moves to a newer Website Integration release when
-you update the plugin, not before. See [Updating the plugin](#updating-the-plugin) and
-[Updating to a newer version]({{< relref "/docs/setup/updating" >}}).
+Plugin 0.6.0 loads Website Integration version 1.0.0, from `https://embed.goodshuffle.com/releases/1.0.0/loader.js`.
+You don't paste a script tag: the plugin adds it to every page. Your site moves to a newer Website Integration release
+when you install a plugin release that pins a newer one. To get 1.x updates without updating the plugin, see
+[Automatic updates with v1](#automatic-updates-with-v1).
 
 ## Overview
 
@@ -32,7 +33,7 @@ you update the plugin, not before. See [Updating the plugin](#updating-the-plugi
 4. Create the gallery page.
 5. Send a test quote request.
 
-If your site already has the plugin, update it to the version above. Your settings carry over. See
+If your site already has the plugin, update it to 0.6.0. Your settings carry over. See
 [Updating the plugin](#updating-the-plugin).
 
 ## Walk-through
@@ -67,7 +68,7 @@ Open the settings page from the **Settings** link under the plugin's name, or fr
 
 ![Wordpress Settings](/wordpress-settings-screen.png)
 
-The plugin now adds the Website Integration to the header of every page on your site.
+The plugin now adds the Website Integration's script tag and your settings to the head of every page on your site.
 
 ### 4. Create the gallery page
 
@@ -116,20 +117,58 @@ The settings page has these fields. Each one maps to an attribute on the Website
 
 The gallery settings apply to the gallery page only. The wishlist settings apply across your site.
 
-**Advanced Settings** hold Data Source, Icon URL, Modern JS and Legacy JS. They show below the main settings when you
-open `/wp-admin/options-general.php?page=gspro-gallery&advanced=1` on your site. Every field shows an address even if
-nobody has changed it: when nothing is saved, the field shows the plugin's built-in address. To tell a custom address
-from the default, compare each field with this table.
+## Advanced Settings
 
-| Field | Built-in address |
+Advanced Settings show below the main settings when you open
+`/wp-admin/options-general.php?page=gspro-gallery&advanced=1` on your site. Most sites never change them.
+
+| Field | What it holds |
 | --- | --- |
-| Data Source | `https://data.goodshuffle.com/vendor` |
-| Icon URL | Your site's address followed by `/wp-content/plugins/gspro-gallery/public/img/icons.svg` |
-| Modern JS | To be filled in when GSPRO-32532 ships: the `https://embed.goodshuffle.com/releases/VERSION/loader.js` address the plugin release pins |
-| Legacy JS | To be filled in when GSPRO-32532 ships: the `https://embed.goodshuffle.com/releases/VERSION/loader.js` address the plugin release pins |
+| Data Source | Shows `https://data.goodshuffle.com/vendor` unless someone changed it. Leave it as is |
+| Icon URL | Shows the address of the plugin's own `icons.svg` unless someone changed it. The Website Integration doesn't read this setting, so changing it does nothing. To change icons, see [Icons]({{< relref "/docs/customization/icons" >}}) |
+| Modern JS | Empty unless you entered an address. The grey placeholder is the plugin's default, `https://embed.goodshuffle.com/releases/1.0.0/loader.js` |
+| Legacy JS | Empty unless you entered an address. The plugin's help text says it's "Only for a custom 0.5.x widget build" |
+| Your site loads | Read only. Each script address the plugin puts on your pages, exactly as it prints it |
 
-A field that matches the table uses the default. To put a field back to its default, clear it and click **Save
-Advanced Options**. The plugin deletes the saved address and shows the built-in one again.
+Click **Save Advanced Options** after any change. To put a field back to its default, clear it and save.
+
+### What Modern JS and Legacy JS do
+
+| Modern JS and Legacy JS | Your site loads |
+| --- | --- |
+| Both empty | `https://embed.goodshuffle.com/releases/1.0.0/loader.js`, the version plugin 0.6.0 pins |
+| An address ending in `/loader.js` in either field | That address, in one script tag. The other field is ignored |
+| Any other address in either field | The two 0.5.x script tags: Modern JS as `type="module"` and Legacy JS as `nomodule`. An empty field uses the gspro-wc 0.5.7 file |
+
+A few addresses count as an empty field:
+
+- The plugin's own default, `https://embed.goodshuffle.com/releases/1.0.0/loader.js`. If you enter it, the plugin
+  doesn't save it, so a later plugin update still moves your site.
+- The `unpkg.com` addresses that earlier plugin versions filled in by default. In the plugin's words: "To use one of
+  those gspro-wc versions on purpose, enter its jsDelivr address instead."
+
+An `embed.goodshuffle.com` address entered with `http://` is saved and loaded as `https://`.
+
+### Automatic updates with v1
+
+To get non-breaking 1.x updates without updating the plugin:
+
+1. Open Advanced Settings.
+2. In **Modern JS**, enter `https://embed.goodshuffle.com/v1/loader.js`.
+3. Leave **Legacy JS** empty.
+4. Click **Save Advanced Options**.
+5. Check that **Your site loads** shows `https://embed.goodshuffle.com/v1/loader.js`.
+
+From then on, plugin updates don't change which version your site loads. To go back to the plugin's pinned version,
+clear Modern JS and save. For what `/v1/` does, see
+[Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}).
+
+### Staying on one version
+
+To keep a specific release, enter its address in Modern JS, for example
+`https://embed.goodshuffle.com/releases/1.0.0/loader.js`. The plugin only saves a version that differs from its own
+default. In the help text's words, "entering the current default's address is treated as leaving the field empty". So
+to stay on 1.0.0 after a later plugin release moves the default, update the plugin first, then enter the 1.0.0 address.
 
 ## Shortcodes
 
@@ -160,17 +199,23 @@ plugin already adds setup and item detail to every page.
    that don't offer this, first deactivate and delete the old plugin in **Plugins**, then upload the new one. Deleting
    the plugin keeps its settings.
 4. Open the settings page and check your key is still there.
-5. Open Advanced Settings (`/wp-admin/options-general.php?page=gspro-gallery&advanced=1`) and look at **Modern JS** and
-   **Legacy JS**.
+5. Open Advanced Settings (`/wp-admin/options-general.php?page=gspro-gallery&advanced=1`) and look at **Your site
+   loads**.
 
-An address with `@goodshuffle/gspro-wc` in it loads version 0.5.x. Older versions of the plugin show their built-in
-0.5.x address in these fields, and clicking **Save Advanced Options** on them saved that address. A saved address
-keeps loading, and the site stays on 0.5.x after the update. Clear both fields and click **Save Advanced Options**,
-unless someone set them on purpose. Both fields then show the built-in address from the table in
-[Every setting](#every-setting).
+### What changes when you update to 0.6.0
 
-A saved `embed.goodshuffle.com/releases/...` address works the same way: the site stays on that release whatever
-plugin version you install, until you clear the field.
+Every setting carries over. Nothing is renamed or deleted. What your site loads depends on Modern JS and Legacy JS:
+
+- **Never changed.** Your site moves to `https://embed.goodshuffle.com/releases/1.0.0/loader.js`. This includes
+  fields that hold the `unpkg.com` address an older plugin filled in. Older plugin versions saved that address
+  whenever someone clicked **Save Advanced Options**, and 0.6.0 treats it as empty.
+- **An address ending in `/loader.js`.** Your site keeps loading that address.
+- **Any other address someone entered**, such as a jsDelivr build. Your site keeps its two 0.5.x script tags. The other
+  field, if it's empty or still holds an old plugin default, uses the gspro-wc 0.5.7 file. To move to the new version, clear both fields
+  and click **Save Advanced Options**, unless someone set them on purpose.
+
+After updating, **Your site loads** should show `https://embed.goodshuffle.com/releases/1.0.0/loader.js`, or the
+`/loader.js` address you chose. If it shows `gspro-wc`, your site is still on 0.5.x.
 
 ## Common changes
 
@@ -186,6 +231,8 @@ plugin version you install, until you clear the field.
 - **The gallery shows but no items load.** Check the Public Browser Key. If someone regenerated it in Goodshuffle Pro,
   paste the new one and click Update Options.
 - **No wishlist button on other pages.** Tick Wishlist ("Display wishlist on all pages").
+- **The site still looks like 0.5.x after updating the plugin.** Check **Your site loads** in Advanced Settings. If it
+  shows a `gspro-wc` address, Modern JS or Legacy JS holds a custom address. Clear both and save.
 - **A shortcode shows as plain text.** Update the plugin. In older versions, `[gspro-item-list]` pointed at
   code that doesn't exist, and WordPress printed the shortcode as text.
 

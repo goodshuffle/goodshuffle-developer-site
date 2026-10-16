@@ -7,8 +7,12 @@ weight: 90
 
 ## Current Version
 
-> To be filled in when GSPRO-32532 ships: the plugin release that loads the Website Integration from its
-> pinned `embed.goodshuffle.com` address, with its download link and date. Until then, 0.5.7 below is the current download.
+> To be filled in when plugin 0.6.0 is released (GSPRO-32532): its download link and date. 0.6.0 loads Website
+> Integration version 1.0.0 from `https://embed.goodshuffle.com/releases/1.0.0/loader.js`. Until it's released, 0.5.7
+> below is the current download. It loads version 0.5.x.
+>
+> From 0.6.0, the plugin's Advanced Settings show the address your site loads, under **Your site loads**. See
+> [WordPress Setup]({{< relref "/docs/setup/wordpress#advanced-settings" >}}).
 
 - [0.5.7](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.7.zip) (June 17, 2024)
 

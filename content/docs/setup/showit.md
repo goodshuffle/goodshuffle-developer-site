@@ -1,5 +1,5 @@
 ---
-weight: 25
+weight: 40
 title: Showit Setup
 ---
 
@@ -56,7 +56,7 @@ The snippet goes in your header canvas, which shows on every page.
 ></gspro-wishlist-config>
 {{< /embed-code >}}
 
-> The script tag adds the styles too; you don't need a stylesheet tag. It pins version {{< embed-version >}}. See
+> The script tag also adds the release's stylesheet, `gspro-embed.css`, so you don't need a stylesheet tag. It pins version {{< embed-version >}}. See
 > [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
 > [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes
 > without editing.
