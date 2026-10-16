@@ -51,9 +51,10 @@ The snippet belongs in the code GoHighLevel adds to the `<head>` of your pages.
 ></gspro-wishlist-config>
 {{< /embed-code >}}
 
-> The script tag also adds the release's stylesheet, `gspro-embed.css`, so you don't need a stylesheet tag. It pins version {{< embed-version >}}. See
+> This is Goodshuffle's script. It brings its own styles, so you don't need a stylesheet tag. The address includes
+> the version, {{< embed-version >}}, and your site stays on that version until you change the number. See
 > [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
-> [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes
+> [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x updates
 > without editing.
 
 4. Replace `YOUR-PUBLIC-WEBSITE-KEY` with the key you copied.
@@ -83,7 +84,7 @@ instead.
 
 ### 4. Send a test quote request
 
-On your published domain (not the editor preview):
+On your published site, on your own domain. The editor preview may not load your inventory.
 
 1. Open the gallery page and pick a category.
 2. Click the heart on an item to add it to the wishlist.
@@ -99,7 +100,7 @@ In Goodshuffle Pro, the request appears as a new project under **Projects**, **F
 - **Funnel steps.** Each funnel step is its own page. A funnel-level head tracking code covers every step; a step's own
   tracking code covers only that step.
 - **Your own forms.** GoHighLevel's forms and the wishlist are separate. A quote request sent from the wishlist goes to
-  Goodshuffle Pro, not to your GoHighLevel contacts.
+  Goodshuffle Pro only. Your GoHighLevel contacts don't get it.
 
 ## When it doesn't work
 

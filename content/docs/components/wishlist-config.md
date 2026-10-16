@@ -27,8 +27,9 @@ The element reads its attributes once, when the page loads. Changing them later 
 
 Currency, country, and the date, address and phone formats come from your Goodshuffle Pro account.
 
-Language works differently. The widget shows English unless multiple languages are turned on for your Goodshuffle
-Pro account (`multiLanguageEnabled`). With them on, clients get a language selector with English, Spanish and French.
+Language works differently. The widget shows English unless Goodshuffle has turned on multiple languages for your
+Goodshuffle Pro account. No attribute on this tag changes it. To turn it on, ask Goodshuffle. With
+them on, clients get a language selector with English, Spanish and French.
 The widget uses the language the client picks there. Before they pick one, it uses the browser's language if that's
 Spanish or French, and English otherwise.
 

@@ -34,15 +34,14 @@ Every Goodshuffle Custom Element on your site uses this Server URL:
 LOADER_URL
 {{< /embed-code >}}
 
-This one file is all Wix needs. It adds the release's stylesheet, `gspro-embed.css`, and its script,
-`gspro-embed.js`, to the page's `<head>`. It adds them once per page, however many Custom Elements use it. If two
-elements on a page have different Server URLs, the first one to run decides which release loads, so keep them all the
-same.
+This is Goodshuffle's script, and it's all Wix needs. It brings its own styles, and it loads once per page however many
+Custom Elements use it. If two elements on a page have different Server URLs, the one that runs first decides which
+version loads, so keep them all the same.
 
-The address pins version {{< embed-version >}}, so your site changes only when you change that number on every Custom
-Element. See [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
-[Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes without
-editing.
+The address includes the version, {{< embed-version >}}, and your site stays on that version until you change the
+number on every Custom Element. See [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
+[Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x updates
+without editing.
 
 Older instructions used an address ending in `/dist/custom-elements/index.js`. Don't use it for new setups: it loads
 version 0.5.x, which no longer gets fixes.

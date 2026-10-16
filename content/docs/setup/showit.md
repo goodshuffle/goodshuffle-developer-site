@@ -56,9 +56,10 @@ The snippet goes in your header canvas, which shows on every page.
 ></gspro-wishlist-config>
 {{< /embed-code >}}
 
-> The script tag also adds the release's stylesheet, `gspro-embed.css`, so you don't need a stylesheet tag. It pins version {{< embed-version >}}. See
+> This is Goodshuffle's script. It brings its own styles, so you don't need a stylesheet tag. The address includes
+> the version, {{< embed-version >}}, and your site stays on that version until you change the number. See
 > [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
-> [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes
+> [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x updates
 > without editing.
 
 7. Replace `YOUR-PUBLIC-WEBSITE-KEY` with the key you copied.

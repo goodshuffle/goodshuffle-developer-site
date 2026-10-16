@@ -22,7 +22,7 @@ You will need:
 
 Plugin 0.6.0 loads Website Integration version 1.0.0, from `https://embed.goodshuffle.com/releases/1.0.0/loader.js`.
 You don't paste a script tag: the plugin adds it to every page. Your site moves to a newer Website Integration release
-when you install a plugin release that pins a newer one. To get 1.x updates without updating the plugin, see
+when you install a plugin release that loads a newer one. To get 1.x updates without updating the plugin, see
 [Automatic updates with v1](#automatic-updates-with-v1).
 
 ## Overview
@@ -119,8 +119,14 @@ The gallery settings apply to the gallery page only. The wishlist settings apply
 
 ## Advanced Settings
 
-Advanced Settings show below the main settings when you open
-`/wp-admin/options-general.php?page=gspro-gallery&advanced=1` on your site. Most sites never change them.
+Advanced Settings show below the main settings when you open this address, with your own site's address in place of
+`yoursite.com`:
+
+```
+https://yoursite.com/wp-admin/options-general.php?page=gspro-gallery&advanced=1
+```
+
+Most sites never change them.
 
 | Field | What it holds |
 | --- | --- |
@@ -134,10 +140,12 @@ Click **Save Advanced Options** after any change. To put a field back to its def
 
 ### What Modern JS and Legacy JS do
 
+The plugin goes down this table and uses the first row that matches.
+
 | Modern JS and Legacy JS | Your site loads |
 | --- | --- |
-| Both empty | `https://embed.goodshuffle.com/releases/1.0.0/loader.js`, the version plugin 0.6.0 pins |
-| An address ending in `/loader.js` in either field | That address, in one script tag. The other field is ignored |
+| Both empty | `https://embed.goodshuffle.com/releases/1.0.0/loader.js`, the version plugin 0.6.0 loads |
+| An address ending in `/loader.js` in either field | That address, in one script tag. If both fields hold one, Modern JS's address. The other field isn't printed |
 | Any other address in either field | The two 0.5.x script tags: Modern JS as `type="module"` and Legacy JS as `nomodule`. An empty field uses the gspro-wc 0.5.7 file |
 
 A few addresses count as an empty field:
@@ -147,7 +155,8 @@ A few addresses count as an empty field:
 - The `unpkg.com` addresses that earlier plugin versions filled in by default. In the plugin's words: "To use one of
   those gspro-wc versions on purpose, enter its jsDelivr address instead."
 
-An `embed.goodshuffle.com` address entered with `http://` is saved and loaded as `https://`.
+An `embed.goodshuffle.com` address that starts with `http://`, with `//`, or with no scheme at all is loaded as
+`https://`. That includes addresses an older plugin version saved.
 
 ### Automatic updates with v1
 
@@ -159,8 +168,8 @@ To get non-breaking 1.x updates without updating the plugin:
 4. Click **Save Advanced Options**.
 5. Check that **Your site loads** shows `https://embed.goodshuffle.com/v1/loader.js`.
 
-From then on, plugin updates don't change which version your site loads. To go back to the plugin's pinned version,
-clear Modern JS and save. For what `/v1/` does, see
+From then on, plugin updates don't change which version your site loads. To go back to the plugin's default version,
+clear both Modern JS and Legacy JS and click **Save Advanced Options**. For what `/v1/` does, see
 [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}).
 
 ### Staying on one version
@@ -199,8 +208,8 @@ plugin already adds setup and item detail to every page.
    that don't offer this, first deactivate and delete the old plugin in **Plugins**, then upload the new one. Deleting
    the plugin keeps its settings.
 4. Open the settings page and check your key is still there.
-5. Open Advanced Settings (`/wp-admin/options-general.php?page=gspro-gallery&advanced=1`) and look at **Your site
-   loads**.
+5. Open Advanced Settings at `https://yoursite.com/wp-admin/options-general.php?page=gspro-gallery&advanced=1`, with
+   your own site's address in place of `yoursite.com`, and look at **Your site loads**.
 
 ### What changes when you update to 0.6.0
 

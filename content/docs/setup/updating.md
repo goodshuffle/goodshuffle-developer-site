@@ -30,7 +30,7 @@ never changed or removed, so your site stays exactly as it is until you change t
 | Builder | What to change |
 | --- | --- |
 | Squarespace | The script tag in Code Injection, Header. See [Squarespace]({{< relref "/docs/setup/squarespace" >}}) |
-| WordPress | Nothing by hand. Install the plugin release that pins the version you want, then check **Your site loads** in Advanced Settings. If Modern JS holds an address, the plugin loads that address instead. See [Updating the plugin]({{< relref "/docs/setup/wordpress#updating-the-plugin" >}}) |
+| WordPress | Install the plugin release that loads the version you want. The [WordPress Plugin]({{< relref "/docs/resources/wordpress" >}}) page lists which version each release loads. If Modern JS or Legacy JS in Advanced Settings holds an address, the plugin loads what those fields say, so check **Your site loads** there afterwards. See [Updating the plugin]({{< relref "/docs/setup/wordpress#updating-the-plugin" >}}) |
 | Wix | The Server URL on every Goodshuffle Custom Element. See [Wix]({{< relref "/docs/setup/wix" >}}) |
 | Showit | The script tag in the Embed Code element in your header canvas. See [Showit]({{< relref "/docs/setup/showit" >}}) |
 | GoHighLevel | The script tag in the head tracking code, and in any page's or funnel step's own tracking code. See [GoHighLevel]({{< relref "/docs/setup/gohighlevel" >}}) |
@@ -50,13 +50,13 @@ If you'd rather not edit your site for each 1.x release, you can put this addres
 <script src="LOADER_URL"></script>
 {{< /embed-code >}}
 
-It's optional. `/v1/loader.js` is the loader of the newest published 1.x release, so it adds that release's
-`gspro-embed.css` and `gspro-embed.js` from its numbered folder. When a newer 1.x release is published, this file
-changes to point at it. It's cached for up to five minutes, so your site picks up a new release within a few minutes,
-without an edit. It never moves to a 2.x release.
+It's optional. Goodshuffle points `/v1/loader.js` at the current 1.x release, so it adds that release's
+`gspro-embed.css` and `gspro-embed.js` from its numbered folder. When Goodshuffle moves it to another 1.x release,
+your site follows. The file is cached for up to five minutes, so your site picks up the change within a few minutes,
+without an edit. It only ever points at a 1.x release.
 
-Goodshuffle ships breaking changes only as a new major version (2.x), with an upgrade guide. Your site stays on the
-newest 1.x release until you follow that guide.
+Goodshuffle ships breaking changes only as a new major version (2.x), with an upgrade guide. Your site stays on 1.x
+until you follow that guide.
 
 The trade-off is that your site changes when a release ships, at a time you don't choose.
 
@@ -68,5 +68,5 @@ How to switch depends on your builder:
 | Wix | Set the Server URL of every Goodshuffle Custom Element to the `/v1/` address. Leave no element on a numbered address |
 | Every other builder | Replace the address in the script tag with the `/v1/` address, everywhere the tag appears. The table in [How to update](#how-to-update) says where it is |
 
-To go back to a fixed version, put a numbered address back. On WordPress, clear Modern JS and save, and the site goes
-back to the version the plugin pins.
+To go back to a fixed version, put a numbered address back. On WordPress, clear both Modern JS and Legacy JS and click
+**Save Advanced Options**. With both empty, the site goes back to the version the plugin loads by default.

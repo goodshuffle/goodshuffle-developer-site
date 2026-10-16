@@ -37,7 +37,7 @@ widget actually uses, and the Events page gives the exact `detail` of the two su
 | Path (`content/docs/`) | Change |
 |---|---|
 | `setup/_index.md` | Lists the six builders, the shared pinned snippet and what the one tag does |
-| `setup/switching-from-0-5.md` | New. Replace the two script tags with the one pinned tag; nothing else changes, with the GSPRO-32329 note and the one approved difference (submit fires once per send, GSPRO-31871). The check after switching is per builder: the widget renders, and the address shows in the page source (WordPress: "Your site loads"; Wix: each element's Server URL) |
+| `setup/switching-from-0-5.md` | New. Replace the two script tags with the one pinned tag; nothing else changes, with the one approved difference (submit fires once per send, GSPRO-31871). The check after switching is per builder: the widget renders, and the address shows in the page source (WordPress: "Your site loads"; Wix: each element's Server URL) |
 | `setup/updating.md` | New. Where each builder keeps the address, with WordPress and Wix spelled out; changelog link (plus the WordPress Plugin page for plugin releases); the opt-in "Automatic updates with v1" section every guide links to, with how to switch on WordPress, Wix and the rest |
 | `setup/squarespace.md` | Rewritten on the pinned snippet |
 | `setup/wordpress.md` | Rewritten. Settings page, gallery page and shortcodes match PR #20 (GSPRO-31875). Which widget loads, Advanced Settings, the `/v1/` opt-in, staying on a version and what happens on upgrade match PR #21 (GSPRO-32532, plugin 0.6.0). Only the 0.6.0 download link is still a placeholder |
@@ -48,7 +48,7 @@ widget actually uses, and the Events page gives the exact `detail` of the two su
 | `setup/lovable.md` | New |
 | `setup/weebly.md`, `setup/custom-setup.md` | Same pages, pinned snippet, current Integrations link, gallery behavior stated correctly. `custom-setup.md` says what the loader does |
 | `components/*.md` | An "All attributes" table per tag from `attributes.ts`; Wishlist Config's wrong `# Item List` heading fixed; "added in v0.5.x" markers removed |
-| `integrations/events.md` | Every 0.5.11 event vendors listen for (`gspro-item-card.click`, `gspro-item-card.add`, `gspro-item-detail.add`, `gspro-wishlist.submit`, `submit-complete`) with 0.5.11's full `detail`, and a note that the restored events ship with GSPRO-32329 |
+| `integrations/events.md` | Every 0.5.11 event vendors listen for (`gspro-item-card.click`, `gspro-item-card.add`, `gspro-item-detail.add`, `gspro-wishlist.submit`, `submit-complete`) with 0.5.11's full `detail`, stated as available (the page publishes after GSPRO-32329) |
 | `integrations/listeners.md` | The "requires 0.5.3 or greater" line removed. The rebuild re-reads every observed attribute on change (`embed-element.ts` `attributeChangedCallback`) |
 | `_index.md` (home) | Links to every builder guide, the switching page and the updating page |
 
@@ -68,9 +68,11 @@ builds the address from them; shortcodes `embed-code` (a code block, `LOADER_URL
 | WordPress Advanced Settings | Describe plugin 0.6.0 (PR #21): Modern JS and Legacy JS are empty unless customized, the "Your site loads" row, the three-row behavior table, the old unpkg defaults and the pinned address counting as empty, `/v1/` via Modern JS with Legacy JS empty, and upgrade behavior. Help text is quoted from `gspro-gallery-admin-display.php`. Icon URL is described as having no effect | PR #20's behavior (every field pre-filled, a saved 0.5.7 address keeps loading) no longer applies once 0.6.0 ships, and 0.6.0 is the version the guide tells vendors to install |
 | WordPress addresses written out | The WordPress pages write `https://embed.goodshuffle.com/releases/1.0.0/loader.js` literally, outside the `embed-*` shortcodes | The plugin pins its own address in `GSPRO_GALLERY_WIDGET_LOADER_URL`. If `params.embed.version` moves first, the plugin still loads 1.0.0 until a new plugin release, so the WordPress page has to name the plugin's version |
 | Loader wording | Every page says the tag adds `gspro-embed.css` and `gspro-embed.js` from the same release folder to `<head>`. Where it matters (custom setup, Wix, updating, the troubleshooting table) it says the first copy on a page decides the release, and that the loader doesn't detect the 0.5.x `gspro-wc` scripts | `loaderSource()` returns early only if `script[data-gspro-embed]` or `script[src$="/gspro-embed.js"]` is already on the page. `/v1/loader.js` is the newest 1.x release's loader, cached 5 minutes (`ALIAS_CACHE`) |
-| Menu order | Setup pages in steps of 10, matching the other sections: Squarespace 10, WordPress 20, Wix 30, Showit 40, GoHighLevel 50, Lovable 60, Custom 70, Switching 80, Updating 90 | Same order as the Getting Started table and the home page. Weebly stays hidden at 10 |
+| Menu order | Setup pages in steps of 10, matching the other sections: Squarespace 10, WordPress 20, Wix 30, Showit 40, GoHighLevel 50, Lovable 60, Custom 70, Switching 80, Updating 90 | Same order as the Getting Started table and the home page. Weebly stays hidden at 10. The empty `setup/getting-started.md` stub gets `bookHidden: true` so the menu doesn't show a blank second "Getting Started" |
+| Builder guide wording | Squarespace, Showit, GoHighLevel, Lovable, Weebly and Wix say "Goodshuffle's script" and "the version". The precise terms (loader, release folder, `gspro-embed.css` / `.js`) stay on `custom-setup.md` and `updating.md` | Vendors on a builder don't need the mechanism to follow the steps |
+| Language on Wishlist Config | "Ask Goodshuffle to turn it on" in place of the `multiLanguageEnabled` flag name | It's a vendor feature flag (`VendorFeatureFlags.multiLanguageEnabled` in gscore); the goodshuffle app only reads it, so a vendor can't set it themselves |
 | Wishlists carry over | Kept on "Switching from 0.5.x", worded as what the code does | `migrateLegacy()` in GSPRO-31870's `storage.ts` (see Sources). It ships before these docs publish, because GSPRO-32329, which these docs wait on, contains it |
-| Events (Kyser, 2026-10-08) | The docs describe the restored events: every 0.5.11 event, with 0.5.11's full `detail`, including whole items in `detail.wishlist`. Each page notes that this ships with GSPRO-32329. "Switching from 0.5.x" says replace the two script tags and nothing else changes | GSPRO-32329 restores what the rebuild had dropped. The one approved difference stays documented: `gspro-wishlist.submit` fires once per send (GSPRO-31871) |
+| Events (Kyser, 2026-10-08) | The docs describe the restored events: every 0.5.11 event, with 0.5.11's full `detail`, including whole items in `detail.wishlist`. The pages state them as available and publish after GSPRO-32329. "Switching from 0.5.x" says replace the two script tags and nothing else changes | GSPRO-32329 restores what the rebuild had dropped. The one approved difference stays documented: `gspro-wishlist.submit` fires once per send (GSPRO-31871) |
 | Monitoring (Kyser, 2026-10-08) | "To be decided", with no ticket key | Where the adoption view and error alert are built is undecided. The earlier ticket for it was deleted on purpose and isn't cited |
 | Attributes the widget sets or ignores | Listed, marked "set by the widget" or "accepted, no effect" | The ticket asks for every attribute. `hide-quantity` and `total` are parsed but never read in `src/embed/app`. The card's `route` and the gallery's and list's `item-card-route` are passed along but never read: `itemLink()` in `card.tsx` always builds `#!/item/{id}/{slug}`. The list's `filters` is never set by the gallery (`catalog-results.tsx` passes only `item-card-route`), and a string attribute is never a valid filter object, so `catalogView()` treats it as null. `package-quantity` does work: `card.tsx` passes it to `quantityText()`, which shows it in place of the available quantity when `show-quantity-on-card` is on |
 | Events `detail` example | A `DAILY` entry with no `hours` | `hours` is set only for `HOURLY` items: `gspro-item-choices` in 0.5.11, `withRate()` and `withDefaults()` in `app/wishlist/entry.ts` in the rebuild |
@@ -88,15 +90,17 @@ builds the address from them; shortcodes `embed-code` (a code block, `LOADER_URL
 ### Events wait on GSPRO-32329
 
 Settled by Kyser on 2026-10-08: GSPRO-32329 restores every 0.5.11 event with its full `detail`.
-`events.md` and `switching-from-0-5.md` describe that behavior and say it ships with GSPRO-32329.
-They're accurate once GSPRO-32329 merges, so this branch publishes after it.
+`events.md` and `switching-from-0-5.md` describe that behavior as available, with no ticket
+reference, because a vendor can't act on one. They're accurate once GSPRO-32329 merges, so this
+branch publishes after it.
 
 ### Acceptance criteria not met
 
 - **AC1: following each guide on a fresh site produces a working catalog and a quote request in
   GSP.** Not done. Every snippet loads `https://embed.goodshuffle.com/releases/1.0.0/loader.js`,
-  which exists only once GSPRO-31872 publishes release 1.0.0. In PR #450's `release.mjs`,
-  `requireParityGate()` refuses any 1.x release until `PARITY_GATED=true` is set in CI.
+  which exists only once GSPRO-31872 publishes release 1.0.0. `requireParityGate()` in
+  `release.mjs` allows a 1.x release once `PARITY_GATED=true`; marketplace #452 sets it, behind the
+  browser gates, so 1.0.0 can publish once those gates pass.
 - **AC2: CX has reviewed each guide against the top HubSpot questions.** Not done, for the same
   reason: CX can't check a guide whose snippet doesn't load yet.
 - **AC3: every snippet pins the same current version, set in one place.** Met in the source:

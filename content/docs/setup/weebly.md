@@ -50,9 +50,10 @@ You can do this from the [Integration Tab](https://pro.goodshuffle.com/app/vendo
 ></gspro-wishlist-config>
 {{< /embed-code >}}
 
-> The script tag also adds the release's stylesheet, `gspro-embed.css`, so you don't need a stylesheet tag. It pins version {{< embed-version >}}. See
+> This is Goodshuffle's script. It brings its own styles, so you don't need a stylesheet tag. The address includes
+> the version, {{< embed-version >}}, and your site stays on that version until you change the number. See
 > [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
-> [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes
+> [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x updates
 > without editing.
 
 If your site is on version 0.5.x, replace your two script tags with the one above. See

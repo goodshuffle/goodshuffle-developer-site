@@ -4,7 +4,7 @@ bookFlatSection: true
 title: "Custom Website Setup"
 ---
 
-# Setup
+# Custom Website Setup
 
 Use this guide for any site where you can edit the page's HTML. If your site is on Squarespace, WordPress, Wix,
 Showit, GoHighLevel or Lovable, use [that builder's guide]({{< relref "/docs/setup" >}}) instead.

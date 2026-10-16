@@ -21,7 +21,8 @@ Listening for events takes basic JavaScript and a way to add your own script to 
 | `gspro-wishlist.submit` | The client clicked Send List and the wishlist is on its way |
 | `gspro-wishlist.submit-complete` | Goodshuffle Pro accepted the quote request |
 
-> The three item events and the full wishlist entries described here ship with GSPRO-32329. They match version 0.5.x.
+These events, and the `detail` each one carries, are the same as in version 0.5.x. The one difference is when
+`gspro-wishlist.submit` fires; see [Wishlist sent](#wishlist-sent-gspro-wishlistsubmit).
 
 Every event bubbles up to `document`. Listen there:
 

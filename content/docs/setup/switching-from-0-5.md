@@ -33,7 +33,7 @@ Leave your `<gspro-wishlist-config>` tag where it is, and save or publish your s
 
 Where the header lives depends on your site builder:
 
-| Builder | Where the two tags are |
+| Builder | Where to change it |
 | --- | --- |
 | Squarespace | Code Injection, Header. See [Squarespace]({{< relref "/docs/setup/squarespace" >}}) |
 | WordPress | Inside the Goodshuffle plugin. Update the plugin to 0.6.0. You don't edit any tags. See [Updating the plugin]({{< relref "/docs/setup/wordpress#updating-the-plugin" >}}) |
@@ -54,9 +54,6 @@ Nothing else changes. All of these keep working as they are:
 - Links into your catalog, such as `#!/inventory/...` and `#!/item/...`.
 - Wishlists your clients already started. The first time the new version loads on your site in a client's browser,
   it moves the wishlist 0.5.x saved in that browser, with its items and dates, into its own storage.
-
-> `gspro-item-card.click`, `gspro-item-card.add`, `gspro-item-detail.add` and the whole item in each
-> `detail.wishlist` entry ship with GSPRO-32329.
 
 One detail differs. On 0.5.x, `gspro-wishlist.submit` fired on every click of Send List, even while a send was in
 progress. It now fires once per send.
