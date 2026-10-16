@@ -119,8 +119,11 @@ In Goodshuffle Pro, the request appears as a new project under **Projects**, **F
 A lead form shows one of your Goodshuffle Pro Custom Forms on a page, styled by your site. See
 [Lead Form]({{< relref "/docs/components/lead-form" >}}). On Wix it's one more Custom Element.
 
-1. In Goodshuffle Pro, open the form and make sure it's published. In its **Share** section, copy the form's share
-   link, `https://www.goodshuffle.com/c/f/FORM_ID`. It's the `form` value in the lead form tag shown there.
+<!-- GSPRO-32476: the form's Share section gets the "Website Integration code" row (goodshuffle PR #9099). Match this
+step to that screen once it ships. -->
+
+1. In Goodshuffle Pro, open the form and make sure it's published. Find the **Website Integration code** in the
+   form's **Share** section and copy the address inside `form="..."`, `https://www.goodshuffle.com/c/f/FORM_ID`.
 2. In the Wix Editor, open the page where the form should go.
 3. Click **Add Elements**, then **Embed Code**, then **Custom Element**, and place it on the page.
 4. Click **Choose Source** and set:
@@ -132,7 +135,8 @@ A lead form shows one of your Goodshuffle Pro Custom Forms on a page, styled by 
 | --- | --- |
 | `form` | The share link you copied, `https://www.goodshuffle.com/c/f/FORM_ID` |
 
-6. Resize the element so the whole form fits.
+6. Resize the element so the whole form fits. Leave extra height below it for questions that appear depending on
+   earlier answers, and for error messages.
 7. Click **Publish**.
 8. On your published site, fill in the form and click **Submit**. The response shows in the form's **Responses** in
    Goodshuffle Pro.

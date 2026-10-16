@@ -130,8 +130,11 @@ Both carry the same `event.detail`:
 
 | Field | Notes |
 | --- | --- |
-| `form` | The form's ID, the part after `/c/f/` in its share link |
+| `form` | The form's ID, as in its share link: the text after `/c/f/` |
 | `answers` | The answers, as sent to Goodshuffle Pro |
+
+<!-- GSPRO-32473: detail.form is to be the share-link form ID (a string), not the numeric internal ID. Confirm when
+GSPRO-32473 lands. -->
 
 Like the wishlist events, both bubble, are composed and are cancelable, so a listener on `document` hears them. With
 several forms on a page, use `detail.form` to tell them apart.

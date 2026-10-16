@@ -98,8 +98,11 @@ In Goodshuffle Pro, the request appears as a new project under **Projects**, **F
 A lead form shows one of your Goodshuffle Pro Custom Forms on a page, styled by your site. See
 [Lead Form]({{< relref "/docs/components/lead-form" >}}).
 
-1. In Goodshuffle Pro, open the form and make sure it's published. In its **Share** section, copy the lead form tag.
-   It looks like this, with your form's link in `form`:
+<!-- GSPRO-32476: the form's Share section gets the "Website Integration code" row (goodshuffle PR #9099). Match this
+step to that screen once it ships. -->
+
+1. In Goodshuffle Pro, open the form and make sure it's published. Copy the **Website Integration code** from the
+   form's **Share** section. It's a `<gspro-lead-form>` tag with your form's link in `form`:
 
 ```
 <gspro-lead-form form="https://www.goodshuffle.com/c/f/FORM_ID"></gspro-lead-form>

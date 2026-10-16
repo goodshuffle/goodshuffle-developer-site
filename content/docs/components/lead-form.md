@@ -49,13 +49,14 @@ The form to show. Paste the form's share link exactly as Goodshuffle Pro gives i
 
 1. In Goodshuffle Pro, open the form. Make sure it's published.
 2. Go to its **Share** section.
-3. Copy the lead form tag shown there. It already holds the form's share link in `form`.
+3. Copy the **Website Integration code**. It's the `<gspro-lead-form>` tag, with the form's share link already in
+   `form`.
 
 The Share section also has the form's **Embed code**, an iframe. See [Lead form or Embed code](#lead-form-or-embed-code)
 below.
 
-<!-- GSPRO-32476 adds the lead form tag to the form's Share section, next to the iframe "Embed code". Match the labels
-above to that screen once it ships. -->
+<!-- GSPRO-32476 adds the "Website Integration code" row to the form's Share section (goodshuffle PR #9099), next to
+the iframe "Embed code". Match the labels above to that screen once it ships. -->
 
 The form's ID on its own also works, for example `form="FORM_ID"`. The share link is the safer choice: it's what
 Goodshuffle Pro gives you, so there's nothing to edit.
@@ -65,16 +66,22 @@ form's ID. Any other address shows [This form isn't available](#this-form-isnt-a
 
 Changing `form` later, for example with JavaScript, loads the other form in its place.
 
+<!-- GSPRO-32471: the attribute's format (share link or ID, and which hosts) and whether a vendor's page can load the
+form cross-site are both pending that decision. form-attribute.ts is the one place the rule lives; update this
+section to match when GSPRO-32471 is decided. -->
+
 ## This form isn't available
 
 In place of the form, the tag shows "This form isn't available." when:
 
 - `form` is missing, or isn't a Goodshuffle share link or form ID;
 - the form doesn't exist, isn't published, or is archived;
+- your Goodshuffle Pro account doesn't have Custom Forms;
 - the form can't be reached, for example because the client is offline, or Goodshuffle Pro didn't answer within
-  15 seconds.
+  15 seconds;
+- the answer from Goodshuffle Pro isn't a form.
 
-To fix it, publish the form (or restore it) in Goodshuffle Pro, then copy its tag again from the Share section.
+To fix it, publish the form (or restore it) in Goodshuffle Pro, then copy its Website Integration code again from the Share section.
 
 While the form loads, the tag is empty. To hide the message instead of showing it, see
 [Styling](#styling).
@@ -93,16 +100,17 @@ Every part has a class you can style with your site's CSS:
 | --- | --- |
 | `gspro-c-lead-form` | The `<gspro-lead-form>` tag itself |
 | `is-loading`, `is-ready`, `is-unavailable` | Also on the tag, one at a time: the form is loading, showing, or unavailable |
-| `gspro-c-lead-form__form` | The form |
+| `gspro-c-lead-form__form` | The box that holds every question and the Submit button (a `<div>`, not a `<form>`) |
 | `gspro-c-lead-form__question` | Each question |
 | `gspro-c-lead-form__label` | A question's label |
-| `gspro-c-lead-form__input` | A question's field. For an address or a date range, the group of fields |
+| `gspro-c-lead-form__input` | A question's field. For an address, a date range, a date and time range, or a group of checkboxes, radio buttons or Yes/No choices, the wrapper around the group |
 | `gspro-c-lead-form__error` | A question's error message, such as "This field is required." |
 | `gspro-c-lead-form__submit` | The Submit button |
 | `gspro-c-lead-form__confirmation` | The message shown after a successful submit |
 | `gspro-c-lead-form__unavailable` | The "This form isn't available." message |
 
-<!-- GSPRO-32473: gspro-c-lead-form__confirmation shows only once submit is built. Confirm the row then. -->
+<!-- GSPRO-32473: gspro-c-lead-form__confirmation shows only once submit is built. Confirm the row then. The
+form-level submit error (above Submit) has no documented class yet; add a row if it gets one. -->
 
 For example, add this to your site's CSS:
 
@@ -112,7 +120,9 @@ For example, add this to your site's CSS:
     font-weight: 600;
 }
 
-/* Fields with your brand's border color */
+/* Text fields with your brand's border color. On a group (checkboxes, radio buttons,
+   Yes/No, an address or a range) the class is on the wrapper, so this doesn't reach
+   the controls inside it. */
 .gspro-c-lead-form__input {
     border-color: #b89b72;
 }
@@ -134,8 +144,12 @@ For example, add this to your site's CSS:
 }
 ```
 
-Your site's rules on these classes win over the form's own styles. If a rule doesn't apply, your theme may be more
-specific. Make the rule more specific too, for example `gspro-lead-form .gspro-c-lead-form__submit`. See
+Your site's rules on these classes win over most of the form's own styles. Two of the form's rules are more specific
+than a single class: the one that gives labels, headings, buttons and fields your page's font, and the one that keeps
+text fields within the column's width (`min-width` and `max-width`). So a rule like
+`.gspro-c-lead-form__label { font-family: ... }` or `.gspro-c-lead-form__input { max-width: ... }` doesn't apply. Start the rule with the tag name instead, for example
+`gspro-lead-form .gspro-c-lead-form__label`. That matches the form's rule, and yours wins because the Website
+Integration's stylesheet comes first on the page. The same works when your theme's rules are more specific. See
 [Colors and Typography]({{< relref "/docs/customization/colors-and-typography" >}}).
 
 ## Questions
@@ -152,7 +166,13 @@ note about file questions here when GSPRO-32474 lands. Don't say uploads work un
 ## Languages
 
 The form's own text shows in English, Spanish or French: the Submit button, the required marker, error messages,
-field placeholders, the date picker, the address fields and the "This form isn't available." message.
+field placeholders, the calendar for a single-date question, the address fields, the confirmation shown after a
+submit, and the "This form isn't available." message.
+
+<!-- GSPRO-32473 translates the confirmation screen's own text. Confirm it's listed correctly when GSPRO-32473 lands. -->
+
+Date range, date and time, date and time range, and time questions use the browser's own date and time fields. Those
+follow the language of the client's browser, not the form's.
 
 Your questions, answer choices, help text and content blocks show exactly as you wrote them, in any language.
 

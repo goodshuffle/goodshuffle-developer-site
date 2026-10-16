@@ -98,8 +98,11 @@ A lead form shows one of your Goodshuffle Pro Custom Forms on a page or post, st
 <!-- Release: plugin 0.6.0 pins https://embed.goodshuffle.com/releases/1.0.0/loader.js. Confirm that release includes
 <gspro-lead-form> (GSPRO-32472). If the tag ships in a later release, say which plugin version pins it here. -->
 
-1. In Goodshuffle Pro, open the form and make sure it's published. In its **Share** section, copy the lead form tag.
-   It looks like this, with your form's link in `form`:
+<!-- GSPRO-32476: the form's Share section gets the "Website Integration code" row (goodshuffle PR #9099). Match this
+step to that screen once it ships. -->
+
+1. In Goodshuffle Pro, open the form and make sure it's published. Copy the **Website Integration code** from the
+   form's **Share** section. It's a `<gspro-lead-form>` tag with your form's link in `form`:
 
 ```
 <gspro-lead-form form="https://www.goodshuffle.com/c/f/FORM_ID"></gspro-lead-form>
@@ -115,6 +118,14 @@ A lead form shows one of your Goodshuffle Pro Custom Forms on a page or post, st
 
 The plugin already adds the Website Integration's script tag to every page while it's active, so you don't paste a
 script tag. The form doesn't use the plugin's settings: it needs no Public Browser Key and no gallery page.
+
+This works only while **Your site loads** in [Advanced Settings](#advanced-settings) shows an
+`embed.goodshuffle.com/.../loader.js` address. If Modern JS or Legacy JS holds another address, the plugin prints the
+two 0.5.x `gspro-wc` script tags instead, and those have no lead form. Clear both fields and save.
+
+The Custom HTML block needs a user who can post unfiltered HTML. On a multisite network, site administrators and
+editors usually can't, and WordPress may strip the `<gspro-lead-form>` tag when they save. Ask a network administrator
+to add the block.
 
 ## Every setting
 
