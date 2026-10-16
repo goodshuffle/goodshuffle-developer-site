@@ -32,6 +32,7 @@ when you install a plugin release that pins a newer one. To get 1.x updates with
 3. Enter your key and choose your gallery page on the plugin's settings page.
 4. Create the gallery page.
 5. Send a test quote request.
+6. Optional: add a lead form.
 
 If your site already has the plugin, update it to 0.6.0. Your settings carry over. See
 [Updating the plugin](#updating-the-plugin).
@@ -88,6 +89,32 @@ The plugin puts the gallery above the page's own content. Anything you write on 
 4. Fill in your name and email, then **Send List**.
 
 In Goodshuffle Pro, the request appears as a new project under **Projects**, **Filters**, Origin = "Website".
+
+### 6. Add a lead form
+
+A lead form shows one of your Goodshuffle Pro Custom Forms on a page or post, styled by your site. See
+[Lead Form]({{< relref "/docs/components/lead-form" >}}).
+
+<!-- Release: plugin 0.6.0 pins https://embed.goodshuffle.com/releases/1.0.0/loader.js. Confirm that release includes
+<gspro-lead-form> (GSPRO-32472). If the tag ships in a later release, say which plugin version pins it here. -->
+
+1. In Goodshuffle Pro, open the form and make sure it's published. In its **Share** section, copy the lead form tag.
+   It looks like this, with your form's link in `form`:
+
+```
+<gspro-lead-form form="https://www.goodshuffle.com/c/f/FORM_ID"></gspro-lead-form>
+```
+
+2. In WordPress, open the page or post where the form should go.
+3. Add a **Custom HTML** block and paste the tag into it.
+4. Click **Update** (or **Publish**).
+5. On your site, fill in the form and click **Submit**. The response shows in the form's **Responses** in Goodshuffle
+   Pro.
+
+<!-- GSPRO-32473: submit and Responses for the lead form land with GSPRO-32473. Confirm this check then. -->
+
+The plugin already adds the Website Integration's script tag to every page while it's active, so you don't paste a
+script tag. The form doesn't use the plugin's settings: it needs no Public Browser Key and no gallery page.
 
 ## Every setting
 
