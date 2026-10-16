@@ -49,16 +49,17 @@ The snippet goes in your header canvas, which shows on every page.
 5. Double-click the black box that appears in the header.
 6. Paste this snippet:
 
-```
-<script src="https://EMBED_HOST/v1/loader.js"></script>
+{{< embed-code >}}
+<script src="LOADER_URL"></script>
 <gspro-wishlist-config
     data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
 ></gspro-wishlist-config>
-```
+{{< /embed-code >}}
 
-> **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
-> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing. Also to be filled in
-> then: whether this tag adds the styles itself or needs a stylesheet tag next to it.
+> The script tag adds the styles too; you don't need a stylesheet tag. It pins version {{< embed-version >}}. See
+> [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
+> [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes
+> without editing.
 
 7. Replace `YOUR-PUBLIC-WEBSITE-KEY` with the key you copied.
 8. Click **Save**.

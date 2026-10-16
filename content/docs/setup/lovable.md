@@ -39,30 +39,31 @@ and activate the Website Integration if it isn't active yet. **Copy the Public B
 
 The snippet goes inside `<head>` in `index.html`, at the root of the project:
 
-```
-<script src="https://EMBED_HOST/v1/loader.js"></script>
+{{< embed-code >}}
+<script src="LOADER_URL"></script>
 <gspro-wishlist-config
     data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
 ></gspro-wishlist-config>
-```
+{{< /embed-code >}}
 
-> **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
-> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing. Also to be filled in
-> then: whether this tag adds the styles itself or needs a stylesheet tag next to it.
+> The script tag adds the styles too; you don't need a stylesheet tag or a CSS import. It pins version
+> {{< embed-version >}}. See [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
+> [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes
+> without editing.
 
 Replace `YOUR-PUBLIC-WEBSITE-KEY` with the key you copied.
 
 To do it from Lovable's chat, send a message like this, with the snippet and your key pasted in:
 
-```
+{{< embed-code lang="text" >}}
 Add these two tags inside the <head> of index.html, exactly as written.
 Don't change them, don't move them into a React component, and don't add anything else:
 
-<script src="https://EMBED_HOST/v1/loader.js"></script>
+<script src="LOADER_URL"></script>
 <gspro-wishlist-config
     data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
 ></gspro-wishlist-config>
-```
+{{< /embed-code >}}
 
 Check the result in `index.html` afterwards. The tags should be there exactly as above.
 

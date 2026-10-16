@@ -7,8 +7,8 @@ weight: 90
 
 ## Current Version
 
-> To be filled in when GSPRO-31872 ships: the plugin release that loads the current Website Integration, with its
-> download link and date. Until then, 0.5.7 below is the current download.
+> To be filled in when GSPRO-32532 ships: the plugin release that loads the Website Integration from its
+> pinned `embed.goodshuffle.com` address, with its download link and date. Until then, 0.5.7 below is the current download.
 
 - [0.5.7](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.7.zip) (June 17, 2024)
 

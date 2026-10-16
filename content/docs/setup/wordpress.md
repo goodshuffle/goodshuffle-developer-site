@@ -16,9 +16,13 @@ You will need:
 - An active Website Integration on your Goodshuffle Pro account.
 - The Goodshuffle Website Integration plugin.
 
-> To be filled in when GSPRO-31872 ships: the version number of the plugin that loads the current Website Integration,
-> and its download link. Until that release, the plugin download on the
+> To be filled in when GSPRO-32532 ships: the version number of the plugin release that loads the Website Integration
+> from its pinned `embed.goodshuffle.com` address, the Website Integration version it pins, and its download link. Until that release, the plugin download on the
 > [WordPress Plugin]({{< relref "/docs/resources/wordpress" >}}) page is version 0.5.7.
+
+The plugin pins the Website Integration version for you. Your site moves to a newer Website Integration release when
+you update the plugin, not before. See [Updating the plugin](#updating-the-plugin) and
+[Updating to a newer version]({{< relref "/docs/setup/updating" >}}).
 
 ## Overview
 
@@ -121,8 +125,8 @@ from the default, compare each field with this table.
 | --- | --- |
 | Data Source | `https://data.goodshuffle.com/vendor` |
 | Icon URL | Your site's address followed by `/wp-content/plugins/gspro-gallery/public/img/icons.svg` |
-| Modern JS | To be filled in when GSPRO-31872 ships: the loader address the plugin uses by default |
-| Legacy JS | To be filled in when GSPRO-31872 ships: the loader address the plugin uses by default |
+| Modern JS | To be filled in when GSPRO-32532 ships: the `https://embed.goodshuffle.com/releases/VERSION/loader.js` address the plugin release pins |
+| Legacy JS | To be filled in when GSPRO-32532 ships: the `https://embed.goodshuffle.com/releases/VERSION/loader.js` address the plugin release pins |
 
 A field that matches the table uses the default. To put a field back to its default, clear it and click **Save
 Advanced Options**. The plugin deletes the saved address and shows the built-in one again.
@@ -164,6 +168,9 @@ An address with `@goodshuffle/gspro-wc` in it loads version 0.5.x. Older version
 keeps loading, and the site stays on 0.5.x after the update. Clear both fields and click **Save Advanced Options**,
 unless someone set them on purpose. Both fields then show the built-in address from the table in
 [Every setting](#every-setting).
+
+A saved `embed.goodshuffle.com/releases/...` address works the same way: the site stays on that release whatever
+plugin version you install, until you clear the field.
 
 ## Common changes
 

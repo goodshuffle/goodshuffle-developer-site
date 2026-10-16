@@ -6,8 +6,7 @@ title: "Switching from 0.5.x"
 # Switching from 0.5.x
 
 If your site loads the Website Integration from `unpkg.com/@goodshuffle/gspro-wc@0.5...`, you're on version 0.5.x.
-Switching to the current version is one change to your site header. After that, every fix and improvement reaches
-your site without another edit.
+Switching to the current version, {{< embed-version >}}, is one change to your site header.
 
 ## What to change
 
@@ -21,13 +20,12 @@ place of `0.5.7`:
 
 Replace both with this one tag:
 
-```
-<script src="https://EMBED_HOST/v1/loader.js"></script>
-```
+{{< embed-code >}}
+<script src="LOADER_URL"></script>
+{{< /embed-code >}}
 
-> **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
-> filled in when GSPRO-31872 ships: the final address, and whether this tag also adds the styles or a stylesheet tag
-> goes with it. Until then, this tag loads nothing.
+The new tag adds the stylesheet and the rest of the Website Integration itself, so you don't add a stylesheet tag.
+Don't keep either of the old tags next to it.
 
 Leave your `<gspro-wishlist-config>` tag where it is, and save or publish your site.
 
@@ -60,16 +58,18 @@ Nothing else changes. All of these keep working as they are:
 One detail differs. On 0.5.x, `gspro-wishlist.submit` fired on every click of Send List, even while a send was in
 progress. It now fires once per send.
 
-## Staying on a specific version
+## After you switch
 
-> To be filled in when GSPRO-31872 ships: whether and how a site can stay on one numbered release instead of `/v1/`,
-> and how to switch back to `/v1/` later.
+The new tag pins version {{< embed-version >}}. Your site stays on it until you change the number in the tag, so a
+later release never changes your site by surprise. To move to a newer release, see
+[Updating to a newer version]({{< relref "/docs/setup/updating" >}}). To get 1.x fixes without editing, see
+[Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}).
 
 Sites that don't switch keep working on 0.5.x. They don't get fixes or new features.
 
 ## Checking that you've switched
 
-View your site's page source and search for `loader.js`. If it's there and `unpkg.com/@goodshuffle` isn't, your site
-is on the current version.
+View your site's page source and search for `loader.js`. If `{{< embed-url >}}` is there and
+`unpkg.com/@goodshuffle` isn't, your site is on the current version.
 
 > To be decided: how Goodshuffle's support team can confirm which version your site runs.

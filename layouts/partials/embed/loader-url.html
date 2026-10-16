@@ -1,0 +1,22 @@
+{{/*
+  The Website Integration loader address. Every snippet on the site gets it from here.
+  Context: (dict "site" .Site "alias" "")   -> https://HOST/releases/VERSION/loader.js (pinned, the default)
+           (dict "site" .Site "alias" "v1") -> https://HOST/v1/loader.js (opt-in 1.x alias)
+  HOST and VERSION are params.embed.host and params.embed.version in config.toml.
+*/}}
+{{- $host := "" -}}
+{{- $version := "" -}}
+{{- with .site.Params.embed -}}
+  {{- $host = .host -}}
+  {{- $version = .version -}}
+{{- end -}}
+{{- if or (not $host) (not $version) -}}
+  {{- errorf "params.embed.host and params.embed.version must both be set in config.toml" -}}
+{{- end -}}
+{{- $url := printf "https://%s/releases/%s/loader.js" $host $version -}}
+{{- if eq .alias "v1" -}}
+  {{- $url = printf "https://%s/v1/loader.js" $host -}}
+{{- else if .alias -}}
+  {{- errorf "embed loader-url: unknown alias %q (use \"v1\" or leave it out)" .alias -}}
+{{- end -}}
+{{- return $url -}}

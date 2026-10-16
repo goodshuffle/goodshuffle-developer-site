@@ -44,16 +44,17 @@ The snippet belongs in the code GoHighLevel adds to the `<head>` of your pages.
    wishlist then shows on every page. A single page's own settings have the same box if you only want it on that page.
 3. Paste this snippet:
 
-```
-<script src="https://EMBED_HOST/v1/loader.js"></script>
+{{< embed-code >}}
+<script src="LOADER_URL"></script>
 <gspro-wishlist-config
     data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
 ></gspro-wishlist-config>
-```
+{{< /embed-code >}}
 
-> **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
-> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing. Also to be filled in
-> then: whether this tag adds the styles itself or needs a stylesheet tag next to it.
+> The script tag adds the styles too; you don't need a stylesheet tag. It pins version {{< embed-version >}}. See
+> [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
+> [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes
+> without editing.
 
 4. Replace `YOUR-PUBLIC-WEBSITE-KEY` with the key you copied.
 5. Save.

@@ -20,20 +20,30 @@ has a shared header template, put it there.
 [Integrations tab](https://pro.goodshuffle.com/app/vendorAccount/index?tab=thirdPartyIntegrations) of your Goodshuffle
 Pro account.**
 
-```
-<script src="https://EMBED_HOST/v1/loader.js"></script>
+{{< embed-code >}}
+<script src="LOADER_URL"></script>
 <gspro-wishlist-config
     data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
 ></gspro-wishlist-config>
-```
-
-> **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
-> filled in when GSPRO-31872 ships: the final address. Until then, this tag loads nothing.
+{{< /embed-code >}}
 
 You don't need a footer snippet. `<gspro-wishlist-config>` adds the wishlist and item detail to the page.
 
-> To be filled in when GSPRO-31872 ships: whether the script tag works both with and without `type="module"`, and
-> whether it adds the styles itself or needs a stylesheet tag next to it.
+### What the script tag does
+
+`loader.js` is small. It adds two things to the page's `<head>`, both from the same release folder:
+
+- a stylesheet, `gspro-embed.css`, so you don't add a stylesheet tag of your own;
+- the Website Integration itself, `gspro-embed.js`.
+
+It works as a plain `<script>` tag, as shown, and also with `type="module"` if your site adds every script that way.
+If the Website Integration is already on the page, for example because the tag is there twice, it does nothing the
+second time.
+
+The address pins version {{< embed-version >}}, so your site changes only when you change that number. See
+[Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
+[Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes without
+editing.
 
 ## Step 2: Test
 

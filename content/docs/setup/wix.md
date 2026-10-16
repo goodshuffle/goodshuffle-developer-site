@@ -30,13 +30,17 @@ below. Nothing else changes. See [Switching from 0.5.x]({{< relref "/docs/setup/
 
 Every Goodshuffle Custom Element on your site uses this Server URL:
 
-```
-https://EMBED_HOST/v1/loader.js
-```
+{{< embed-code lang="text" >}}
+LOADER_URL
+{{< /embed-code >}}
 
-> **Placeholder address.** `EMBED_HOST` stands in for the address the Website Integration will be served from. To be
-> filled in when GSPRO-31872 ships: the final address. Until then, this URL loads nothing. Also to be filled in
-> then: whether this URL adds the styles itself or Wix needs something more.
+This one file is all Wix needs. It adds the styles and the rest of the Website Integration to the page itself, and
+it adds them once however many Custom Elements use it.
+
+The address pins version {{< embed-version >}}, so your site changes only when you change that number on each Custom
+Element. See [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
+[Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x fixes without
+editing.
 
 Older instructions used an address ending in `/dist/custom-elements/index.js`. Don't use it for new setups: it loads
 version 0.5.x, which no longer gets fixes.

@@ -2,3 +2,9 @@ baseURL = "https://docs.goodshuffle.dev/"
 languageCode = "en-us"
 title = "Goodshuffle Developer Docs"
 theme = "book"
+
+# The Website Integration release every setup snippet pins. Snippets read these through
+# layouts/partials/embed/loader-url.html, so a new release changes `version` here and nothing else.
+[params.embed]
+  host = "embed.goodshuffle.com"
+  version = "1.0.0"
