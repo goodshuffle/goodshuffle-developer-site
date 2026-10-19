@@ -22,6 +22,7 @@ You will need:
 2. Add the settings Custom Element to your site header.
 3. Add a gallery Custom Element to a page.
 4. Send a test quote request.
+5. Optional: add a lead form.
 
 If your site is on version 0.5.x, open each Goodshuffle Custom Element and replace its Server URL with the one
 below. Nothing else changes. See [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
@@ -112,6 +113,36 @@ On your published site:
 4. Fill in your name and email, then **Send List**.
 
 In Goodshuffle Pro, the request appears as a new project under **Projects**, **Filters**, Origin = "Website".
+
+### 5. Add a lead form
+
+A lead form shows one of your Goodshuffle Pro Custom Forms on a page, styled by your site. See
+[Lead Form]({{< relref "/docs/components/lead-form" >}}). On Wix it's one more Custom Element.
+
+<!-- GSPRO-32476: the form's Share section gets the "Website Integration code" row (goodshuffle PR #9099). Match this
+step to that screen once it ships. -->
+
+1. In Goodshuffle Pro, open the form and make sure it's published. Find the **Website Integration code** in the
+   form's **Share** section and copy the address inside `form="..."`, `https://www.goodshuffle.com/c/f/FORM_ID`.
+2. In the Wix Editor, open the page where the form should go.
+3. Click **Add Elements**, then **Embed Code**, then **Custom Element**, and place it on the page.
+4. Click **Choose Source** and set:
+   - **Server URL**: the [Server URL](#the-server-url) above.
+   - **Tag Name**: `gspro-lead-form`
+5. Click **Set Attributes** and add one attribute:
+
+| Name | Value |
+| --- | --- |
+| `form` | The share link you copied, `https://www.goodshuffle.com/c/f/FORM_ID` |
+
+6. Resize the element so the whole form fits. Leave extra height below it for questions that appear depending on
+   earlier answers, and for error messages.
+7. Click **Publish**.
+8. On your published site, fill in the form and click **Submit**. The response shows in the form's **Responses** in
+   Goodshuffle Pro.
+
+The form doesn't need the settings element from step 2. If you only want forms on your site, this is the only step
+you need.
 
 ## Things to know on Wix
 

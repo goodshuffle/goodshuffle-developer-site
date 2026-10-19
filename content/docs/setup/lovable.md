@@ -22,6 +22,7 @@ You will need:
 2. Add the snippet to `index.html`.
 3. Add the gallery to a page.
 4. Publish, then send a test quote request.
+5. Optional: add a lead form.
 
 If your app is on version 0.5.x, replace the two script tags in `index.html`. See
 [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
@@ -103,6 +104,7 @@ interface GsproTags {
   "gspro-item-gallery": GsproTag;
   "gspro-item-list": GsproTag;
   "gspro-item-card": GsproTag;
+  "gspro-lead-form": GsproTag;
 }
 
 declare module "react" {
@@ -119,8 +121,8 @@ declare global {
 ```
 
 From the chat, you can ask: "On the Rentals page, render `<gspro-item-gallery></gspro-item-gallery>` as a plain HTML
-custom element below the heading, and declare the gspro-item-gallery, gspro-item-list and gspro-item-card tags for
-TypeScript in src/gspro-elements.d.ts."
+custom element below the heading, and declare the gspro-item-gallery, gspro-item-list, gspro-item-card and
+gspro-lead-form tags for TypeScript in src/gspro-elements.d.ts."
 
 ### 4. Publish and send a test quote request
 
@@ -132,6 +134,52 @@ TypeScript in src/gspro-elements.d.ts."
 6. Fill in your name and email, then **Send List**.
 
 In Goodshuffle Pro, the request appears as a new project under **Projects**, **Filters**, Origin = "Website".
+
+### 5. Add a lead form
+
+A lead form shows one of your Goodshuffle Pro Custom Forms on a page, styled by your site. See
+[Lead Form]({{< relref "/docs/components/lead-form" >}}).
+
+<!-- GSPRO-32476: the form's Share section gets the "Website Integration code" row (goodshuffle PR #9099). Match this
+step to that screen once it ships. -->
+
+1. In Goodshuffle Pro, open the form and make sure it's published. Copy the **Website Integration code** from the
+   form's **Share** section. It's a `<gspro-lead-form>` tag with your form's link in `form`:
+
+```
+<gspro-lead-form form="https://www.goodshuffle.com/c/f/FORM_ID"></gspro-lead-form>
+```
+
+2. In the component for the page where the form should go (for example `src/pages/Contact.tsx`), put the tag where
+   the form should appear:
+
+```
+export default function Contact() {
+  return (
+    <main>
+      <h1>Contact us</h1>
+      <gspro-lead-form form="https://www.goodshuffle.com/c/f/FORM_ID"></gspro-lead-form>
+    </main>
+  );
+}
+```
+
+3. Make sure `src/gspro-elements.d.ts` lists `"gspro-lead-form"`. If your project doesn't have that file yet, add it
+   as shown in step 3.
+4. Publish the project.
+5. On the published site, fill in the form and click **Submit**. The response shows in the form's **Responses** in
+   Goodshuffle Pro.
+
+From the chat, you can ask this, with your Website Integration code pasted in: "On the Contact page, render
+`<gspro-lead-form form="https://www.goodshuffle.com/c/f/FORM_ID"></gspro-lead-form>` exactly as written, as a plain
+HTML custom element below the heading, and declare gspro-lead-form for TypeScript in src/gspro-elements.d.ts."
+
+The form needs only the script tag from step 2. If you only want forms on your site, put just this line in the
+`<head>` of `index.html`. You can leave out `<gspro-wishlist-config>`:
+
+{{< embed-code >}}
+<script src="LOADER_URL"></script>
+{{< /embed-code >}}
 
 ## Things to know on Lovable
 

@@ -22,6 +22,7 @@ You will need:
 2. Add the snippet to your header canvas with an Embed Code element.
 3. Add a gallery canvas to a page with a second Embed Code element.
 4. Send a test quote request.
+5. Optional: add a lead form.
 
 If your site is on version 0.5.x, open the Embed Code element in your header canvas and replace the two script
 tags. See [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
@@ -98,6 +99,35 @@ On your published site:
 4. Fill in your name and email, then **Send List**.
 
 In Goodshuffle Pro, the request appears as a new project under **Projects**, **Filters**, Origin = "Website".
+
+### 5. Add a lead form
+
+A lead form shows one of your Goodshuffle Pro Custom Forms on a page, styled by your site. See
+[Lead Form]({{< relref "/docs/components/lead-form" >}}).
+
+<!-- GSPRO-32476: the form's Share section gets the "Website Integration code" row (goodshuffle PR #9099). Match this
+step to that screen once it ships. -->
+
+1. In Goodshuffle Pro, open the form and make sure it's published. Copy the **Website Integration code** from the
+   form's **Share** section. It's a `<gspro-lead-form>` tag with your form's link in `form`:
+
+```
+<gspro-lead-form form="https://www.goodshuffle.com/c/f/FORM_ID"></gspro-lead-form>
+```
+
+2. On the page where the form should go, add a canvas for it, as in step 3.
+3. Add an **Embed Code** element to the canvas, as in step 2, and paste the tag.
+4. Make the canvas and the element tall enough for the whole form, on Desktop and Mobile.
+5. Save and publish.
+6. On your published site, fill in the form and click **Submit**. The response shows in the form's **Responses** in
+   Goodshuffle Pro.
+
+The form needs only the script tag from step 2. If you only want forms on your site, paste just this line into the
+Embed Code element in your header canvas. You can leave out `<gspro-wishlist-config>`:
+
+{{< embed-code >}}
+<script src="LOADER_URL"></script>
+{{< /embed-code >}}
 
 ## When it doesn't work
 

@@ -57,6 +57,21 @@ Add this to a page:
 Open the page, pick a category, add an item to the wishlist with the heart, and send it. The quote request appears in
 Goodshuffle Pro as a new project under Projects, Filters, Origin = "Website".
 
+## Step 3: Add a lead form (optional)
+
+<!-- GSPRO-32476: the form's Share section gets the "Website Integration code" row (goodshuffle PR #9099). Match this
+step to that screen once it ships. -->
+
+To show one of your Goodshuffle Pro Custom Forms on a page, copy the **Website Integration code** from the form's
+**Share** section in Goodshuffle Pro and paste it where the form should go:
+
+```
+<gspro-lead-form form="https://www.goodshuffle.com/c/f/FORM_ID"></gspro-lead-form>
+```
+
+The form needs only the script tag from step 1, not `<gspro-wishlist-config>`. Submit the form once on your site; the
+response shows in the form's **Responses** in Goodshuffle Pro. See [Lead Form]({{< relref "/docs/components/lead-form" >}}).
+
 ## Troubleshooting
 
 - If nothing loads, check the Public Browser Key against the Integrations tab. Regenerating it in Goodshuffle Pro

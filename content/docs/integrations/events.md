@@ -5,8 +5,8 @@ weight: 30
 
 # Events
 
-The Website Integration tells your page when a client opens an item, adds one to the wishlist, or sends their
-wishlist. It does this with standard
+The Website Integration tells your page when a client opens an item, adds one to the wishlist, sends their
+wishlist, or submits a lead form. It does this with standard
 [DOM events](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events). Any script on your
 page can react: report the activity to your analytics, show your own thank-you message, or send the client to a
 thank-you page.
@@ -20,6 +20,8 @@ Listening for events takes basic JavaScript and a way to add your own script to 
 | `gspro-item-detail.add` | The client added the item to the wishlist from the item's detail view |
 | `gspro-wishlist.submit` | The client clicked Send List and the wishlist is on its way |
 | `gspro-wishlist.submit-complete` | Goodshuffle Pro accepted the quote request |
+| `gspro-lead-form.submit` | The client submitted a [lead form]({{< relref "/docs/components/lead-form" >}}) and the answers are on their way |
+| `gspro-lead-form.submit-complete` | Goodshuffle Pro saved the lead form's response |
 
 > The three item events and the full wishlist entries described here ship with GSPRO-32329. They match version 0.5.x.
 
@@ -109,6 +111,42 @@ Example (redirect to a thank-you page):
 document.addEventListener("gspro-wishlist.submit-complete", function (event) {
     var name = event.detail.contact.firstName || "";
     window.location = "https://example.com/thank-you?name=" + encodeURIComponent(name);
+});
+```
+
+## Lead form sent: `gspro-lead-form.submit` and `gspro-lead-form.submit-complete`
+
+A [`<gspro-lead-form>`]({{< relref "/docs/components/lead-form" >}}) fires two events, like the wishlist:
+
+- `gspro-lead-form.submit` fires when the client clicks Submit and the answers pass the form's checks, just before
+  they're sent. The send can still fail after it. Use it to count attempts, not to redirect.
+- `gspro-lead-form.submit-complete` fires when Goodshuffle Pro has saved the response. Use it for anything that must
+  happen only after a successful submit, such as sending the client to a thank-you page.
+
+When a send fails, nothing fires. The client sees a message asking them to try again, and `gspro-lead-form.submit`
+fires again when they do.
+
+Both carry the same `event.detail`:
+
+| Field | Notes |
+| --- | --- |
+| `form` | The form's ID, as in its share link: the text after `/c/f/`, as a string |
+| `answers` | A copy of the answers sent, as a list of `{ elementLogicalID, value }`, one per answered question. Changing it doesn't change what's sent |
+
+Both fire on the `<gspro-lead-form>` tag. Like the wishlist events, they bubble, are composed and are cancelable, so a
+listener on `document` hears them. Calling `preventDefault()` on either has no effect: it doesn't stop the send. With
+several forms on a page, use `detail.form` to tell them apart.
+
+Example (with Google Analytics, then a thank-you page):
+
+```
+document.addEventListener("gspro-lead-form.submit-complete", function (event) {
+    gtag("event", "Submission", {
+        "event_category": "Lead Form",
+        "event_label": event.detail.form,
+        "value": event.detail.answers.length
+    });
+    window.location = "https://example.com/thank-you";
 });
 ```
 

@@ -22,6 +22,7 @@ You will need:
 2. Add the snippet to the head tracking code.
 3. Add a gallery to a page with a custom code element.
 4. Send a test quote request.
+5. Optional: add a lead form.
 
 If your site is on version 0.5.x, replace the two script tags in your head tracking code. See
 [Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
@@ -92,6 +93,34 @@ On your published domain (not the editor preview):
 
 In Goodshuffle Pro, the request appears as a new project under **Projects**, **Filters**, Origin = "Website".
 
+### 5. Add a lead form
+
+A lead form shows one of your Goodshuffle Pro Custom Forms on a page, styled by your site. See
+[Lead Form]({{< relref "/docs/components/lead-form" >}}).
+
+<!-- GSPRO-32476: the form's Share section gets the "Website Integration code" row (goodshuffle PR #9099). Match this
+step to that screen once it ships. -->
+
+1. In Goodshuffle Pro, open the form and make sure it's published. Copy the **Website Integration code** from the
+   form's **Share** section. It's a `<gspro-lead-form>` tag with your form's link in `form`:
+
+```
+<gspro-lead-form form="https://www.goodshuffle.com/c/f/FORM_ID"></gspro-lead-form>
+```
+
+2. Open the page in the editor and add a section and a row for the form.
+3. Add a **Custom JS/HTML** (custom code) element to the row, open its code editor and paste the tag.
+4. Save the element, then save and publish the page.
+5. On your published domain, fill in the form and click **Submit**. The response shows in the form's **Responses** in
+   Goodshuffle Pro.
+
+The form needs only the script tag from step 2. If you only want forms on your site, paste just this line into the
+head tracking code. You can leave out `<gspro-wishlist-config>`:
+
+{{< embed-code >}}
+<script src="LOADER_URL"></script>
+{{< /embed-code >}}
+
 ## Things to know on GoHighLevel
 
 - **Test on your own domain.** Inventory loads on the website address saved for your brand in Goodshuffle Pro. The
@@ -99,7 +128,8 @@ In Goodshuffle Pro, the request appears as a new project under **Projects**, **F
 - **Funnel steps.** Each funnel step is its own page. A funnel-level head tracking code covers every step; a step's own
   tracking code covers only that step.
 - **Your own forms.** GoHighLevel's forms and the wishlist are separate. A quote request sent from the wishlist goes to
-  Goodshuffle Pro, not to your GoHighLevel contacts.
+  Goodshuffle Pro, not to your GoHighLevel contacts. The same goes for a lead form: its responses go to the form's
+  Responses in Goodshuffle Pro.
 
 ## When it doesn't work
 

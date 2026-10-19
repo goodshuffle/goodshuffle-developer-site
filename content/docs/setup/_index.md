@@ -51,6 +51,9 @@ Replace `YOUR-PUBLIC-WEBSITE-KEY` with your key. Leave the rest of the snippet a
 When a client sends their wishlist, it arrives in Goodshuffle Pro as a new project. Find it under Projects, Filters,
 Origin = "Website". The sales lead set on the Integrations tab also gets an email.
 
+To show one of your Custom Forms on your site, add a `<gspro-lead-form>` to a page. It needs only the script tag. Each
+guide ends with a step for it. See [Lead Form]({{< relref "/docs/components/lead-form" >}}).
+
 ## When it doesn't work
 
 | What you see | Likely cause |
