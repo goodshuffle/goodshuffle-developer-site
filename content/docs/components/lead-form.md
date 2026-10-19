@@ -67,9 +67,6 @@ A project-specific link, one that ends in `?p=` and a number, isn't supported he
 answers are filed against the form only, not the project, and the browser console shows a warning. Use the form's
 plain share link.
 
-<!-- GSPRO-32471: the attribute's format (share link or ID, and which hosts) and whether a vendor's page can load the
-form cross-site are both pending that decision. form-attribute.ts is the one place the rule lives; update this
-section to match when GSPRO-32471 is decided. -->
 
 ## This form isn't available
 
@@ -87,8 +84,8 @@ To fix it, publish the form (or restore it) in Goodshuffle Pro, then copy its We
 While the form loads, the tag is empty. To hide the message instead of showing it, see
 [Styling](#styling).
 
-<!-- GSPRO-32471: how a vendor's page reaches marketplace (cross-site access) isn't settled. Until it is, don't promise
-the form loads in a builder's editor preview. Test on the published site, as the setup guides say. -->
+<!-- GSPRO-32471 (marketplace #458) lets any website load and submit the form. Builder editor previews are
+untested, so the guides still say to test on the published site. -->
 
 ## Styling
 
@@ -158,8 +155,16 @@ Integration's stylesheet comes first on the page. The same works when your theme
 The form shows your questions in the order you set them in the form builder, with the same required questions
 and the same rules for when a question shows.
 
-Address questions are typed by hand. If your page already loads Google Maps Places for your own use, the address
-field suggests addresses as the client types.
+Address questions suggest addresses as the client types, the same as the form's share page, and picking one fills
+in the street, city, state, ZIP and country. Suggestions come through Goodshuffle, so your page loads no Google script
+and needs no Google key of its own. A "Powered by Google" note shows under the suggestions. If suggestions aren't
+available, the client types the address.
+
+<!-- GSPRO-32710: launch item, replace the "Powered by Google" text with Google's official logo. -->
+
+To restyle the suggestions, use `gspro-c-lead-form__address-suggestions` (the list), `gspro-c-lead-form__address-suggestion`
+(one suggestion, with `gspro-c-lead-form__address-suggestion--active` on the highlighted one) and
+`gspro-c-lead-form__address-attribution` (the "Powered by Google" note).
 
 Clients attach files right in the form, and the files upload straight to Goodshuffle's file storage. The file types
 and sizes allowed are the same as on the form's share page.
