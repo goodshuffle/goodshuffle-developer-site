@@ -66,9 +66,9 @@ No. Data is retrieved from Goodshuffle Pro on demand, although it is cached to i
 ## Do you support IE11?
 No. Most visitors [no longer use IE11](https://help.goodshuffle.com/en/articles/4973646-do-you-support-ie11).
 
-## Why don’t you support Wix or Joomla?
-* Wix and Joomla don’t allow custom code snippets to be embedded on their sites. 
-* [Learn more here](https://help.goodshuffle.com/en/articles/4973648-why-don-t-you-support-wix-or-joomla) about your options when using a Wix or Joomla site.
+## Which site builders do you support?
+We have setup guides for Squarespace, WordPress, Wix, Showit, GoHighLevel and Lovable, and a guide for any other site
+where you can edit the HTML. See [Getting Started]({{< relref "/docs/setup" >}}).
 
 ## Can I obtain analytics about how people are using my site?
 We do not provide this out-of-the-box. [Learn more here.](https://help.goodshuffle.com/en/articles/4973654-can-i-obtain-analytics-about-how-people-are-using-my-site)

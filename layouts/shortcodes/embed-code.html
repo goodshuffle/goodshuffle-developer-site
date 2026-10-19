@@ -1,0 +1,14 @@
+{{/*
+  A code block holding a Website Integration snippet. Fenced code in Markdown can't read site params,
+  so every snippet that contains the loader address goes through this shortcode instead.
+  LOADER_URL in the inner text becomes the address from partials/embed/loader-url.html.
+
+    {{< embed-code >}}
+    <script src="LOADER_URL"></script>
+    {{< /embed-code >}}
+
+  Named params: alias="v1" for the opt-in /v1/ address, alias="latest" for /latest/; lang="text" for a block that isn't HTML.
+*/}}
+{{- $url := partial "embed/loader-url.html" (dict "site" .Site "alias" (.Get "alias" | default "")) -}}
+{{- $code := replace (trim .Inner "\n") "LOADER_URL" $url -}}
+{{- highlight $code (.Get "lang" | default "html") "" -}}

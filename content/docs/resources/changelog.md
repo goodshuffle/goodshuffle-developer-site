@@ -38,14 +38,14 @@ weight: 1
 - Added support for [sorting gspro-item-gallery]({{< relref "../components/item-gallery/#sort" >}}) by attributes
 - Significantly expanded options provided with the `gspro-wishlist-config` element
   - Added ability to [disable time selection]({{< relref "../components/wishlist-config/#disable-time-selection" >}})
-  - Added ability to [show quantities]({{< relref "../components/wishlist-config/#show-quantity-on-cardshow-quantity-on-detail" >}}) on the `gspro-item-detail` and the `gspro-item-card`
+  - Added ability to [show quantities]({{< relref "../components/wishlist-config/#show-quantity-on-card-and-show-quantity-on-detail" >}}) on the `gspro-item-detail` and the `gspro-item-card`
   - Added ability to make [phone numbers required]({{< relref "../components/wishlist-config/#require-phone-number" >}}) for Wishlist submission
   - Added ability to [add help text]({{< relref "../components/wishlist-config/#notes-help-text" >}}) under the "Notes" label of the Wishlist submission form
 
 ## [0.5.1] - 2021-07-13
 
 - Fixed a rare bug resulting in duplicate wishlist submissions
-- Added a new event emitter, [`gspro-wishlist.submit-complete`]({{< relref "../integrations/events.md#submit-complete" >}})
+- Added a new event emitter, [`gspro-wishlist.submit-complete`]({{< relref "../integrations/events.md#quote-request-accepted-gspro-wishlistsubmit-complete" >}})
 
 ## [0.5.0] - 2021-06-10
 
@@ -62,7 +62,7 @@ weight: 1
 ## [0.4.3] - 2021-01-07
 
 - Added event emitters to key Website Integration events. See [this page]({{< relref "../integrations/events.md" >}}) on usage.
-- Improved SEO optimization. See [this FAQ]({{< relref "../customization/faq/#how-does-the-wishlist-impact-seo-search-engine-optimization" >}}) for more information.
+- Improved SEO optimization. See [this FAQ]({{< relref "../customization/faq/#how-does-the-website-integration-impact-seo-search-engine-optimization" >}}) for more information.
 
 ## [0.4.2] - 2020-10-14
 

@@ -9,6 +9,43 @@ weight: 20
 
 Use the `gspro-item-gallery` web component to display a list of items with controls for searching, browsing categories, and filtering items. If you don't need any of these controls, consider using an `gspro-item list` instead. It's worth noting, that this web component provides a superset of attributes provided by `gspro-item-list`. It may help to [learn more about how to use a `gspro-item-list`]({{< relref "./item-list.md" >}}) because the item-list has a subset of item-gallery attributes.
 
+```
+<gspro-item-gallery></gspro-item-gallery>
+```
+
+With no attributes, the gallery shows the search bar, your categories and the filters. Items appear once the client
+picks a category or searches. To open on a set of items, give it a `category`, `group`, `search`, `tags`,
+`scope-category`, `scope-group`, `scope-search` or `scope-tags`. The `scope-attribute-#` pair alone narrows the items
+but doesn't load any: the gallery still waits for the client to pick a category or search.
+
+## All attributes
+
+| Attribute | Default | What it does |
+| --- | --- | --- |
+| `category` | None | Category to open on. Replaced when the client searches or picks a category |
+| `group` | None | Subcategory to open on. Needs its parent `category` too |
+| `search` | None | Keywords to open on |
+| `tags` | None | Tags to open on |
+| `scope-category` | None | Limits every view to these categories |
+| `scope-group` | None | Limits every view to these subcategories |
+| `scope-search` | None | Limits every view to items matching these keywords |
+| `scope-tags` | None | Limits every view to items with these tags |
+| `scope-attribute-1-name`, `scope-attribute-1-value` | None | Limits every view to items with this attribute value. Also `-2-` and `-3-`, up to three |
+| `sort-primary` | None | Sorts by this attribute (see [`sort`](#sort)) |
+| `sort-primary-order` | `asc` when `sort-primary` is set | `asc` or `desc` |
+| `sort-secondary` | None | Second sort, applied within the first |
+| `sort-secondary-order` | `asc` when `sort-secondary` is set | `asc` or `desc` |
+| `show-categories` | `true` | `false` hides the category list and its button |
+| `show-filters` | `true` | `false` hides the filters and their button |
+| `size` | `15` | Items per page |
+| `from` | `0` | Position of the first item shown. Paging sets it; leave it out |
+| `route` | `/inventory/:category?/:group?` | Pattern the gallery keeps in the page link after `#!`. Leave it out |
+| `item-card-route` | `#!/item/:item` | Accepted so older pages stay valid. It has no effect |
+| `total` | None | Accepted so older pages stay valid. It has no effect |
+
+On/off attributes read like the [Wishlist Config]({{< relref "./wishlist-config.md" >}}) ones: only the lowercase
+word `false` turns one off.
+
 ## Parts of a Gallery
 
 ### Search
@@ -107,9 +144,8 @@ Limit the displayed items to ones with the given tags.
 [Learn more about how to use tags]({{< relref "./item-list.md#tags" >}}).
 
 ### **`scope-attribute-#-name / scope-attribute-#-value`**
-**`added in v0.5.2`**
 
-Limit the displayed items to ones with the given attributes.
+Limit the displayed items to ones with the given attributes. Use `1`, `2` and `3` for up to three attributes.
 
 Example:
 ```
@@ -122,7 +158,6 @@ Example:
 [Learn more about attributes]({{< relref "./item-list.md#item-attribute-" >}}).
 
 ### **`sort`**
-**`added in v0.5.2`**
 
 **Usage of at least one `scope-attribute-#` with piped `scope-attribute-#-value` values is required to use sort.** 
 
@@ -135,6 +170,8 @@ Example:
 ```
 
 We would then see all the items in the Washington warehouse, then all the items in the Rosslyn warehouse.
+
+Add `sort-secondary` (and `sort-secondary-order`) to sort within the first sort by a second attribute.
 
 [Learn more about sort]({{< relref "./item-list.md#sort-primary" >}}).
 

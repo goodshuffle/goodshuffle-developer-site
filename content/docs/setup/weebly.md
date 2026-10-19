@@ -20,16 +20,15 @@ These are the high-level steps:
 
 1. Activate your Website Integration.
 2. Add HTML code snippets to your site's header.
-3. Add custom CSS to your site's design.
-4. Create a page for the basic gallery and embed an HTML code snippet.
+3. Create a page for the basic gallery and embed an HTML code snippet.
 
-## Walk-Through
+## Walk-through
 
 ### Activation
 
 If you'd prefer to follow along with a video tutorial, we have one [available here](https://www.youtube.com/watch?v=PGBM8f7CdOQ)!
 
-You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
+You can do this from the [Integration Tab](https://pro.goodshuffle.com/app/vendorAccount/index?tab=thirdPartyIntegrations) of your account. **Copy the "Public Browser Key" on this screen for subsequent use.**
 
 ![Integration Tab](/wordpress-website-integration-activation.png)
 
@@ -44,15 +43,23 @@ You can do this from the [Integration Tab](https://pro.goodshuffle.com/vendorAcc
 
 **PLEASE NOTE! You need to replace the text YOUR-PUBLIC-WEBSITE-KEY below with your Public Browser Key from Goodshuffle Pro (retrieved in the Activation step above).**
 
-```
-<script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.js"></script>
+{{< embed-code >}}
+<script src="LOADER_URL"></script>
 <gspro-wishlist-config
     data-url="https://data.goodshuffle.com/vendor/YOUR-PUBLIC-WEBSITE-KEY"
 ></gspro-wishlist-config>
-```
+{{< /embed-code >}}
 
-*Previous versions of the Website Integration also required footer code. Some of our tutorial resources may still reference a footer, but if you are on version **0.5.0 or later** of the Website Integration you can safely ignore the footer setup.*
+> This is Goodshuffle's script. It brings its own styles, so you don't need a stylesheet tag. The address includes
+> the version, {{< embed-version >}}, and your site stays on that version until you change the number. See
+> [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
+> [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x updates
+> without editing.
+
+If your site is on version 0.5.x, replace your two script tags with the one above. See
+[Switching from 0.5.x]({{< relref "/docs/setup/switching-from-0-5" >}}).
+
+No footer code is needed. Older tutorials that mention a footer can be ignored.
 
 ### Create a Gallery Page
 
@@ -74,4 +81,6 @@ Make sure to publish your changes!
 
 ## All Set!
 
-You should now have a basic page that displays a list of relevant categories/subcategories and your inventory.
+You should now have a gallery page that shows your categories. Items appear once a client picks a category or
+searches. To open the gallery on one category, give it a `category`. See
+[Item Gallery]({{< relref "/docs/components/item-gallery" >}}).

@@ -36,6 +36,31 @@ Additionally, multiple options can be provided to further narrow down the invent
 
 *This list will display seating and chair rentals, tagged with the 'Rustic' tag, with either a Red, White or Blue 'Color' attribute. Tags and attributes can be set in your [Goodshuffle Pro Inventory tab](https://pro.goodshuffle.com/inventory/index)*
 
+## All attributes
+
+| Attribute | Default | What it does |
+| --- | --- | --- |
+| `category` | None | Shows items in this category |
+| `group` | None | Shows items in this subcategory |
+| `search` | None | Shows items matching these keywords |
+| `tags` | None | Shows items with these tags |
+| `item-attribute-1-name`, `item-attribute-1-value` | None | Narrows to items with this attribute value. Also `-2-` and `-3-`, up to three |
+| `sort-primary` | None | Sorts by one of the `item-attribute-#` values |
+| `sort-primary-order` | `asc` when `sort-primary` is set | `asc` or `desc` |
+| `sort-secondary` | None | Second sort, applied within the first |
+| `sort-secondary-order` | `asc` when `sort-secondary` is set | `asc` or `desc` |
+| `size` | `15` | Items shown, or items per page with `route` |
+| `route` | None | Turns on Previous and Next, kept in the page link. Without it, the list shows one page and ignores the page link |
+| `context` | `inventory` | First part of the page link when `route` is set. Leave it out |
+| `from` | `0` | Position of the first item shown. Paging sets it; leave it out |
+| `filters` | None | Accepted so older pages stay valid. It has no effect |
+| `item-card-route` | `#!/item/:item` | Accepted so older pages stay valid. It has no effect |
+| `hide-quantity` | `false` | Accepted so older pages stay valid. It has no effect; use `show-quantity-on-card` on [Wishlist Config]({{< relref "./wishlist-config.md" >}}) |
+| `total` | None | Accepted so older pages stay valid. It has no effect |
+
+A list loads items only when it has at least one of `category`, `group`, `search` or `tags`. The `item-attribute-#`
+values narrow those results; on their own they load nothing.
+
 ## Usage
 
 You determine the items displayed in a gallery by changing the following controls on the `<gspro-item-list>` component. 

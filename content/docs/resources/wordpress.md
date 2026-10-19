@@ -7,6 +7,15 @@ weight: 90
 
 ## Current Version
 
+From 0.6.0 on, each plugin release loads one Website Integration version, listed next to it. Your site loads that
+version unless Modern JS or Legacy JS in the plugin's Advanced Settings holds an address. The **Your site loads** row
+there shows what your site loads. See [WordPress Setup]({{< relref "/docs/setup/wordpress#advanced-settings" >}}).
+
+- 0.6.0: loads Website Integration 1.0.0.
+
+> To be filled in when plugin 0.6.0 is released (GSPRO-32532): its download link and date. Until then, 0.5.7 is the
+> current download. It loads Website Integration version 0.5.x.
+
 - [0.5.7](https://goodshufflecdn.s3.amazonaws.com/gspro-embed-wpp/gspro-wishlist-plugin-0.5.7.zip) (June 17, 2024)
 
 ## Previous Versions
