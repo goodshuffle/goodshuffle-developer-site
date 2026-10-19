@@ -16,6 +16,16 @@ The number in the address is the release. `loader.js` adds two files from that s
 `<head>`: the stylesheet `gspro-embed.css` and the script `gspro-embed.js`. Files in a numbered release folder are
 never changed or removed, so your site stays exactly as it is until you change the number.
 
+## Choosing an address
+
+There are three addresses you can load the Website Integration from:
+
+| Address | What your site gets | Choose it if |
+| --- | --- | --- |
+| A numbered release, such as `{{< embed-url >}}` | That release only. Your site changes when you change the number | You want to check each release before your site gets it. Every setup guide on this site uses this address |
+| `{{< embed-url alias="v1" >}}` | The newest 1.x release, automatically. It never moves to 2.x | You want updates without editing your site. This is the right choice for most vendors who want automatic updates. See [Automatic updates with v1](#automatic-updates-with-v1) |
+| `{{< embed-url alias="latest" >}}` | The newest release, automatically, including a new major version such as 2.x | You check your site after every release and can change your setup right away when a major version needs it. See [Always the newest release with latest](#always-the-newest-release-with-latest) |
+
 ## How to update
 
 1. Check what changed in the new release. See the [Changelog]({{< relref "/docs/resources/changelog" >}}). On
@@ -58,7 +68,8 @@ without an edit. It only ever points at a 1.x release.
 Goodshuffle ships breaking changes only as a new major version (2.x), with an upgrade guide. Your site stays on 1.x
 until you follow that guide.
 
-The trade-off is that your site changes when a release ships, at a time you don't choose.
+The trade-off is that your site changes when a release ships, at a time you don't choose. For most vendors who want
+automatic updates, `/v1/` is the address to use.
 
 How to switch depends on your builder:
 
@@ -68,5 +79,36 @@ How to switch depends on your builder:
 | Wix | Set the Server URL of every Goodshuffle Custom Element to the `/v1/` address. Leave no element on a numbered address |
 | Every other builder | Replace the address in the script tag with the `/v1/` address, everywhere the tag appears. The table in [How to update](#how-to-update) says where it is |
 
-To go back to a fixed version, put a numbered address back. On WordPress, clear both Modern JS and Legacy JS and click
-**Save Advanced Options**. With both empty, the site goes back to the version the plugin loads by default.
+## Always the newest release with latest
+
+This address always loads the newest release of the Website Integration, whatever its major version:
+
+{{< embed-code alias="latest" >}}
+<script src="LOADER_URL"></script>
+{{< /embed-code >}}
+
+Goodshuffle points `/latest/loader.js` at the newest release, so it adds that release's `gspro-embed.css` and
+`gspro-embed.js` from its numbered folder. Like `/v1/`, it is cached for up to five minutes, and your site picks up a
+new release within a few minutes, without an edit.
+
+> **Warning:** `/latest/` moves to a new major version (2.x, 3.x and later) as soon as Goodshuffle ships it. A new
+> major version can include changes that need you to update your setup, such as a renamed attribute or setting. Your
+> site loads the new version straight away, before you've made those changes, so parts of your site may stop working
+> as before until you follow that version's upgrade guide.
+
+Use `/latest/` only if someone checks your site after every release and can follow an upgrade guide right away. If you
+want automatic updates without that risk, use [`/v1/`](#automatic-updates-with-v1). It stays on 1.x.
+
+How to switch depends on your builder:
+
+| Builder | What to change |
+| --- | --- |
+| WordPress | In Advanced Settings, enter the `/latest/` address in **Modern JS**, leave **Legacy JS** empty, and click **Save Advanced Options**. It works the same way as the `/v1/` address. See [WordPress]({{< relref "/docs/setup/wordpress#always-the-newest-release-with-latest" >}}) |
+| Wix | Set the Server URL of every Goodshuffle Custom Element to the `/latest/` address. Leave no element on a numbered or `/v1/` address |
+| Every other builder | Replace the address in the script tag with the `/latest/` address, everywhere the tag appears. The table in [How to update](#how-to-update) says where it is |
+
+## Going back to a fixed version
+
+To leave `/v1/` or `/latest/`, put a numbered address back, everywhere the address appears. On WordPress, clear both
+Modern JS and Legacy JS and click **Save Advanced Options**. With both empty, the site goes back to the version the
+plugin loads by default.

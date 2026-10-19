@@ -172,6 +172,18 @@ From then on, plugin updates don't change which version your site loads. To go b
 clear both Modern JS and Legacy JS and click **Save Advanced Options**. For what `/v1/` does, see
 [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}).
 
+### Always the newest release with latest
+
+`https://embed.goodshuffle.com/latest/loader.js` loads the newest release, including a new major version such as 2.x.
+A new major version can need setup changes, so read
+[Always the newest release with latest]({{< relref "/docs/setup/updating#always-the-newest-release-with-latest" >}})
+before you choose it. Most sites are better served by `/v1/`.
+
+To use it, follow the steps in [Automatic updates with v1](#automatic-updates-with-v1) with
+`https://embed.goodshuffle.com/latest/loader.js` in **Modern JS**, and check that **Your site loads** shows that
+address. The plugin loads any address ending in `/loader.js` the same way. To go back to the plugin's default version,
+clear both fields and click **Save Advanced Options**.
+
 ### Staying on one version
 
 To keep a specific release, enter its address in Modern JS, for example

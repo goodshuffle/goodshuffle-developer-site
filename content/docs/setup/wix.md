@@ -41,7 +41,8 @@ version loads, so keep them all the same.
 The address includes the version, {{< embed-version >}}, and your site stays on that version until you change the
 number on every Custom Element. See [Updating to a newer version]({{< relref "/docs/setup/updating" >}}), or
 [Automatic updates with v1]({{< relref "/docs/setup/updating#automatic-updates-with-v1" >}}) to get 1.x updates
-without editing.
+without editing. A `/latest/` address also works as the Server URL. See
+[Choosing an address]({{< relref "/docs/setup/updating#choosing-an-address" >}}) before you use it.
 
 Older instructions used an address ending in `/dist/custom-elements/index.js`. Don't use it for new setups: it loads
 version 0.5.x, which no longer gets fixes.

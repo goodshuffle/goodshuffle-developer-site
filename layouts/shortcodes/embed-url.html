@@ -1,1 +1,1 @@
-{{/* The loader address inline, e.g. `{{< embed-url >}}` or `{{< embed-url alias="v1" >}}`. See partials/embed/loader-url.html. */}}{{- partial "embed/loader-url.html" (dict "site" .Site "alias" (.Get "alias" | default "")) -}}
+{{/* The loader address inline, e.g. `{{< embed-url >}}`, `{{< embed-url alias="v1" >}}` or `{{< embed-url alias="latest" >}}`. See partials/embed/loader-url.html. */}}{{- partial "embed/loader-url.html" (dict "site" .Site "alias" (.Get "alias" | default "")) -}}
